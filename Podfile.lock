@@ -1,0 +1,66 @@
+PODS:
+  - AKSideMenu (1.4.6)
+  - Alamofire (4.9.1)
+  - BetterSegmentedControl (2.0.1)
+  - CardIO (5.4.1)
+  - iOSDropDown (0.3.4)
+  - liquid-swipe (0.7.0):
+    - pop (~> 1.0)
+  - PayPal-iOS-SDK (2.18.1):
+    - PayPal-iOS-SDK/CardIO (= 2.18.1)
+    - PayPal-iOS-SDK/Core (= 2.18.1)
+  - PayPal-iOS-SDK/CardIO (2.18.1):
+    - CardIO (~> 5.4.1)
+  - PayPal-iOS-SDK/Core (2.18.1)
+  - pop (1.0.12)
+  - RappleProgressHUD (4.1)
+  - SDWebImage (5.12.1):
+    - SDWebImage/Core (= 5.12.1)
+  - SDWebImage/Core (5.12.1)
+  - StepIndicator (1.0.8)
+  - SwiftyJSON (5.0.1)
+
+DEPENDENCIES:
+  - AKSideMenu
+  - Alamofire (~> 4.7)
+  - BetterSegmentedControl
+  - iOSDropDown
+  - liquid-swipe
+  - PayPal-iOS-SDK (~> 2.15)
+  - RappleProgressHUD
+  - SDWebImage (~> 5.0)
+  - StepIndicator (~> 1.0.8)
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - AKSideMenu
+    - Alamofire
+    - BetterSegmentedControl
+    - CardIO
+    - iOSDropDown
+    - liquid-swipe
+    - PayPal-iOS-SDK
+    - pop
+    - RappleProgressHUD
+    - SDWebImage
+    - StepIndicator
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  AKSideMenu: 1f2b261a82b89f980624dda4b3385544fbf178e0
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  BetterSegmentedControl: 09607b27861d49cbce48b7673b74f9150a3d371a
+  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
+  liquid-swipe: 850f88c0717fe58ba83f0f571c47a191f29ddc1f
+  PayPal-iOS-SDK: 70d56697aef502c130b9840e31dea5c6b8a350e1
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  RappleProgressHUD: f29bc5dc5f9834c2caa9c2ae21ba11f3ff2b5a85
+  SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
+  StepIndicator: 748b293f671355b021253f82031ac002f153dc81
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+
+PODFILE CHECKSUM: f0336941ce962f652d21596a5ef1d1982cf21095
+
+COCOAPODS: 1.11.2

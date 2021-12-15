@@ -1,0 +1,10 @@
+Color code :
+#0BBAA3
+#3B525A
+#ffffff
+#000000
+
+
+Font: 
+
+Montserrat

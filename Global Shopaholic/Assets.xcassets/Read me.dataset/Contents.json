@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "Read me.txt",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
