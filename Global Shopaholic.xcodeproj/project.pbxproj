@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26D8261998059B7529EB0AD8 /* Pods_Global_Shopaholic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263BDF0982112EA3DCDC69C8 /* Pods_Global_Shopaholic.framework */; };
 		780137C426A05566003D29D7 /* CreditCardPaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780137C326A05566003D29D7 /* CreditCardPaymentModel.swift */; };
 		78088D05260B762A00C6E806 /* WeightUnitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78088D03260B762A00C6E806 /* WeightUnitCell.xib */; };
 		78088D06260B762A00C6E806 /* WeightUnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78088D04260B762A00C6E806 /* WeightUnitCell.swift */; };
@@ -252,8 +251,9 @@
 		7CD45E54274618FB00397F57 /* OutgoingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD45E52274618FB00397F57 /* OutgoingTableViewCell.xib */; };
 		7CE79893273CFE5000D145E5 /* MyStorageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE79891273CFE5000D145E5 /* MyStorageCollectionViewCell.swift */; };
 		7CE79894273CFE5000D145E5 /* MyStorageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE79892273CFE5000D145E5 /* MyStorageCollectionViewCell.xib */; };
-		B141345FCE2729086C0C2FBA /* Pods_Global_ShopaholicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275758026C1206F77C844DE8 /* Pods_Global_ShopaholicTests.framework */; };
-		EF411DABB5FBFE6C5A45EFAB /* Pods_Global_Shopaholic_Global_ShopaholicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 814254BF37D3AFF425958EE9 /* Pods_Global_Shopaholic_Global_ShopaholicUITests.framework */; };
+		AC65A2415C03513226DF1644 /* Pods_Global_Shopaholic_Global_ShopaholicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C352BAD25CA4EDBC58C7560 /* Pods_Global_Shopaholic_Global_ShopaholicUITests.framework */; };
+		C197F16F8272306ABC38E9AB /* Pods_Global_Shopaholic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B94FB0DB9F36A8FECC349E6 /* Pods_Global_Shopaholic.framework */; };
+		FE8955E43B6936D385F69018 /* Pods_Global_ShopaholicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3ED7F419C3CEED6FFC0CC0 /* Pods_Global_ShopaholicTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -274,12 +274,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15F7A826EE05E659AEAF4C7A /* Pods-Global ShopaholicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global ShopaholicTests.release.xcconfig"; path = "Target Support Files/Pods-Global ShopaholicTests/Pods-Global ShopaholicTests.release.xcconfig"; sourceTree = "<group>"; };
-		263BDF0982112EA3DCDC69C8 /* Pods_Global_Shopaholic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Global_Shopaholic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		26FEA754135FB9E8A0D34A14 /* Pods-Global ShopaholicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global ShopaholicTests.debug.xcconfig"; path = "Target Support Files/Pods-Global ShopaholicTests/Pods-Global ShopaholicTests.debug.xcconfig"; sourceTree = "<group>"; };
-		275758026C1206F77C844DE8 /* Pods_Global_ShopaholicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Global_ShopaholicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C5A8BE9CDCA390BFAFF2C38 /* Pods-Global Shopaholic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global Shopaholic.debug.xcconfig"; path = "Target Support Files/Pods-Global Shopaholic/Pods-Global Shopaholic.debug.xcconfig"; sourceTree = "<group>"; };
-		303C171F9F7ACA84DD8F6600 /* Pods-Global Shopaholic-Global ShopaholicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global Shopaholic-Global ShopaholicUITests.debug.xcconfig"; path = "Target Support Files/Pods-Global Shopaholic-Global ShopaholicUITests/Pods-Global Shopaholic-Global ShopaholicUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		14E128EEF7F3FF1FBC4E0775 /* Pods-Global Shopaholic-Global ShopaholicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global Shopaholic-Global ShopaholicUITests.release.xcconfig"; path = "Target Support Files/Pods-Global Shopaholic-Global ShopaholicUITests/Pods-Global Shopaholic-Global ShopaholicUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2C352BAD25CA4EDBC58C7560 /* Pods_Global_Shopaholic_Global_ShopaholicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Global_Shopaholic_Global_ShopaholicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43EA95CABA766B16A6010CFA /* Pods-Global Shopaholic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global Shopaholic.release.xcconfig"; path = "Target Support Files/Pods-Global Shopaholic/Pods-Global Shopaholic.release.xcconfig"; sourceTree = "<group>"; };
+		5E157FC64F04261FD494B371 /* Pods-Global Shopaholic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global Shopaholic.debug.xcconfig"; path = "Target Support Files/Pods-Global Shopaholic/Pods-Global Shopaholic.debug.xcconfig"; sourceTree = "<group>"; };
 		780137C326A05566003D29D7 /* CreditCardPaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardPaymentModel.swift; sourceTree = "<group>"; };
 		78088D03260B762A00C6E806 /* WeightUnitCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightUnitCell.xib; sourceTree = "<group>"; };
 		78088D04260B762A00C6E806 /* WeightUnitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightUnitCell.swift; sourceTree = "<group>"; };
@@ -506,6 +504,7 @@
 		78FF212B268F1F47009FFB3B /* OrderSummaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSummaryRequest.swift; sourceTree = "<group>"; };
 		78FF212E268F29D8009FFB3B /* CheckoutVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVM.swift; sourceTree = "<group>"; };
 		78FF2130268F2C99009FFB3B /* APSCheckOut+EXT+DELEGATEs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APSCheckOut+EXT+DELEGATEs.swift"; sourceTree = "<group>"; };
+		7B3ED7F419C3CEED6FFC0CC0 /* Pods_Global_ShopaholicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Global_ShopaholicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C50462527438D2C000F6307 /* StorageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTableViewCell.swift; sourceTree = "<group>"; };
 		7C50462627438D2C000F6307 /* StorageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StorageTableViewCell.xib; sourceTree = "<group>"; };
 		7C6A1390274B60B000C8C81A /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
@@ -537,9 +536,10 @@
 		7CD45E52274618FB00397F57 /* OutgoingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutgoingTableViewCell.xib; sourceTree = "<group>"; };
 		7CE79891273CFE5000D145E5 /* MyStorageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStorageCollectionViewCell.swift; sourceTree = "<group>"; };
 		7CE79892273CFE5000D145E5 /* MyStorageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyStorageCollectionViewCell.xib; sourceTree = "<group>"; };
-		814254BF37D3AFF425958EE9 /* Pods_Global_Shopaholic_Global_ShopaholicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Global_Shopaholic_Global_ShopaholicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7C3B9ECB4F6879881F72EBE /* Pods-Global Shopaholic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global Shopaholic.release.xcconfig"; path = "Target Support Files/Pods-Global Shopaholic/Pods-Global Shopaholic.release.xcconfig"; sourceTree = "<group>"; };
-		F9CA7B11D125290340CBBC95 /* Pods-Global Shopaholic-Global ShopaholicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global Shopaholic-Global ShopaholicUITests.release.xcconfig"; path = "Target Support Files/Pods-Global Shopaholic-Global ShopaholicUITests/Pods-Global Shopaholic-Global ShopaholicUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7D2D49A586877FB2FC0FC05A /* Pods-Global ShopaholicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global ShopaholicTests.debug.xcconfig"; path = "Target Support Files/Pods-Global ShopaholicTests/Pods-Global ShopaholicTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9B94FB0DB9F36A8FECC349E6 /* Pods_Global_Shopaholic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Global_Shopaholic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C30B380F99D0DF5E7857FB2E /* Pods-Global ShopaholicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global ShopaholicTests.release.xcconfig"; path = "Target Support Files/Pods-Global ShopaholicTests/Pods-Global ShopaholicTests.release.xcconfig"; sourceTree = "<group>"; };
+		E62E6149AB8874585F3180CB /* Pods-Global Shopaholic-Global ShopaholicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global Shopaholic-Global ShopaholicUITests.debug.xcconfig"; path = "Target Support Files/Pods-Global Shopaholic-Global ShopaholicUITests/Pods-Global Shopaholic-Global ShopaholicUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -547,7 +547,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D8261998059B7529EB0AD8 /* Pods_Global_Shopaholic.framework in Frameworks */,
+				C197F16F8272306ABC38E9AB /* Pods_Global_Shopaholic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,7 +555,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B141345FCE2729086C0C2FBA /* Pods_Global_ShopaholicTests.framework in Frameworks */,
+				FE8955E43B6936D385F69018 /* Pods_Global_ShopaholicTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,7 +563,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF411DABB5FBFE6C5A45EFAB /* Pods_Global_Shopaholic_Global_ShopaholicUITests.framework in Frameworks */,
+				AC65A2415C03513226DF1644 /* Pods_Global_Shopaholic_Global_ShopaholicUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,14 +573,24 @@
 		02669F32393957230ADCC227 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2C5A8BE9CDCA390BFAFF2C38 /* Pods-Global Shopaholic.debug.xcconfig */,
-				D7C3B9ECB4F6879881F72EBE /* Pods-Global Shopaholic.release.xcconfig */,
-				303C171F9F7ACA84DD8F6600 /* Pods-Global Shopaholic-Global ShopaholicUITests.debug.xcconfig */,
-				F9CA7B11D125290340CBBC95 /* Pods-Global Shopaholic-Global ShopaholicUITests.release.xcconfig */,
-				26FEA754135FB9E8A0D34A14 /* Pods-Global ShopaholicTests.debug.xcconfig */,
-				15F7A826EE05E659AEAF4C7A /* Pods-Global ShopaholicTests.release.xcconfig */,
+				5E157FC64F04261FD494B371 /* Pods-Global Shopaholic.debug.xcconfig */,
+				43EA95CABA766B16A6010CFA /* Pods-Global Shopaholic.release.xcconfig */,
+				E62E6149AB8874585F3180CB /* Pods-Global Shopaholic-Global ShopaholicUITests.debug.xcconfig */,
+				14E128EEF7F3FF1FBC4E0775 /* Pods-Global Shopaholic-Global ShopaholicUITests.release.xcconfig */,
+				7D2D49A586877FB2FC0FC05A /* Pods-Global ShopaholicTests.debug.xcconfig */,
+				C30B380F99D0DF5E7857FB2E /* Pods-Global ShopaholicTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4A7A9C9F571D5907B7C9B4E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B94FB0DB9F36A8FECC349E6 /* Pods_Global_Shopaholic.framework */,
+				2C352BAD25CA4EDBC58C7560 /* Pods_Global_Shopaholic_Global_ShopaholicUITests.framework */,
+				7B3ED7F419C3CEED6FFC0CC0 /* Pods_Global_ShopaholicTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		780B1AF9268D9827006C828F /* CheckOut */ = {
@@ -637,7 +647,7 @@
 				781D3E5D257900D10013DE3A /* Global ShopaholicUITests */,
 				781D3E3A257900D00013DE3A /* Products */,
 				02669F32393957230ADCC227 /* Pods */,
-				FC68F00EB634E2395F8285D0 /* Frameworks */,
+				4A7A9C9F571D5907B7C9B4E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1712,16 +1722,6 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		FC68F00EB634E2395F8285D0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				263BDF0982112EA3DCDC69C8 /* Pods_Global_Shopaholic.framework */,
-				814254BF37D3AFF425958EE9 /* Pods_Global_Shopaholic_Global_ShopaholicUITests.framework */,
-				275758026C1206F77C844DE8 /* Pods_Global_ShopaholicTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1729,11 +1729,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 781D3E63257900D10013DE3A /* Build configuration list for PBXNativeTarget "Global Shopaholic" */;
 			buildPhases = (
-				38740E62268E309467D5EF37 /* [CP] Check Pods Manifest.lock */,
+				1D4AF0C92340B020BE593010 /* [CP] Check Pods Manifest.lock */,
 				781D3E35257900D00013DE3A /* Sources */,
 				781D3E36257900D00013DE3A /* Frameworks */,
 				781D3E37257900D00013DE3A /* Resources */,
-				9AF72807B67BD1A61F2DEBBC /* [CP] Embed Pods Frameworks */,
+				57CF4FA56633D3B1AEA6A9DF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1748,7 +1748,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 781D3E66257900D10013DE3A /* Build configuration list for PBXNativeTarget "Global ShopaholicTests" */;
 			buildPhases = (
-				5819B8E03DFE94A6B7E0DBB9 /* [CP] Check Pods Manifest.lock */,
+				8741DA9921001472964AC09B /* [CP] Check Pods Manifest.lock */,
 				781D3E4B257900D10013DE3A /* Sources */,
 				781D3E4C257900D10013DE3A /* Frameworks */,
 				781D3E4D257900D10013DE3A /* Resources */,
@@ -1767,11 +1767,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 781D3E69257900D10013DE3A /* Build configuration list for PBXNativeTarget "Global ShopaholicUITests" */;
 			buildPhases = (
-				4E136B8C76B7FCD2FEB9EBF3 /* [CP] Check Pods Manifest.lock */,
+				CA3B0E9698C723E0E7C77156 /* [CP] Check Pods Manifest.lock */,
 				781D3E56257900D10013DE3A /* Sources */,
 				781D3E57257900D10013DE3A /* Frameworks */,
 				781D3E58257900D10013DE3A /* Resources */,
-				005A3AB255B9722527F0005A /* [CP] Embed Pods Frameworks */,
+				3A33EA9C3891301D36F6D556 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1915,24 +1915,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		005A3AB255B9722527F0005A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Global Shopaholic-Global ShopaholicUITests/Pods-Global Shopaholic-Global ShopaholicUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Global Shopaholic-Global ShopaholicUITests/Pods-Global Shopaholic-Global ShopaholicUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Global Shopaholic-Global ShopaholicUITests/Pods-Global Shopaholic-Global ShopaholicUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		38740E62268E309467D5EF37 /* [CP] Check Pods Manifest.lock */ = {
+		1D4AF0C92340B020BE593010 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1954,29 +1937,41 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4E136B8C76B7FCD2FEB9EBF3 /* [CP] Check Pods Manifest.lock */ = {
+		3A33EA9C3891301D36F6D556 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Global Shopaholic-Global ShopaholicUITests/Pods-Global Shopaholic-Global ShopaholicUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Global Shopaholic-Global ShopaholicUITests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-Global Shopaholic-Global ShopaholicUITests/Pods-Global Shopaholic-Global ShopaholicUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Global Shopaholic-Global ShopaholicUITests/Pods-Global Shopaholic-Global ShopaholicUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5819B8E03DFE94A6B7E0DBB9 /* [CP] Check Pods Manifest.lock */ = {
+		57CF4FA56633D3B1AEA6A9DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Global Shopaholic/Pods-Global Shopaholic-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Global Shopaholic/Pods-Global Shopaholic-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Global Shopaholic/Pods-Global Shopaholic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8741DA9921001472964AC09B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1998,21 +1993,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9AF72807B67BD1A61F2DEBBC /* [CP] Embed Pods Frameworks */ = {
+		CA3B0E9698C723E0E7C77156 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Global Shopaholic/Pods-Global Shopaholic-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Global Shopaholic/Pods-Global Shopaholic-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Global Shopaholic-Global ShopaholicUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Global Shopaholic/Pods-Global Shopaholic-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2304,7 +2304,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2358,7 +2358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2370,7 +2370,7 @@
 		};
 		781D3E64257900D10013DE3A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C5A8BE9CDCA390BFAFF2C38 /* Pods-Global Shopaholic.debug.xcconfig */;
+			baseConfigurationReference = 5E157FC64F04261FD494B371 /* Pods-Global Shopaholic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -2427,7 +2427,7 @@
 		};
 		781D3E65257900D10013DE3A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7C3B9ECB4F6879881F72EBE /* Pods-Global Shopaholic.release.xcconfig */;
+			baseConfigurationReference = 43EA95CABA766B16A6010CFA /* Pods-Global Shopaholic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -2484,7 +2484,7 @@
 		};
 		781D3E67257900D10013DE3A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26FEA754135FB9E8A0D34A14 /* Pods-Global ShopaholicTests.debug.xcconfig */;
+			baseConfigurationReference = 7D2D49A586877FB2FC0FC05A /* Pods-Global ShopaholicTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2506,7 +2506,7 @@
 		};
 		781D3E68257900D10013DE3A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15F7A826EE05E659AEAF4C7A /* Pods-Global ShopaholicTests.release.xcconfig */;
+			baseConfigurationReference = C30B380F99D0DF5E7857FB2E /* Pods-Global ShopaholicTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2528,7 +2528,7 @@
 		};
 		781D3E6A257900D10013DE3A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 303C171F9F7ACA84DD8F6600 /* Pods-Global Shopaholic-Global ShopaholicUITests.debug.xcconfig */;
+			baseConfigurationReference = E62E6149AB8874585F3180CB /* Pods-Global Shopaholic-Global ShopaholicUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -2548,7 +2548,7 @@
 		};
 		781D3E6B257900D10013DE3A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9CA7B11D125290340CBBC95 /* Pods-Global Shopaholic-Global ShopaholicUITests.release.xcconfig */;
+			baseConfigurationReference = 14E128EEF7F3FF1FBC4E0775 /* Pods-Global Shopaholic-Global ShopaholicUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

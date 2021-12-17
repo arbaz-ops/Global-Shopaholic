@@ -10,6 +10,8 @@ import UIKit
 
 class RequestFormTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var actualBoxWeight: UILabel!
+    @IBOutlet weak var boxDimensions: UILabel!
     @IBOutlet weak var specialServices: UILabel!
     @IBOutlet weak var destinationAddress
     : UILabel!
@@ -30,7 +32,7 @@ class RequestFormTableViewCell: UITableViewCell {
         speacialServiceViewBox.layer.cornerRadius = 12
         shipmentBoxViewBox.layer.cornerRadius = 10
         shipmentInvoiceViewBox.layer.cornerRadius = 10
-        specialServices.text = "sasdgahjsgajgdshjgadjasghjdgsajhgdhjsagjdhsgajdgsjhagdjhsgajhdgsjagdjhsagjhdsgjdhsgahjdgshjagdjhsgajhdgsjhagdhjsagjhgdsjhagdjhsgajhdgsjahgdjsagjhdgsajhgdjhsaghjdgsajhgdhjasgjhdg"
+        
         
     }
 

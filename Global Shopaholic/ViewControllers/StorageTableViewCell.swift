@@ -28,7 +28,7 @@ class StorageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+//        print(packagesList)
         setUpCollectionView()
     }
     
@@ -80,16 +80,16 @@ extension StorageTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let storageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StorageCollectionViewCell", for: indexPath) as? StorageCollectionViewCell
-       
         storageCell?.storageCollectionViewCellDelegate = self
         let width = calculateWidth()
         storageCell!.myStorageImageView.frame.size.width = width
-        print(storageCell!.myStorageImageView.frame.size.width)
         collectionView.layoutIfNeeded()
         storageCell?.trackingNumber.text = "TN: \(packagesList[indexPath.row]["tracking_number"] as! String)"
         let primaryFullImage = packagesList[indexPath.row]["primary_full_image"] as? [String: Any]
-        print(primaryFullImage!["image_name"]!)
-        storageCell?.myStorageImageView.sd_setImage(with: URL(string: primaryFullImage!["image_name"]! as! String), placeholderImage: UIImage())
+        if let imageName = primaryFullImage?["image_name"] as? String {
+            storageCell?.myStorageImageView.sd_setImage(with: URL(string: imageName), placeholderImage: UIImage())
+        }
+
        
         return storageCell!
 

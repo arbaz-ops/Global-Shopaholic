@@ -25,5 +25,5 @@ pod 'liquid-swipe'
 pod 'AKSideMenu'
 pod 'SDWebImage', '~> 5.0'
 pod 'StepIndicator', '~> 1.0.8'
-pod ‘PayPal-iOS-SDK’, ‘~> 2.15’
+pod 'PayPal-iOS-SDK', '~> 2.15’
 end

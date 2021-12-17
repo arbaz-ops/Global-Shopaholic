@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -88,10 +88,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rye-uQ-boP">
-                        <rect key="frame" x="36" y="203.5" width="356" height="52"/>
+                        <rect key="frame" x="36" y="203.5" width="356" height="32"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Castle, Delaware, 19720" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YM1-3s-77b">
-                                <rect key="frame" x="16" y="16" width="335" height="26"/>
+                                <rect key="frame" x="16" y="16" width="335" height="16"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                 <color key="textColor" red="0.3529411764705882" green="0.33725490196078434" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -107,16 +107,16 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Special Service (Optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhE-gg-f2Y">
-                        <rect key="frame" x="36" y="272.5" width="191" height="19"/>
+                        <rect key="frame" x="36" y="252.5" width="191" height="19"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                         <color key="textColor" red="0.3529411764705882" green="0.33725490196078434" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itm-S7-f5l">
-                        <rect key="frame" x="36" y="301.5" width="356" height="80"/>
+                        <rect key="frame" x="36" y="281.5" width="356" height="100"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please remove original boxes of the items and repack in the smallest shipping box and use bubble wraps" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnu-Wc-NMT">
-                                <rect key="frame" x="16" y="16" width="320" height="48"/>
+                                <rect key="frame" x="16" y="16" width="320" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                 <color key="textColor" red="0.3529411764705882" green="0.33725490196078434" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -126,8 +126,8 @@
                         <constraints>
                             <constraint firstItem="gnu-Wc-NMT" firstAttribute="top" secondItem="itm-S7-f5l" secondAttribute="top" constant="16" id="8An-7V-F3i"/>
                             <constraint firstItem="gnu-Wc-NMT" firstAttribute="leading" secondItem="itm-S7-f5l" secondAttribute="leading" constant="16" id="B9M-AR-olU"/>
+                            <constraint firstAttribute="height" secondItem="gnu-Wc-NMT" secondAttribute="height" multiplier="3.28333" id="Ijw-6W-XPr"/>
                             <constraint firstAttribute="width" constant="356" id="U4u-PO-m1S"/>
-                            <constraint firstAttribute="height" secondItem="gnu-Wc-NMT" secondAttribute="height" multiplier="1.66667" id="bgZ-i8-3J2"/>
                             <constraint firstAttribute="trailing" secondItem="gnu-Wc-NMT" secondAttribute="trailing" constant="20" id="c64-LE-evt"/>
                         </constraints>
                     </view>
@@ -369,6 +369,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="actualBoxWeight" destination="5XL-s3-wi0" id="YaS-8u-Ihl"/>
+                <outlet property="boxDimensions" destination="IJU-hn-bjG" id="tNn-5W-OU3"/>
                 <outlet property="consolidatedPackages" destination="OgK-05-JtW" id="HpZ-Fl-t9U"/>
                 <outlet property="customValue" destination="QIA-q6-xPi" id="y51-zX-kcF"/>
                 <outlet property="destinationAddress" destination="YM1-3s-77b" id="Bf7-ag-B5c"/>
