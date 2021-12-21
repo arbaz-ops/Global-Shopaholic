@@ -247,6 +247,7 @@
 		7C95D2D427632FFA00EC198E /* SpecialServicesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C95D2D227632FFA00EC198E /* SpecialServicesTableViewCell.xib */; };
 		7C95D2D627635DF900EC198E /* SpecialServices+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D2D527635DF900EC198E /* SpecialServices+EXT+TABLE.swift */; };
 		7CA3EAC42770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */; };
+		7CA3EAC72771C1710053C493 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */; };
 		7CAA390F2747A20D0095A8F5 /* ShippedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA390D2747A20D0095A8F5 /* ShippedTableViewCell.swift */; };
 		7CAA39102747A20D0095A8F5 /* ShippedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CAA390E2747A20D0095A8F5 /* ShippedTableViewCell.xib */; };
 		7CAE1F8327709F9A0039E027 /* CustomDeclarationFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAE1F8127709F9A0039E027 /* CustomDeclarationFormTableViewCell.swift */; };
@@ -536,6 +537,7 @@
 		7C95D2D227632FFA00EC198E /* SpecialServicesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialServicesTableViewCell.xib; sourceTree = "<group>"; };
 		7C95D2D527635DF900EC198E /* SpecialServices+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpecialServices+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomDeclaration+EXT+TABLE.swift"; sourceTree = "<group>"; };
+		7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
 		7CAA390D2747A20D0095A8F5 /* ShippedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippedTableViewCell.swift; sourceTree = "<group>"; };
 		7CAA390E2747A20D0095A8F5 /* ShippedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShippedTableViewCell.xib; sourceTree = "<group>"; };
 		7CAE1F8127709F9A0039E027 /* CustomDeclarationFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDeclarationFormTableViewCell.swift; sourceTree = "<group>"; };
@@ -735,6 +737,7 @@
 				785424C1257E5CE400FC1F61 /* SideMenu */,
 				7C49161927707A280077307B /* Custom Declaration */,
 				7C6A138F274B5E4900C8C81A /* FilterVC */,
+				7CA3EAC52771C1450053C493 /* Edit Address */,
 				7C6F00792761E6C60007D83C /* CustomDetail */,
 				7C6F005F275F76A80007D83C /* ReturnPackage */,
 				7C6F0055275E25F90007D83C /* RequestForm */,
@@ -1750,6 +1753,14 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		7CA3EAC52771C1450053C493 /* Edit Address */ = {
+			isa = PBXGroup;
+			children = (
+				7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */,
+			);
+			name = "Edit Address";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2208,6 +2219,7 @@
 				7818E02C25B5ACCB0057C383 /* Storage+EXT.swift in Sources */,
 				781D3E9F25793AED0013DE3A /* ForgotPasswordVC.swift in Sources */,
 				78BC49E1269C48B0000EC5FE /* infoCell.swift in Sources */,
+				7CA3EAC72771C1710053C493 /* EditAddressViewController.swift in Sources */,
 				782A68A225DAD18D00A25A34 /* AddressesCell.swift in Sources */,
 				7C6A1396274CB99F00C8C81A /* StorageVM.swift in Sources */,
 				78440087257A5CB000B5F0C7 /* LoginVM.swift in Sources */,
