@@ -10,27 +10,24 @@ import UIKit
 
 class CustomDeclarationFormViewController: UIViewController {
 
+    @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var customDeclarationFormTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTable()
-        // Do any additional setup after loading the view.
+        upperView.roundTopCorners(radius: 25)
+        
     }
     
     private func loadTable() {
+        
         customDeclarationFormTableView.separatorStyle = .none
         customDeclarationFormTableView.backgroundColor = .clear
-        
+        customDeclarationFormTableView.dataSource = self
+        customDeclarationFormTableView.delegate = self
+        customDeclarationFormTableView.register(UINib(nibName: "CustomDeclarationFormTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomDeclarationFormTableViewCell")
+        customDeclarationFormTableView.alwaysBounceVertical = true
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }

@@ -406,10 +406,10 @@
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qGq-jH-AMT">
                                         <rect key="frame" x="0.0" y="50" width="428" height="747"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.93725490196078431" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="xA1-QG-Fvg" firstAttribute="top" secondItem="y1d-ap-oFt" secondAttribute="top" id="Bus-k1-gbR"/>
                                     <constraint firstAttribute="trailing" secondItem="xA1-QG-Fvg" secondAttribute="trailing" id="FhV-bI-ozn"/>
@@ -433,6 +433,7 @@
                     </view>
                     <connections>
                         <outlet property="customDeclarationFormTableView" destination="qGq-jH-AMT" id="6II-dQ-7pc"/>
+                        <outlet property="upperView" destination="xA1-QG-Fvg" id="O83-D8-9Nk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zwp-gu-zDN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
