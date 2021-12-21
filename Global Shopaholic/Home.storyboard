@@ -440,10 +440,10 @@
             </objects>
             <point key="canvasLocation" x="-1864" y="-1633"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Address View Controller-->
         <scene sceneID="hpX-bV-SBo">
             <objects>
-                <viewController id="YvF-Gj-ZEc" sceneMemberID="viewController">
+                <viewController restorationIdentifier="EditAddressViewController" storyboardIdentifier="EditAddressViewController" id="YvF-Gj-ZEc" customClass="EditAddressViewController" customModule="gShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7oj-Vv-oSD">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -487,7 +487,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="g28-2Q-clu" firstAttribute="leading" secondItem="4dd-AV-ZZf" secondAttribute="leading" id="D40-2H-KQ6"/>
                                     <constraint firstAttribute="trailing" secondItem="ip5-Hu-WC7" secondAttribute="trailing" id="Dz1-Tu-mR9"/>
@@ -509,6 +509,9 @@
                             <constraint firstItem="4dd-AV-ZZf" firstAttribute="top" secondItem="C9Y-uz-OIP" secondAttribute="top" constant="85" id="rt8-QB-wEe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="editAddressTableView" destination="g28-2Q-clu" id="MuH-p7-f4L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neZ-yJ-ZBW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

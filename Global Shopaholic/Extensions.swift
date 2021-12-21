@@ -34,6 +34,17 @@ func hexStringToUIColor (hex:String) -> UIColor {
     
 }
 
+extension UITextView {
+    
+    func setLeftPaddingPoints(_ amount: CGFloat) {
+        self.textContainerInset = UIEdgeInsets(top: 0, left: amount, bottom: 0, right: 0)
+    }
+    
+    func setRightPaddingPoints(_ amount: CGFloat) {
+        self.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: amount)
+    }
+    
+}
 
 extension UITextField {
     func setLeftPaddingPoints(_ amount:CGFloat){

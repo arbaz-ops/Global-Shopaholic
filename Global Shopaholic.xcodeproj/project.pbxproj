@@ -248,6 +248,8 @@
 		7C95D2D627635DF900EC198E /* SpecialServices+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D2D527635DF900EC198E /* SpecialServices+EXT+TABLE.swift */; };
 		7CA3EAC42770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */; };
 		7CA3EAC72771C1710053C493 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */; };
+		7CA3EACB2771D7000053C493 /* EditAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */; };
+		7CA3EACC2771D7000053C493 /* EditAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA3EACA2771D7000053C493 /* EditAddressTableViewCell.xib */; };
 		7CAA390F2747A20D0095A8F5 /* ShippedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA390D2747A20D0095A8F5 /* ShippedTableViewCell.swift */; };
 		7CAA39102747A20D0095A8F5 /* ShippedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CAA390E2747A20D0095A8F5 /* ShippedTableViewCell.xib */; };
 		7CAE1F8327709F9A0039E027 /* CustomDeclarationFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAE1F8127709F9A0039E027 /* CustomDeclarationFormTableViewCell.swift */; };
@@ -538,6 +540,8 @@
 		7C95D2D527635DF900EC198E /* SpecialServices+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpecialServices+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomDeclaration+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
+		7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressTableViewCell.swift; sourceTree = "<group>"; };
+		7CA3EACA2771D7000053C493 /* EditAddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditAddressTableViewCell.xib; sourceTree = "<group>"; };
 		7CAA390D2747A20D0095A8F5 /* ShippedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippedTableViewCell.swift; sourceTree = "<group>"; };
 		7CAA390E2747A20D0095A8F5 /* ShippedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShippedTableViewCell.xib; sourceTree = "<group>"; };
 		7CAE1F8127709F9A0039E027 /* CustomDeclarationFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDeclarationFormTableViewCell.swift; sourceTree = "<group>"; };
@@ -1756,9 +1760,19 @@
 		7CA3EAC52771C1450053C493 /* Edit Address */ = {
 			isa = PBXGroup;
 			children = (
+				7CA3EAC82771D6DF0053C493 /* Cells */,
 				7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */,
 			);
 			name = "Edit Address";
+			sourceTree = "<group>";
+		};
+		7CA3EAC82771D6DF0053C493 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */,
+				7CA3EACA2771D7000053C493 /* EditAddressTableViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1934,6 +1948,7 @@
 				781D3E8B257926870013DE3A /* Montserrat-ExtraLightItalic.ttf in Resources */,
 				781D3E96257926870013DE3A /* Montserrat-Black.ttf in Resources */,
 				78D81FBF26848E02007DDB81 /* SummaryCell.xib in Resources */,
+				7CA3EACC2771D7000053C493 /* EditAddressTableViewCell.xib in Resources */,
 				7851C44E257E95F20000A42D /* WarehouseAddressCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2189,6 +2204,7 @@
 				785ED6B526302BF40033D98D /* CalculatorDetailCellTableViewCell.swift in Sources */,
 				78F619AB25C182C600BF6CA3 /* ShippingAddressVC.swift in Sources */,
 				7893ED132653BBEF00D6CDFA /* DepositeCreditCardResponse.swift in Sources */,
+				7CA3EACB2771D7000053C493 /* EditAddressTableViewCell.swift in Sources */,
 				7CAE1F8327709F9A0039E027 /* CustomDeclarationFormTableViewCell.swift in Sources */,
 				788F73D22673870500FA3DBE /* ShippingCalculator+EXT+CollectionView.swift in Sources */,
 				7C6F005B275E29F00007D83C /* RequestFormTableViewCell.swift in Sources */,
