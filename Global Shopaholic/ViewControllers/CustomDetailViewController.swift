@@ -9,9 +9,11 @@
 import UIKit
 
 class CustomDetailViewController: UIViewController {
-
+    var trackingNumber: String?
     @IBOutlet weak var customDetailTableView: UITableView!
     @IBOutlet weak var upperView: UIView!
+    
+    var packagesList: [[String: Any]]?
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTable()

@@ -11,6 +11,7 @@ import iOSDropDown
 
 class CustomDetailTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var trackingNumber: UILabel!
     @IBOutlet weak var addItemButton: UIButton!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var totalValueTextField: UITextField!

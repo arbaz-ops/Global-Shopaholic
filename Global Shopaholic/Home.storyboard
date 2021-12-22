@@ -389,6 +389,7 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="⎯"/>
                                                 <connections>
                                                     <action selector="closeFormTapped:" destination="emB-DN-gDK" eventType="touchUpInside" id="5Dj-17-sS9"/>
+                                                    <action selector="closeTapped:" destination="4hQ-A7-131" eventType="touchUpInside" id="Dee-XT-mrL"/>
                                                     <action selector="closeViewTapped:" destination="6hs-4G-Eom" eventType="touchUpInside" id="Pvo-gh-I0i"/>
                                                 </connections>
                                             </button>
@@ -467,6 +468,7 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="⎯"/>
                                                 <connections>
                                                     <action selector="closeFormTapped:" destination="emB-DN-gDK" eventType="touchUpInside" id="4dY-Oq-Abr"/>
+                                                    <action selector="closeTapped:" destination="YvF-Gj-ZEc" eventType="touchUpInside" id="3ff-FF-tve"/>
                                                     <action selector="closeViewTapped:" destination="6hs-4G-Eom" eventType="touchUpInside" id="6e4-iX-Ahk"/>
                                                 </connections>
                                             </button>
@@ -511,6 +513,7 @@
                     </view>
                     <connections>
                         <outlet property="editAddressTableView" destination="g28-2Q-clu" id="MuH-p7-f4L"/>
+                        <outlet property="upperView" destination="ip5-Hu-WC7" id="FNE-oO-ThU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neZ-yJ-ZBW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

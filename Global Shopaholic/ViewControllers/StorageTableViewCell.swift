@@ -32,6 +32,11 @@ class StorageTableViewCell: UITableViewCell {
         setUpCollectionView()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+    }
+    
     private func setUpCollectionView() {
         let layout = UICollectionViewFlowLayout()
              layout.scrollDirection = .vertical

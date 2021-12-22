@@ -50,18 +50,42 @@ extension RequestFormViewController: UITableViewDelegate, UITableViewDataSource 
                     requestFormCell?.customValue.text = "NA"
                 }
             }
-            
-            if boxDetails.count > 1 {
-               if let boxHeightFloat = boxDetails[0]["height"], let boxWidthFloat = boxDetails[0]["width"],
-                let boxLengthFloat = boxDetails[0]["length"],
-                  let actualWeight = boxDetails[0]["actual_weight"] {
-                   let boxWidth = String(format: "%.0f", boxWidthFloat as! CVarArg)
-                   print(boxWidth)
-//                   print(boxHeight)
-//                   print(boxLength)
-                   print(actualWeight)
-               }
+            if boxDetails.count < 1 {
+                requestFormCell?.boxDimensions.text = "NA x NA x NA (inches)"
+                requestFormCell?.actualBoxWeight.text = "NA (Pounds)"
             }
+            else {
+                if let height = boxDetails[0]["height"] as? String,
+                   let width = boxDetails[0]["width"] as? String,
+                   let length = boxDetails[0]["length"] as? String,
+                   let actualWeight = boxDetails[0]["actual_weight"] as? String {
+                    let heightFloat = Float(height)
+                    let widthFloat = Float(width)
+                    let lengthFloat = Float(length)
+                    let actualWeightFloat = Float(actualWeight)
+                    requestFormCell?.boxDimensions.text = "\(lengthFloat!.clean) x \(widthFloat!.clean) x \(heightFloat!.clean) (inches)"
+                    requestFormCell?.actualBoxWeight.text = "\(actualWeightFloat!.clean) (Pounds)"
+                    
+                }
+                else {
+                    requestFormCell?.boxDimensions.text = "NA x NA x NA (inches)"
+                    requestFormCell?.actualBoxWeight.text = "NA (Pounds)"
+                }
+            }
+            
+//            if boxDetails.count > 1 {
+//               if let boxHeightFloat = boxDetails[0]["height"], let boxWidthFloat = boxDetails[0]["width"],
+//                let boxLengthFloat = boxDetails[0]["length"],
+//                  let actualWeight = boxDetails[0]["actual_weight"] {
+//                   let boxWidth = String(format: "%.0f", boxWidthFloat as! CVarArg)
+//                   print(boxWidth)
+//
+////                   print(boxHeight)
+////                   print(boxLength)
+//                   print(actualWeight)
+//
+//               }
+//            }
             
         }
         

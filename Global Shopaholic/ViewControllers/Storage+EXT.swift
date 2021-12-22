@@ -373,7 +373,7 @@ extension StorageShipmentVC:  StorageTableViewCellDelegate {
     func addCustomDetailTapped() {
         let customDetailVC = storyboard?.instantiateViewController(withIdentifier: "CustomDetailViewController") as? CustomDetailViewController
         customDetailVC?.modalPresentationStyle = .overFullScreen
-
+        customDetailVC?.packagesList = packagesList
         present(customDetailVC!, animated: true, completion: nil)
     }
     

@@ -16,6 +16,7 @@ extension CustomDetailViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let customDetailCell = tableView.dequeueReusableCell(withIdentifier: "CustomDetailTableViewCell", for: indexPath) as? CustomDetailTableViewCell
+        customDetailCell?.trackingNumber.text = trackingNumber
         customDetailCell?.backgroundColor = hexStringToUIColor(hex: "#EFF7F5")
         
         return customDetailCell!

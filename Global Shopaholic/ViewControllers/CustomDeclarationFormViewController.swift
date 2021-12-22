@@ -28,8 +28,11 @@ class CustomDeclarationFormViewController: UIViewController {
         customDeclarationFormTableView.dataSource = self
         customDeclarationFormTableView.delegate = self
         customDeclarationFormTableView.register(UINib(nibName: "CustomDeclarationFormTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomDeclarationFormTableViewCell")
-        customDeclarationFormTableView.alwaysBounceVertical = true
+        customDeclarationFormTableView.alwaysBounceVertical = false
     }
 
-   
+    @IBAction func closeTapped(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
 }

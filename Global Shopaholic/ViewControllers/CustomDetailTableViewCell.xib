@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -183,6 +183,7 @@
                 <outlet property="qtyTextField" destination="vHP-FS-Ilx" id="UeC-8n-RqG"/>
                 <outlet property="submitButton" destination="XA6-gK-WL7" id="UAP-lR-ht9"/>
                 <outlet property="totalValueTextField" destination="NWb-y3-Kao" id="nyV-6M-nAs"/>
+                <outlet property="trackingNumber" destination="HQw-ZS-ae6" id="WD3-bG-lAe"/>
                 <outlet property="valueTextField" destination="0CC-q4-5hL" id="6SK-Uf-rMy"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="270.20089285714283"/>

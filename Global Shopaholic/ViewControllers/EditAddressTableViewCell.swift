@@ -31,6 +31,10 @@ class EditAddressTableViewCell: UITableViewCell {
         completeAddressTextField.setRightPaddingPoints(20)
         completeAddressTextField.setLeftPaddingPoints(20)
         
+        nameTextField.placeholder = "Name"
+        phoneNumberTextField.placeholder = "Phone Number"
+        phoneNumberTextField.keyboardType = .namePhonePad
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
