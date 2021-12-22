@@ -10,6 +10,7 @@ import UIKit
 
 class CustomDeclarationFormTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var totalView: UIView!
     @IBOutlet weak var descriptionView: UIView!
     override func awakeFromNib() {

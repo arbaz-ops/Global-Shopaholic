@@ -10,6 +10,8 @@ import UIKit
 
 class EditAddressViewController: UIViewController {
 
+    var atIndex: IndexPath?
+    var packageList: [[String: Any]]?
     @IBOutlet weak var editAddressTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,10 @@ class EditAddressViewController: UIViewController {
     }
     private func loadTable() {
         editAddressTableView.backgroundColor = .clear
-        editAddressTableView.alwaysBounceVertical = true
+        editAddressTableView.alwaysBounceVertical = false
+        editAddressTableView.delegate = self
+        editAddressTableView.dataSource = self
+        editAddressTableView.register(UINib(nibName: "EditAddressTableViewCell", bundle: nil), forCellReuseIdentifier: "EditAddressTableViewCell")
     }
 
   

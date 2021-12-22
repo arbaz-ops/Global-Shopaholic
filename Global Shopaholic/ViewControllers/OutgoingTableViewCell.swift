@@ -12,6 +12,8 @@ import iOSDropDown
 protocol OutgoingTableViewCellDelegate {
     func outgoingOptionButtonTapped(atIndex: IndexPath)
     func openRequestFormViewController(cell: UITableViewCell)
+    func openCustomDeclarationViewController(cell: UITableViewCell)
+    func openEditAddressViewController(cell: UITableViewCell)
     
 }
 
@@ -182,9 +184,9 @@ extension OutgoingTableViewCell: UITableViewDataSource, UITableViewDelegate {
         case 0:
             self.outgoingTableViewCellDelegate?.openRequestFormViewController(cell: self)
         case 1:
-            print("Custom Declaration Form")
+            self.outgoingTableViewCellDelegate?.openCustomDeclarationViewController(cell: self)
         case 2:
-            print("Edit Address")
+            self.outgoingTableViewCellDelegate?.openEditAddressViewController(cell: self)
         case 3:
             print("Show Package Details")
         default:

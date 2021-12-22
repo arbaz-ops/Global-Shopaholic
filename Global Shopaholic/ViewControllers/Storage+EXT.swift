@@ -11,6 +11,8 @@ import Foundation
 
 extension StorageShipmentVC: FilterViewControllerDelegate, OutgoingTableViewCellDelegate{
    
+    
+   
    
     func changeUI(status: MainSelection) {
         switch currentSelection {
@@ -340,6 +342,28 @@ extension StorageShipmentVC: FilterViewControllerDelegate, OutgoingTableViewCell
 
     }
     
+    
+    func openCustomDeclarationViewController(cell: UITableViewCell) {
+        let customDeclarationVC = self.storyboard!.instantiateViewController(withIdentifier: "CustomDeclarationFormViewController") as? CustomDeclarationFormViewController
+        let outgoingCell = cell as? OutgoingTableViewCell
+        outgoingCell?.hideOptions(frame: (outgoingCell?.optionButton.frame)!)
+        customDeclarationVC?.atIndex = outgoingCell!.indexPath
+        customDeclarationVC?.packageList = self.packagesList
+        customDeclarationVC?.modalPresentationStyle = .overFullScreen
+        customDeclarationVC?.isModalInPresentation = true
+        self.present(customDeclarationVC!, animated: true)
+    }
+    
+    func openEditAddressViewController(cell: UITableViewCell) {
+        let customDeclarationVC = self.storyboard!.instantiateViewController(withIdentifier: "EditAddressViewController") as? EditAddressViewController
+        let outgoingCell = cell as? OutgoingTableViewCell
+        outgoingCell?.hideOptions(frame: (outgoingCell?.optionButton.frame)!)
+        customDeclarationVC?.atIndex = outgoingCell!.indexPath
+        customDeclarationVC?.packageList = self.packagesList
+        customDeclarationVC?.modalPresentationStyle = .overFullScreen
+        customDeclarationVC?.isModalInPresentation = true
+        self.present(customDeclarationVC!, animated: true)
+    }
     
     
     

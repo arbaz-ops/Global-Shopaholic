@@ -50,7 +50,7 @@
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Complete Addrese" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1nF-Hq-utL">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Complete Address" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1nF-Hq-utL">
                         <rect key="frame" x="32" y="161" width="368" height="111"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>

@@ -9,7 +9,9 @@
 import UIKit
 
 class CustomDeclarationFormViewController: UIViewController {
-
+    
+    var atIndex: IndexPath?
+    var packageList: [[String: Any]]?
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var customDeclarationFormTableView: UITableView!
     override func viewDidLoad() {

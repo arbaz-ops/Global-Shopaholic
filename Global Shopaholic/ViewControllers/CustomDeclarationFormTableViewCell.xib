@@ -237,8 +237,8 @@
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CII-jf-gUb">
-                        <rect key="frame" x="331" y="30" width="39" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CII-jf-gUb">
+                        <rect key="frame" x="332" y="30" width="39" height="18"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -274,25 +274,26 @@
                     <constraint firstAttribute="bottom" secondItem="eqb-bv-KiT" secondAttribute="bottom" constant="166" id="8I0-mW-gHC"/>
                     <constraint firstItem="eqb-bv-KiT" firstAttribute="top" secondItem="CuS-eC-YQN" secondAttribute="bottom" constant="20" id="8hG-6N-Lgd"/>
                     <constraint firstAttribute="trailing" secondItem="63y-Bi-ANv" secondAttribute="trailing" constant="24" id="FP0-Kt-Xb3"/>
+                    <constraint firstItem="CII-jf-gUb" firstAttribute="centerX" secondItem="6PD-nI-jDf" secondAttribute="centerX" id="GVi-Th-J2y"/>
                     <constraint firstItem="qDG-Em-wLN" firstAttribute="centerX" secondItem="3st-al-sw1" secondAttribute="centerX" id="Hcc-Bj-1dL"/>
-                    <constraint firstItem="CuS-eC-YQN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Iy0-JP-jBG"/>
                     <constraint firstItem="zKB-YC-jj7" firstAttribute="centerX" secondItem="ai0-AN-pyM" secondAttribute="centerX" id="Na9-jV-UEb"/>
                     <constraint firstAttribute="bottom" secondItem="63y-Bi-ANv" secondAttribute="bottom" constant="160" id="X0N-dn-fSk"/>
                     <constraint firstItem="PWM-iL-Dp7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="cEi-iy-ZgR"/>
                     <constraint firstItem="PWM-iL-Dp7" firstAttribute="centerX" secondItem="7U1-Zm-RrG" secondAttribute="centerX" id="ccZ-SX-4v5"/>
                     <constraint firstItem="CuS-eC-YQN" firstAttribute="top" secondItem="PWM-iL-Dp7" secondAttribute="bottom" constant="8" id="cvQ-db-ga1"/>
                     <constraint firstItem="CuS-eC-YQN" firstAttribute="top" secondItem="CII-jf-gUb" secondAttribute="bottom" constant="8" id="eTg-HM-jDe"/>
+                    <constraint firstItem="CuS-eC-YQN" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="fff-EV-KRE"/>
                     <constraint firstItem="eqb-bv-KiT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="l5c-pa-XS5"/>
                     <constraint firstItem="CuS-eC-YQN" firstAttribute="top" secondItem="qDG-Em-wLN" secondAttribute="bottom" constant="8" id="lYn-qU-yCm"/>
                     <constraint firstItem="qDG-Em-wLN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="olg-xo-IKM"/>
                     <constraint firstItem="zKB-YC-jj7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="pb0-95-KJ1"/>
-                    <constraint firstAttribute="trailing" secondItem="CuS-eC-YQN" secondAttribute="trailing" constant="24" id="pbQ-cu-oEb"/>
                     <constraint firstItem="CII-jf-gUb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="sbK-ru-Mf3"/>
                     <constraint firstItem="CuS-eC-YQN" firstAttribute="top" secondItem="zKB-YC-jj7" secondAttribute="bottom" constant="8" id="wT1-13-cvE"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="backView" destination="H2p-sc-9uM" id="8WB-WC-qSW"/>
                 <outlet property="descriptionView" destination="CuS-eC-YQN" id="EfD-CU-tzy"/>
                 <outlet property="totalView" destination="63y-Bi-ANv" id="6u7-hK-ntP"/>
             </connections>
