@@ -18,9 +18,9 @@ import RappleProgressHUD
 
 struct StorageVM {
   
-    func getPackagesList(token: String, status: String,subStatus: String ,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+    func getPackagesList(token: String, keyValue: String,subStatus: String, key: String ,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
         let ep = endpoints()
-        let params = ["status": status,
+        let params = ["\(key)": keyValue,
                       "subStatus": subStatus]
         print(params)
         RappleActivityIndicatorView.startAnimating()

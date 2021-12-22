@@ -469,3 +469,22 @@ func convertDateString(dateString : String!, fromFormat sourceFormat : String!, 
     }
 
 
+func getCurrentUserToken() -> String {
+    do {
+    let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
+    guard let userData = encodedUserData else {
+        return ""
+    }
+    let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(userData) as? UserDataClass
+        
+        guard let userToken = unarchivedData?.token else {
+            print("Failed to get the token")
+            return ""
+        }
+       
+       return userToken
+    } catch let error {
+        print(error.localizedDescription)
+        return error.localizedDescription
+    }
+}
