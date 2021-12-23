@@ -16,85 +16,14 @@ extension RequestFormViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let requestFormCell = tableView.dequeueReusableCell(withIdentifier: "RequestFormTableViewCell", for: indexPath) as? RequestFormTableViewCell
         
-        if let uniqueKey = packageList![atIndex!.row]["unique_key"] as? String,
-           let consolidatedPackages = packageList![indexPath.row]["packageCount"]! as? Int,
-           let specialService = packageList![atIndex!.row]["special_instructions"] as? String,
-           let address = packageList![atIndex!.row]["address"] as? [String: Any],
-           let street = address["street"], let city = address["city"],
-           let country = address["country"], let zipCode = address["zip_code"],
-           let packages = packageList![atIndex!.row]["packages"] as? [[String: Any]],
-           let packagesCustomDetail = packages[0]["package_custom_detail"] as? [[String:Any]],
-           let boxDetails = packageList![atIndex!.row]["box_detail"] as? [[String: Any]]
-          
-        {
-            print(packageList![atIndex!.row]["unique_key"])
-            
-            requestFormCell!.requestId.text = uniqueKey
-            requestFormCell?.consolidatedPackages.text = "\(consolidatedPackages)"
-            requestFormCell?.destinationAddress.text = "\(street), \(city), \(country), \(zipCode)"
-            
-            if specialService == "" {
-                requestFormCell?.specialServices.text = "NA"
-            }else {
-                requestFormCell?.specialServices.text = specialService
-            }
-            
-            if packagesCustomDetail.count < 1 {
-                requestFormCell?.customValue.text = "NA"
-            }
-            else {
-                if let packageCustomValue = packagesCustomDetail[0]["value"] as? String {
-                    requestFormCell?.customValue.text = packageCustomValue
-                }
-                else {
-                    requestFormCell?.customValue.text = "NA"
-                }
-            }
-            if boxDetails.count < 1 {
-                requestFormCell?.boxDimensions.text = "NA x NA x NA (inches)"
-                requestFormCell?.actualBoxWeight.text = "NA (Pounds)"
-            }
-            else {
-                if let height = boxDetails[0]["height"] as? String,
-                   let width = boxDetails[0]["width"] as? String,
-                   let length = boxDetails[0]["length"] as? String,
-                   let actualWeight = boxDetails[0]["actual_weight"] as? String {
-                    let heightFloat = Float(height)
-                    let widthFloat = Float(width)
-                    let lengthFloat = Float(length)
-                    let actualWeightFloat = Float(actualWeight)
-                    requestFormCell?.boxDimensions.text = "\(lengthFloat!.clean) x \(widthFloat!.clean) x \(heightFloat!.clean) (inches)"
-                    requestFormCell?.actualBoxWeight.text = "\(actualWeightFloat!.clean) (Pounds)"
-                    
-                }
-                else {
-                    requestFormCell?.boxDimensions.text = "NA x NA x NA (inches)"
-                    requestFormCell?.actualBoxWeight.text = "NA (Pounds)"
-                }
-            }
-            
-//            if boxDetails.count > 1 {
-//               if let boxHeightFloat = boxDetails[0]["height"], let boxWidthFloat = boxDetails[0]["width"],
-//                let boxLengthFloat = boxDetails[0]["length"],
-//                  let actualWeight = boxDetails[0]["actual_weight"] {
-//                   let boxWidth = String(format: "%.0f", boxWidthFloat as! CVarArg)
-//                   print(boxWidth)
-//
-////                   print(boxHeight)
-////                   print(boxLength)
-//                   print(actualWeight)
-//
-//               }
-//            }
-            
-        }
-        
-        
+        if let consolidation = reviewRequestList!["consolidation"] as? [String: Any],
+           let uniqueKey = consolidation["unique_key"] as? String,
+           let packagesConsolidated = consolidation["packageCount"] as? Int,
+           let packages = consolidation["packages"] as? [[String: Any]],
+           let packagesCustomDetail = packages[0]["package_custom_detail"],
+           let customValue = packagesCustomDetail[0]["value"],
+           
     
-        
-        
-        
-//        let packagesCustomDetail = packages["package_custom_detail"]
         
         return requestFormCell!
     }

@@ -85,7 +85,7 @@ class FilterViewController: UIViewController {
             }
             if subTypeTextField.text == "Payment Pending" {
                 
-                storageVM?.getPackagesList(token: userToken, keyValue: currentSelection!.rawValue, subStatus: "paymentpending", key: "status", success: { response in
+                storageVM?.getPackagesList(token: userToken, status: currentSelection!.rawValue, subStatus: "paymentpending", success: { response in
                     let data = response["data"] as? [String: [[String: Any]]]
                     let list = data!["list"]!
                     self.filterVCDelegate?.updateFilteredList(list: list)
@@ -98,7 +98,7 @@ class FilterViewController: UIViewController {
             guard let subStatus = subTypeTextField.text?.lowercased() else {
                 return
             }
-                storageVM?.getPackagesList(token: userToken, keyValue: currentSelection!.rawValue, subStatus: subStatus, key: "status", success: { response in
+            storageVM?.getPackagesList(token: userToken, status: currentSelection!.rawValue, subStatus: subStatus, success: { response in
                 let data = response["data"] as? [String: [[String: Any]]]
                 let list = data!["list"]!
                 self.filterVCDelegate?.updateFilteredList(list: list)

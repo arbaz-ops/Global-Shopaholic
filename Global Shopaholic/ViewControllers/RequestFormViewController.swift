@@ -15,6 +15,7 @@ class RequestFormViewController: UIViewController {
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var requestFormTableView: UITableView!
     var atIndex: IndexPath?
+    var reviewRequestList: [String: Any]?
     var packageList: [[String:Any]]?
     
     var requestID: String?
@@ -48,15 +49,14 @@ class RequestFormViewController: UIViewController {
                 print("Failed to get the token")
                 return
             }
-            let requestId = packageList![atIndex!.row]["id"]
-            storageVM.getPackagesList(token: userToken, keyValue: "\(requestId!)", subStatus: "", key: "request_id") {[self] response in
-                print(response)
-                let data = response["data"] as? [String: Any]
-                print(data)
-                let list = data!["list"]!
-                print(list)
-                consolidation = list["consolidation"]! 
-                print(consolidation)
+            let requestId = packageList![atIndex!.row]["id"]!
+
+            storageVM.getRequestReview(token: userToken, requestId: "\(String(describing: requestId))") { response in
+                let data = response["data"] as? [String: [String: Any]]
+                let list = data!["list"]
+                self.reviewRequestList = list
+                let consolidation = list!["consolidation"] as? [String: Any]
+                print(list!["processing_charges"])
                 
             } failure: { error in
                 print(error)

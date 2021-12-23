@@ -18,14 +18,33 @@ import RappleProgressHUD
 
 struct StorageVM {
   
-    func getPackagesList(token: String, keyValue: String,subStatus: String, key: String ,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+    func getPackagesList(token: String, status: String,subStatus: String ,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
         let ep = endpoints()
-        let params = ["\(key)": keyValue,
+        let params = ["status": status,
                       "subStatus": subStatus]
         print(params)
         RappleActivityIndicatorView.startAnimating()
 
         WebService.RequestWithTokenJsonWithParams(Token: token, strURL: ep.packagesList, is_loader_required: false, params: params) { response in
+            RappleActivityIndicatorView.stopAnimation()
+
+            success(response)
+            
+        } failure: { str in
+            RappleActivityIndicatorView.stopAnimation()
+            failure(str)
+            print(str)
+        }
+
+    }
+    
+    func getRequestReview(token: String, requestId: String ,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+        let ep = endpoints()
+        let params = ["request_id": requestId]
+        print(params)
+        RappleActivityIndicatorView.startAnimating()
+
+        WebService.RequestWithTokenJsonWithParams(Token: token, strURL: ep.getRequestReview, is_loader_required: false, params: params) { response in
             RappleActivityIndicatorView.stopAnimation()
 
             success(response)

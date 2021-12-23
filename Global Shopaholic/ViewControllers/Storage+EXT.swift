@@ -102,7 +102,7 @@ extension StorageShipmentVC: FilterViewControllerDelegate, OutgoingTableViewCell
                    return
                }
               storageVM = StorageVM()
-               storageVM?.getPackagesList(token: userToken, keyValue: currentSelection.rawValue, subStatus: "all", key: "status", success: { response in
+               storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all", success: { response in
                    let data = response["data"] as? [String: [[String: Any]]]
                    let list = data!["list"]!
                    self.packagesList = list
@@ -140,7 +140,7 @@ extension StorageShipmentVC: FilterViewControllerDelegate, OutgoingTableViewCell
                }
                storageVM = StorageVM()
                
-               storageVM?.getPackagesList(token: userToken, keyValue: currentSelection.rawValue, subStatus: "all", key: "status" ,success: {[self] response in
+               storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all" ,success: {[self] response in
                    let data = response["data"] as? [String: [[String: Any]]]
                    let list = data!["list"]!
                    self.packagesList = list
@@ -173,7 +173,7 @@ extension StorageShipmentVC: FilterViewControllerDelegate, OutgoingTableViewCell
                    return
                }
                storageVM = StorageVM()
-               storageVM?.getPackagesList(token: userToken, keyValue: currentSelection.rawValue,subStatus: "all", key: "status" ,success: {[self] response in
+               storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue,subStatus: "all" ,success: {[self] response in
                    let data = response["data"] as? [String: [[String: Any]]]
                    let list = data!["list"]!
                    self.packagesList = list
@@ -205,7 +205,7 @@ extension StorageShipmentVC: FilterViewControllerDelegate, OutgoingTableViewCell
                    return
                }
                storageVM = StorageVM()
-               storageVM?.getPackagesList(token: userToken, keyValue: currentSelection.rawValue, subStatus: "all", key: "status" ,success: {[self] response in
+               storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all" ,success: {[self] response in
                    let data = response["data"] as? [String: [[String: Any]]]
                    let list = data!["list"]!
                    self.packagesList = list
@@ -237,7 +237,7 @@ extension StorageShipmentVC: FilterViewControllerDelegate, OutgoingTableViewCell
                    return
                }
                storageVM = StorageVM()
-               storageVM?.getPackagesList(token: userToken, keyValue: currentSelection.rawValue, subStatus: "all", key: "status" ,success: {[self] response in
+               storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all" ,success: {[self] response in
                    let data = response["data"] as? [String: [[String: Any]]]
                    let list = data!["list"]!
                    self.packagesList = list
