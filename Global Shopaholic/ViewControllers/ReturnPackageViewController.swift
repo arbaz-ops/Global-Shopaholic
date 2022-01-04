@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReturnPackageViewController: UIViewController {
+class ReturnPackageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var returnPackageView: UIView!
     @IBOutlet weak var closeButton: UIButton!

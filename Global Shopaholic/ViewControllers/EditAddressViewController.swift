@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditAddressViewController: UIViewController {
+class EditAddressViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var upperView: UIView!
     var atIndex: IndexPath?

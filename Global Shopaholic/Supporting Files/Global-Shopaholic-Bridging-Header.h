@@ -9,5 +9,5 @@
 #ifndef Global_Shopaholic_Bridging_Header_h
 #define Global_Shopaholic_Bridging_Header_h
 
-#import "PayPalMobile.h"
+//#import "PayPalMobile.h"
 #endif /* Global_Shopaholic_Bridging_Header_h */

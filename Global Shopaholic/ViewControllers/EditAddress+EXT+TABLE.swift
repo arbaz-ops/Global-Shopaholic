@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-extension EditAddressViewController: UITableViewDelegate, UITableViewDataSource {
+extension EditAddressViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }

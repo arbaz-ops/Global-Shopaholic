@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension RequestFormViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -20,8 +21,9 @@ extension RequestFormViewController: UITableViewDelegate, UITableViewDataSource 
            let uniqueKey = consolidation["unique_key"] as? String,
            let packagesConsolidated = consolidation["packageCount"] as? Int,
            let packages = consolidation["packages"] as? [[String: Any]],
-           let packagesCustomDetail = packages[0]["package_custom_detail"],
-           let customValue = packagesCustomDetail[0]["value"],
+           let packagesCustomDetail = packages[0]["package_custom_detail"] {
+            
+        }
            
     
         

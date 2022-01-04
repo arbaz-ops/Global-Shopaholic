@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-extension ReturnPackageViewController: UITableViewDataSource, UITableViewDelegate {
+extension ReturnPackageViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
