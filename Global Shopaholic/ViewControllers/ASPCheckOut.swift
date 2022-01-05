@@ -117,8 +117,6 @@ class ASPCheckOut: UIViewController {
     
     var vm = CheckoutVM()
     
-    
-    
     @IBOutlet weak var payBtn: UIButton!
     enum PaymentMethod {
         case paypal
@@ -180,16 +178,19 @@ class ASPCheckOut: UIViewController {
     }
     
     @IBAction func paypalAction(_ sender: UIButton) {
+        self.payBtn.isEnabled = false
+//        print("This is Paypal For Transaction")
 //        SelectedMethod = PaymentMethod.paypal
-//        paypalBtn.backgroundColor = hexStringToUIColor(hex: appColors.init().checkoutMethodSelectedColor)
-//        cardBtn.backgroundColor = .clear
-//        BankTransferBtn.backgroundColor = .clear
-//        bitCoinBtn.backgroundColor = .clear
-//        selectedPaymentMethod = "paypal"
-//       // print(summaryData)
+        paypalBtn.backgroundColor = hexStringToUIColor(hex: appColors.init().checkoutMethodSelectedColor)
+        cardBtn.backgroundColor = .clear
+        BankTransferBtn.backgroundColor = .clear
+        bitCoinBtn.backgroundColor = .clear
+        selectedPaymentMethod = "paypal"
+        print(summaryData)
 //
-//        let request = OrderSummaryRequest(aspRequestID: self.aspRequestId!, paymentMethod: selectedPaymentMethod, isWallet: isWallet)
-//        vm.getCheckOutSummary(token: user_data.token, Request: request)
+        let request = OrderSummaryRequest(aspRequestID: self.aspRequestId!, paymentMethod: selectedPaymentMethod, isWallet: isWallet)
+        vm.getCheckOutSummary(token: user_data.token, Request: request)
+        
         
         resultText = ""
             

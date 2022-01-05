@@ -35,6 +35,7 @@ struct CheckoutVM{
         WebService.requestPostUrl(Token: token, strURL: ep.CheckoutSummaryEP, params: param, is_loader_required: false) { (response) in
             if (response["success"] as! Bool) == true
             {
+                print(response)
                 RappleActivityIndicatorView.stopAnimation()
                 self.delegate?.didGetCheckoutSummary(response: response)
             }
