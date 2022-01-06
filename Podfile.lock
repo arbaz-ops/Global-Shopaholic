@@ -2,6 +2,17 @@ PODS:
   - AKSideMenu (1.4.6)
   - Alamofire (4.9.1)
   - BetterSegmentedControl (2.0.1)
+  - Braintree (5.5.0):
+    - Braintree/Card (= 5.5.0)
+    - Braintree/Core (= 5.5.0)
+    - Braintree/PayPal (= 5.5.0)
+  - Braintree/Card (5.5.0):
+    - Braintree/Core
+  - Braintree/Core (5.5.0)
+  - Braintree/PayPal (5.5.0):
+    - Braintree/Core
+    - Braintree/PayPalDataCollector
+  - Braintree/PayPalDataCollector (5.5.0)
   - iOSDropDown (0.3.4)
   - liquid-swipe (0.7.0):
     - pop (~> 1.0)
@@ -17,6 +28,7 @@ DEPENDENCIES:
   - AKSideMenu
   - Alamofire (~> 4.7)
   - BetterSegmentedControl
+  - Braintree
   - iOSDropDown
   - liquid-swipe
   - RappleProgressHUD
@@ -29,6 +41,7 @@ SPEC REPOS:
     - AKSideMenu
     - Alamofire
     - BetterSegmentedControl
+    - Braintree
     - iOSDropDown
     - liquid-swipe
     - pop
@@ -41,6 +54,7 @@ SPEC CHECKSUMS:
   AKSideMenu: 1f2b261a82b89f980624dda4b3385544fbf178e0
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   BetterSegmentedControl: 09607b27861d49cbce48b7673b74f9150a3d371a
+  Braintree: acd5dd18b4aff8858346d6b6f6f3b5bc059332fb
   iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   liquid-swipe: 850f88c0717fe58ba83f0f571c47a191f29ddc1f
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
@@ -49,6 +63,6 @@ SPEC CHECKSUMS:
   StepIndicator: 748b293f671355b021253f82031ac002f153dc81
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: f1bb7711080d46bf82f37011c6261a04ed6fec7f
+PODFILE CHECKSUM: 1e18d94b3304a8eff4297fea0ad756e486b2e8dc
 
 COCOAPODS: 1.11.2

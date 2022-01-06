@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ASPCheckOut: UIViewController {
 //    func payPalFuturePaymentDidCancel(_ futurePaymentViewController: PayPalFuturePaymentViewController) {
 //
@@ -187,13 +188,12 @@ class ASPCheckOut: UIViewController {
         bitCoinBtn.backgroundColor = .clear
         selectedPaymentMethod = "paypal"
         print(summaryData)
-//
+        
         let request = OrderSummaryRequest(aspRequestID: self.aspRequestId!, paymentMethod: selectedPaymentMethod, isWallet: isWallet)
         vm.getCheckOutSummary(token: user_data.token, Request: request)
-        
-        
         resultText = ""
-            
+        print(totalLbl.text)
+
             // Note: For purposes of illustration, this example shows a payment that includes
             //       both payment details (subtotal, shipping, tax) and multiple items.
             //       You would only specify these if appropriate to your situation.
@@ -211,6 +211,8 @@ class ASPCheckOut: UIViewController {
             // Optional: include payment details
             let shipping = NSDecimalNumber(string: "5.99")
             let tax = NSDecimalNumber(string: "2.50")
+        let a = shipping.adding(tax)
+        print(a)
 //            let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
             
 //            let total = subtotal.adding(shipping).adding(tax)
@@ -233,12 +235,7 @@ class ASPCheckOut: UIViewController {
 //            }
         
         
-        
-        ////
-        
-        
-        
-        
+
     }
     
     @IBAction func creditCardAction(_ sender: UIButton) {
