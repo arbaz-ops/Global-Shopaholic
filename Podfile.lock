@@ -14,6 +14,7 @@ PODS:
     - Braintree/PayPalDataCollector
   - Braintree/PayPalDataCollector (5.5.0)
   - iOSDropDown (0.3.4)
+  - IQKeyboardManagerSwift (6.5.9)
   - liquid-swipe (0.7.0):
     - pop (~> 1.0)
   - pop (1.0.12)
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - BetterSegmentedControl
   - Braintree
   - iOSDropDown
+  - IQKeyboardManagerSwift
   - liquid-swipe
   - RappleProgressHUD
   - SDWebImage (~> 5.0)
@@ -43,6 +45,7 @@ SPEC REPOS:
     - BetterSegmentedControl
     - Braintree
     - iOSDropDown
+    - IQKeyboardManagerSwift
     - liquid-swipe
     - pop
     - RappleProgressHUD
@@ -56,6 +59,7 @@ SPEC CHECKSUMS:
   BetterSegmentedControl: 09607b27861d49cbce48b7673b74f9150a3d371a
   Braintree: acd5dd18b4aff8858346d6b6f6f3b5bc059332fb
   iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
+  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   liquid-swipe: 850f88c0717fe58ba83f0f571c47a191f29ddc1f
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   RappleProgressHUD: f29bc5dc5f9834c2caa9c2ae21ba11f3ff2b5a85
@@ -63,6 +67,6 @@ SPEC CHECKSUMS:
   StepIndicator: 748b293f671355b021253f82031ac002f153dc81
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 1e18d94b3304a8eff4297fea0ad756e486b2e8dc
+PODFILE CHECKSUM: 447c2d752d135afae79eefb81d99c5b05547c1f7
 
 COCOAPODS: 1.11.2

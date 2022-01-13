@@ -34,6 +34,13 @@ func hexStringToUIColor (hex:String) -> UIColor {
     
 }
 
+func isValidEmail(testStr:String) -> Bool {
+    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    
+    let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+    return emailTest.evaluate(with: testStr)
+}
+
 extension UITextView {
     
     func setLeftPaddingPoints(_ amount: CGFloat) {
@@ -130,6 +137,26 @@ extension UITextField
               layer.shadowRadius = 2
                layer.masksToBounds = false
     }
+    
+    func setupRightImage(imageName:String){
+        let imageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 12, height: 16))
+        imageView.image = UIImage(named: imageName)
+        let imageContainerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 55, height: 40))
+        imageContainerView.addSubview(imageView)
+        rightView = imageContainerView
+        rightViewMode = .always
+        self.tintColor = .lightGray
+    }
+    
+    func setupLeftImage(imageName:String){
+           let imageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 20, height: 20))
+           imageView.image = UIImage(named: imageName)
+           let imageContainerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 55, height: 40))
+           imageContainerView.addSubview(imageView)
+           leftView = imageContainerView
+           leftViewMode = .always
+           self.tintColor = .lightGray
+         }
 
 }
 
@@ -433,6 +460,14 @@ extension UIImage{
 public extension UIButton
 {
 
+    func underline() {
+            guard let title = self.titleLabel else { return }
+            guard let tittleText = title.text else { return }
+            let attributedString = NSMutableAttributedString(string: (tittleText))
+            attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: (tittleText.count)))
+            self.setAttributedTitle(attributedString, for: .normal)
+        }
+    
   func alignTextUnderImage(spacing: CGFloat = 6.0)
   {
       if let image = self.imageView?.image

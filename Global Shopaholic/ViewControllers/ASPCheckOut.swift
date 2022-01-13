@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Braintree
 
 
 class ASPCheckOut: UIViewController {
@@ -72,10 +73,7 @@ class ASPCheckOut: UIViewController {
     @IBOutlet weak var CreditCardExpYearField: UITextField!
     @IBOutlet weak var CreditCardCVCField: UITextField!
     
-    
-    
-    
-    
+    var brainTreeClient: BTAPIClient?
       var resultText = "" // empty
 //      var payPalConfig = PayPalConfiguration()
     var user_data:UserDataClass!
@@ -130,6 +128,7 @@ class ASPCheckOut: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        brainTreeClient = BTAPIClient(authorization: "sandbox_x6hkqxj5_v9h2kg9x6686mdsf")
         
         title = "PayPal SDK Demo"
            //successView.isHidden = true

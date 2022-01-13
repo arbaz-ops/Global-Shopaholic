@@ -17,13 +17,13 @@ extension RequestFormViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let requestFormCell = tableView.dequeueReusableCell(withIdentifier: "RequestFormTableViewCell", for: indexPath) as? RequestFormTableViewCell
         
-        if let consolidation = reviewRequestList!["consolidation"] as? [String: Any],
-           let uniqueKey = consolidation["unique_key"] as? String,
-           let packagesConsolidated = consolidation["packageCount"] as? Int,
-           let packages = consolidation["packages"] as? [[String: Any]],
-           let packagesCustomDetail = packages[0]["package_custom_detail"] {
-            
-        }
+//        if let consolidation = reviewRequestList!["consolidation"] as? [String: Any],
+//           let uniqueKey = consolidation["unique_key"] as? String,
+//           let packagesConsolidated = consolidation["packageCount"] as? Int,
+//           let packages = consolidation["packages"] as? [[String: Any]],
+//           let packagesCustomDetail = packages[0]["package_custom_detail"] {
+//
+//        }
            
     
         

@@ -26,4 +26,5 @@ pod 'AKSideMenu'
 pod 'SDWebImage', '~> 5.0'
 pod 'StepIndicator', '~> 1.0.8'
 pod 'Braintree'
+pod 'IQKeyboardManagerSwift'
 end

@@ -20,6 +20,7 @@ extension StorageShipmentVC: FilterViewControllerDelegate, OutgoingTableViewCell
         case .Storage:
             self.selectedSection = 0
             storageAndShipTableView.register(UINib(nibName: "StorageTableViewCell", bundle: nil), forCellReuseIdentifier: "StorageTableViewCell")
+            storageAndShipTableView.isScrollEnabled = false
             filterButton.isHidden = true
             itemsSelectedLabel.isHidden = false
             selectAllLabel.isHidden = false
@@ -119,11 +120,14 @@ extension StorageShipmentVC: FilterViewControllerDelegate, OutgoingTableViewCell
                    }
                    
                }, failure: { str in
-                   print(str)
+                   COMMON_ALERT.showAlert(msg: str)
                })
                
            } catch let error {
-               print(error.localizedDescription)
+               if error != nil {
+                   COMMON_ALERT.showAlert(msg: error.localizedDescription)
+
+               }
            }
      
        case .Outgoing:
@@ -150,12 +154,12 @@ extension StorageShipmentVC: FilterViewControllerDelegate, OutgoingTableViewCell
                    self.storageAndShipTableView.reloadWithAnimation()
                    
                }, failure: { str in
-                   print(str)
+                   COMMON_ALERT.showAlert(msg: str)
                })
 
            
            } catch let error {
-               print(error.localizedDescription)
+               COMMON_ALERT.showAlert(msg: error.localizedDescription)
            }
 
            
@@ -182,13 +186,13 @@ extension StorageShipmentVC: FilterViewControllerDelegate, OutgoingTableViewCell
 
                    self.storageAndShipTableView.reloadWithAnimation()
                }, failure: { str in
-                   print(str)
+                   COMMON_ALERT.showAlert(msg: str)
                })
           
 
            
            } catch let error {
-               print(error.localizedDescription)
+               COMMON_ALERT.showAlert(msg: error.localizedDescription)
            }
 
            
@@ -215,11 +219,11 @@ extension StorageShipmentVC: FilterViewControllerDelegate, OutgoingTableViewCell
                    self.storageAndShipTableView.reloadWithAnimation()
 
                }, failure: { str in
-                   print(str)
+                   COMMON_ALERT.showAlert(msg: str)
                })
 
            } catch let error {
-               print(error.localizedDescription)
+               COMMON_ALERT.showAlert(msg: error.localizedDescription)
            }
            
            
@@ -248,12 +252,12 @@ extension StorageShipmentVC: FilterViewControllerDelegate, OutgoingTableViewCell
                    self.storageAndShipTableView.reloadWithAnimation()
 
                }, failure: { str in
-                   print(str)
+                   COMMON_ALERT.showAlert(msg: str)
                })
 
            
            } catch let error {
-               print(error.localizedDescription)
+               COMMON_ALERT.showAlert(msg: error.localizedDescription)
            }
            
        case .Return:

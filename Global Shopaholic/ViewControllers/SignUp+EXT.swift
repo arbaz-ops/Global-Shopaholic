@@ -18,7 +18,7 @@ extension SignupVC: RegistrationRequestDelegate
     }
     
     func DidFinishedHTTPRequest(response: NSDictionary) {
-        
+        print("This is registration button")
         let viewController = (self.storyboard?.instantiateViewController(withIdentifier: "AccountCreateVC"))!
         self.navigationController?.fadeTo(viewController)
         

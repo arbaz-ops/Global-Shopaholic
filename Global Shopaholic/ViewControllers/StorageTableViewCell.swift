@@ -29,13 +29,14 @@ class StorageTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
 //        print(packagesList)
+        storageCollectionView.layoutIfNeeded()
         setUpCollectionView()
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-    }
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//       
+//    }
     
     private func setUpCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -86,9 +87,9 @@ extension StorageTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let storageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StorageCollectionViewCell", for: indexPath) as? StorageCollectionViewCell
         storageCell?.storageCollectionViewCellDelegate = self
+        storageCell?.indexPath = indexPath
         let width = calculateWidth()
         storageCell!.myStorageImageView.frame.size.width = width
-        collectionView.layoutIfNeeded()
         storageCell?.trackingNumber.text = "TN: \(packagesList[indexPath.row]["tracking_number"] as! String)"
         let primaryFullImage = packagesList[indexPath.row]["primary_full_image"] as? [String: Any]
         if let imageName = primaryFullImage?["image_name"] as? String {
@@ -132,6 +133,36 @@ extension StorageTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
 }
 
 extension StorageTableViewCell: StorageCollectionViewCellDelegate {
+    func checkBoxTapped(indexPath: IndexPath) {
+        guard  let storageCell = storageCollectionView.cellForItem(at: indexPath) as? StorageCollectionViewCell else {
+            return
+        }
+//        if storageCell.indexPath?.row == indexPath.row {
+//            print("sadsad")
+//            storageCell.isChecked = true
+//            storageCell.checkBoxButton.setImage(UIImage(named: "checkedGreen"), for: .normal)
+//
+//        }
+//        else {
+//            storageCell.isChecked = false
+//            storageCell.checkBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+//
+//        }
+//
+        if !storageCell.isChecked! {
+
+            storageCell.isChecked = true
+            storageCell.checkBoxButton.setImage(UIImage(named: "checkedGreen"), for: .normal)
+             }
+        else if storageCell.isChecked! {
+
+            storageCell.isChecked = false
+            storageCell.checkBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+
+             }
+        
+    }
+    
     func addCustomDetailTapped() {
         storageTableViewCellDelegate?.addCustomDetailTapped()
     }

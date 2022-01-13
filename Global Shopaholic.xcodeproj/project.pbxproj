@@ -240,6 +240,10 @@
 		7C6F007E2761E8F90007D83C /* CustomDetail+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F007D2761E8F90007D83C /* CustomDetail+EXT+TABLE.swift */; };
 		7C6F00812761E9230007D83C /* CustomDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F007F2761E9230007D83C /* CustomDetailTableViewCell.swift */; };
 		7C6F00822761E9230007D83C /* CustomDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C6F00802761E9230007D83C /* CustomDetailTableViewCell.xib */; };
+		7C726148278C382300ADB324 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C726147278C382300ADB324 /* VerificationViewController.swift */; };
+		7C72614C278C4E1900ADB324 /* VerificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72614A278C4E1900ADB324 /* VerificationTableViewCell.swift */; };
+		7C72614D278C4E1900ADB324 /* VerificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C72614B278C4E1900ADB324 /* VerificationTableViewCell.xib */; };
+		7C726150278FF6BB00ADB324 /* Verification+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72614F278FF6BB00ADB324 /* Verification+EXT+TABLE.swift */; };
 		7C82DF922743BC220056BF98 /* StorageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C82DF902743BC220056BF98 /* StorageCollectionViewCell.swift */; };
 		7C82DF932743BC220056BF98 /* StorageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C82DF912743BC220056BF98 /* StorageCollectionViewCell.xib */; };
 		7C95D2CF27632F1000EC198E /* SpecialServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D2CE27632F1000EC198E /* SpecialServicesViewController.swift */; };
@@ -533,6 +537,10 @@
 		7C6F007D2761E8F90007D83C /* CustomDetail+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomDetail+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7C6F007F2761E9230007D83C /* CustomDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetailTableViewCell.swift; sourceTree = "<group>"; };
 		7C6F00802761E9230007D83C /* CustomDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDetailTableViewCell.xib; sourceTree = "<group>"; };
+		7C726147278C382300ADB324 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
+		7C72614A278C4E1900ADB324 /* VerificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationTableViewCell.swift; sourceTree = "<group>"; };
+		7C72614B278C4E1900ADB324 /* VerificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerificationTableViewCell.xib; sourceTree = "<group>"; };
+		7C72614F278FF6BB00ADB324 /* Verification+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Verification+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7C82DF902743BC220056BF98 /* StorageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageCollectionViewCell.swift; sourceTree = "<group>"; };
 		7C82DF912743BC220056BF98 /* StorageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StorageCollectionViewCell.xib; sourceTree = "<group>"; };
 		7C95D2CE27632F1000EC198E /* SpecialServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialServicesViewController.swift; sourceTree = "<group>"; };
@@ -742,6 +750,7 @@
 				789C9494257E4EC5006A76CD /* HomeVC */,
 				785424C1257E5CE400FC1F61 /* SideMenu */,
 				7C49161927707A280077307B /* Custom Declaration */,
+				7C726146278C37F600ADB324 /* VerificationVC */,
 				7C6A138F274B5E4900C8C81A /* FilterVC */,
 				7CA3EAC52771C1450053C493 /* Edit Address */,
 				7C6F00792761E6C60007D83C /* CustomDetail */,
@@ -1732,6 +1741,25 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		7C726146278C37F600ADB324 /* VerificationVC */ = {
+			isa = PBXGroup;
+			children = (
+				7C726149278C4DF200ADB324 /* Cells */,
+				7C726147278C382300ADB324 /* VerificationViewController.swift */,
+				7C72614F278FF6BB00ADB324 /* Verification+EXT+TABLE.swift */,
+			);
+			name = VerificationVC;
+			sourceTree = "<group>";
+		};
+		7C726149278C4DF200ADB324 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7C72614A278C4E1900ADB324 /* VerificationTableViewCell.swift */,
+				7C72614B278C4E1900ADB324 /* VerificationTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		7C7A71452750E40400698077 /* MyStorage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1890,6 +1918,7 @@
 				781D3E90257926870013DE3A /* Montserrat-Regular.ttf in Resources */,
 				7CE79894273CFE5000D145E5 /* MyStorageCollectionViewCell.xib in Resources */,
 				78088D0F260B767600C6E806 /* AddBoxCell.xib in Resources */,
+				7C72614D278C4E1900ADB324 /* VerificationTableViewCell.xib in Resources */,
 				78BC49DA269C4874000EC5FE /* itemCell.xib in Resources */,
 				7CAA39102747A20D0095A8F5 /* ShippedTableViewCell.xib in Resources */,
 				789C9490257E4E83006A76CD /* Home.storyboard in Resources */,
@@ -2152,6 +2181,7 @@
 				783373D326833206004CB9AF /* ASPCombineData.swift in Sources */,
 				784AED3525E5280F00FE7E09 /* onBoardingTwo.swift in Sources */,
 				7872B82B2654F89C00B796B2 /* BankTransferValidationResult.swift in Sources */,
+				7C726150278FF6BB00ADB324 /* Verification+EXT+TABLE.swift in Sources */,
 				78B0EA532670BE6C0026B515 /* CouriersCell.swift in Sources */,
 				78088D10260B767600C6E806 /* AddBoxCell.swift in Sources */,
 				788F73CF2673842900FA3DBE /* individualItemsCell.swift in Sources */,
@@ -2172,6 +2202,7 @@
 				7893ED1E2653BC9C00D6CDFA /* DepositeCardVM.swift in Sources */,
 				78F7FC2926330410005208FF /* WalletHistoryCell.swift in Sources */,
 				781D3EA125793F060013DE3A /* ForgotPassword+EXT.swift in Sources */,
+				7C726148278C382300ADB324 /* VerificationViewController.swift in Sources */,
 				78B0363B26188ADB00883769 /* InfoUpdateRequest.swift in Sources */,
 				78BC49DD269C488C000EC5FE /* ShippingInfoCell.swift in Sources */,
 				78440096257A7B6000B5F0C7 /* OTPVC.swift in Sources */,
@@ -2243,6 +2274,7 @@
 				782A68A225DAD18D00A25A34 /* AddressesCell.swift in Sources */,
 				7C6A1396274CB99F00C8C81A /* StorageVM.swift in Sources */,
 				78440087257A5CB000B5F0C7 /* LoginVM.swift in Sources */,
+				7C72614C278C4E1900ADB324 /* VerificationTableViewCell.swift in Sources */,
 				78C69CF32638081500B74780 /* AddCardVM.swift in Sources */,
 				7869BAAB268A2D440020DE4B /* SavedItemCell.swift in Sources */,
 				78BDF2D12582704C0016C6B6 /* BoxCell.swift in Sources */,
@@ -2439,7 +2471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6.1;
+				CURRENT_PROJECT_VERSION = 6.2;
 				DEVELOPMENT_TEAM = WGBR9F58C5;
 				INFOPLIST_FILE = "Global Shopaholic/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -2495,7 +2527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6.1;
+				CURRENT_PROJECT_VERSION = 6.2;
 				DEVELOPMENT_TEAM = WGBR9F58C5;
 				INFOPLIST_FILE = "Global Shopaholic/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
