@@ -22,7 +22,7 @@ class StorageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var myStorageImageView: UIImageView!
     @IBOutlet weak var specialServiceLabel: UILabel!
     @IBOutlet weak var myStorageContentView: UIView!
-    @IBOutlet weak var storageCellContainerView: UIView!
+    
     @IBOutlet weak var trackingNumber: UILabel!
     @IBOutlet weak var checkBoxButton: UIButton!
     

@@ -121,7 +121,8 @@ class MenuViewController: UIViewController {
         if sender.tag != btnMenu.tag
             {
                 setUI(sender: sender)
-                hide(withIdentifier: "StorageShipmentVC")
+            hide(withIdentifier: "StorageAndShipmentViewController")
+//                hide(withIdentifier: "StorageShipmentVC")
             
             }
             else{

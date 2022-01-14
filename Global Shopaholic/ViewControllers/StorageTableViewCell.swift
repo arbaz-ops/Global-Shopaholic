@@ -30,6 +30,7 @@ class StorageTableViewCell: UITableViewCell {
         // Initialization code
 //        print(packagesList)
         storageCollectionView.layoutIfNeeded()
+        
         setUpCollectionView()
     }
     
