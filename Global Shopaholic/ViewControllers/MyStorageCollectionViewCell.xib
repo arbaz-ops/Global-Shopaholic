@@ -80,6 +80,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="uncheckedBox" title=""/>
+                                <connections>
+                                    <action selector="checkBocBUttonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="DiK-gS-d1n"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.96862745100000003" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -128,7 +131,7 @@
             <size key="customSize" width="77" height="86"/>
             <connections>
                 <outlet property="addCustomDetailLabel" destination="XZd-Et-wfJ" id="Sub-Ph-hNG"/>
-                <outlet property="checkBoxButton" destination="h5I-1z-goL" id="4fK-oS-pTl"/>
+                <outlet property="checkBoxButton" destination="h5I-1z-goL" id="4yi-E4-1RO"/>
                 <outlet property="myStorageContentView" destination="r8P-nv-cWi" id="2bM-cp-6mM"/>
                 <outlet property="myStorageImageView" destination="K4r-4z-vhY" id="GCn-dE-DcW"/>
                 <outlet property="returnThisPackageLabel" destination="CgO-9K-E12" id="zu7-FK-sKL"/>

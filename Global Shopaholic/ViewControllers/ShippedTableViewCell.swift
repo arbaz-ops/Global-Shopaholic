@@ -24,6 +24,7 @@ class ShippedTableViewCell: UITableViewCell {
         markAsDeliveredButton.layer.cornerRadius = 8
         containerView.layer.cornerRadius = 8
         containerView.DropShadowView()
+        
         // Initialization code
     }
 

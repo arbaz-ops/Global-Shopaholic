@@ -19,9 +19,9 @@ extension StorageShipmentVC: UICollectionViewDataSource,UICollectionViewDelegate
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyStorageCollectionViewCell", for: indexPath) as? MyStorageCollectionViewCell
-        cell!.containerView.DropShadowView()
-        cell!.collectionImageView.image = upperCollection[indexPath.item].image
-        cell!.collectionCellText.text = upperCollection[indexPath.item].text
+//        cell!.containerView.DropShadowView()
+//        cell!.collectionImageView.image = upperCollection[indexPath.item].image
+//        cell!.collectionCellText.text = upperCollection[indexPath.item].text
         return cell!
 
     }
@@ -71,16 +71,12 @@ extension StorageShipmentVC: UICollectionViewDataSource,UICollectionViewDelegate
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyStorageCollectionViewCell", for: indexPath) as? MyStorageCollectionViewCell else {
-            return
-        }
-        cell.containerView.backgroundColor = hexStringToUIColor(hex: "#EFF7F5")
-    }
-    
-    
-    
-
+//    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyStorageCollectionViewCell", for: indexPath) as? MyStorageCollectionViewCell else {
+//            return
+//        }
+//        cell.containerView.backgroundColor = hexStringToUIColor(hex: "#EFF7F5")
+//    }
     
     func shakeThatBooty()
     {

@@ -8,15 +8,6 @@
 
 import UIKit
 
-struct UpperCollectionModel {
-    var image: UIImage?
-    var text: String?
-    
-    
-}
-
-
-
 
 class StorageShipmentVC: BaseViewController, UIGestureRecognizerDelegate {
     
@@ -68,7 +59,7 @@ class StorageShipmentVC: BaseViewController, UIGestureRecognizerDelegate {
         
 //        self.collectionView.allowsSelection = true
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
-        myStorageCollectionView.register(UINib(nibName: "MyStorageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyStorageCollectionViewCell")
+        myStorageCollectionView.register(UINib(nibName: "UpperCollectionView", bundle: nil), forCellWithReuseIdentifier: "UpperCollectionView")
         myStorageCollectionView.showsVerticalScrollIndicator = false
         myStorageCollectionView.showsHorizontalScrollIndicator = false
 //                 self.collectionView.addGestureRecognizer(longPressRecognizer)

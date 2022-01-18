@@ -8,6 +8,13 @@
 
 import UIKit
 
+protocol StorageCollectionViewCellDelegate {
+    func returnPackageTapped(indexPath: IndexPath)
+    func addCustomDetailTapped(indexPath: IndexPath)
+    func specialServiceTapped(indexPath: IndexPath)
+    func checkBoxTapped(indexPath: IndexPath)
+}
+
 class MyStorageCollectionViewCell: UICollectionViewCell {
 
     
@@ -35,6 +42,8 @@ class MyStorageCollectionViewCell: UICollectionViewCell {
 //        }
 //    }
     
+    
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         myStorageImageView.roundTopCorners(radius: 14)
@@ -52,18 +61,42 @@ class MyStorageCollectionViewCell: UICollectionViewCell {
         specialServiceLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(specialServiceTapped)))
         specialServiceLabel.isUserInteractionEnabled = true
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        checkBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+//        if isChecked == false {
+//            checkBoxButton.setImage(UIImage(named: "checkedGreen"), for: .normal)
+//            isChecked = true
+//        }
+//      else  if isChecked == true {
+//            checkBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+//            isChecked = false
+//        }
+    }
 
     @objc func returnPackageTapped() {
-        print(<#T##items: Any...##Any#>)
-        storageCollectionViewCellDelegate?.returnPackageTapped()
+        
+        storageCollectionViewCellDelegate?.returnPackageTapped(indexPath: self.indexPath!)
     }
     
     @objc func addCustomDetailTapped() {
-        storageCollectionViewCellDelegate?.addCustomDetailTapped()
+        storageCollectionViewCellDelegate?.addCustomDetailTapped(indexPath: self.indexPath!)
 
     }
     @objc func specialServiceTapped() {
-        storageCollectionViewCellDelegate?.specialServiceTapped()
+        storageCollectionViewCellDelegate?.specialServiceTapped(indexPath: self.indexPath!)
     }
     
+    @IBAction func checkBocBUttonTapped(_ sender: UIButton) {
+        storageCollectionViewCellDelegate?.checkBoxTapped(indexPath: indexPath!)
+//        if isChecked == false {
+//            checkBoxButton.setImage(UIImage(named: "checkedGreen"), for: .normal)
+//            isChecked = true
+//        }
+//      else  if isChecked == true {
+//            checkBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+//            isChecked = false
+//        }
+    }
 }

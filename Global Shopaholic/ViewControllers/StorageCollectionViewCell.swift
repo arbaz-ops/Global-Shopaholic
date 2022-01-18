@@ -8,12 +8,7 @@
 
 import UIKit
 
-protocol StorageCollectionViewCellDelegate {
-    func returnPackageTapped()
-    func addCustomDetailTapped()
-    func specialServiceTapped()
-    func checkBoxTapped(indexPath: IndexPath)
-}
+
 
 class StorageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var addCustomDetailLabel: UILabel!
@@ -38,11 +33,7 @@ class StorageCollectionViewCell: UICollectionViewCell {
         self.DropShadowView()
         isChecked = false
         // Initialization code
-        returnThisPackageLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(returnPackageTapped)))
-        returnThisPackageLabel.isUserInteractionEnabled = true
-        addCustomDetailLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addCustomDetailTapped)))
-        addCustomDetailLabel.isUserInteractionEnabled = true
-        specialServiceLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(specialServiceTapped)))
+        
         specialServiceLabel.isUserInteractionEnabled = true
     }
     
@@ -64,17 +55,7 @@ class StorageCollectionViewCell: UICollectionViewCell {
                 }
     }
     
-    @objc func returnPackageTapped() {
-        storageCollectionViewCellDelegate?.returnPackageTapped()
-    }
-    
-    @objc func addCustomDetailTapped() {
-        storageCollectionViewCellDelegate?.addCustomDetailTapped()
-
-    }
-    @objc func specialServiceTapped() {
-        storageCollectionViewCellDelegate?.specialServiceTapped()
-    }
+   
 
     @IBAction func checkBoxTapped(_ sender: UIButton) {
 //        if !isChecked! {

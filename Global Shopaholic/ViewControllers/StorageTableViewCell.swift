@@ -87,7 +87,6 @@ extension StorageTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let storageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "StorageCollectionViewCell", for: indexPath) as? StorageCollectionViewCell
-        storageCell?.storageCollectionViewCellDelegate = self
         storageCell?.indexPath = indexPath
         let width = calculateWidth()
         storageCell!.myStorageImageView.frame.size.width = width
@@ -133,7 +132,7 @@ extension StorageTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
     
 }
 
-extension StorageTableViewCell: StorageCollectionViewCellDelegate {
+extension StorageTableViewCell {
     func checkBoxTapped(indexPath: IndexPath) {
         guard  let storageCell = storageCollectionView.cellForItem(at: indexPath) as? StorageCollectionViewCell else {
             return
@@ -164,17 +163,6 @@ extension StorageTableViewCell: StorageCollectionViewCellDelegate {
         
     }
     
-    func addCustomDetailTapped() {
-        storageTableViewCellDelegate?.addCustomDetailTapped()
-    }
-    
-    func specialServiceTapped() {
-        storageTableViewCellDelegate?.specialServiceTapped()
-    }
-    
-    func returnPackageTapped() {
-        storageTableViewCellDelegate?.returnPackageTapped()
-    }
-    
+
     
 }

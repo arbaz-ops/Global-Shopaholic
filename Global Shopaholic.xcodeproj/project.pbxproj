@@ -18,8 +18,6 @@
 		780FB5EE25DBE5A90063A015 /* GetAddressesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780FB5ED25DBE5A90063A015 /* GetAddressesVM.swift */; };
 		780FB5FE25DC2B990063A015 /* DropAddressVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780FB5FD25DC2B990063A015 /* DropAddressVM.swift */; };
 		7810769726988273000A384A /* itemReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810769626988273000A384A /* itemReviewVC.swift */; };
-		7818E02C25B5ACCB0057C383 /* Storage+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818E02B25B5ACCB0057C383 /* Storage+EXT.swift */; };
-		7818E03125B5AD0B0057C383 /* Storage+EXT+TABLE+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818E03025B5AD0B0057C383 /* Storage+EXT+TABLE+Collection.swift */; };
 		7819B36E257FABD6006A8376 /* FAQsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819B36D257FABD6006A8376 /* FAQsVC.swift */; };
 		7819B371257FABF1006A8376 /* FAQCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819B36F257FABF1006A8376 /* FAQCell.swift */; };
 		7819B372257FABF1006A8376 /* FAQCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7819B370257FABF1006A8376 /* FAQCell.xib */; };
@@ -193,7 +191,6 @@
 		78C69D13263832C700B74780 /* CreditCardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C69D11263832C700B74780 /* CreditCardsCell.swift */; };
 		78C69D14263832C700B74780 /* CreditCardsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C69D12263832C700B74780 /* CreditCardsCell.xib */; };
 		78C69D1C2638380500B74780 /* walletcv+CollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C69D1B2638380500B74780 /* walletcv+CollectionView+Ext.swift */; };
-		78C7F59E25B06884007F058E /* StorageShipmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7F59D25B06884007F058E /* StorageShipmentVC.swift */; };
 		78D81FBE26848E02007DDB81 /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D81FBC26848E01007DDB81 /* SummaryCell.swift */; };
 		78D81FBF26848E02007DDB81 /* SummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78D81FBD26848E02007DDB81 /* SummaryCell.xib */; };
 		78E4DDE026A033E0000F9EDE /* CancelledCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E4DDDE26A033E0000F9EDE /* CancelledCell.swift */; };
@@ -221,8 +218,6 @@
 		78FF212F268F29D8009FFB3B /* CheckoutVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF212E268F29D8009FFB3B /* CheckoutVM.swift */; };
 		78FF2131268F2C99009FFB3B /* APSCheckOut+EXT+DELEGATEs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF2130268F2C99009FFB3B /* APSCheckOut+EXT+DELEGATEs.swift */; };
 		7C49161B27707A7B0077307B /* CustomDeclarationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C49161A27707A7B0077307B /* CustomDeclarationFormViewController.swift */; };
-		7C50462727438D2C000F6307 /* StorageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50462527438D2C000F6307 /* StorageTableViewCell.swift */; };
-		7C50462827438D2D000F6307 /* StorageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C50462627438D2C000F6307 /* StorageTableViewCell.xib */; };
 		7C6A1391274B60B000C8C81A /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6A1390274B60B000C8C81A /* FilterViewController.swift */; };
 		7C6A1393274BA0E100C8C81A /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6A1392274BA0E100C8C81A /* Interactor.swift */; };
 		7C6A1396274CB99F00C8C81A /* StorageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6A1395274CB99F00C8C81A /* StorageVM.swift */; };
@@ -247,8 +242,6 @@
 		7C7261532790482100ADB324 /* StorageAndShipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7261522790482100ADB324 /* StorageAndShipmentViewController.swift */; };
 		7C72615527904D4000ADB324 /* StorageAndShipment+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72615427904D4000ADB324 /* StorageAndShipment+EXT.swift */; };
 		7C7261572790592C00ADB324 /* StorageAndShipment+EXT+TABLE+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7261562790592C00ADB324 /* StorageAndShipment+EXT+TABLE+Collection.swift */; };
-		7C82DF922743BC220056BF98 /* StorageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C82DF902743BC220056BF98 /* StorageCollectionViewCell.swift */; };
-		7C82DF932743BC220056BF98 /* StorageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C82DF912743BC220056BF98 /* StorageCollectionViewCell.xib */; };
 		7C95D2CF27632F1000EC198E /* SpecialServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D2CE27632F1000EC198E /* SpecialServicesViewController.swift */; };
 		7C95D2D327632FFA00EC198E /* SpecialServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D2D127632FFA00EC198E /* SpecialServicesTableViewCell.swift */; };
 		7C95D2D427632FFA00EC198E /* SpecialServicesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C95D2D227632FFA00EC198E /* SpecialServicesTableViewCell.xib */; };
@@ -264,6 +257,12 @@
 		7CAE1F8427709F9A0039E027 /* CustomDeclarationFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CAE1F8227709F9A0039E027 /* CustomDeclarationFormTableViewCell.xib */; };
 		7CB3A1B42791716D00CA5C69 /* UpperCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1B22791716D00CA5C69 /* UpperCollectionViewCell.swift */; };
 		7CB3A1B52791716D00CA5C69 /* UpperCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB3A1B32791716D00CA5C69 /* UpperCollectionViewCell.xib */; };
+		7CB3A1BB279587C900CA5C69 /* Storage+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1BA279587C900CA5C69 /* Storage+EXT.swift */; };
+		7CB3A1BD279587DD00CA5C69 /* Storage+EXT+TABLE+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1BC279587DD00CA5C69 /* Storage+EXT+TABLE+Collection.swift */; };
+		7CB3A1BF279587E500CA5C69 /* StorageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1BE279587E500CA5C69 /* StorageCollectionViewCell.swift */; };
+		7CB3A1C1279587F100CA5C69 /* StorageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB3A1C0279587F100CA5C69 /* StorageCollectionViewCell.xib */; };
+		7CB3A1C3279587F700CA5C69 /* StorageShipmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1C2279587F700CA5C69 /* StorageShipmentVC.swift */; };
+		7CB3A1C52795880600CA5C69 /* StorageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1C42795880500CA5C69 /* StorageTableViewCell.swift */; };
 		7CD45E53274618FB00397F57 /* OutgoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD45E51274618FB00397F57 /* OutgoingTableViewCell.swift */; };
 		7CD45E54274618FB00397F57 /* OutgoingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD45E52274618FB00397F57 /* OutgoingTableViewCell.xib */; };
 		7CE79893273CFE5000D145E5 /* MyStorageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE79891273CFE5000D145E5 /* MyStorageCollectionViewCell.swift */; };
@@ -306,8 +305,6 @@
 		780FB5ED25DBE5A90063A015 /* GetAddressesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAddressesVM.swift; sourceTree = "<group>"; };
 		780FB5FD25DC2B990063A015 /* DropAddressVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropAddressVM.swift; sourceTree = "<group>"; };
 		7810769626988273000A384A /* itemReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemReviewVC.swift; sourceTree = "<group>"; };
-		7818E02B25B5ACCB0057C383 /* Storage+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+EXT.swift"; sourceTree = "<group>"; };
-		7818E03025B5AD0B0057C383 /* Storage+EXT+TABLE+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+EXT+TABLE+Collection.swift"; sourceTree = "<group>"; };
 		7819B36D257FABD6006A8376 /* FAQsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsVC.swift; sourceTree = "<group>"; };
 		7819B36F257FABF1006A8376 /* FAQCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQCell.swift; sourceTree = "<group>"; };
 		7819B370257FABF1006A8376 /* FAQCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQCell.xib; sourceTree = "<group>"; };
@@ -493,7 +490,6 @@
 		78C69D11263832C700B74780 /* CreditCardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardsCell.swift; sourceTree = "<group>"; };
 		78C69D12263832C700B74780 /* CreditCardsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCardsCell.xib; sourceTree = "<group>"; };
 		78C69D1B2638380500B74780 /* walletcv+CollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "walletcv+CollectionView+Ext.swift"; sourceTree = "<group>"; };
-		78C7F59D25B06884007F058E /* StorageShipmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageShipmentVC.swift; sourceTree = "<group>"; };
 		78D81FBC26848E01007DDB81 /* SummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCell.swift; sourceTree = "<group>"; };
 		78D81FBD26848E02007DDB81 /* SummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryCell.xib; sourceTree = "<group>"; };
 		78E4DDDD269EF95C000F9EDE /* Global-Shopaholic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Global-Shopaholic-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -523,8 +519,6 @@
 		78FF2130268F2C99009FFB3B /* APSCheckOut+EXT+DELEGATEs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APSCheckOut+EXT+DELEGATEs.swift"; sourceTree = "<group>"; };
 		7B3ED7F419C3CEED6FFC0CC0 /* Pods_Global_ShopaholicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Global_ShopaholicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C49161A27707A7B0077307B /* CustomDeclarationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDeclarationFormViewController.swift; sourceTree = "<group>"; };
-		7C50462527438D2C000F6307 /* StorageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTableViewCell.swift; sourceTree = "<group>"; };
-		7C50462627438D2C000F6307 /* StorageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StorageTableViewCell.xib; sourceTree = "<group>"; };
 		7C6A1390274B60B000C8C81A /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		7C6A1392274BA0E100C8C81A /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		7C6A1395274CB99F00C8C81A /* StorageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageVM.swift; sourceTree = "<group>"; };
@@ -549,8 +543,6 @@
 		7C7261522790482100ADB324 /* StorageAndShipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageAndShipmentViewController.swift; sourceTree = "<group>"; };
 		7C72615427904D4000ADB324 /* StorageAndShipment+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageAndShipment+EXT.swift"; sourceTree = "<group>"; };
 		7C7261562790592C00ADB324 /* StorageAndShipment+EXT+TABLE+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageAndShipment+EXT+TABLE+Collection.swift"; sourceTree = "<group>"; };
-		7C82DF902743BC220056BF98 /* StorageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageCollectionViewCell.swift; sourceTree = "<group>"; };
-		7C82DF912743BC220056BF98 /* StorageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StorageCollectionViewCell.xib; sourceTree = "<group>"; };
 		7C95D2CE27632F1000EC198E /* SpecialServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialServicesViewController.swift; sourceTree = "<group>"; };
 		7C95D2D127632FFA00EC198E /* SpecialServicesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialServicesTableViewCell.swift; sourceTree = "<group>"; };
 		7C95D2D227632FFA00EC198E /* SpecialServicesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialServicesTableViewCell.xib; sourceTree = "<group>"; };
@@ -566,6 +558,12 @@
 		7CAE1F8227709F9A0039E027 /* CustomDeclarationFormTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDeclarationFormTableViewCell.xib; sourceTree = "<group>"; };
 		7CB3A1B22791716D00CA5C69 /* UpperCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperCollectionViewCell.swift; sourceTree = "<group>"; };
 		7CB3A1B32791716D00CA5C69 /* UpperCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpperCollectionViewCell.xib; sourceTree = "<group>"; };
+		7CB3A1BA279587C900CA5C69 /* Storage+EXT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storage+EXT.swift"; sourceTree = "<group>"; };
+		7CB3A1BC279587DD00CA5C69 /* Storage+EXT+TABLE+Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storage+EXT+TABLE+Collection.swift"; sourceTree = "<group>"; };
+		7CB3A1BE279587E500CA5C69 /* StorageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageCollectionViewCell.swift; sourceTree = "<group>"; };
+		7CB3A1C0279587F100CA5C69 /* StorageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StorageCollectionViewCell.xib; sourceTree = "<group>"; };
+		7CB3A1C2279587F700CA5C69 /* StorageShipmentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageShipmentVC.swift; sourceTree = "<group>"; };
+		7CB3A1C42795880500CA5C69 /* StorageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageTableViewCell.swift; sourceTree = "<group>"; };
 		7CD45E51274618FB00397F57 /* OutgoingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingTableViewCell.swift; sourceTree = "<group>"; };
 		7CD45E52274618FB00397F57 /* OutgoingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutgoingTableViewCell.xib; sourceTree = "<group>"; };
 		7CE79891273CFE5000D145E5 /* MyStorageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStorageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1526,27 +1524,14 @@
 		78C7F5A225B06F2D007F058E /* MyStorage */ = {
 			isa = PBXGroup;
 			children = (
-				78C7F5A325B06F35007F058E /* Cells */,
-				78C7F59D25B06884007F058E /* StorageShipmentVC.swift */,
-				7818E02B25B5ACCB0057C383 /* Storage+EXT.swift */,
-				7818E03025B5AD0B0057C383 /* Storage+EXT+TABLE+Collection.swift */,
+				7CB3A1C42795880500CA5C69 /* StorageTableViewCell.swift */,
+				7CB3A1C0279587F100CA5C69 /* StorageCollectionViewCell.xib */,
+				7CB3A1BE279587E500CA5C69 /* StorageCollectionViewCell.swift */,
+				7CB3A1C2279587F700CA5C69 /* StorageShipmentVC.swift */,
+				7CB3A1BC279587DD00CA5C69 /* Storage+EXT+TABLE+Collection.swift */,
+				7CB3A1BA279587C900CA5C69 /* Storage+EXT.swift */,
 			);
 			name = MyStorage;
-			sourceTree = "<group>";
-		};
-		78C7F5A325B06F35007F058E /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				7C50462527438D2C000F6307 /* StorageTableViewCell.swift */,
-				7C50462627438D2C000F6307 /* StorageTableViewCell.xib */,
-				7C82DF902743BC220056BF98 /* StorageCollectionViewCell.swift */,
-				7C82DF912743BC220056BF98 /* StorageCollectionViewCell.xib */,
-				7CD45E51274618FB00397F57 /* OutgoingTableViewCell.swift */,
-				7CD45E52274618FB00397F57 /* OutgoingTableViewCell.xib */,
-				7CAA390D2747A20D0095A8F5 /* ShippedTableViewCell.swift */,
-				7CAA390E2747A20D0095A8F5 /* ShippedTableViewCell.xib */,
-			);
-			name = Cells;
 			sourceTree = "<group>";
 		};
 		78CCEEC4258D0E060079E9D0 /* WalletVM */ = {
@@ -1833,6 +1818,10 @@
 				7CE79892273CFE5000D145E5 /* MyStorageCollectionViewCell.xib */,
 				7CB3A1B22791716D00CA5C69 /* UpperCollectionViewCell.swift */,
 				7CB3A1B32791716D00CA5C69 /* UpperCollectionViewCell.xib */,
+				7CD45E51274618FB00397F57 /* OutgoingTableViewCell.swift */,
+				7CD45E52274618FB00397F57 /* OutgoingTableViewCell.xib */,
+				7CAA390D2747A20D0095A8F5 /* ShippedTableViewCell.swift */,
+				7CAA390E2747A20D0095A8F5 /* ShippedTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1949,12 +1938,12 @@
 				781D3E90257926870013DE3A /* Montserrat-Regular.ttf in Resources */,
 				7CE79894273CFE5000D145E5 /* MyStorageCollectionViewCell.xib in Resources */,
 				78088D0F260B767600C6E806 /* AddBoxCell.xib in Resources */,
+				7CB3A1C1279587F100CA5C69 /* StorageCollectionViewCell.xib in Resources */,
 				7CB3A1B52791716D00CA5C69 /* UpperCollectionViewCell.xib in Resources */,
 				7C72614D278C4E1900ADB324 /* VerificationTableViewCell.xib in Resources */,
 				78BC49DA269C4874000EC5FE /* itemCell.xib in Resources */,
 				7CAA39102747A20D0095A8F5 /* ShippedTableViewCell.xib in Resources */,
 				789C9490257E4E83006A76CD /* Home.storyboard in Resources */,
-				7C82DF932743BC220056BF98 /* StorageCollectionViewCell.xib in Resources */,
 				781D3E94257926870013DE3A /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				7C6F00762760A7DE0007D83C /* ReturnPackageTableViewCell.xib in Resources */,
 				78B0EA542670BE6C0026B515 /* CouriersCell.xib in Resources */,
@@ -1970,7 +1959,6 @@
 				789CB91C25E6A589007313B4 /* SubRow.xib in Resources */,
 				78F7FC2A26330410005208FF /* WalletHistoryCell.xib in Resources */,
 				781D3E8F257926870013DE3A /* Montserrat-MediumItalic.ttf in Resources */,
-				7C50462827438D2D000F6307 /* StorageTableViewCell.xib in Resources */,
 				78F5ED962680A790002AE14B /* AssistedItemCell.xib in Resources */,
 				7CD45E54274618FB00397F57 /* OutgoingTableViewCell.xib in Resources */,
 				781D3E8A257926870013DE3A /* Montserrat-BoldItalic.ttf in Resources */,
@@ -2145,6 +2133,7 @@
 				782FDBB2261B4C8B003AB552 /* ChangePasswordVM.swift in Sources */,
 				7856F5D4257A47D70067D0B5 /* RegistrationRequest.swift in Sources */,
 				7856F5DA257A4A340067D0B5 /* RegisterValidation.swift in Sources */,
+				7CB3A1C3279587F700CA5C69 /* StorageShipmentVC.swift in Sources */,
 				7867BFCB25DAAD59002B4A63 /* CitiesModel.swift in Sources */,
 				781D3E7125790B360013DE3A /* Extensions.swift in Sources */,
 				7844007F257A520900B5F0C7 /* RequestResponse.swift in Sources */,
@@ -2154,13 +2143,12 @@
 				78B0365126188C8A00883769 /* InfoUpdateVM.swift in Sources */,
 				78B0364726188B9900883769 /* InfoValidationResult.swift in Sources */,
 				785ED6AB26302AD20033D98D /* CalculatorDetailVC.swift in Sources */,
-				7C82DF922743BC220056BF98 /* StorageCollectionViewCell.swift in Sources */,
 				781D3EA325793FFE0013DE3A /* UITextField+EXT.swift in Sources */,
 				785424BE257E5C5400FC1F61 /* MenuViewController.swift in Sources */,
 				789CB91D25E6A589007313B4 /* SubRow.swift in Sources */,
 				7CA3EACE2771ED300053C493 /* EditAddress+EXT+TABLE.swift in Sources */,
 				7869BAA5268A0E500020DE4B /* AspVM.swift in Sources */,
-				78C7F59E25B06884007F058E /* StorageShipmentVC.swift in Sources */,
+				7CB3A1BB279587C900CA5C69 /* Storage+EXT.swift in Sources */,
 				78740A8D267B8D3A00C78FE8 /* BeginPurchaseVC.swift in Sources */,
 				7851C45F257EAC400000A42D /* AssitedPuchaseCell.swift in Sources */,
 				78C69CF8263817A200B74780 /* wallet+AddCard+EXT.swift in Sources */,
@@ -2170,12 +2158,12 @@
 				781D3E9C257927C30013DE3A /* SignupVC.swift in Sources */,
 				7CE79893273CFE5000D145E5 /* MyStorageCollectionViewCell.swift in Sources */,
 				7844008F257A625300B5F0C7 /* LoginValidation.swift in Sources */,
+				7CB3A1BD279587DD00CA5C69 /* Storage+EXT+TABLE+Collection.swift in Sources */,
 				78F5EDA12680B17F002AE14B /* AssistedQuestionCell.swift in Sources */,
 				787F2BEC25D6E32F00A480CD /* AddAddressVC.swift in Sources */,
 				7C7261572790592C00ADB324 /* StorageAndShipment+EXT+TABLE+Collection.swift in Sources */,
 				780137C426A05566003D29D7 /* CreditCardPaymentModel.swift in Sources */,
 				7872B84F26552C7C00B796B2 /* BankDepositeVM.swift in Sources */,
-				7818E03125B5AD0B0057C383 /* Storage+EXT+TABLE+Collection.swift in Sources */,
 				782A689C25DAD11A00A25A34 /* SettingsVC+EXT+Table.swift in Sources */,
 				7810769726988273000A384A /* itemReviewVC.swift in Sources */,
 				7C6F0054275779110007D83C /* Enumerations.swift in Sources */,
@@ -2190,7 +2178,6 @@
 				7C6F0057275E26170007D83C /* RequestFormViewController.swift in Sources */,
 				789B02E7268C8A05006D489A /* ASPCheckOut.swift in Sources */,
 				78C69CFD26382DC800B74780 /* CardListVM.swift in Sources */,
-				7C50462727438D2C000F6307 /* StorageTableViewCell.swift in Sources */,
 				785E45E6265669EC00DF387A /* Colors.swift in Sources */,
 				78B0EA4F2670BC810026B515 /* CourierVC.swift in Sources */,
 				78F5EDA52680B192002AE14B /* AssistedReviewCell.swift in Sources */,
@@ -2239,6 +2226,7 @@
 				78B0363B26188ADB00883769 /* InfoUpdateRequest.swift in Sources */,
 				78BC49DD269C488C000EC5FE /* ShippingInfoCell.swift in Sources */,
 				78440096257A7B6000B5F0C7 /* OTPVC.swift in Sources */,
+				7CB3A1C52795880600CA5C69 /* StorageTableViewCell.swift in Sources */,
 				7872B80E2654F5E600B796B2 /* ImagePicker.swift in Sources */,
 				78FF1E132682364100A6F3DE /* BeginAssistedPurhase+EXT+VALIDATION.swift in Sources */,
 				787E89E72625F464007F67DB /* CalculatorValidationResult.swift in Sources */,
@@ -2301,7 +2289,6 @@
 				78C69D1C2638380500B74780 /* walletcv+CollectionView+Ext.swift in Sources */,
 				7C95D2D327632FFA00EC198E /* SpecialServicesTableViewCell.swift in Sources */,
 				782FDBB8261B4CBE003AB552 /* PasswordValidationResult.swift in Sources */,
-				7818E02C25B5ACCB0057C383 /* Storage+EXT.swift in Sources */,
 				781D3E9F25793AED0013DE3A /* ForgotPasswordVC.swift in Sources */,
 				78BC49E1269C48B0000EC5FE /* infoCell.swift in Sources */,
 				7CA3EAC72771C1710053C493 /* EditAddressViewController.swift in Sources */,
@@ -2326,6 +2313,7 @@
 				7CB3A1B42791716D00CA5C69 /* UpperCollectionViewCell.swift in Sources */,
 				784D781825C4514100F59E5B /* UserDataClass.swift in Sources */,
 				7851C44D257E95F20000A42D /* WarehouseAddressCell.swift in Sources */,
+				7CB3A1BF279587E500CA5C69 /* StorageCollectionViewCell.swift in Sources */,
 				7C72615527904D4000ADB324 /* StorageAndShipment+EXT.swift in Sources */,
 				78440098257A8DF800B5F0C7 /* OPT+EXT.swift in Sources */,
 				78FF212C268F1F47009FFB3B /* OrderSummaryRequest.swift in Sources */,
@@ -2510,7 +2498,7 @@
 				CURRENT_PROJECT_VERSION = 6.2;
 				DEVELOPMENT_TEAM = WGBR9F58C5;
 				INFOPLIST_FILE = "Global Shopaholic/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2566,7 +2554,7 @@
 				CURRENT_PROJECT_VERSION = 6.2;
 				DEVELOPMENT_TEAM = WGBR9F58C5;
 				INFOPLIST_FILE = "Global Shopaholic/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
