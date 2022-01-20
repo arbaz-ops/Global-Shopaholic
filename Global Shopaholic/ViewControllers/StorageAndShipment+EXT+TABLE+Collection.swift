@@ -12,6 +12,7 @@ import SDWebImage
 
 extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == upperCollectionView {
             return upperCollection.count
@@ -237,7 +238,7 @@ extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollecti
             let outgoingCell = tableView.dequeueReusableCell(withIdentifier: "OutgoingTableViewCell") as? OutgoingTableViewCell
             DispatchQueue.main.async {[self] in
                 outgoingCell?.indexPath = indexPath
-//                outgoingCell?.outgoingTableViewCellDelegate = self
+                outgoingCell?.outgoingTableViewCellDelegate = self
                 let dateDatAndYear = changeDateToRequiredType(date: packagesList[indexPath.row]["created_at"] as? String)
                 let formattedDate = convertDateString(dateString: dateDatAndYear, fromFormat: "MMM d, yyyy", toFormat: "dd/MM/yyyy")
                 outgoingCell?.requestId.text = packagesList[indexPath.row]["unique_key"] as? String

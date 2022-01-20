@@ -17,15 +17,47 @@ extension RequestFormViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let requestFormCell = tableView.dequeueReusableCell(withIdentifier: "RequestFormTableViewCell", for: indexPath) as? RequestFormTableViewCell
         
-//        if let consolidation = reviewRequestList!["consolidation"] as? [String: Any],
-//           let uniqueKey = consolidation["unique_key"] as? String,
-//           let packagesConsolidated = consolidation["packageCount"] as? Int,
-//           let packages = consolidation["packages"] as? [[String: Any]],
-//           let packagesCustomDetail = packages[0]["package_custom_detail"] {
-//
-//        }
-           
-    
+        if let consolidation = reviewRequestList!["consolidation"] as? [String: Any],
+        let unique_key = consolidation["unique_key"] as? String,
+        let totalPackage = consolidation["packageCount"] as? Int,
+        let packages = consolidation["packages"] as? [[String: Any]],
+        let packageCustomDetails = packages[0]["package_custom_detail"] as? [[String: Any]],
+        
+        let address = consolidation["address"] as? [String: Any],
+        let country = address["country"],
+        let city = address["city"],
+        let street = address["street"],
+        let zipCode = address["zip_code"],
+        let specialInstruction = consolidation["special_instructions"] as? String,
+        let boxDetail = consolidation["box_detail"] as? [[String: Any]]{
+//            print(country)
+//            print(city)
+//            print(street)
+//            print(zipCode)
+//            print(state)
+//            print(boxDetail)
+            
+            if packageCustomDetails.count < 1 {
+                requestFormCell?.customValue.text = "$ 0"
+            }
+            else {
+                if let customValue = packageCustomDetails[0]["value"] as? String {
+                    requestFormCell?.customValue.text = "$ \(String(describing: customValue))"
+                }
+            }
+            if specialInstruction == "" {
+                requestFormCell?.specialServices.text = "NUN"
+            }
+            else {
+                requestFormCell?.specialServices.text = specialInstruction
+
+            }
+            requestFormCell?.destinationAddress.text = "\(street), \(city), \(country), \(zipCode)"
+            requestFormCell?.requestId.text = unique_key
+            requestFormCell?.consolidatedPackages.text = String.init(totalPackage)
+            requestFormCell?.boxeDetail = boxDetail
+            print(consolidation)
+        }
         
         return requestFormCell!
     }
@@ -34,5 +66,6 @@ extension RequestFormViewController: UITableViewDelegate, UITableViewDataSource 
         return UITableView.automaticDimension
     }
     
+   
     
 }

@@ -10,9 +10,11 @@ import UIKit
 
 class RequestFormViewController: UIViewController {
     
+    @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     let storageVM = StorageVM()
     var consolidation: [String: [String: Any]]?
     @IBOutlet weak var upperView: UIView!
+    @IBOutlet weak var requestFormView: UIView!
     @IBOutlet weak var requestFormTableView: UITableView!
     var atIndex: IndexPath?
     var reviewRequestList: [String: Any]?
@@ -25,8 +27,10 @@ class RequestFormViewController: UIViewController {
         
         upperView.roundTopCorners(radius: 35)
         requestFormTableView.backgroundColor = .clear
-
-        loadTable()
+        self.view.roundTopCorners(radius: 35)
+        requestFormTableView.roundTopCorners(radius: 35)
+        requestFormView.roundTopCorners(radius: 35)
+        
       
     }
     
@@ -51,13 +55,16 @@ class RequestFormViewController: UIViewController {
             }
             let requestId = packageList![atIndex!.row]["id"]!
 
-            storageVM.getRequestReview(token: userToken, requestId: "\(String(describing: requestId))") { response in
+            storageVM.getRequestReview(token: userToken, requestId: "\(String(describing: requestId))") { [self] response in
+                print(response)
                 let data = response["data"] as? [String: [String: Any]]
                 let list = data!["list"]
                 self.reviewRequestList = list
-                let consolidation = list!["consolidation"] as? [String: Any]
-                print(list!["processing_charges"])
-                
+//                print(reviewRequestList)
+//                print(reviewRequestList!["consolidation"] as? [String: Any])
+//                let consolidation = list!["consolidation"] as? [String: Any]
+//                print(consolidation)
+                loadTable()
             } failure: { error in
                 print(error)
             }
@@ -73,6 +80,7 @@ class RequestFormViewController: UIViewController {
         requestFormTableView.register(UINib(nibName: "RequestFormTableViewCell", bundle: nil), forCellReuseIdentifier: "RequestFormTableViewCell")
         requestFormTableView.delegate = self
         requestFormTableView.dataSource = self
+        requestFormTableView.reloadData()
     }
     
     

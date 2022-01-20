@@ -165,6 +165,7 @@
                             <constraint firstItem="Qad-Hj-sG2" firstAttribute="leading" secondItem="vOq-7b-nsg" secondAttribute="leading" id="QQi-xu-qRM"/>
                             <constraint firstItem="qPR-r5-4tT" firstAttribute="centerY" secondItem="plm-lo-EEp" secondAttribute="centerY" id="UKP-SV-e8Z"/>
                             <constraint firstAttribute="trailing" secondItem="5da-nt-wfP" secondAttribute="trailing" constant="29" id="VcA-mN-vd2"/>
+                            <constraint firstAttribute="width" constant="320" id="cWz-Vc-IUp"/>
                             <constraint firstAttribute="height" constant="241" id="pJq-Kd-rwg"/>
                             <constraint firstItem="w9l-JN-wHL" firstAttribute="top" secondItem="vOq-7b-nsg" secondAttribute="top" constant="40" id="s9i-rG-oSA"/>
                             <constraint firstItem="5da-nt-wfP" firstAttribute="top" secondItem="vOq-7b-nsg" secondAttribute="top" constant="10" id="vLo-gJ-z7T"/>
@@ -177,7 +178,6 @@
                     <constraint firstItem="vOq-7b-nsg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="3Pm-e4-J2v"/>
                     <constraint firstAttribute="bottom" secondItem="vOq-7b-nsg" secondAttribute="bottom" constant="10" id="8EB-eB-tji"/>
                     <constraint firstItem="vOq-7b-nsg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18.5" id="Eha-rh-y0e"/>
-                    <constraint firstItem="vOq-7b-nsg" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.896359" id="Pyq-CY-Oo4"/>
                     <constraint firstAttribute="trailing" secondItem="vOq-7b-nsg" secondAttribute="trailing" constant="18.5" id="YAi-1H-pkb"/>
                 </constraints>
             </tableViewCellContentView>

@@ -1,27 +1,29 @@
 //
-//  OutgoingTableViewCell.swift
+//  OutgoingCollectionViewCell.swift
 //  Global Shopaholic
 //
-//  Created by Carbonic-IT on 18/11/2021.
-//  Copyright © 2021 Ahsan. All rights reserved.
+//  Created by Carbonic-IT on 15/01/2022.
+//  Copyright © 2022 Ahsan. All rights reserved.
 //
 
 import UIKit
 import iOSDropDown
 
-protocol OutgoingTableViewCellDelegate {
+
+protocol OutgoingCollectionCellDelegate {
     func outgoingOptionButtonTapped(atIndex: IndexPath)
-    func openRequestFormViewController(cell: UITableViewCell)
-    func openCustomDeclarationViewController(cell: UITableViewCell)
-    func openEditAddressViewController(cell: UITableViewCell)
-    
+    func openRequestFormViewController(cell: UICollectionViewCell)
+    func openCustomDeclarationViewController(cell: UICollectionViewCell)
+    func openEditAddressViewController(cell: UICollectionViewCell)
 }
 
-class OutgoingTableViewCell: UITableViewCell {
+
+class OutgoingCollectionViewCell: UICollectionViewCell {
     var optionsView = UITableView()
+    @IBOutlet weak var cellView: UIView!
     var isShowing: Bool?
     var dropDown: DropDown?
-    var outgoingTableViewCellDelegate: OutgoingTableViewCellDelegate?
+    var outgoingCollectionCellDelegate: OutgoingCollectionCellDelegate?
     var indexPath: IndexPath?
     var outGoingStatus: OutgoingStatus?
     @IBOutlet weak var createdDate: UILabel!
@@ -36,10 +38,8 @@ class OutgoingTableViewCell: UITableViewCell {
     @IBOutlet weak var processingProgressView: UIView!
     
     var dataSource = [String]()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         self.containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissOptionView)))
        isShowing = false
         preparingProgressView.layer.cornerRadius = preparingProgressView.frame.height / 2
@@ -61,12 +61,13 @@ class OutgoingTableViewCell: UITableViewCell {
         
         optionsView.alwaysBounceVertical = false
     }
+
     
     override func prepareForReuse() {
-        super.prepareForReuse()
-        
         hideOptions(frame: optionButton.frame)
+
     }
+    
     
     @objc func dismissOptionView() {
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut) {[self] in
@@ -75,6 +76,7 @@ class OutgoingTableViewCell: UITableViewCell {
             isShowing = false
         }
     }
+    
     
     func checkStatus(status: OutgoingStatus) {
         switch status {
@@ -111,12 +113,6 @@ class OutgoingTableViewCell: UITableViewCell {
         }
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func drawBorderToView(progressView: UIView) {
         progressView.layer.borderColor = hexStringToUIColor(hex: "A1A1A1").cgColor
         progressView.layer.borderWidth = 1.5
@@ -126,12 +122,13 @@ class OutgoingTableViewCell: UITableViewCell {
         optionsView.frame = CGRect(x: frame.origin.x, y: frame.origin.y + frame.height, width: frame.width, height: 0)
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut) {[self] in
             optionsView.isHidden = false
-            optionsView.frame = CGRect(x: (frame.origin.x / 2.5) * 2, y: frame.origin.y + 30, width: 200, height: 180)
+            optionsView.frame = CGRect(x: (frame.origin.x / 4) * 2, y: frame.origin.y + 30, width: 200, height: 180)
         } completion: { [self] _ in
             isShowing = true
         }
         
     }
+    
     
     func hideOptions(frame: CGRect) {
         
@@ -140,8 +137,6 @@ class OutgoingTableViewCell: UITableViewCell {
         } completion: { [self] _ in
             isShowing = false
         }
-
-       
     }
     
     func removeBorderFromView(progressView: UIView) {
@@ -152,7 +147,7 @@ class OutgoingTableViewCell: UITableViewCell {
     
     @IBAction func optionButtonTapped(_ sender: UIButton) {
         dataSource = ["Review Request", "Custom Details", "Edit Address", "Show Package Details"]
-        outgoingTableViewCellDelegate?.outgoingOptionButtonTapped(atIndex: self.indexPath!)
+        outgoingCollectionCellDelegate?.outgoingOptionButtonTapped(atIndex: self.indexPath!)
     }
     
     @objc func optionRowTapped() {
@@ -163,9 +158,7 @@ class OutgoingTableViewCell: UITableViewCell {
         }
     }
 }
-
-
-extension OutgoingTableViewCell: UITableViewDataSource, UITableViewDelegate {
+extension OutgoingCollectionViewCell: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
@@ -182,11 +175,11 @@ extension OutgoingTableViewCell: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            self.outgoingTableViewCellDelegate?.openRequestFormViewController(cell: self)
+            self.outgoingCollectionCellDelegate?.openRequestFormViewController(cell: self)
         case 1:
-            self.outgoingTableViewCellDelegate?.openCustomDeclarationViewController(cell: self)
+            self.outgoingCollectionCellDelegate?.openCustomDeclarationViewController(cell: self)
         case 2:
-            self.outgoingTableViewCellDelegate?.openEditAddressViewController(cell: self)
+            self.outgoingCollectionCellDelegate?.openEditAddressViewController(cell: self)
         case 3:
             print("Show Package Details")
         default:

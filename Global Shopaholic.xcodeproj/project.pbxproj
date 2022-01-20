@@ -263,6 +263,10 @@
 		7CB3A1C1279587F100CA5C69 /* StorageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB3A1C0279587F100CA5C69 /* StorageCollectionViewCell.xib */; };
 		7CB3A1C3279587F700CA5C69 /* StorageShipmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1C2279587F700CA5C69 /* StorageShipmentVC.swift */; };
 		7CB3A1C52795880600CA5C69 /* StorageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1C42795880500CA5C69 /* StorageTableViewCell.swift */; };
+		7CB3A1CB279689CB00CA5C69 /* OutgoingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1CA279689CB00CA5C69 /* OutgoingCollectionViewCell.swift */; };
+		7CB3A1CD279689D200CA5C69 /* OutgoingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB3A1CC279689D200CA5C69 /* OutgoingCollectionViewCell.xib */; };
+		7CB3A1D02799371B00CA5C69 /* BoxDimensionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1CE2799371B00CA5C69 /* BoxDimensionsTableViewCell.swift */; };
+		7CB3A1D12799371B00CA5C69 /* BoxDimensionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB3A1CF2799371B00CA5C69 /* BoxDimensionsTableViewCell.xib */; };
 		7CD45E53274618FB00397F57 /* OutgoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD45E51274618FB00397F57 /* OutgoingTableViewCell.swift */; };
 		7CD45E54274618FB00397F57 /* OutgoingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD45E52274618FB00397F57 /* OutgoingTableViewCell.xib */; };
 		7CE79893273CFE5000D145E5 /* MyStorageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE79891273CFE5000D145E5 /* MyStorageCollectionViewCell.swift */; };
@@ -564,6 +568,10 @@
 		7CB3A1C0279587F100CA5C69 /* StorageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StorageCollectionViewCell.xib; sourceTree = "<group>"; };
 		7CB3A1C2279587F700CA5C69 /* StorageShipmentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageShipmentVC.swift; sourceTree = "<group>"; };
 		7CB3A1C42795880500CA5C69 /* StorageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageTableViewCell.swift; sourceTree = "<group>"; };
+		7CB3A1CA279689CB00CA5C69 /* OutgoingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingCollectionViewCell.swift; sourceTree = "<group>"; };
+		7CB3A1CC279689D200CA5C69 /* OutgoingCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutgoingCollectionViewCell.xib; sourceTree = "<group>"; };
+		7CB3A1CE2799371B00CA5C69 /* BoxDimensionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDimensionsTableViewCell.swift; sourceTree = "<group>"; };
+		7CB3A1CF2799371B00CA5C69 /* BoxDimensionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoxDimensionsTableViewCell.xib; sourceTree = "<group>"; };
 		7CD45E51274618FB00397F57 /* OutgoingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingTableViewCell.swift; sourceTree = "<group>"; };
 		7CD45E52274618FB00397F57 /* OutgoingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutgoingTableViewCell.xib; sourceTree = "<group>"; };
 		7CE79891273CFE5000D145E5 /* MyStorageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStorageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1525,6 +1533,8 @@
 			isa = PBXGroup;
 			children = (
 				7CB3A1C42795880500CA5C69 /* StorageTableViewCell.swift */,
+				7CB3A1CA279689CB00CA5C69 /* OutgoingCollectionViewCell.swift */,
+				7CB3A1CC279689D200CA5C69 /* OutgoingCollectionViewCell.xib */,
 				7CB3A1C0279587F100CA5C69 /* StorageCollectionViewCell.xib */,
 				7CB3A1BE279587E500CA5C69 /* StorageCollectionViewCell.swift */,
 				7CB3A1C2279587F700CA5C69 /* StorageShipmentVC.swift */,
@@ -1693,6 +1703,8 @@
 			children = (
 				7C6F0059275E29F00007D83C /* RequestFormTableViewCell.swift */,
 				7C6F005A275E29F00007D83C /* RequestFormTableViewCell.xib */,
+				7CB3A1CE2799371B00CA5C69 /* BoxDimensionsTableViewCell.swift */,
+				7CB3A1CF2799371B00CA5C69 /* BoxDimensionsTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1941,6 +1953,7 @@
 				7CB3A1C1279587F100CA5C69 /* StorageCollectionViewCell.xib in Resources */,
 				7CB3A1B52791716D00CA5C69 /* UpperCollectionViewCell.xib in Resources */,
 				7C72614D278C4E1900ADB324 /* VerificationTableViewCell.xib in Resources */,
+				7CB3A1CD279689D200CA5C69 /* OutgoingCollectionViewCell.xib in Resources */,
 				78BC49DA269C4874000EC5FE /* itemCell.xib in Resources */,
 				7CAA39102747A20D0095A8F5 /* ShippedTableViewCell.xib in Resources */,
 				789C9490257E4E83006A76CD /* Home.storyboard in Resources */,
@@ -1952,6 +1965,7 @@
 				78F5EDA62680B192002AE14B /* AssistedReviewCell.xib in Resources */,
 				78BC49EA269C49E3000EC5FE /* ReviewSummaryCell.xib in Resources */,
 				780B1B03268DB8CC006C828F /* activeTableViewCell.xib in Resources */,
+				7CB3A1D12799371B00CA5C69 /* BoxDimensionsTableViewCell.xib in Resources */,
 				7C6F005C275E29F00007D83C /* RequestFormTableViewCell.xib in Resources */,
 				78BDF2D22582704C0016C6B6 /* BoxCell.xib in Resources */,
 				7CAE1F8427709F9A0039E027 /* CustomDeclarationFormTableViewCell.xib in Resources */,
@@ -2157,6 +2171,7 @@
 				78BC49D9269C4874000EC5FE /* itemCell.swift in Sources */,
 				781D3E9C257927C30013DE3A /* SignupVC.swift in Sources */,
 				7CE79893273CFE5000D145E5 /* MyStorageCollectionViewCell.swift in Sources */,
+				7CB3A1CB279689CB00CA5C69 /* OutgoingCollectionViewCell.swift in Sources */,
 				7844008F257A625300B5F0C7 /* LoginValidation.swift in Sources */,
 				7CB3A1BD279587DD00CA5C69 /* Storage+EXT+TABLE+Collection.swift in Sources */,
 				78F5EDA12680B17F002AE14B /* AssistedQuestionCell.swift in Sources */,
@@ -2268,6 +2283,7 @@
 				78D81FBE26848E02007DDB81 /* SummaryCell.swift in Sources */,
 				78F5ED952680A790002AE14B /* AssistedItemCell.swift in Sources */,
 				781D3E3D257900D00013DE3A /* AppDelegate.swift in Sources */,
+				7CB3A1D02799371B00CA5C69 /* BoxDimensionsTableViewCell.swift in Sources */,
 				78F9E87F26134DC70019F74F /* ShowSubFaqsVC.swift in Sources */,
 				78FF2131268F2C99009FFB3B /* APSCheckOut+EXT+DELEGATEs.swift in Sources */,
 				7C7261532790482100ADB324 /* StorageAndShipmentViewController.swift in Sources */,

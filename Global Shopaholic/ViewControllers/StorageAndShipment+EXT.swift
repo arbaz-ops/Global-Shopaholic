@@ -319,7 +319,54 @@ extension StorageAndShipmentViewController {
     
 }
 
-extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, FilterViewControllerDelegate {
+extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, FilterViewControllerDelegate, OutgoingTableViewCellDelegate {
+    func outgoingOptionButtonTapped(atIndex: IndexPath) {
+        print(atIndex)
+        let outgoingCell = storageAndShipmentTableView!.cellForRow(at: atIndex) as? OutgoingTableViewCell
+       
+        if outgoingCell!.isShowing!  {
+
+            outgoingCell?.hideOptions(frame: outgoingCell!.optionButton!.frame)
+        }
+        if !outgoingCell!.isShowing! {
+
+        outgoingCell?.openOptionsView(frame: outgoingCell!.optionButton!.frame)
+        }
+    }
+    
+    func openRequestFormViewController(cell: UITableViewCell) {
+        let requestFormVC = self.storyboard!.instantiateViewController(withIdentifier: "RequestFormViewController") as? RequestFormViewController
+        let outgoingCell = cell as? OutgoingTableViewCell
+        outgoingCell?.hideOptions(frame: (outgoingCell?.optionButton.frame)!)
+        requestFormVC?.atIndex = outgoingCell!.indexPath
+        requestFormVC?.packageList = self.packagesList
+        requestFormVC?.modalPresentationStyle = .overFullScreen
+        requestFormVC?.isModalInPresentation = true
+        self.present(requestFormVC!, animated: true)
+    }
+    
+    func openCustomDeclarationViewController(cell: UITableViewCell) {
+        let customDeclarationVC = self.storyboard!.instantiateViewController(withIdentifier: "CustomDeclarationFormViewController") as? CustomDeclarationFormViewController
+        let outgoingCell = cell as? OutgoingTableViewCell
+        outgoingCell?.hideOptions(frame: (outgoingCell?.optionButton.frame)!)
+        customDeclarationVC?.atIndex = outgoingCell!.indexPath
+        customDeclarationVC?.packageList = self.packagesList
+        customDeclarationVC?.modalPresentationStyle = .overFullScreen
+        customDeclarationVC?.isModalInPresentation = true
+        self.present(customDeclarationVC!, animated: true)
+    }
+    
+    func openEditAddressViewController(cell: UITableViewCell) {
+        let customDeclarationVC = self.storyboard!.instantiateViewController(withIdentifier: "EditAddressViewController") as? EditAddressViewController
+        let outgoingCell = cell as? OutgoingTableViewCell
+        outgoingCell?.hideOptions(frame: (outgoingCell?.optionButton.frame)!)
+        customDeclarationVC?.atIndex = outgoingCell!.indexPath
+        customDeclarationVC?.packageList = self.packagesList
+        customDeclarationVC?.modalPresentationStyle = .overFullScreen
+        customDeclarationVC?.isModalInPresentation = true
+        self.present(customDeclarationVC!, animated: true)
+    }
+    
     func updateFilteredList(list: [[String : Any]]) {
         self.packagesList = list
         self.storageAndShipmentTableView!.reloadData()
