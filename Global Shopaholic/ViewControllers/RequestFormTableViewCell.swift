@@ -57,12 +57,48 @@ class RequestFormTableViewCell: UITableViewCell {
 
 extension RequestFormTableViewCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return boxeDetail.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let boxDimensionCell = tableView.dequeueReusableCell(withIdentifier: "BoxDimensionsTableViewCell") as? BoxDimensionsTableViewCell
+       
+        if boxeDetail.count < 1 {
+            let boxDimensionCell = tableView.dequeueReusableCell(withIdentifier: "BoxDimensionsTableViewCell") as? BoxDimensionsTableViewCell
+            boxDimensionCell?.boxActualWeightLabel.isHidden = true
+            boxDimensionCell?.boxDimensionsLabel.isHidden = true
+            boxDimensionCell?.boxWeight.isHidden = true
+            boxDimensionCell?.boxDimension.isHidden = true
+            return boxDimensionCell!
+        }
+        else {
+            let boxDimensionCell = tableView.dequeueReusableCell(withIdentifier: "BoxDimensionsTableViewCell") as? BoxDimensionsTableViewCell
+            boxDimensionCell?.boxDimensionsLabel.text = "Box \(indexPath.row + 1) Dimensions"
+            boxDimensionCell?.boxActualWeightLabel.text = "Box \(indexPath.row + 1) Actual Weight"
+            let heightString = boxeDetail[indexPath.row]["height"] as? String
+            let heightDouble = Double.init(heightString!)
+            let heightInt = Int.init(heightDouble!)
+            
+            let widthString = boxeDetail[indexPath.row]["width"] as? String
+            let widthDouble = Double.init(widthString!)
+            let widthInt = Int.init(widthDouble!)
+            
+            let lengthString = boxeDetail[indexPath.row]["length"] as? String
+            let lengthDouble = Double.init(lengthString!)
+            let lengthInt = Int.init(lengthDouble!)
+            
+            
+            let actualWeightString = boxeDetail[indexPath.row]["actual_weight"] as? String
+            let actualWeightDouble = Double.init(actualWeightString!)
+            
+            
+            print(widthInt)
+            print(heightInt)
+            print(lengthInt)
+            boxDimensionCell?.boxWeight.text = "\(actualWeightString!) Pounds"
+            boxDimensionCell?.boxDimension.text = "\(widthInt) x \(heightInt) x \(lengthInt) (inches)"
         return boxDimensionCell!
+        }
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
