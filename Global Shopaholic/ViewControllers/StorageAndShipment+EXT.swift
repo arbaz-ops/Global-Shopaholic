@@ -146,10 +146,10 @@ extension StorageAndShipmentViewController {
                })
                
            } catch let error {
-               if error != nil {
-                   COMMON_ALERT.showAlert(msg: error.localizedDescription)
+               
+                   COMMON_ALERT.showAlert(msg: "Could not connect to server.\n Please try again later.")
 
-               }
+               
            }
      
        case .Outgoing:
@@ -174,16 +174,16 @@ extension StorageAndShipmentViewController {
                    let list = data!["list"]!
                    self.packagesList = list
                    changeUI(status: currentSelection)
-
+                   self.viewDidAppear(true)
                    self.storageAndShipmentTableView!.reloadWithAnimation()
-
+                   storageAndShipmentTableView?.layoutIfNeeded()
                }, failure: { str in
                    COMMON_ALERT.showAlert(msg: str)
                })
 
            
            } catch let error {
-               COMMON_ALERT.showAlert(msg: error.localizedDescription)
+               COMMON_ALERT.showAlert(msg: "Could not connect to server.\n Please try again later.")
            }
 
            
@@ -219,7 +219,7 @@ extension StorageAndShipmentViewController {
 
            
            } catch let error {
-               COMMON_ALERT.showAlert(msg: error.localizedDescription)
+               COMMON_ALERT.showAlert(msg: "Could not connect to server.\n Please try again later.")
            }
 
            
@@ -252,7 +252,7 @@ extension StorageAndShipmentViewController {
                })
 
            } catch let error {
-               COMMON_ALERT.showAlert(msg: error.localizedDescription)
+               COMMON_ALERT.showAlert(msg: "Could not connect to server.\n Please try again later.")
            }
            
            
@@ -286,7 +286,7 @@ extension StorageAndShipmentViewController {
 
            
            } catch let error {
-               COMMON_ALERT.showAlert(msg: error.localizedDescription)
+               COMMON_ALERT.showAlert(msg: "Could not connect to server.\n Please try again later.")
            }
            
        case .Return:
@@ -310,7 +310,7 @@ extension StorageAndShipmentViewController {
 //               })
            
            } catch let error {
-               print(error.localizedDescription)
+               print("Could not connect to server.\n Please try again later.")
            }
   
       

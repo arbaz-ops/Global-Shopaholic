@@ -245,13 +245,23 @@ extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollecti
                 outgoingCell?.createdDate.text = formattedDate
                
                 if packagesList[indexPath.row]["status"] as? String == "preparing" {
+                    tableView.beginUpdates()
                     outgoingCell?.checkStatus(status: .Preparing)
+                    tableView.endUpdates()
                 }
                 else if packagesList[indexPath.row]["status"] as? String == "payment_pending" {
+                    tableView.beginUpdates()
                     outgoingCell?.checkStatus(status: .PendingPayment)
+
+                    tableView.endUpdates()
+
                 }
                 else if packagesList[indexPath.row]["status"] as? String == "processing" {
+                    tableView.beginUpdates()
                     outgoingCell?.checkStatus(status: .Processing)
+
+                    tableView.endUpdates()
+
                 }
             }
             return outgoingCell!

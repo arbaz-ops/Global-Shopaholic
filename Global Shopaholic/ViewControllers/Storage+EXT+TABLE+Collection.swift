@@ -152,12 +152,18 @@ extension StorageShipmentVC: UITableViewDelegate,UITableViewDataSource {
                    
                     if packagesList[indexPath.row]["status"] as? String == "preparing" {
                         outgoingCell?.checkStatus(status: .Preparing)
+                        
+                        tableView.reloadRows(at: [indexPath], with: .none)
                     }
                     else if packagesList[indexPath.row]["status"] as? String == "payment_pending" {
                         outgoingCell?.checkStatus(status: .PendingPayment)
+                        tableView.reloadRows(at: [indexPath], with: .none)
+
                     }
                     else if packagesList[indexPath.row]["status"] as? String == "processing" {
                         outgoingCell?.checkStatus(status: .Processing)
+                        tableView.reloadRows(at: [indexPath], with: .none)
+
                     }
                 }
                 return outgoingCell!

@@ -65,6 +65,11 @@ class StorageAndShipmentViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        storageAndShipmentTableView?.reloadData()
+    }
+    
     func setupCollectionView()  {
         upperCollectionView.showsVerticalScrollIndicator = false
         upperCollectionView.showsHorizontalScrollIndicator = false

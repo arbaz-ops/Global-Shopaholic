@@ -86,7 +86,7 @@ class OutgoingTableViewCell: UITableViewCell {
             drawBorderToView(progressView: pendingPaymentProgressView)
             drawBorderToView(progressView: processingProgressView)
             checkoutAndPayButton.isHidden = false
-
+            
             
         case .PendingPayment:
             preparingProgressView.backgroundColor = hexStringToUIColor(hex: "#0BBAA3")
@@ -126,7 +126,7 @@ class OutgoingTableViewCell: UITableViewCell {
         optionsView.frame = CGRect(x: frame.origin.x, y: frame.origin.y + frame.height, width: frame.width, height: 0)
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut) {[self] in
             optionsView.isHidden = false
-            optionsView.frame = CGRect(x: (frame.origin.x / 2.5) * 2, y: frame.origin.y + 30, width: 200, height: 180)
+            optionsView.frame = CGRect(x: (frame.origin.x / 3) * 2, y: frame.origin.y + 30, width: 200, height: 180)
         } completion: { [self] _ in
             isShowing = true
         }

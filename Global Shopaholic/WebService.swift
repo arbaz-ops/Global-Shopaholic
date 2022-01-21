@@ -16,7 +16,7 @@ enum NetworkError: Error {
 
 
 import RappleProgressHUD//http://beta.globalshopaholics.com   //http://192.168.100.2/ http://globalshopaholics.com/
-let BASE_URL = "http://192.168.100.16/"
+let BASE_URL = "http://34.194.133.139:8888/"
 class WebService: NSObject {
     
     
