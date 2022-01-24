@@ -10,6 +10,7 @@ import UIKit
 
 class CustomDeclarationFormViewController: UIViewController {
     
+    @IBOutlet weak var customDeclarationView: UIView!
     var atIndex: IndexPath?
     var packageList: [[String: Any]]?
     @IBOutlet weak var upperView: UIView!
@@ -17,6 +18,7 @@ class CustomDeclarationFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTable()
+        customDeclarationView.roundTopCorners(radius: 25)
         upperView.roundTopCorners(radius: 25)
         
     }

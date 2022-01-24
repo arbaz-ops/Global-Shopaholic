@@ -30,7 +30,7 @@ class RequestFormViewController: UIViewController {
         self.view.roundTopCorners(radius: 35)
         requestFormTableView.roundTopCorners(radius: 35)
         requestFormView.roundTopCorners(radius: 35)
-        
+        requestFormTableView.showsVerticalScrollIndicator = false
       
     }
     

@@ -11,6 +11,12 @@ import UIKit
 class RequestFormTableViewCell: UITableViewCell {
 
    
+    @IBOutlet weak var totalCost: UILabel!
+    @IBOutlet weak var paidServices: UILabel!
+    @IBOutlet weak var vatCharges: UILabel!
+    @IBOutlet weak var expressProcessingCharges: UILabel!
+    @IBOutlet weak var processingCharges: UILabel!
+    @IBOutlet weak var estimatedShippingCharges: UILabel!
     @IBOutlet weak var shipmentBoxInformationTableView: UITableView!
     @IBOutlet weak var specialServices: UILabel!
     @IBOutlet weak var destinationAddress

@@ -337,12 +337,18 @@
                 <outlet property="customValue" destination="QIA-q6-xPi" id="y51-zX-kcF"/>
                 <outlet property="destinationAddress" destination="YM1-3s-77b" id="Bf7-ag-B5c"/>
                 <outlet property="destinationAddressViewBox" destination="Rye-uQ-boP" id="kBO-US-w0r"/>
+                <outlet property="estimatedShippingCharges" destination="CPt-Ev-ohS" id="7Jw-A1-SGB"/>
+                <outlet property="expressProcessingCharges" destination="cQO-Po-L3M" id="RBs-OV-V7D"/>
+                <outlet property="paidServices" destination="fy9-rf-mTM" id="Wa1-2i-hZA"/>
+                <outlet property="processingCharges" destination="5JP-74-JMa" id="yFX-Yi-xkh"/>
                 <outlet property="requestId" destination="L1V-6Q-Rvb" id="fb4-pQ-gDE"/>
                 <outlet property="shipmentBoxInformationTableView" destination="OgG-dz-KqF" id="MYF-q7-kQy"/>
                 <outlet property="shipmentInvoiceViewBox" destination="FDo-kY-yF1" id="rzV-jp-wPW"/>
                 <outlet property="speacialServiceViewBox" destination="itm-S7-f5l" id="Mh8-YY-mOe"/>
                 <outlet property="specialServices" destination="gnu-Wc-NMT" id="29p-Ma-f2y"/>
                 <outlet property="tableViewHeightConstraint" destination="mA8-mH-Jn8" id="p9Y-W4-4w1"/>
+                <outlet property="totalCost" destination="e7I-D0-teO" id="BUO-mK-ZOf"/>
+                <outlet property="vatCharges" destination="FiZ-hh-vjo" id="DUu-HA-0Ea"/>
                 <outlet property="viewBox1" destination="rCC-5K-IES" id="7nm-lk-jTz"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="410.15625"/>
