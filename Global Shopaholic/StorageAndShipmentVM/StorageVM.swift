@@ -44,7 +44,7 @@ struct StorageVM {
         print(params)
         RappleActivityIndicatorView.startAnimating()
 
-        WebService.RequestWithTokenJsonWithParams(Token: token, strURL: ep., is_loader_required: false, params: params) { response in
+        WebService.RequestWithTokenJsonWithParams(Token: token, strURL: ep.getRequestReview, is_loader_required: false, params: params) { response in
             RappleActivityIndicatorView.stopAnimation()
 
             success(response)
@@ -63,7 +63,7 @@ struct StorageVM {
         print(params)
         RappleActivityIndicatorView.startAnimating()
 
-        WebService.RequestWithTokenJsonWithParams(Token: token, strURL: ep.getRequestReview, is_loader_required: false, params: params) { response in
+        WebService.RequestWithTokenJsonWithParams(Token: token, strURL: ep.getCustomDeclaration, is_loader_required: false, params: params) { response in
             RappleActivityIndicatorView.stopAnimation()
 
             success(response)

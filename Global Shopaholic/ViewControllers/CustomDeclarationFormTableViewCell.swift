@@ -10,15 +10,25 @@ import UIKit
 
 class CustomDeclarationFormTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var customDescriptionTableView: UITableView!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var totalView: UIView!
-    @IBOutlet weak var descriptionView: UIView!
+    var customDeclarationList: [[String: Any]] = [[String : Any]]()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        descriptionView.layer.cornerRadius = 10
+        customDescriptionTableView.layer.cornerRadius = 10
         totalView.layer.cornerRadius = 10
+        
+    }
+    
+   func loadTable() {
+       customDescriptionTableView.register(UINib(nibName: "CustomDescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomDescriptionTableViewCell")
+       customDescriptionTableView.delegate = self
+       customDescriptionTableView.dataSource = self
+       customDescriptionTableView.separatorStyle = .none
+       customDescriptionTableView.backgroundColor = .white
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,4 +36,19 @@ class CustomDeclarationFormTableViewCell: UITableViewCell {
 
     }
     
+}
+
+extension CustomDeclarationFormTableViewCell: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return customDeclarationList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let customDescriptionCell = tableView.dequeueReusableCell(withIdentifier: "CustomDescriptionTableViewCell") as? CustomDescriptionTableViewCell
+        return customDescriptionCell!
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.estimatedRowHeight
+    }
 }

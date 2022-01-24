@@ -14,12 +14,12 @@ class CustomDeclarationFormViewController: UIViewController {
     var atIndex: IndexPath?
     var storageVM: StorageVM?
     var packageList: [[String: Any]]? = [[String: Any]]()
-    var customDeclarationList: [String: Any]? = [String: Any]()
+    var customDeclarationList: [[String: Any]]? = [[String: Any]]()
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var customDeclarationFormTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        storageVM = StorageVM()
+        
         loadTable()
         customDeclarationView.roundTopCorners(radius: 25)
         upperView.roundTopCorners(radius: 25)
@@ -38,6 +38,11 @@ class CustomDeclarationFormViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getCustomDeclaration()
     }
 
@@ -46,7 +51,7 @@ class CustomDeclarationFormViewController: UIViewController {
     }
     
     func getCustomDeclaration() {
-        func getRequestReviewDetail() {
+        
             do {
             let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
             guard let userData = encodedUserData else {
@@ -59,13 +64,15 @@ class CustomDeclarationFormViewController: UIViewController {
                     return
                 }
                 let requestId = packageList![atIndex!.row]["id"]!
-
+                print(requestId)
+                
+                storageVM = StorageVM()
                 storageVM?.getCustomDeclaration(token: userToken, requestId: "\(String(describing: requestId))") { [self] response in
                     print(response)
-                    let data = response["data"] as? [String: [String: Any]]
+                    let data = response["data"] as? [String: [[String: Any]]]
                     let list = data!["list"]
                     self.customDeclarationList = list
-                    print(list)
+                    print(customDeclarationList)
     //                print(reviewRequestList)
     //                print(reviewRequestList!["consolidation"] as? [String: Any])
     //                let consolidation = list!["consolidation"] as? [String: Any]
@@ -81,6 +88,6 @@ class CustomDeclarationFormViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
-    }
+    
     
 }

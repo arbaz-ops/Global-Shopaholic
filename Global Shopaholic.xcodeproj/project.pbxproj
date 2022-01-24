@@ -246,6 +246,8 @@
 		7C95D2D327632FFA00EC198E /* SpecialServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D2D127632FFA00EC198E /* SpecialServicesTableViewCell.swift */; };
 		7C95D2D427632FFA00EC198E /* SpecialServicesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C95D2D227632FFA00EC198E /* SpecialServicesTableViewCell.xib */; };
 		7C95D2D627635DF900EC198E /* SpecialServices+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D2D527635DF900EC198E /* SpecialServices+EXT+TABLE.swift */; };
+		7CA39F99279EAD5F00F2359E /* CustomDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39F97279EAD5F00F2359E /* CustomDescriptionTableViewCell.swift */; };
+		7CA39F9A279EAD5F00F2359E /* CustomDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA39F98279EAD5F00F2359E /* CustomDescriptionTableViewCell.xib */; };
 		7CA3EAC42770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */; };
 		7CA3EAC72771C1710053C493 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */; };
 		7CA3EACB2771D7000053C493 /* EditAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */; };
@@ -551,6 +553,8 @@
 		7C95D2D127632FFA00EC198E /* SpecialServicesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialServicesTableViewCell.swift; sourceTree = "<group>"; };
 		7C95D2D227632FFA00EC198E /* SpecialServicesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialServicesTableViewCell.xib; sourceTree = "<group>"; };
 		7C95D2D527635DF900EC198E /* SpecialServices+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpecialServices+EXT+TABLE.swift"; sourceTree = "<group>"; };
+		7CA39F97279EAD5F00F2359E /* CustomDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		7CA39F98279EAD5F00F2359E /* CustomDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomDeclaration+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
 		7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -1668,6 +1672,8 @@
 			children = (
 				7CAE1F8127709F9A0039E027 /* CustomDeclarationFormTableViewCell.swift */,
 				7CAE1F8227709F9A0039E027 /* CustomDeclarationFormTableViewCell.xib */,
+				7CA39F97279EAD5F00F2359E /* CustomDescriptionTableViewCell.swift */,
+				7CA39F98279EAD5F00F2359E /* CustomDescriptionTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -2002,6 +2008,7 @@
 				784447F92680BF5500F2C084 /* AddAnotherBtnCell.xib in Resources */,
 				78E4DDE526A033FE000F9EDE /* completedCell.xib in Resources */,
 				7C95D2D427632FFA00EC198E /* SpecialServicesTableViewCell.xib in Resources */,
+				7CA39F9A279EAD5F00F2359E /* CustomDescriptionTableViewCell.xib in Resources */,
 				78BC49DE269C488C000EC5FE /* ShippingInfoCell.xib in Resources */,
 				78BC49EE269C619E000EC5FE /* ReviewHeader.xib in Resources */,
 				785ED6B626302BF40033D98D /* CalculatorDetailCellTableViewCell.xib in Resources */,
@@ -2196,6 +2203,7 @@
 				785E45E6265669EC00DF387A /* Colors.swift in Sources */,
 				78B0EA4F2670BC810026B515 /* CourierVC.swift in Sources */,
 				78F5EDA52680B192002AE14B /* AssistedReviewCell.swift in Sources */,
+				7CA39F99279EAD5F00F2359E /* CustomDescriptionTableViewCell.swift in Sources */,
 				7819B371257FABF1006A8376 /* FAQCell.swift in Sources */,
 				781D3E7325790F530013DE3A /* LoginVC+EXT+VIEWSETUP.swift in Sources */,
 				78088D06260B762A00C6E806 /* WeightUnitCell.swift in Sources */,
