@@ -39,5 +39,5 @@ struct endpoints {
     let checkOutViaCCEP = "api/asp/checkout/credit_card"
     let packagesList = "api/shopaholic/storage/packages/list"
     let getRequestReview = "api/shopaholic/storage/request/getreview"
-    
+    let getCustomDeclaration = "api/shopaholic/storage/request/getcustomform"
 }

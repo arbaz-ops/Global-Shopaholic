@@ -44,7 +44,7 @@ struct StorageVM {
         print(params)
         RappleActivityIndicatorView.startAnimating()
 
-        WebService.RequestWithTokenJsonWithParams(Token: token, strURL: ep.getRequestReview, is_loader_required: false, params: params) { response in
+        WebService.RequestWithTokenJsonWithParams(Token: token, strURL: ep., is_loader_required: false, params: params) { response in
             RappleActivityIndicatorView.stopAnimation()
 
             success(response)
@@ -55,5 +55,23 @@ struct StorageVM {
             print(str)
         }
 
+    }
+    
+    func getCustomDeclaration(token: String, requestId: String ,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+        let ep = endpoints()
+        let params = ["request_id": requestId]
+        print(params)
+        RappleActivityIndicatorView.startAnimating()
+
+        WebService.RequestWithTokenJsonWithParams(Token: token, strURL: ep.getRequestReview, is_loader_required: false, params: params) { response in
+            RappleActivityIndicatorView.stopAnimation()
+
+            success(response)
+            
+        } failure: { str in
+            RappleActivityIndicatorView.stopAnimation()
+            failure(str)
+            print(str)
+        }
     }
 }
