@@ -68,16 +68,14 @@ class CustomDeclarationFormViewController: UIViewController {
                 
                 storageVM = StorageVM()
                 storageVM?.getCustomDeclaration(token: userToken, requestId: "\(String(describing: requestId))") { [self] response in
-                    print(response)
                     let data = response["data"] as? [String: [[String: Any]]]
                     let list = data!["list"]
                     self.customDeclarationList = list
-                    print(customDeclarationList)
     //                print(reviewRequestList)
     //                print(reviewRequestList!["consolidation"] as? [String: Any])
     //                let consolidation = list!["consolidation"] as? [String: Any]
     //                print(consolidation)
-                    
+                    customDeclarationFormTableView.reloadData()
                 } failure: { error in
                     print(error)
                 }

@@ -1104,10 +1104,10 @@ Pending </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ean-xJ-feg">
-                                <rect key="frame" x="0.0" y="30.000000000000007" width="392.66666666666669" height="88.666666666666686"/>
+                                <rect key="frame" x="0.0" y="30.000000000000007" width="428" height="88.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Storage &amp; Ship center" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y68-v4-K53">
-                                        <rect key="frame" x="99.666666666666671" y="53.666666666666671" width="193.33333333333331" height="21"/>
+                                        <rect key="frame" x="108.66666666666667" y="53.666666666666671" width="210.66666666666663" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="LO6-IL-7qU"/>
                                         </constraints>
@@ -1138,7 +1138,7 @@ Pending </string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsC-uW-9uC">
-                                        <rect key="frame" x="327.66666666666669" y="41.666666666666671" width="65" height="47"/>
+                                        <rect key="frame" x="363" y="41.666666666666671" width="65" height="47"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5A-5h-1SG">
                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="47"/>
@@ -1176,7 +1176,7 @@ Pending </string>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oPe-7I-TWP">
-                                <rect key="frame" x="0.0" y="138.66666666666666" width="392.66666666666669" height="80"/>
+                                <rect key="frame" x="0.0" y="138.66666666666666" width="428" height="80"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="0jV-Jm-raW"/>
@@ -1190,7 +1190,7 @@ Pending </string>
                                 <cells/>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-cB-fSA">
-                                <rect key="frame" x="33" y="233.66666666666666" width="296.33333333333331" height="33.999999999999972"/>
+                                <rect key="frame" x="33" y="233.66666666666666" width="323" height="33.999999999999972"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="323" id="tFU-xp-9Uw"/>
                                     <constraint firstAttribute="height" constant="34" id="toP-y0-u0n"/>
@@ -1199,7 +1199,7 @@ Pending </string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yu-lF-bHp">
-                                <rect key="frame" x="329.33333333333331" y="231.33333333333334" width="48.333333333333314" height="39.000000000000028"/>
+                                <rect key="frame" x="356" y="231.33333333333334" width="57" height="39.000000000000028"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="filter"/>
                                 <connections>
@@ -1213,7 +1213,7 @@ Pending </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6J-qi-IUt">
-                                <rect key="frame" x="329.66666666666669" y="281.66666666666669" width="30" height="26"/>
+                                <rect key="frame" x="365" y="281.66666666666669" width="30" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="IUm-DH-0O2"/>
                                     <constraint firstAttribute="height" constant="26" id="JL9-gv-AOr"/>
@@ -1222,13 +1222,13 @@ Pending </string>
                                 <buttonConfiguration key="configuration" style="plain" image="uncheckedBox" title=""/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select all" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeh-dj-oct">
-                                <rect key="frame" x="276" y="287.66666666666669" width="53.666666666666686" height="14"/>
+                                <rect key="frame" x="311.33333333333331" y="287.66666666666669" width="53.666666666666686" height="14"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" red="0.63137254899999995" green="0.63137254899999995" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iXf-Qx-1ao">
-                                <rect key="frame" x="0.0" y="310.66666666666669" width="392.66666666666669" height="605.33333333333326"/>
+                                <rect key="frame" x="0.0" y="310.66666666666669" width="428" height="605.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xQa-7F-hRR">
                                     <size key="itemSize" width="343" height="131"/>
@@ -1238,7 +1238,7 @@ Pending </string>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="L1B-hM-T35">
-                                        <rect key="frame" x="25" y="0.0" width="343" height="131"/>
+                                        <rect key="frame" x="42.666666666666664" y="0.0" width="343" height="131"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Fpb-ws-e5h">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="131"/>
@@ -1257,7 +1257,6 @@ Pending </string>
                             <constraint firstItem="Ean-xJ-feg" firstAttribute="height" secondItem="1T2-DF-Qnd" secondAttribute="height" multiplier="0.0957523" id="96j-V6-lCo"/>
                             <constraint firstItem="aOd-cB-fSA" firstAttribute="top" secondItem="oPe-7I-TWP" secondAttribute="bottom" constant="15" id="DgV-Bx-Nzu"/>
                             <constraint firstItem="Uxe-ON-lPf" firstAttribute="trailing" secondItem="z6J-qi-IUt" secondAttribute="trailing" constant="33" id="Efq-pQ-Dsj"/>
-                            <constraint firstItem="aOd-cB-fSA" firstAttribute="width" secondItem="1T2-DF-Qnd" secondAttribute="width" multiplier="0.754673" id="NHq-H5-OTU"/>
                             <constraint firstItem="Uxe-ON-lPf" firstAttribute="trailing" secondItem="iXf-Qx-1ao" secondAttribute="trailing" id="Qed-al-UJ0"/>
                             <constraint firstItem="qeh-dj-oct" firstAttribute="top" secondItem="aOd-cB-fSA" secondAttribute="bottom" constant="20" id="Vao-nB-vXb"/>
                             <constraint firstItem="0yu-lF-bHp" firstAttribute="centerY" secondItem="aOd-cB-fSA" secondAttribute="centerY" id="amK-mG-ECS"/>

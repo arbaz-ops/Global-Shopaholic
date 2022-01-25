@@ -16,6 +16,7 @@ extension CustomDeclarationFormViewController: UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let customDeclarationFormCell = tableView.dequeueReusableCell(withIdentifier: "CustomDeclarationFormTableViewCell", for: indexPath) as? CustomDeclarationFormTableViewCell
+        customDeclarationFormCell!.customDeclarationList = self.customDeclarationList!
         return customDeclarationFormCell!
     }
     
