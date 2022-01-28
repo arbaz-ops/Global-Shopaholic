@@ -30,15 +30,11 @@ extension PackageDetailsViewController: UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView,
                        layout collectionViewLayout: UICollectionViewLayout,
                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-      
-           
                 let lay = collectionViewLayout as! UICollectionViewFlowLayout
                 /// 5
                 let widthPerItem = collectionView.frame.width / 2 - lay.minimumInteritemSpacing
                 /// 6
                 return CGSize(width: widthPerItem - 5, height: 240)
-   
-       
         }
     
     func calculateWidth() -> CGFloat {
