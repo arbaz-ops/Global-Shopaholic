@@ -187,7 +187,7 @@ class WebService: NSObject {
         {
           
             RappleActivityIndicatorView.stopAnimation()
-            COMMON_ALERT.showAlert(msg: "Please check your internet")
+            COMMON_ALERT.showAlert(msg: "Please check your internet.")
         }
     }
 
@@ -198,6 +198,7 @@ class WebService: NSObject {
 
         print(BASE_URL.appending(strURL))
         print(params)
+            print(Token)
 
         do
         {
@@ -219,8 +220,10 @@ class WebService: NSObject {
                 "Accept": "application/json",
                 "Content-Type": "multipart/form-data"
             ]
+            
             Alamofire.request(BASE_URL.appending(strURL), method: .get, parameters: params,headers: headers)
                 .responseData { response in
+                    print(response)
                     switch(response.result) {
                     case .success(_):
                         let httpCode = response.response?.statusCode

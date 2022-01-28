@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6X-eG-HbC">
-                        <rect key="frame" x="26" y="15" width="59.5" height="17"/>
+                        <rect key="frame" x="29" y="15" width="59.5" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="59.5" id="P9M-Fp-ilM"/>
                         </constraints>
@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2U8-mF-Nao">
-                        <rect key="frame" x="121.5" y="15" width="74" height="17"/>
+                        <rect key="frame" x="124.5" y="15" width="74" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="74" id="6SE-Ma-pkj"/>
                         </constraints>
@@ -35,13 +35,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTr-MQ-cgf">
-                        <rect key="frame" x="239.5" y="15" width="6.5" height="17"/>
+                        <rect key="frame" x="242.5" y="15" width="6.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8O-vB-dkX">
-                        <rect key="frame" x="303" y="15" width="35.5" height="17"/>
+                        <rect key="frame" x="306" y="15" width="35.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -49,18 +49,18 @@
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="b6X-eG-HbC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="72Y-cE-bZg"/>
+                    <constraint firstItem="b6X-eG-HbC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="29" id="72Y-cE-bZg"/>
                     <constraint firstItem="eTr-MQ-cgf" firstAttribute="leading" secondItem="2U8-mF-Nao" secondAttribute="trailing" constant="44" id="Eva-gp-dR5"/>
                     <constraint firstItem="a8O-vB-dkX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="G5C-cg-hHY"/>
                     <constraint firstAttribute="bottom" secondItem="eTr-MQ-cgf" secondAttribute="bottom" constant="11" id="I0q-LP-Lcp"/>
                     <constraint firstItem="eTr-MQ-cgf" firstAttribute="centerY" secondItem="2U8-mF-Nao" secondAttribute="centerY" id="RFG-U2-JBM"/>
-                    <constraint firstAttribute="trailing" secondItem="a8O-vB-dkX" secondAttribute="trailing" constant="41.5" id="YEV-6a-IFm"/>
                     <constraint firstAttribute="bottom" secondItem="b6X-eG-HbC" secondAttribute="bottom" constant="11" id="dmt-NM-AjP"/>
                     <constraint firstItem="2U8-mF-Nao" firstAttribute="centerY" secondItem="b6X-eG-HbC" secondAttribute="centerY" id="hob-yG-3el"/>
                     <constraint firstAttribute="bottom" secondItem="2U8-mF-Nao" secondAttribute="bottom" constant="11" id="i7N-FB-yW0"/>
                     <constraint firstAttribute="bottom" secondItem="a8O-vB-dkX" secondAttribute="bottom" constant="11" id="lQv-iD-2P2"/>
                     <constraint firstItem="eTr-MQ-cgf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="ljC-CQ-zpT"/>
                     <constraint firstItem="2U8-mF-Nao" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="ohB-wn-TbU"/>
+                    <constraint firstItem="a8O-vB-dkX" firstAttribute="leading" secondItem="eTr-MQ-cgf" secondAttribute="trailing" constant="57" id="qNI-dI-yzi"/>
                     <constraint firstItem="eTr-MQ-cgf" firstAttribute="leading" secondItem="2U8-mF-Nao" secondAttribute="trailing" constant="44" id="s66-nd-aZp"/>
                     <constraint firstItem="2U8-mF-Nao" firstAttribute="leading" secondItem="b6X-eG-HbC" secondAttribute="trailing" constant="36" id="uHe-hQ-oe3"/>
                     <constraint firstItem="a8O-vB-dkX" firstAttribute="centerY" secondItem="eTr-MQ-cgf" secondAttribute="centerY" id="xxy-Dv-0du"/>

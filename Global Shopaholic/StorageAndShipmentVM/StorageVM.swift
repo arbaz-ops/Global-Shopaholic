@@ -74,4 +74,25 @@ struct StorageVM {
             print(str)
         }
     }
+    
+    func getRequestPackageList(token: String, requestId: String ,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+        let ep = endpoints()
+        print(token)
+        print(requestId)
+        
+        let params = ["request_id": requestId]
+        print(params)
+        RappleActivityIndicatorView.startAnimating()
+
+        WebService.RequestWithTokenJsonWithParams(Token: token, strURL: ep.getRequestPackages, is_loader_required: false, params: params) { response in
+            RappleActivityIndicatorView.stopAnimation()
+
+            success(response)
+            
+        } failure: { str in
+            RappleActivityIndicatorView.stopAnimation()
+            failure(str)
+            print(str)
+        }
+    }
 }

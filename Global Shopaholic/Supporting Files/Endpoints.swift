@@ -40,4 +40,5 @@ struct endpoints {
     let packagesList = "api/shopaholic/storage/packages/list"
     let getRequestReview = "api/shopaholic/storage/request/getreview"
     let getCustomDeclaration = "api/shopaholic/storage/request/getcustomform"
+    let getRequestPackages = "api/shopaholic/storage/request/packages/list"
 }

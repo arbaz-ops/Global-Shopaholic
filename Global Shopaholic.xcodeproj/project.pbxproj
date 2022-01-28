@@ -248,6 +248,10 @@
 		7C95D2D627635DF900EC198E /* SpecialServices+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D2D527635DF900EC198E /* SpecialServices+EXT+TABLE.swift */; };
 		7CA39F99279EAD5F00F2359E /* CustomDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39F97279EAD5F00F2359E /* CustomDescriptionTableViewCell.swift */; };
 		7CA39F9A279EAD5F00F2359E /* CustomDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA39F98279EAD5F00F2359E /* CustomDescriptionTableViewCell.xib */; };
+		7CA39F9D27A000BA00F2359E /* PackageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39F9C27A000BA00F2359E /* PackageDetailsViewController.swift */; };
+		7CA39FA527A2646900F2359E /* PackageDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FA327A2646900F2359E /* PackageDetailCollectionViewCell.swift */; };
+		7CA39FA627A2646900F2359E /* PackageDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA39FA427A2646900F2359E /* PackageDetailCollectionViewCell.xib */; };
+		7CA39FA827A294BF00F2359E /* PackageDetailVC+EXT+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FA727A294BF00F2359E /* PackageDetailVC+EXT+Collection.swift */; };
 		7CA3EAC42770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */; };
 		7CA3EAC72771C1710053C493 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */; };
 		7CA3EACB2771D7000053C493 /* EditAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */; };
@@ -259,14 +263,6 @@
 		7CAE1F8427709F9A0039E027 /* CustomDeclarationFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CAE1F8227709F9A0039E027 /* CustomDeclarationFormTableViewCell.xib */; };
 		7CB3A1B42791716D00CA5C69 /* UpperCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1B22791716D00CA5C69 /* UpperCollectionViewCell.swift */; };
 		7CB3A1B52791716D00CA5C69 /* UpperCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB3A1B32791716D00CA5C69 /* UpperCollectionViewCell.xib */; };
-		7CB3A1BB279587C900CA5C69 /* Storage+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1BA279587C900CA5C69 /* Storage+EXT.swift */; };
-		7CB3A1BD279587DD00CA5C69 /* Storage+EXT+TABLE+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1BC279587DD00CA5C69 /* Storage+EXT+TABLE+Collection.swift */; };
-		7CB3A1BF279587E500CA5C69 /* StorageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1BE279587E500CA5C69 /* StorageCollectionViewCell.swift */; };
-		7CB3A1C1279587F100CA5C69 /* StorageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB3A1C0279587F100CA5C69 /* StorageCollectionViewCell.xib */; };
-		7CB3A1C3279587F700CA5C69 /* StorageShipmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1C2279587F700CA5C69 /* StorageShipmentVC.swift */; };
-		7CB3A1C52795880600CA5C69 /* StorageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1C42795880500CA5C69 /* StorageTableViewCell.swift */; };
-		7CB3A1CB279689CB00CA5C69 /* OutgoingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1CA279689CB00CA5C69 /* OutgoingCollectionViewCell.swift */; };
-		7CB3A1CD279689D200CA5C69 /* OutgoingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB3A1CC279689D200CA5C69 /* OutgoingCollectionViewCell.xib */; };
 		7CB3A1D02799371B00CA5C69 /* BoxDimensionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1CE2799371B00CA5C69 /* BoxDimensionsTableViewCell.swift */; };
 		7CB3A1D12799371B00CA5C69 /* BoxDimensionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB3A1CF2799371B00CA5C69 /* BoxDimensionsTableViewCell.xib */; };
 		7CD45E53274618FB00397F57 /* OutgoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD45E51274618FB00397F57 /* OutgoingTableViewCell.swift */; };
@@ -555,6 +551,10 @@
 		7C95D2D527635DF900EC198E /* SpecialServices+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpecialServices+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7CA39F97279EAD5F00F2359E /* CustomDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		7CA39F98279EAD5F00F2359E /* CustomDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		7CA39F9C27A000BA00F2359E /* PackageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailsViewController.swift; sourceTree = "<group>"; };
+		7CA39FA327A2646900F2359E /* PackageDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		7CA39FA427A2646900F2359E /* PackageDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageDetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		7CA39FA727A294BF00F2359E /* PackageDetailVC+EXT+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PackageDetailVC+EXT+Collection.swift"; sourceTree = "<group>"; };
 		7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomDeclaration+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
 		7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -566,14 +566,6 @@
 		7CAE1F8227709F9A0039E027 /* CustomDeclarationFormTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDeclarationFormTableViewCell.xib; sourceTree = "<group>"; };
 		7CB3A1B22791716D00CA5C69 /* UpperCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperCollectionViewCell.swift; sourceTree = "<group>"; };
 		7CB3A1B32791716D00CA5C69 /* UpperCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpperCollectionViewCell.xib; sourceTree = "<group>"; };
-		7CB3A1BA279587C900CA5C69 /* Storage+EXT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storage+EXT.swift"; sourceTree = "<group>"; };
-		7CB3A1BC279587DD00CA5C69 /* Storage+EXT+TABLE+Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storage+EXT+TABLE+Collection.swift"; sourceTree = "<group>"; };
-		7CB3A1BE279587E500CA5C69 /* StorageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageCollectionViewCell.swift; sourceTree = "<group>"; };
-		7CB3A1C0279587F100CA5C69 /* StorageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StorageCollectionViewCell.xib; sourceTree = "<group>"; };
-		7CB3A1C2279587F700CA5C69 /* StorageShipmentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageShipmentVC.swift; sourceTree = "<group>"; };
-		7CB3A1C42795880500CA5C69 /* StorageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageTableViewCell.swift; sourceTree = "<group>"; };
-		7CB3A1CA279689CB00CA5C69 /* OutgoingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingCollectionViewCell.swift; sourceTree = "<group>"; };
-		7CB3A1CC279689D200CA5C69 /* OutgoingCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutgoingCollectionViewCell.xib; sourceTree = "<group>"; };
 		7CB3A1CE2799371B00CA5C69 /* BoxDimensionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDimensionsTableViewCell.swift; sourceTree = "<group>"; };
 		7CB3A1CF2799371B00CA5C69 /* BoxDimensionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoxDimensionsTableViewCell.xib; sourceTree = "<group>"; };
 		7CD45E51274618FB00397F57 /* OutgoingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingTableViewCell.swift; sourceTree = "<group>"; };
@@ -775,10 +767,10 @@
 				7CA3EAC52771C1450053C493 /* Edit Address */,
 				7C6F00792761E6C60007D83C /* CustomDetail */,
 				7C6F005F275F76A80007D83C /* ReturnPackage */,
+				7CA39F9B27A0008D00F2359E /* Package Details */,
 				7C6F0055275E25F90007D83C /* RequestForm */,
 				7C95D2CD27632EE400EC198E /* Special Services */,
 				7C726151279047FB00ADB324 /* StorageAndShipment */,
-				78C7F5A225B06F2D007F058E /* MyStorage */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1533,21 +1525,6 @@
 			name = CollectionViewCell;
 			sourceTree = "<group>";
 		};
-		78C7F5A225B06F2D007F058E /* MyStorage */ = {
-			isa = PBXGroup;
-			children = (
-				7CB3A1C42795880500CA5C69 /* StorageTableViewCell.swift */,
-				7CB3A1CA279689CB00CA5C69 /* OutgoingCollectionViewCell.swift */,
-				7CB3A1CC279689D200CA5C69 /* OutgoingCollectionViewCell.xib */,
-				7CB3A1C0279587F100CA5C69 /* StorageCollectionViewCell.xib */,
-				7CB3A1BE279587E500CA5C69 /* StorageCollectionViewCell.swift */,
-				7CB3A1C2279587F700CA5C69 /* StorageShipmentVC.swift */,
-				7CB3A1BC279587DD00CA5C69 /* Storage+EXT+TABLE+Collection.swift */,
-				7CB3A1BA279587C900CA5C69 /* Storage+EXT.swift */,
-			);
-			name = MyStorage;
-			sourceTree = "<group>";
-		};
 		78CCEEC4258D0E060079E9D0 /* WalletVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -1810,6 +1787,25 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		7CA39F9B27A0008D00F2359E /* Package Details */ = {
+			isa = PBXGroup;
+			children = (
+				7CA39F9F27A263D400F2359E /* Cells */,
+				7CA39F9C27A000BA00F2359E /* PackageDetailsViewController.swift */,
+				7CA39FA727A294BF00F2359E /* PackageDetailVC+EXT+Collection.swift */,
+			);
+			name = "Package Details";
+			sourceTree = "<group>";
+		};
+		7CA39F9F27A263D400F2359E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7CA39FA327A2646900F2359E /* PackageDetailCollectionViewCell.swift */,
+				7CA39FA427A2646900F2359E /* PackageDetailCollectionViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		7CA3EAC52771C1450053C493 /* Edit Address */ = {
 			isa = PBXGroup;
 			children = (
@@ -1956,13 +1952,12 @@
 				781D3E90257926870013DE3A /* Montserrat-Regular.ttf in Resources */,
 				7CE79894273CFE5000D145E5 /* MyStorageCollectionViewCell.xib in Resources */,
 				78088D0F260B767600C6E806 /* AddBoxCell.xib in Resources */,
-				7CB3A1C1279587F100CA5C69 /* StorageCollectionViewCell.xib in Resources */,
 				7CB3A1B52791716D00CA5C69 /* UpperCollectionViewCell.xib in Resources */,
 				7C72614D278C4E1900ADB324 /* VerificationTableViewCell.xib in Resources */,
-				7CB3A1CD279689D200CA5C69 /* OutgoingCollectionViewCell.xib in Resources */,
 				78BC49DA269C4874000EC5FE /* itemCell.xib in Resources */,
 				7CAA39102747A20D0095A8F5 /* ShippedTableViewCell.xib in Resources */,
 				789C9490257E4E83006A76CD /* Home.storyboard in Resources */,
+				7CA39FA627A2646900F2359E /* PackageDetailCollectionViewCell.xib in Resources */,
 				781D3E94257926870013DE3A /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				7C6F00762760A7DE0007D83C /* ReturnPackageTableViewCell.xib in Resources */,
 				78B0EA542670BE6C0026B515 /* CouriersCell.xib in Resources */,
@@ -2154,7 +2149,6 @@
 				782FDBB2261B4C8B003AB552 /* ChangePasswordVM.swift in Sources */,
 				7856F5D4257A47D70067D0B5 /* RegistrationRequest.swift in Sources */,
 				7856F5DA257A4A340067D0B5 /* RegisterValidation.swift in Sources */,
-				7CB3A1C3279587F700CA5C69 /* StorageShipmentVC.swift in Sources */,
 				7867BFCB25DAAD59002B4A63 /* CitiesModel.swift in Sources */,
 				781D3E7125790B360013DE3A /* Extensions.swift in Sources */,
 				7844007F257A520900B5F0C7 /* RequestResponse.swift in Sources */,
@@ -2169,7 +2163,6 @@
 				789CB91D25E6A589007313B4 /* SubRow.swift in Sources */,
 				7CA3EACE2771ED300053C493 /* EditAddress+EXT+TABLE.swift in Sources */,
 				7869BAA5268A0E500020DE4B /* AspVM.swift in Sources */,
-				7CB3A1BB279587C900CA5C69 /* Storage+EXT.swift in Sources */,
 				78740A8D267B8D3A00C78FE8 /* BeginPurchaseVC.swift in Sources */,
 				7851C45F257EAC400000A42D /* AssitedPuchaseCell.swift in Sources */,
 				78C69CF8263817A200B74780 /* wallet+AddCard+EXT.swift in Sources */,
@@ -2178,9 +2171,7 @@
 				78BC49D9269C4874000EC5FE /* itemCell.swift in Sources */,
 				781D3E9C257927C30013DE3A /* SignupVC.swift in Sources */,
 				7CE79893273CFE5000D145E5 /* MyStorageCollectionViewCell.swift in Sources */,
-				7CB3A1CB279689CB00CA5C69 /* OutgoingCollectionViewCell.swift in Sources */,
 				7844008F257A625300B5F0C7 /* LoginValidation.swift in Sources */,
-				7CB3A1BD279587DD00CA5C69 /* Storage+EXT+TABLE+Collection.swift in Sources */,
 				78F5EDA12680B17F002AE14B /* AssistedQuestionCell.swift in Sources */,
 				787F2BEC25D6E32F00A480CD /* AddAddressVC.swift in Sources */,
 				7C7261572790592C00ADB324 /* StorageAndShipment+EXT+TABLE+Collection.swift in Sources */,
@@ -2232,7 +2223,9 @@
 				7C6F007B2761E6F80007D83C /* CustomDetailViewController.swift in Sources */,
 				7893ED292653BE3300D6CDFA /* DespositeCardValidationResult.swift in Sources */,
 				780B1AFB268D9844006C828F /* bankPaymentModel.swift in Sources */,
+				7CA39FA527A2646900F2359E /* PackageDetailCollectionViewCell.swift in Sources */,
 				7867BFBF25DAAC9F002B4A63 /* getCitiesVM.swift in Sources */,
+				7CA39F9D27A000BA00F2359E /* PackageDetailsViewController.swift in Sources */,
 				78FCF8182604AF9000312880 /* IncomingPackageCell.swift in Sources */,
 				78BDF2D625827BBF0016C6B6 /* ShippingDimensions.swift in Sources */,
 				7819B37D257FC6C7006A8376 /* WalletVC+EXT.swift in Sources */,
@@ -2248,8 +2241,8 @@
 				7C726148278C382300ADB324 /* VerificationViewController.swift in Sources */,
 				78B0363B26188ADB00883769 /* InfoUpdateRequest.swift in Sources */,
 				78BC49DD269C488C000EC5FE /* ShippingInfoCell.swift in Sources */,
+				7CA39FA827A294BF00F2359E /* PackageDetailVC+EXT+Collection.swift in Sources */,
 				78440096257A7B6000B5F0C7 /* OTPVC.swift in Sources */,
-				7CB3A1C52795880600CA5C69 /* StorageTableViewCell.swift in Sources */,
 				7872B80E2654F5E600B796B2 /* ImagePicker.swift in Sources */,
 				78FF1E132682364100A6F3DE /* BeginAssistedPurhase+EXT+VALIDATION.swift in Sources */,
 				787E89E72625F464007F67DB /* CalculatorValidationResult.swift in Sources */,
@@ -2337,7 +2330,6 @@
 				7CB3A1B42791716D00CA5C69 /* UpperCollectionViewCell.swift in Sources */,
 				784D781825C4514100F59E5B /* UserDataClass.swift in Sources */,
 				7851C44D257E95F20000A42D /* WarehouseAddressCell.swift in Sources */,
-				7CB3A1BF279587E500CA5C69 /* StorageCollectionViewCell.swift in Sources */,
 				7C72615527904D4000ADB324 /* StorageAndShipment+EXT.swift in Sources */,
 				78440098257A8DF800B5F0C7 /* OPT+EXT.swift in Sources */,
 				78FF212C268F1F47009FFB3B /* OrderSummaryRequest.swift in Sources */,
@@ -2520,7 +2512,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7.1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WGBR9F58C5;
 				INFOPLIST_FILE = "Global Shopaholic/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2576,7 +2568,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7.1;
-				DEVELOPMENT_TEAM = Z79AP97AWD;
+				DEVELOPMENT_TEAM = WGBR9F58C5;
 				INFOPLIST_FILE = "Global Shopaholic/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (

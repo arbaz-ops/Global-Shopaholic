@@ -320,6 +320,8 @@ extension StorageAndShipmentViewController {
 }
 
 extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, FilterViewControllerDelegate, OutgoingTableViewCellDelegate {
+   
+    
     func outgoingOptionButtonTapped(atIndex: IndexPath) {
         print(atIndex)
         let outgoingCell = storageAndShipmentTableView!.cellForRow(at: atIndex) as? OutgoingTableViewCell
@@ -365,6 +367,20 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
         customDeclarationVC?.modalPresentationStyle = .overFullScreen
         customDeclarationVC?.isModalInPresentation = true
         self.present(customDeclarationVC!, animated: true)
+    }
+    
+    func openShowPackageDetails(cell: UITableViewCell) {
+        let packageDetailVC = self.storyboard!.instantiateViewController(withIdentifier: "PackageDetailsViewController") as? PackageDetailsViewController
+        packageDetailVC?.modalPresentationStyle = .overFullScreen
+        packageDetailVC?.isModalInPresentation = true
+        let outgoingCell = cell as? OutgoingTableViewCell
+        outgoingCell?.hideOptions(frame: (outgoingCell?.optionButton.frame)!)
+
+        let requestId = packagesList[outgoingCell!.indexPath!.row]["id"] as? Int
+        packageDetailVC?.requestID = requestId
+//        packageDetailVC?.requestID = []
+        self.present(packageDetailVC!, animated: true)
+
     }
     
     func updateFilteredList(list: [[String : Any]]) {

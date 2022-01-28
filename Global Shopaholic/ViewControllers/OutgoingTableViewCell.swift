@@ -14,6 +14,7 @@ protocol OutgoingTableViewCellDelegate {
     func openRequestFormViewController(cell: UITableViewCell)
     func openCustomDeclarationViewController(cell: UITableViewCell)
     func openEditAddressViewController(cell: UITableViewCell)
+    func openShowPackageDetails(cell: UITableViewCell)
     
 }
 
@@ -188,7 +189,7 @@ extension OutgoingTableViewCell: UITableViewDataSource, UITableViewDelegate {
         case 2:
             self.outgoingTableViewCellDelegate?.openEditAddressViewController(cell: self)
         case 3:
-            print("Show Package Details")
+            self.outgoingTableViewCellDelegate?.openShowPackageDetails(cell: self)
         default:
             break
         }
