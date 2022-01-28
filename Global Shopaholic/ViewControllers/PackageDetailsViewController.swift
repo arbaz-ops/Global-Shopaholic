@@ -47,7 +47,6 @@ class PackageDetailsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
     }
     
     func getRequestPackage() {
