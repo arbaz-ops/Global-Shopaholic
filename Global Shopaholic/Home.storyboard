@@ -366,7 +366,7 @@
         <!--Edit Custom Details View Controller-->
         <scene sceneID="9UQ-Ql-WOa">
             <objects>
-                <viewController id="eFw-Av-U14" customClass="EditCustomDetailsViewController" customModule="gShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditCustomDetailsViewController" id="eFw-Av-U14" customClass="EditCustomDetailsViewController" customModule="gShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kJd-8b-8MO">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
