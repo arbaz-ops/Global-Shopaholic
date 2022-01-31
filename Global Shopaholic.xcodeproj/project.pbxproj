@@ -252,6 +252,7 @@
 		7CA39FA527A2646900F2359E /* PackageDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FA327A2646900F2359E /* PackageDetailCollectionViewCell.swift */; };
 		7CA39FA627A2646900F2359E /* PackageDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA39FA427A2646900F2359E /* PackageDetailCollectionViewCell.xib */; };
 		7CA39FA827A294BF00F2359E /* PackageDetailVC+EXT+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FA727A294BF00F2359E /* PackageDetailVC+EXT+Collection.swift */; };
+		7CA39FAB27A808E000F2359E /* EditCustomDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FAA27A808E000F2359E /* EditCustomDetailsViewController.swift */; };
 		7CA3EAC42770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */; };
 		7CA3EAC72771C1710053C493 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */; };
 		7CA3EACB2771D7000053C493 /* EditAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */; };
@@ -555,6 +556,7 @@
 		7CA39FA327A2646900F2359E /* PackageDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		7CA39FA427A2646900F2359E /* PackageDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		7CA39FA727A294BF00F2359E /* PackageDetailVC+EXT+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PackageDetailVC+EXT+Collection.swift"; sourceTree = "<group>"; };
+		7CA39FAA27A808E000F2359E /* EditCustomDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCustomDetailsViewController.swift; sourceTree = "<group>"; };
 		7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomDeclaration+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
 		7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -770,6 +772,7 @@
 				7CA39F9B27A0008D00F2359E /* Package Details */,
 				7C6F0055275E25F90007D83C /* RequestForm */,
 				7C95D2CD27632EE400EC198E /* Special Services */,
+				7CA39FA927A808B200F2359E /* EditCustomDetails */,
 				7C726151279047FB00ADB324 /* StorageAndShipment */,
 			);
 			path = ViewControllers;
@@ -1806,6 +1809,14 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		7CA39FA927A808B200F2359E /* EditCustomDetails */ = {
+			isa = PBXGroup;
+			children = (
+				7CA39FAA27A808E000F2359E /* EditCustomDetailsViewController.swift */,
+			);
+			name = EditCustomDetails;
+			sourceTree = "<group>";
+		};
 		7CA3EAC52771C1450053C493 /* Edit Address */ = {
 			isa = PBXGroup;
 			children = (
@@ -2151,6 +2162,7 @@
 				7856F5DA257A4A340067D0B5 /* RegisterValidation.swift in Sources */,
 				7867BFCB25DAAD59002B4A63 /* CitiesModel.swift in Sources */,
 				781D3E7125790B360013DE3A /* Extensions.swift in Sources */,
+				7CA39FAB27A808E000F2359E /* EditCustomDetailsViewController.swift in Sources */,
 				7844007F257A520900B5F0C7 /* RequestResponse.swift in Sources */,
 				7844008C257A5D8800B5F0C7 /* LoginRequestResponse.swift in Sources */,
 				785424C0257E5C9F00FC1F61 /* BaseViewController.swift in Sources */,

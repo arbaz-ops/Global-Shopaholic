@@ -263,6 +263,12 @@ extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollecti
                     tableView.endUpdates()
 
                 }
+                else if packagesList[indexPath.row]["status"] as? String == "payment_done" {
+                    tableView.beginUpdates()
+                    outgoingCell?.checkStatus(status: .PaymentDone)
+                    tableView.endUpdates()
+
+                }
             }
             return outgoingCell!
         case .Shipped:
