@@ -23,6 +23,7 @@ enum OutgoingStatus: String {
     case Preparing = "preparing"
     case PendingPayment = "payment_pending"
     case Processing = "processing"
+    case PaymentDone = "payment_done"
 }
 
 

@@ -17,7 +17,26 @@ extension PackageDetailsViewController: UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let packageDetailCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PackageDetailCollectionViewCell", for: indexPath) as? PackageDetailCollectionViewCell
-        
+        if let primaryThumbnail = packages[indexPath.row]["primary_thumbnail"] as? [String: Any],
+        let thumbnailImage = primaryThumbnail["image_name"] as? String,
+           let trackingNumber = packages[indexPath.row]["tracking_number"] as? String{
+            packageDetailCell?.packageImageView.sd_setImage(with: URL(string: thumbnailImage), placeholderImage: UIImage())
+            print(trackingNumber)
+            packageDetailCell?.trackingNumberLabel.text = "TN: \(trackingNumber)"
+            packageDetailCell?.changeUI(status: packageStatus!)
+        }
+        else {
+            if let fullImages = packages[indexPath.row]["full_images"] as? [[String: Any]],
+               let imageName = fullImages[0]["image_name"] as? String,
+               let trackingNumber = packages[indexPath.row]["tracking_number"] as? String{
+                packageDetailCell?.packageImageView.sd_setImage(with: URL(string: imageName), placeholderImage: UIImage())
+                packageDetailCell?.trackingNumberLabel.text = "TN: \(trackingNumber)"
+
+                packageDetailCell?.changeUI(status: packageStatus!)
+
+            }
+               
+        }
         return packageDetailCell!
     }
     

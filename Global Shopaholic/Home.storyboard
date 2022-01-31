@@ -1115,28 +1115,6 @@ Pending </string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZ1-bt-xkV">
-                                        <rect key="frame" x="0.0" y="40.666666666666671" width="65" height="47"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eD4-b3-Qrk">
-                                                <rect key="frame" x="0.0" y="0.0" width="65" height="47"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="Icon feather-menu"/>
-                                                <connections>
-                                                    <action selector="sideMenuButtonTapped:" destination="eq0-Mb-5pe" eventType="touchUpInside" id="NdZ-Qc-yE0"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.23137254900000001" green="0.32156862749999998" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="eD4-b3-Qrk" firstAttribute="leading" secondItem="cZ1-bt-xkV" secondAttribute="leading" id="JZR-Ti-AXu"/>
-                                            <constraint firstAttribute="trailing" secondItem="eD4-b3-Qrk" secondAttribute="trailing" id="MLP-UX-NSn"/>
-                                            <constraint firstAttribute="width" constant="65" id="O2h-c8-BUI"/>
-                                            <constraint firstAttribute="bottom" secondItem="eD4-b3-Qrk" secondAttribute="bottom" id="YIr-xI-OzG"/>
-                                            <constraint firstItem="eD4-b3-Qrk" firstAttribute="top" secondItem="cZ1-bt-xkV" secondAttribute="top" id="kwP-PH-gdQ"/>
-                                            <constraint firstAttribute="height" constant="47" id="ncL-qO-Ht9"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9pf-F4-eqE">
                                         <rect key="frame" x="363" y="41.666666666666671" width="65" height="47"/>
                                         <subviews>
@@ -1171,8 +1149,6 @@ Pending </string>
                                     <constraint firstItem="t4T-ur-yqf" firstAttribute="width" secondItem="NoC-sf-QVF" secondAttribute="width" multiplier="0.492" id="B1M-rk-qzA"/>
                                     <constraint firstAttribute="bottom" secondItem="9pf-F4-eqE" secondAttribute="bottom" id="Dk1-1E-e9c"/>
                                     <constraint firstAttribute="trailing" secondItem="9pf-F4-eqE" secondAttribute="trailing" id="KYW-dT-irg"/>
-                                    <constraint firstItem="cZ1-bt-xkV" firstAttribute="leading" secondItem="NoC-sf-QVF" secondAttribute="leading" id="Qoh-5j-rby"/>
-                                    <constraint firstAttribute="bottom" secondItem="cZ1-bt-xkV" secondAttribute="bottom" constant="1" id="XCu-tL-z3P"/>
                                     <constraint firstAttribute="bottom" secondItem="t4T-ur-yqf" secondAttribute="bottom" constant="14" id="ssa-rP-7B8"/>
                                 </constraints>
                             </view>
@@ -1218,6 +1194,7 @@ Pending </string>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="BFL-fN-KeK"/>
                                     <constraint firstAttribute="trailing" secondItem="jIc-WL-EPz" secondAttribute="trailing" constant="25" id="I0x-3b-LlK"/>
                                     <constraint firstItem="d3b-z1-114" firstAttribute="top" secondItem="a2u-xU-DTQ" secondAttribute="top" constant="20" id="PWl-3l-PcJ"/>
                                     <constraint firstItem="woQ-WW-nl3" firstAttribute="top" secondItem="17w-CZ-aHO" secondAttribute="bottom" constant="15" id="Pbf-Rp-3n9"/>
@@ -1269,7 +1246,6 @@ Pending </string>
                             <constraint firstItem="NoC-sf-QVF" firstAttribute="top" secondItem="JTN-dg-UYi" secondAttribute="top" constant="30" id="kI0-b3-9Ik"/>
                             <constraint firstItem="Zep-Zs-QUU" firstAttribute="trailing" secondItem="a2u-xU-DTQ" secondAttribute="trailing" constant="28" id="mra-5E-9My"/>
                             <constraint firstItem="a2u-xU-DTQ" firstAttribute="width" secondItem="JTN-dg-UYi" secondAttribute="width" multiplier="0.869159" id="nvC-Xd-gXU"/>
-                            <constraint firstItem="a2u-xU-DTQ" firstAttribute="height" secondItem="JTN-dg-UYi" secondAttribute="height" multiplier="0.12419" id="py8-Kq-tGb"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1278,7 +1254,6 @@ Pending </string>
                         <outlet property="packageDetailCardView" destination="a2u-xU-DTQ" id="uHk-5U-gun"/>
                         <outlet property="packageDetailCollectionView" destination="ycb-Y5-DbG" id="Dvw-RY-HOe"/>
                         <outlet property="requestIdLabel" destination="jIc-WL-EPz" id="ixp-JV-Qyu"/>
-                        <outlet property="sideMenuView" destination="cZ1-bt-xkV" id="Nvn-Wf-Jpn"/>
                         <outlet property="statusLabel" destination="XP9-5n-o3e" id="4rn-yf-5Xn"/>
                     </connections>
                 </viewController>

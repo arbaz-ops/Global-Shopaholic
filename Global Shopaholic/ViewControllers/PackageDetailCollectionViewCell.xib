@@ -24,7 +24,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhr-Y4-Bh6">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uSM-7E-E5C">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uSM-7E-E5C">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="190.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TN : 4567567768768768778" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dM-m6-t20">
@@ -83,6 +83,7 @@
             <connections>
                 <outlet property="containerView" destination="Lhr-Y4-Bh6" id="EFb-mT-Ntm"/>
                 <outlet property="editCustomDetailLabel" destination="UoA-UU-ih8" id="UeS-0k-SO1"/>
+                <outlet property="editCustomImageView" destination="n94-nq-bpV" id="yH1-Dw-WUC"/>
                 <outlet property="packageImageView" destination="uSM-7E-E5C" id="d0M-B1-Qw9"/>
                 <outlet property="trackingNumberLabel" destination="4dM-m6-t20" id="1sR-xg-egl"/>
             </connections>

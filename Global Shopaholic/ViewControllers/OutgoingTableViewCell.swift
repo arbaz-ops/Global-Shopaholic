@@ -109,6 +109,16 @@ class OutgoingTableViewCell: UITableViewCell {
             removeBorderFromView(progressView: pendingPaymentProgressView)
             removeBorderFromView(progressView: processingProgressView)
             checkoutAndPayButton.isHidden = true
+        case .PaymentDone:
+            preparingProgressView.backgroundColor = hexStringToUIColor(hex: "#0BBAA3")
+            pendingPaymentProgressView.backgroundColor = hexStringToUIColor(hex: "#0BBAA3")
+            processingProgressView.backgroundColor = hexStringToUIColor(hex: "#0BBAA3")
+            preparingToPendingLineView.backgroundColor = hexStringToUIColor(hex: "#0BBAA3")
+            pendingToProcessingLineView.backgroundColor = hexStringToUIColor(hex: "#0BBAA3")
+            removeBorderFromView(progressView: preparingProgressView)
+            removeBorderFromView(progressView: pendingPaymentProgressView)
+            removeBorderFromView(progressView: processingProgressView)
+            checkoutAndPayButton.isHidden = true
         }
     }
 

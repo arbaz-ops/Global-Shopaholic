@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PackageDetailsViewController: UIViewController {
+class PackageDetailsViewController: BaseViewController {
     var storageVM: StorageVM?
     var requestID: Int?
     var requestList: [String: Any] = [String: Any]()
@@ -26,12 +26,11 @@ class PackageDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         storageVM = StorageVM()
-        sideMenuView.roundCorners([.topRight, .bottomRight], radius: 20)
+//        sideMenuView.roundCorners([.topRight, .bottomRight], radius: 20)
         backButtonView.roundCorners([.topLeft, .bottomLeft], radius: 20)
         packageDetailCardView.layer.cornerRadius = 20
         packageDetailCardView.DropShadowView()
         getRequestPackage()
-        // Do any additional setup after loading the view.
     }
     
     func loadCollectionView() {
@@ -90,6 +89,10 @@ class PackageDetailsViewController: UIViewController {
                         packageStatus = OutgoingStatus.Preparing
                         statusLabel.text = "Preparing"
                     }
+                    else if status == OutgoingStatus.PaymentDone.rawValue {
+                        packageStatus = OutgoingStatus.PaymentDone
+                        statusLabel.text = "Payment Done"
+                    }
                     packages = requestPackages
                     print(packages)
                     loadCollectionView()
@@ -112,6 +115,7 @@ class PackageDetailsViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
+    
     @IBAction func backBtnTapped(_ sender: UIButton) {
         dismiss(animated: true)
     }
