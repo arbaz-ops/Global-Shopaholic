@@ -22,6 +22,9 @@ class EditCustomDetailsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        submitButton.layer.cornerRadius = 8
+        addItemButton.layer.cornerRadius = 8
+
         categoryDropDown.layer.cornerRadius = 6
         totalPackagesValue.layer.cornerRadius = 6
         valueTextField.layer.cornerRadius = 6
@@ -40,7 +43,6 @@ class EditCustomDetailsTableViewCell: UITableViewCell {
         qtyTextField.setLeftPaddingPoints(20)
         descriptionTextField.setLeftPaddingPoints(20)
         
-        categoryDropDown.setRightPaddingPoints(10)
         totalPackagesValue.setRightPaddingPoints(10)
         valueTextField.setRightPaddingPoints(10)
         qtyTextField.setRightPaddingPoints(10)
