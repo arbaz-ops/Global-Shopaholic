@@ -17,6 +17,8 @@ extension PackageDetailsViewController: UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let packageDetailCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PackageDetailCollectionViewCell", for: indexPath) as? PackageDetailCollectionViewCell
+        packageDetailCell?.indexPath = indexPath
+        packageDetailCell?.packageDetailCollectionViewCellDelegate = self
         if let primaryThumbnail = packages[indexPath.row]["primary_thumbnail"] as? [String: Any],
         let thumbnailImage = primaryThumbnail["image_name"] as? String,
            let trackingNumber = packages[indexPath.row]["tracking_number"] as? String{

@@ -8,8 +8,13 @@
 
 import UIKit
 
-class PackageDetailCollectionViewCell: UICollectionViewCell {
+protocol PackageDetailCollectionViewCellDelegate {
+    func editCustomDetailTapped(cell: UICollectionViewCell)
+}
 
+class PackageDetailCollectionViewCell: UICollectionViewCell {
+    var indexPath: IndexPath?
+    var packageDetailCollectionViewCellDelegate: PackageDetailCollectionViewCellDelegate?
     @IBOutlet weak var editCustomImageView: UIImageView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var editCustomDetailLabel: UILabel!
@@ -23,6 +28,12 @@ class PackageDetailCollectionViewCell: UICollectionViewCell {
         packageImageView.layer.masksToBounds = true
         packageImageView.clipsToBounds = true
         packageImageView.layoutIfNeeded()
+        editCustomDetailLabel.isUserInteractionEnabled = true
+        editCustomDetailLabel.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(editCustomLabelTapped)))
+    }
+    
+    @objc func editCustomLabelTapped() {
+        packageDetailCollectionViewCellDelegate?.editCustomDetailTapped(cell: self)
     }
     
     func changeUI(status: OutgoingStatus) {

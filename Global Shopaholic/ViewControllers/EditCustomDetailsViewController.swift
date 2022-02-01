@@ -16,12 +16,25 @@ class EditCustomDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadTable()
         editCustomDetailsView.roundTopCorners(radius: 25)
         upperView.roundTopCorners(radius: 25)
         // Do any additional setup after loading the view.
     }
-    
+    private func loadTable() {
+        editCustomDetailTableView.backgroundColor = .clear
+        editCustomDetailTableView.allowsSelection = false
+        
+        editCustomDetailTableView.separatorStyle = .none
+        editCustomDetailTableView.alwaysBounceVertical = false
+        editCustomDetailTableView.register(UINib(nibName: "EditCustomDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "EditCustomDetailsTableViewCell")
+        editCustomDetailTableView.delegate = self
+        editCustomDetailTableView.dataSource = self
+    }
 
-   
+    @IBAction func closeButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
 }

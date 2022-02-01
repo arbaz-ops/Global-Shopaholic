@@ -255,6 +255,8 @@
 		7CA39FAB27A808E000F2359E /* EditCustomDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FAA27A808E000F2359E /* EditCustomDetailsViewController.swift */; };
 		7CA39FB127A9104600F2359E /* EditCustomDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FAF27A9104600F2359E /* EditCustomDetailsTableViewCell.swift */; };
 		7CA39FB227A9104600F2359E /* EditCustomDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA39FB027A9104600F2359E /* EditCustomDetailsTableViewCell.xib */; };
+		7CA39FB427A9203600F2359E /* EditCustomDetails+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FB327A9203600F2359E /* EditCustomDetails+EXT+TABLE.swift */; };
+		7CA39FB627A9295500F2359E /* PackageDetails+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FB527A9295500F2359E /* PackageDetails+EXT.swift */; };
 		7CA3EAC42770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */; };
 		7CA3EAC72771C1710053C493 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */; };
 		7CA3EACB2771D7000053C493 /* EditAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */; };
@@ -561,6 +563,8 @@
 		7CA39FAA27A808E000F2359E /* EditCustomDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCustomDetailsViewController.swift; sourceTree = "<group>"; };
 		7CA39FAF27A9104600F2359E /* EditCustomDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCustomDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		7CA39FB027A9104600F2359E /* EditCustomDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditCustomDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		7CA39FB327A9203600F2359E /* EditCustomDetails+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditCustomDetails+EXT+TABLE.swift"; sourceTree = "<group>"; };
+		7CA39FB527A9295500F2359E /* PackageDetails+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PackageDetails+EXT.swift"; sourceTree = "<group>"; };
 		7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomDeclaration+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
 		7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -1800,6 +1804,7 @@
 				7CA39F9F27A263D400F2359E /* Cells */,
 				7CA39F9C27A000BA00F2359E /* PackageDetailsViewController.swift */,
 				7CA39FA727A294BF00F2359E /* PackageDetailVC+EXT+Collection.swift */,
+				7CA39FB527A9295500F2359E /* PackageDetails+EXT.swift */,
 			);
 			name = "Package Details";
 			sourceTree = "<group>";
@@ -1818,6 +1823,7 @@
 			children = (
 				7CA39FAC27A90E4A00F2359E /* Cells */,
 				7CA39FAA27A808E000F2359E /* EditCustomDetailsViewController.swift */,
+				7CA39FB327A9203600F2359E /* EditCustomDetails+EXT+TABLE.swift */,
 			);
 			name = EditCustomDetails;
 			sourceTree = "<group>";
@@ -2187,6 +2193,7 @@
 				785ED6AB26302AD20033D98D /* CalculatorDetailVC.swift in Sources */,
 				781D3EA325793FFE0013DE3A /* UITextField+EXT.swift in Sources */,
 				785424BE257E5C5400FC1F61 /* MenuViewController.swift in Sources */,
+				7CA39FB427A9203600F2359E /* EditCustomDetails+EXT+TABLE.swift in Sources */,
 				789CB91D25E6A589007313B4 /* SubRow.swift in Sources */,
 				7CA3EACE2771ED300053C493 /* EditAddress+EXT+TABLE.swift in Sources */,
 				7869BAA5268A0E500020DE4B /* AspVM.swift in Sources */,
@@ -2273,6 +2280,7 @@
 				7872B80E2654F5E600B796B2 /* ImagePicker.swift in Sources */,
 				78FF1E132682364100A6F3DE /* BeginAssistedPurhase+EXT+VALIDATION.swift in Sources */,
 				787E89E72625F464007F67DB /* CalculatorValidationResult.swift in Sources */,
+				7CA39FB627A9295500F2359E /* PackageDetails+EXT.swift in Sources */,
 				781D3E6F257905E00013DE3A /* LoginVC + EXT.swift in Sources */,
 				78C69CE92638064800B74780 /* cardValidation.swift in Sources */,
 				78A7E7D125C06FC00073F586 /* Endpoints.swift in Sources */,
