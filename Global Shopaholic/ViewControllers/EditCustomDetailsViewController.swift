@@ -10,9 +10,14 @@ import UIKit
 
 class EditCustomDetailsViewController: UIViewController {
 
+    @IBOutlet weak var editCustomDetailsView: UIView!
+    @IBOutlet weak var upperView: UIView!
+    @IBOutlet weak var editCustomDetailTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        editCustomDetailsView.roundTopCorners(radius: 25)
+        upperView.roundTopCorners(radius: 25)
         // Do any additional setup after loading the view.
     }
     

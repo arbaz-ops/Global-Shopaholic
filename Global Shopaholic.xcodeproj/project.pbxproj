@@ -253,6 +253,8 @@
 		7CA39FA627A2646900F2359E /* PackageDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA39FA427A2646900F2359E /* PackageDetailCollectionViewCell.xib */; };
 		7CA39FA827A294BF00F2359E /* PackageDetailVC+EXT+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FA727A294BF00F2359E /* PackageDetailVC+EXT+Collection.swift */; };
 		7CA39FAB27A808E000F2359E /* EditCustomDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FAA27A808E000F2359E /* EditCustomDetailsViewController.swift */; };
+		7CA39FB127A9104600F2359E /* EditCustomDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FAF27A9104600F2359E /* EditCustomDetailsTableViewCell.swift */; };
+		7CA39FB227A9104600F2359E /* EditCustomDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA39FB027A9104600F2359E /* EditCustomDetailsTableViewCell.xib */; };
 		7CA3EAC42770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */; };
 		7CA3EAC72771C1710053C493 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */; };
 		7CA3EACB2771D7000053C493 /* EditAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */; };
@@ -557,6 +559,8 @@
 		7CA39FA427A2646900F2359E /* PackageDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		7CA39FA727A294BF00F2359E /* PackageDetailVC+EXT+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PackageDetailVC+EXT+Collection.swift"; sourceTree = "<group>"; };
 		7CA39FAA27A808E000F2359E /* EditCustomDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCustomDetailsViewController.swift; sourceTree = "<group>"; };
+		7CA39FAF27A9104600F2359E /* EditCustomDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCustomDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		7CA39FB027A9104600F2359E /* EditCustomDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditCustomDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomDeclaration+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
 		7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -1812,9 +1816,19 @@
 		7CA39FA927A808B200F2359E /* EditCustomDetails */ = {
 			isa = PBXGroup;
 			children = (
+				7CA39FAC27A90E4A00F2359E /* Cells */,
 				7CA39FAA27A808E000F2359E /* EditCustomDetailsViewController.swift */,
 			);
 			name = EditCustomDetails;
+			sourceTree = "<group>";
+		};
+		7CA39FAC27A90E4A00F2359E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7CA39FAF27A9104600F2359E /* EditCustomDetailsTableViewCell.swift */,
+				7CA39FB027A9104600F2359E /* EditCustomDetailsTableViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		7CA3EAC52771C1450053C493 /* Edit Address */ = {
@@ -2021,6 +2035,7 @@
 				7851C45B257EA7660000A42D /* UserInfoCell.xib in Resources */,
 				781D3E8D257926870013DE3A /* Montserrat-Italic.ttf in Resources */,
 				789D2F41266913F800D92197 /* NewsAndUpdateCell.xib in Resources */,
+				7CA39FB227A9104600F2359E /* EditCustomDetailsTableViewCell.xib in Resources */,
 				78C69D14263832C700B74780 /* CreditCardsCell.xib in Resources */,
 				781D3E89257926870013DE3A /* Montserrat-SemiBold.ttf in Resources */,
 				781D3E8E257926870013DE3A /* Montserrat-LightItalic.ttf in Resources */,
@@ -2321,6 +2336,7 @@
 				781D3E9F25793AED0013DE3A /* ForgotPasswordVC.swift in Sources */,
 				78BC49E1269C48B0000EC5FE /* infoCell.swift in Sources */,
 				7CA3EAC72771C1710053C493 /* EditAddressViewController.swift in Sources */,
+				7CA39FB127A9104600F2359E /* EditCustomDetailsTableViewCell.swift in Sources */,
 				782A68A225DAD18D00A25A34 /* AddressesCell.swift in Sources */,
 				7C6A1396274CB99F00C8C81A /* StorageVM.swift in Sources */,
 				78440087257A5CB000B5F0C7 /* LoginVM.swift in Sources */,

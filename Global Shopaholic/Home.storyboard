@@ -411,7 +411,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="DH7-VK-FW3" firstAttribute="leading" secondItem="qxW-M4-94J" secondAttribute="leading" id="0F2-tj-1cb"/>
                                     <constraint firstItem="bkq-NU-7YB" firstAttribute="leading" secondItem="qxW-M4-94J" secondAttribute="leading" id="AVW-pS-sbQ"/>
@@ -433,10 +433,15 @@
                             <constraint firstItem="qxW-M4-94J" firstAttribute="leading" secondItem="aFP-Kq-OCc" secondAttribute="leading" id="n0R-vl-KR1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="editCustomDetailTableView" destination="DH7-VK-FW3" id="rWT-IK-NmG"/>
+                        <outlet property="editCustomDetailsView" destination="qxW-M4-94J" id="RVf-Og-gvi"/>
+                        <outlet property="upperView" destination="bkq-NU-7YB" id="uDu-lM-uxN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nof-qf-8CI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2505" y="-1625"/>
+            <point key="canvasLocation" x="-2502" y="-1634"/>
         </scene>
         <!--Custom Declaration Form View Controller-->
         <scene sceneID="Q4w-pB-GAV">
