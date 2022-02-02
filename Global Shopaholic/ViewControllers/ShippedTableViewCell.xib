@@ -28,6 +28,9 @@
                                 <rect key="frame" x="242" y="10" width="49" height="21"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="DetailsImg" title=""/>
+                                <connections>
+                                    <action selector="optionButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ycq-dY-lKa"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guc-LW-c60">
                                 <rect key="frame" x="24" y="40" width="67" height="15"/>
@@ -118,6 +121,7 @@
                 <outlet property="containerView" destination="Bbc-u7-Id4" id="ILd-vi-zpn"/>
                 <outlet property="createdDate" destination="1jf-Ph-cEm" id="lJH-gx-ctD"/>
                 <outlet property="markAsDeliveredButton" destination="OWi-6o-i5r" id="Xyb-TU-yUr"/>
+                <outlet property="optionButton" destination="0Ph-xr-I7z" id="FAO-jL-Zis"/>
                 <outlet property="requestIdNumber" destination="X8J-zd-dKd" id="LCM-7Z-oKA"/>
                 <outlet property="shippedViewHeightConstraint" destination="Erc-rV-AmQ" id="3nf-dF-Uuf"/>
                 <outlet property="trackingIdLabel" destination="06Y-xl-r8q" id="bpx-Nt-oQp"/>
