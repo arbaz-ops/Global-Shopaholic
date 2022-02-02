@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,51 +29,55 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Te-xU-5QS">
-                        <rect key="frame" x="55" y="56.5" width="36" height="26"/>
+                        <rect key="frame" x="55" y="56.5" width="39" height="29"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuJ-rd-g97">
-                        <rect key="frame" x="55" y="87.5" width="36" height="26"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="yesReturnLabelCheckBox:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="FSJ-tI-ic5"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31t-1I-JDn">
-                        <rect key="frame" x="91" y="61" width="23.5" height="17.5"/>
+                        <rect key="frame" x="94" y="62.5" width="23.5" height="17.5"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqT-D5-Fgl">
-                        <rect key="frame" x="91" y="92" width="20.5" height="17.5"/>
+                        <rect key="frame" x="94" y="96.5" width="20.5" height="17.5"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to return the whole package?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKZ-bW-cMW">
-                        <rect key="frame" x="52" y="125.5" width="299.5" height="17.5"/>
+                        <rect key="frame" x="52" y="124.5" width="299.5" height="17.5"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXv-ET-zcT">
-                        <rect key="frame" x="55" y="153" width="36" height="26"/>
+                        <rect key="frame" x="55" y="152" width="39" height="29"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="yesReturnPackageCheckBox:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jae-l4-0ST"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtb-tL-dG7">
-                        <rect key="frame" x="91" y="157.5" width="23.5" height="17.5"/>
+                        <rect key="frame" x="94" y="158" width="23.5" height="17.5"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjJ-xU-iLf">
-                        <rect key="frame" x="55" y="184" width="36" height="26"/>
+                        <rect key="frame" x="55" y="186" width="39" height="29"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="noReturnPackageCheckBox:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CVa-af-fxo"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNa-Bc-9qW">
-                        <rect key="frame" x="91" y="188.5" width="20.5" height="17.5"/>
+                        <rect key="frame" x="94" y="192" width="20.5" height="17.5"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -122,6 +126,14 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Submit"/>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuJ-rd-g97">
+                        <rect key="frame" x="55" y="90.5" width="39" height="29"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="noReturnLabelCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="L3s-mj-XFv"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.93725490196078431" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
@@ -134,24 +146,24 @@
                     <constraint firstItem="vjJ-xU-iLf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="55" id="KCG-wf-6IT"/>
                     <constraint firstItem="IWj-qi-YG2" firstAttribute="top" secondItem="MNd-bQ-8K9" secondAttribute="bottom" constant="16" id="M85-YY-Fm6"/>
                     <constraint firstItem="MNd-bQ-8K9" firstAttribute="top" secondItem="IL9-2O-rhI" secondAttribute="bottom" constant="10" id="MAU-S9-p9q"/>
-                    <constraint firstItem="HKZ-bW-cMW" firstAttribute="top" secondItem="IuJ-rd-g97" secondAttribute="bottom" constant="12" id="Nja-8a-pWX"/>
                     <constraint firstItem="TqT-D5-Fgl" firstAttribute="leading" secondItem="IuJ-rd-g97" secondAttribute="trailing" id="Puu-MM-0Hc"/>
                     <constraint firstItem="IuJ-rd-g97" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="55" id="Q2K-bI-UXd"/>
                     <constraint firstItem="FwE-hE-ypo" firstAttribute="top" secondItem="MNd-bQ-8K9" secondAttribute="bottom" constant="126" id="Rs1-Xo-Uhi"/>
-                    <constraint firstItem="IuJ-rd-g97" firstAttribute="top" secondItem="2Te-xU-5QS" secondAttribute="bottom" constant="5" id="WCK-A6-OQo"/>
                     <constraint firstItem="Q2X-QE-9LE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="27" id="a3o-51-v1Z"/>
+                    <constraint firstItem="HKZ-bW-cMW" firstAttribute="top" secondItem="IuJ-rd-g97" secondAttribute="bottom" constant="5" id="b6T-1k-gbF"/>
                     <constraint firstItem="vjJ-xU-iLf" firstAttribute="top" secondItem="QXv-ET-zcT" secondAttribute="bottom" constant="5" id="brO-EZ-rsm"/>
                     <constraint firstItem="jtb-tL-dG7" firstAttribute="leading" secondItem="QXv-ET-zcT" secondAttribute="trailing" id="cQw-Nv-xvy"/>
                     <constraint firstItem="jtb-tL-dG7" firstAttribute="centerY" secondItem="QXv-ET-zcT" secondAttribute="centerY" id="cT8-si-pNh"/>
                     <constraint firstItem="31t-1I-JDn" firstAttribute="centerY" secondItem="2Te-xU-5QS" secondAttribute="centerY" id="d2g-6a-M92"/>
                     <constraint firstItem="QXv-ET-zcT" firstAttribute="top" secondItem="HKZ-bW-cMW" secondAttribute="bottom" constant="10" id="egI-Ly-VuX"/>
+                    <constraint firstItem="IuJ-rd-g97" firstAttribute="top" secondItem="2Te-xU-5QS" secondAttribute="bottom" constant="5" id="ele-ch-LqD"/>
                     <constraint firstItem="QXv-ET-zcT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="55" id="erf-re-2Am"/>
                     <constraint firstItem="BNa-Bc-9qW" firstAttribute="leading" secondItem="vjJ-xU-iLf" secondAttribute="trailing" id="es4-pq-tyb"/>
                     <constraint firstAttribute="trailing" secondItem="FwE-hE-ypo" secondAttribute="trailing" constant="161" id="hCV-sE-83N"/>
                     <constraint firstAttribute="bottom" secondItem="FwE-hE-ypo" secondAttribute="bottom" constant="72.5" id="im1-nl-i2W"/>
                     <constraint firstItem="nR0-yg-asq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="52" id="m4A-Bh-JxF"/>
                     <constraint firstItem="2Te-xU-5QS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="55" id="m7a-Vf-6Db"/>
-                    <constraint firstItem="IL9-2O-rhI" firstAttribute="top" secondItem="vjJ-xU-iLf" secondAttribute="bottom" constant="30" id="oce-FG-ubH"/>
+                    <constraint firstItem="IL9-2O-rhI" firstAttribute="top" secondItem="vjJ-xU-iLf" secondAttribute="bottom" constant="25" id="oce-FG-ubH"/>
                     <constraint firstItem="IL9-2O-rhI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="55" id="qSt-KF-2Fa"/>
                     <constraint firstItem="2Te-xU-5QS" firstAttribute="top" secondItem="Q2X-QE-9LE" secondAttribute="bottom" constant="12" id="vHm-Ua-I5F"/>
                     <constraint firstItem="FwE-hE-ypo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="161" id="vqX-GB-e1h"/>
@@ -164,13 +176,17 @@
             <connections>
                 <outlet property="chooseFileButton" destination="nR0-yg-asq" id="VeZ-ql-e1O"/>
                 <outlet property="detailsTextField" destination="MNd-bQ-8K9" id="Zq5-gV-vtO"/>
+                <outlet property="noReturnLabelCheckBox" destination="IuJ-rd-g97" id="0rR-4B-v2A"/>
+                <outlet property="noReturnPackageCheckBox" destination="vjJ-xU-iLf" id="w11-0E-uHx"/>
                 <outlet property="submitButton" destination="FwE-hE-ypo" id="4v4-IN-hPH"/>
+                <outlet property="yesReturnLabelCheckBox" destination="2Te-xU-5QS" id="RGI-yp-5qI"/>
+                <outlet property="yesReturnPackageCheckBox" destination="QXv-ET-zcT" id="QVR-JM-1B3"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="248.10267857142856"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="greenRec" width="12" height="12"/>
+        <image name="uncheckedBox" width="15" height="15"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
