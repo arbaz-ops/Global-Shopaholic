@@ -18,6 +18,7 @@ protocol StorageCollectionViewCellDelegate {
 class MyStorageCollectionViewCell: UICollectionViewCell {
 
     
+    @IBOutlet weak var storageRemainingLabel: UILabel!
     @IBOutlet weak var addCustomDetailLabel: UILabel!
     @IBOutlet weak var returnThisPackageLabel: UILabel!
     var isChecked: Bool?

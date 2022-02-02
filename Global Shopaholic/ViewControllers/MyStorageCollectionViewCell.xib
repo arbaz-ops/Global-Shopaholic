@@ -165,6 +165,7 @@
                 <outlet property="myStorageImageView" destination="K4r-4z-vhY" id="GCn-dE-DcW"/>
                 <outlet property="returnThisPackageLabel" destination="CgO-9K-E12" id="zu7-FK-sKL"/>
                 <outlet property="specialServiceLabel" destination="soa-bD-ulE" id="ewI-dq-zE3"/>
+                <outlet property="storageRemainingLabel" destination="lDd-Db-gCV" id="pjv-G9-L91"/>
                 <outlet property="trackingNumber" destination="LZ4-P1-Hc2" id="Z5N-Dp-BWn"/>
             </connections>
             <point key="canvasLocation" x="168.11594202898553" y="117.52232142857142"/>

@@ -53,8 +53,9 @@ extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollecti
                     myStorageCell?.checkBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
                 }
                 myStorageCell?.indexPath = indexPath
+                myStorageCell?.storageRemainingLabel.text = "\(packagesList[indexPath.row]["storageLeft"] ?? "NAN")"
                 myStorageCell!.storageCollectionViewCellDelegate = self
-                myStorageCell!.myStorageImageView.frame.size.width = width
+               myStorageCell!.myStorageImageView.frame.size.width = width
                 myStorageCell?.trackingNumber.text = "TN: \(packagesList[indexPath.row]["tracking_number"] as! String)"
                 let primaryFullImage = packagesList[indexPath.row]["primary_full_image"] as? [String: Any]
                 if let imageName = primaryFullImage?["image_name"] as? String {

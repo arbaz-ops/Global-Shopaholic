@@ -38,8 +38,12 @@ extension StorageAndShipmentViewController {
              self.selectedSection = 0
              storageAndShipmentCollectionView.isHidden = false
              storageAndShipmentTableView?.isHidden = true
+            
              storageAndShipmentCollectionView.register(UINib(nibName: "MyStorageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyStorageCollectionViewCell")
-           
+             DispatchQueue.main.async { [self] in
+                 storageAndShipmentCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
+
+             }
              
              storageAndShipmentCollectionView.reloadData()
              storageAndShipmentCollectionView.layoutIfNeeded()
@@ -52,10 +56,13 @@ extension StorageAndShipmentViewController {
          case .Outgoing:
              self.selectedSection = 1
              storageAndShipmentTableView!.register(UINib(nibName: "OutgoingTableViewCell", bundle: nil), forCellReuseIdentifier: "OutgoingTableViewCell")
+             storageAndShipmentTableView?.scrollsToTop = true
              activateTableViewConstraint(topConstraint: 5)
              storageAndShipmentCollectionView.isHidden = true
              storageAndShipmentTableView?.isHidden = false
-           
+             DispatchQueue.main.async { [self] in
+             storageAndShipmentTableView?.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
+             }
 
              filterButton.isHidden = false
              itemsSelectedLabel.isHidden = true
@@ -69,6 +76,10 @@ extension StorageAndShipmentViewController {
              self.selectedSection = 2
              storageAndShipmentTableView!.register(UINib(nibName: "ShippedTableViewCell", bundle: nil), forCellReuseIdentifier: "ShippedTableViewCell")
              activateTableViewConstraint(topConstraint: 5)
+             storageAndShipmentTableView?.scrollsToTop = true
+             DispatchQueue.main.async { [self] in
+             storageAndShipmentTableView?.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
+             }
              storageAndShipmentCollectionView.isHidden = true
              storageAndShipmentTableView?.isHidden = false
              filterButton.isHidden = false
@@ -82,6 +93,10 @@ extension StorageAndShipmentViewController {
              
              self.selectedSection = 3
              storageAndShipmentTableView!.register(UINib(nibName: "ShippedTableViewCell", bundle: nil), forCellReuseIdentifier: "ShippedTableViewCell")
+             storageAndShipmentTableView?.scrollsToTop = true
+             DispatchQueue.main.async { [self] in
+             storageAndShipmentTableView?.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
+             }
              activateTableViewConstraint(topConstraint: 5)
              storageAndShipmentCollectionView.isHidden = true
              storageAndShipmentTableView?.isHidden = false
@@ -96,6 +111,9 @@ extension StorageAndShipmentViewController {
              self.selectedSection = 4
             storageAndShipmentTableView!.register(UINib(nibName: "ShippedTableViewCell", bundle: nil), forCellReuseIdentifier: "ShippedTableViewCell")
              activateTableViewConstraint(topConstraint: 5)
+             DispatchQueue.main.async { [self] in
+             storageAndShipmentTableView?.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
+             }
              storageAndShipmentCollectionView.isHidden = true
              storageAndShipmentTableView?.isHidden = false
              filterButton.isHidden = false

@@ -22,6 +22,7 @@ class EditCustomDetailsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        categoryDropDown.resignFirstResponder()
         submitButton.layer.cornerRadius = 8
         addItemButton.layer.cornerRadius = 8
 
@@ -47,6 +48,9 @@ class EditCustomDetailsTableViewCell: UITableViewCell {
         valueTextField.setRightPaddingPoints(10)
         qtyTextField.setRightPaddingPoints(10)
         descriptionTextField.setRightPaddingPoints(10)
+        
+        addItemButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
+        submitButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
