@@ -337,7 +337,20 @@ extension StorageAndShipmentViewController {
     
 }
 
-extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, FilterViewControllerDelegate, OutgoingTableViewCellDelegate {
+extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, FilterViewControllerDelegate, OutgoingTableViewCellDelegate, ShippedTableViewCellDelegate {
+    func shippedOptionButtonTapped(atIndex: IndexPath) {
+        let shippedCell = storageAndShipmentTableView!.cellForRow(at: atIndex) as? ShippedTableViewCell
+       
+        if shippedCell!.isShowing!  {
+
+            shippedCell?.hideOptions(frame: shippedCell!.optionButton!.frame)
+        }
+        if !shippedCell!.isShowing! {
+
+            shippedCell?.openOptionsView(frame: shippedCell!.optionButton!.frame)
+        }
+    }
+    
    
     
     func outgoingOptionButtonTapped(atIndex: IndexPath) {

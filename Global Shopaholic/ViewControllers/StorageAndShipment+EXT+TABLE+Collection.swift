@@ -276,6 +276,8 @@ extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollecti
             let shippedCell = tableView.dequeueReusableCell(withIdentifier: "ShippedTableViewCell") as? ShippedTableViewCell
             shippedCell?.markAsDeliveredButton.isHidden = false
             shippedCell?.shippedViewHeightConstraint.constant = 174.98
+            shippedCell?.indexPath = indexPath
+            shippedCell?.shippedTableViewCellDelegate = self
             DispatchQueue.main.async {[self] in
                 print(indexPath.row)
                 shippedCell?.trackingIdNumber.text = self.packagesList[indexPath.row]["tracking_number"] as? String ?? "NUN"

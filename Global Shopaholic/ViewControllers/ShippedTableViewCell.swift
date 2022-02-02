@@ -8,11 +8,19 @@
 
 import UIKit
 
+protocol ShippedTableViewCellDelegate {
+    func shippedOptionButtonTapped(atIndex: IndexPath)
+}
+
 class ShippedTableViewCell: UITableViewCell {
 
+    var dataSource = [String]()
+
+    var shippedTableViewCellDelegate: ShippedTableViewCellDelegate?
     @IBOutlet weak var optionButton: UIButton!
     var optionsView = UITableView()
     var isShowing: Bool?
+    var indexPath: IndexPath?
     @IBOutlet weak var createdDate: UILabel!
     @IBOutlet weak var requestIdNumber: UILabel!
     @IBOutlet weak var trackingIdNumber: UILabel!
@@ -26,7 +34,13 @@ class ShippedTableViewCell: UITableViewCell {
         markAsDeliveredButton.layer.cornerRadius = 8
         containerView.layer.cornerRadius = 8
         containerView.DropShadowView()
-        
+        self.addSubview(optionsView)
+        isShowing = false
+        optionsView.layer.cornerRadius = 6
+        optionsView.delegate = self
+        optionsView.dataSource = self
+        optionsView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        self.containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissOptionView)))
         // Initialization code
     }
 
@@ -42,11 +56,19 @@ class ShippedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @objc func dismissOptionView() {
+        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut) {[self] in
+            optionsView.frame = CGRect(x: optionButton.frame.origin.x, y: optionButton.frame.origin.y + optionButton.frame.height, width: 0, height: 0)
+        } completion: { [self] _ in
+            isShowing = false
+        }
+    }
+    
     func openOptionsView(frame: CGRect) {
         optionsView.frame = CGRect(x: frame.origin.x, y: frame.origin.y + frame.height, width: frame.width, height: 0)
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut) {[self] in
             optionsView.isHidden = false
-            optionsView.frame = CGRect(x: (frame.origin.x / 3) * 2, y: frame.origin.y + 30, width: 200, height: 180)
+            optionsView.frame = CGRect(x: (frame.origin.x / 3) * 2, y: frame.origin.y + 30, width: 200, height: 140)
         } completion: { [self] _ in
             isShowing = true
         }
@@ -65,5 +87,42 @@ class ShippedTableViewCell: UITableViewCell {
     }
     
     @IBAction func optionButtonTapped(_ sender: UIButton) {
+        dataSource = ["Review Request", "Custom Details","Show Package Details"]
+        shippedTableViewCellDelegate?.shippedOptionButtonTapped(atIndex: indexPath!)
     }
+}
+
+
+extension ShippedTableViewCell: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.font = UIFont(name: "Montserrat-Medium", size: 13)
+        cell.textLabel?.text = dataSource[indexPath.row]
+        cell.textLabel?.textColor = hexStringToUIColor(hex: "#5A5657")
+        cell.textLabel?.numberOfLines = 0
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            print("sadsadsa")
+//            self.outgoingTableViewCellDelegate?.openRequestFormViewController(cell: self)
+        case 1:
+            print("sadsads")
+//            self.outgoingTableViewCellDelegate?.openCustomDeclarationViewController(cell: self)
+        case 2:
+            print("sadsadsadsa")
+//            self.outgoingTableViewCellDelegate?.openEditAddressViewController(cell: self)
+        
+        default:
+            break
+        }
+    }
+    
+    
 }
