@@ -296,6 +296,8 @@ extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollecti
             delieverdCell?.shippedViewHeightConstraint.constant = 140
             delieverdCell?.trackingIdLabel.isHidden = false
             delieverdCell?.trackingIdNumber.isHidden = false
+            delieverdCell?.indexPath = indexPath
+            delieverdCell?.shippedTableViewCellDelegate = self
             DispatchQueue.main.async { [self] in
 //                let packages = self.packagesList[indexPath.row]["packages"] as? [[String: Any]]
                 delieverdCell?.requestIdNumber.text = self.packagesList[indexPath.row]["unique_key"] as? String
