@@ -949,6 +949,9 @@ Agree to receive email notifications and updates from Global Shopaholics.</strin
         </scene>
     </scenes>
     <designables>
+        <designable name="Dlc-GE-zzs">
+            <size key="intrinsicContentSize" width="195" height="32"/>
+        </designable>
         <designable name="Rek-xL-zkk">
             <size key="intrinsicContentSize" width="588" height="101.5"/>
         </designable>
