@@ -123,7 +123,22 @@ extension StorageAndShipmentViewController {
              storageAndShipmentTableView!.reloadData()
 
          case .Return:
-             print("pending UI")
+             self.selectedSection = 0
+             storageAndShipmentCollectionView.isHidden = false
+             storageAndShipmentTableView?.isHidden = true
+            
+             storageAndShipmentCollectionView.register(UINib(nibName: "ReturnCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ReturnCollectionViewCell")
+             DispatchQueue.main.async { [self] in
+                 storageAndShipmentCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
+
+             }
+             
+             storageAndShipmentCollectionView.reloadData()
+             storageAndShipmentCollectionView.layoutIfNeeded()
+             filterButton.isHidden = true
+             itemsSelectedLabel.isHidden = false
+             selectAllLabel.isHidden = false
+             selectAllButton.isHidden = false
          }
      }
      
@@ -321,14 +336,20 @@ extension StorageAndShipmentViewController {
                }
               
                print(currentSelection.rawValue)
-//               storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, success: { response in
-//                   print(response)
-//               }, failure: { str in
-//                   print(str)
-//               })
+               storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all", success: {[self] response in
+                   let data = response["data"] as? [String: [[String: Any]]]
+                  let list = data!["list"]!
+                  self.packagesList = list
+                  print(self.packagesList)
+                  changeUI(status: currentSelection)
+
+                  self.storageAndShipmentCollectionView!.reloadData()
+               }, failure: { str in
+                   COMMON_ALERT.showAlert(msg: str)
+               })
            
            } catch let error {
-               print("Could not connect to server.\n Please try again later.")
+               COMMON_ALERT.showAlert(msg: error.localizedDescription)
            }
   
       

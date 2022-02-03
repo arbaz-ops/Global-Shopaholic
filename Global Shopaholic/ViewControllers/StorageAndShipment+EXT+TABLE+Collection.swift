@@ -63,7 +63,24 @@ extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollecti
                 }
                
                 return myStorageCell!
-                
+            case .Return:
+                let returnPackageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReturnCollectionViewCell", for: indexPath) as? ReturnCollectionViewCell
+                if let status = packagesList[indexPath.row]["status"] as? String,
+                   let primaryImage = packagesList[indexPath.row]["primary_full_image"] as? [String: Any],
+                    let image = primaryImage["image_name"] as? String,
+                   let storageRemaining = packagesList[indexPath.row]["storageLeft"] as? Int{
+                    
+                    if let trackingNumber = packagesList[indexPath.row]["tracking_number"] as? String {
+                        returnPackageCell?.trackingNumberLabel.text = "TN : \(trackingNumber)"
+                    }
+                    else {
+                        returnPackageCell?.trackingNumberLabel.text = "TN : NAN"
+                    }
+                    returnPackageCell?.remainingStorageLabel.text = "\(storageRemaining)"
+                    returnPackageCell?.changeStatus(status: PackageStatus(rawValue: status)!)
+                    returnPackageCell?.returnImageView.sd_setImage(with: URL(string: image), placeholderImage: UIImage())
+                }
+                return returnPackageCell!
             default:
                 return collectionView.dequeueReusableCell(withReuseIdentifier: "default", for: indexPath)
             }
@@ -108,6 +125,8 @@ extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollecti
                 switch currentSelection {
                 case .Storage:
                     return UIEdgeInsets(top: 1.0, left: 8.0, bottom: 1.0, right: 8.0)
+                case .Return:
+                    return UIEdgeInsets(top: 1.0, left: 8.0, bottom: 1.0, right: 8.0)
                 
                 default:
                     return UIEdgeInsets()
@@ -130,6 +149,13 @@ extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollecti
             
             switch currentSelection {
             case .Storage:
+                let lay = collectionViewLayout as! UICollectionViewFlowLayout
+                /// 5
+                let widthPerItem = collectionView.frame.width / 2 - lay.minimumInteritemSpacing
+                /// 6
+                return CGSize(width: widthPerItem - 5, height: 320)
+                
+            case .Return:
                 let lay = collectionViewLayout as! UICollectionViewFlowLayout
                 /// 5
                 let widthPerItem = collectionView.frame.width / 2 - lay.minimumInteritemSpacing
@@ -215,7 +241,6 @@ extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollecti
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch currentSelection {
         case .Outgoing:
-            
             return packagesList.count
         case .Shipped:
            
@@ -304,7 +329,7 @@ extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollecti
                 let dateDatAndYear = changeDateToRequiredType(date: packagesList[indexPath.row]["created_at"] as? String)
                 let formattedDate = convertDateString(dateString: dateDatAndYear, fromFormat: "MMM d, yyyy", toFormat: "dd/MM/yyyy")
                 delieverdCell?.createdDate.text = formattedDate
-                delieverdCell?.trackingIdNumber.text = self.packagesList[indexPath.row]["tracking_number"] as? String ?? "NUN"
+                delieverdCell?.trackingIdNumber.text = self.packagesList[indexPath.row]["tracking_number"] as? String ?? "NAN"
                 
             }
             return delieverdCell!

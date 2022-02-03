@@ -27,4 +27,8 @@ enum OutgoingStatus: String {
 }
 
 
-
+enum PackageStatus: String {
+    case Approved = "approved"
+    case Rejected = "rejected"
+    case Processing = "processing"
+}

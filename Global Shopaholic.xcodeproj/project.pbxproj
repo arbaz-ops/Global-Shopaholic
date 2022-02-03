@@ -257,6 +257,8 @@
 		7CA39FB227A9104600F2359E /* EditCustomDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA39FB027A9104600F2359E /* EditCustomDetailsTableViewCell.xib */; };
 		7CA39FB427A9203600F2359E /* EditCustomDetails+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FB327A9203600F2359E /* EditCustomDetails+EXT+TABLE.swift */; };
 		7CA39FB627A9295500F2359E /* PackageDetails+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FB527A9295500F2359E /* PackageDetails+EXT.swift */; };
+		7CA39FB927ABB4A000F2359E /* ReturnCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39FB727ABB49F00F2359E /* ReturnCollectionViewCell.swift */; };
+		7CA39FBA27ABB4A000F2359E /* ReturnCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA39FB827ABB49F00F2359E /* ReturnCollectionViewCell.xib */; };
 		7CA3EAC42770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */; };
 		7CA3EAC72771C1710053C493 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */; };
 		7CA3EACB2771D7000053C493 /* EditAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */; };
@@ -565,6 +567,8 @@
 		7CA39FB027A9104600F2359E /* EditCustomDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditCustomDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		7CA39FB327A9203600F2359E /* EditCustomDetails+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditCustomDetails+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7CA39FB527A9295500F2359E /* PackageDetails+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PackageDetails+EXT.swift"; sourceTree = "<group>"; };
+		7CA39FB727ABB49F00F2359E /* ReturnCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnCollectionViewCell.swift; sourceTree = "<group>"; };
+		7CA39FB827ABB49F00F2359E /* ReturnCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReturnCollectionViewCell.xib; sourceTree = "<group>"; };
 		7CA3EAC32770CDE60053C493 /* CustomDeclaration+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomDeclaration+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7CA3EAC62771C1710053C493 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
 		7CA3EAC92771D7000053C493 /* EditAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -1867,6 +1871,8 @@
 				7CD45E52274618FB00397F57 /* OutgoingTableViewCell.xib */,
 				7CAA390D2747A20D0095A8F5 /* ShippedTableViewCell.swift */,
 				7CAA390E2747A20D0095A8F5 /* ShippedTableViewCell.xib */,
+				7CA39FB727ABB49F00F2359E /* ReturnCollectionViewCell.swift */,
+				7CA39FB827ABB49F00F2359E /* ReturnCollectionViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -2050,6 +2056,7 @@
 				78D81FBF26848E02007DDB81 /* SummaryCell.xib in Resources */,
 				7CA3EACC2771D7000053C493 /* EditAddressTableViewCell.xib in Resources */,
 				7851C44E257E95F20000A42D /* WarehouseAddressCell.xib in Resources */,
+				7CA39FBA27ABB4A000F2359E /* ReturnCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2217,6 +2224,7 @@
 				78C69CDA2638045000B74780 /* AddCreditCardRequest.swift in Sources */,
 				78740A8A267B7D8300C78FE8 /* AssistedPurchaseVC.swift in Sources */,
 				7869BAA7268A295B0020DE4B /* AssistedPurchaseVC+EXT+Tableview.swift in Sources */,
+				7CA39FB927ABB4A000F2359E /* ReturnCollectionViewCell.swift in Sources */,
 				7856F5D9257A4A340067D0B5 /* RegisterValidationResult.swift in Sources */,
 				78E4DDE026A033E0000F9EDE /* CancelledCell.swift in Sources */,
 				78F5ED9D2680B168002AE14B /* AssisterShippingCell.swift in Sources */,
