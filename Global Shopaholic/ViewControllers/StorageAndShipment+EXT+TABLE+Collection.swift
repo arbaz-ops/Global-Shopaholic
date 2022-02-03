@@ -337,6 +337,8 @@ extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollecti
             cancelledCell?.markAsDeliveredButton.isHidden = true
             cancelledCell?.trackingIdLabel.isHidden = true
             cancelledCell?.trackingIdNumber.isHidden = true
+            cancelledCell?.shippedTableViewCellDelegate = self
+            cancelledCell?.indexPath = indexPath
             cancelledCell?.shippedViewHeightConstraint.constant = 105
             DispatchQueue.main.async {[self] in
                 cancelledCell?.requestIdNumber.text = self.packagesList[indexPath.row]["unique_key"] as? String

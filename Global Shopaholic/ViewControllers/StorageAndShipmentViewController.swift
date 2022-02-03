@@ -23,6 +23,7 @@ struct UpperCollectionModel {
 
 
 class StorageAndShipmentViewController: BaseViewController {
+    @IBOutlet weak var collectionViewUpperConstraint: NSLayoutConstraint!
     var upperCollection: [UpperCollectionModel] = [
         UpperCollectionModel(image: UIImage(named: "box (1)"), text: "My Storage"),
         UpperCollectionModel(image: UIImage(named: "sendMail"), text: "Outgoing"),

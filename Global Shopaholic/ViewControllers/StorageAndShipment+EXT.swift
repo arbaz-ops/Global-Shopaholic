@@ -41,6 +41,7 @@ extension StorageAndShipmentViewController {
             
              storageAndShipmentCollectionView.register(UINib(nibName: "MyStorageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyStorageCollectionViewCell")
              DispatchQueue.main.async { [self] in
+                 collectionViewUpperConstraint.constant = 43
                  storageAndShipmentCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
 
              }
@@ -126,19 +127,21 @@ extension StorageAndShipmentViewController {
              self.selectedSection = 0
              storageAndShipmentCollectionView.isHidden = false
              storageAndShipmentTableView?.isHidden = true
-            
+
              storageAndShipmentCollectionView.register(UINib(nibName: "ReturnCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ReturnCollectionViewCell")
              DispatchQueue.main.async { [self] in
+                 collectionViewUpperConstraint.constant = 10
                  storageAndShipmentCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
 
              }
              
+             
+             filterButton.isHidden = false
+             itemsSelectedLabel.isHidden = true
+             selectAllLabel.isHidden = true
+             selectAllButton.isHidden = true
              storageAndShipmentCollectionView.reloadData()
              storageAndShipmentCollectionView.layoutIfNeeded()
-             filterButton.isHidden = true
-             itemsSelectedLabel.isHidden = false
-             selectAllLabel.isHidden = false
-             selectAllButton.isHidden = false
          }
      }
      
@@ -224,7 +227,6 @@ extension StorageAndShipmentViewController {
           
            do {
 //          changeUI(status: currentSelection)
-               changeUI(status: currentSelection)
 
            let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
            guard let userData = encodedUserData else {
@@ -243,6 +245,7 @@ extension StorageAndShipmentViewController {
                    let list = data!["list"]!
                    self.packagesList = list
                    print(packagesList.count)
+                   changeUI(status: currentSelection)
 
                    self.storageAndShipmentTableView!.reloadWithAnimation()
                }, failure: { str in
@@ -368,7 +371,7 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
         }
         if !shippedCell!.isShowing! {
 
-            shippedCell?.openOptionsView(frame: shippedCell!.optionButton!.frame)
+            shippedCell?.openOptionsView(currentSelection: currentSelection, frame: shippedCell!.optionButton!.frame)
         }
     }
     

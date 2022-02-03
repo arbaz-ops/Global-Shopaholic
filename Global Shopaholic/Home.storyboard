@@ -1524,6 +1524,7 @@ Pending </string>
                     </view>
                     <connections>
                         <outlet property="backButtonView" destination="bsC-uW-9uC" id="iXs-pl-vyf"/>
+                        <outlet property="collectionViewUpperConstraint" destination="sWS-TE-RBE" id="nlI-O2-Qi7"/>
                         <outlet property="filterButton" destination="0yu-lF-bHp" id="F1e-a4-Slx"/>
                         <outlet property="itemsSelectedLabel" destination="8Lm-Fu-VO1" id="HGi-Ti-brh"/>
                         <outlet property="searchTextField" destination="aOd-cB-fSA" id="t0U-Im-IDk"/>

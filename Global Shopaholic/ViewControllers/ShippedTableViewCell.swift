@@ -64,11 +64,37 @@ class ShippedTableViewCell: UITableViewCell {
         }
     }
     
-    func openOptionsView(frame: CGRect) {
+    func openOptionsView(currentSelection: MainSelection,frame: CGRect) {
         optionsView.frame = CGRect(x: frame.origin.x, y: frame.origin.y + frame.height, width: frame.width, height: 0)
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut) {[self] in
             optionsView.isHidden = false
-            optionsView.frame = CGRect(x: (frame.origin.x / 3) * 2, y: frame.origin.y + 30, width: 200, height: 140)
+            switch currentSelection {
+            case .Storage:
+                 print("no")
+            case .Outgoing:
+                print("no")
+            case .Shipped:
+                optionsView.frame = CGRect(x: (frame.origin.x / 3) * 2, y: frame.origin.y + 30, width: 200, height: 140)
+                optionsView.layoutIfNeeded()
+
+            case .Delivered:
+
+                optionsView.frame = CGRect(x: (frame.origin.x / 3) * 2, y: frame.origin.y + 30, width: 200, height: 140)
+                optionsView.layoutIfNeeded()
+
+            case .Cancelled:
+                optionsView.showsVerticalScrollIndicator = true
+                optionsView.flashScrollIndicators()
+                optionsView.frame = CGRect(x: (frame.origin.x / 3) * 2, y: frame.origin.y + 30, width: 200, height: 100)
+                DispatchQueue.main.async {
+                    optionsView.layoutIfNeeded()
+
+                }
+
+            case .Return:
+                print("no")
+            }
+            
         } completion: { [self] _ in
             isShowing = true
         }
