@@ -46,7 +46,6 @@ extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollecti
                 let myStorageCell = storageAndShipmentCollectionView.dequeueReusableCell(withReuseIdentifier: "MyStorageCollectionViewCell", for: indexPath) as? MyStorageCollectionViewCell
                 let width = calculateWidth()
                 if selectedIndex.contains(indexPath.row) {
-                    print("yes it contains")
                     myStorageCell?.checkBoxButton.setImage(UIImage(named: "checkedGreen"), for: .normal)
                 }
                 else if !selectedIndex.contains(indexPath.row) {
