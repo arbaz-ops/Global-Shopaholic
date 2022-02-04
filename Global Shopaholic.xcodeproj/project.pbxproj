@@ -217,9 +217,12 @@
 		78FF212C268F1F47009FFB3B /* OrderSummaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF212B268F1F47009FFB3B /* OrderSummaryRequest.swift */; };
 		78FF212F268F29D8009FFB3B /* CheckoutVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF212E268F29D8009FFB3B /* CheckoutVM.swift */; };
 		78FF2131268F2C99009FFB3B /* APSCheckOut+EXT+DELEGATEs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF2130268F2C99009FFB3B /* APSCheckOut+EXT+DELEGATEs.swift */; };
+		7C1F471627AD3AF300FC19C8 /* CheckoutAndPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F471527AD3AF300FC19C8 /* CheckoutAndPayViewController.swift */; };
+		7C1F471A27AD3E3500FC19C8 /* CheckoutAndPayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F471827AD3E3500FC19C8 /* CheckoutAndPayTableViewCell.swift */; };
+		7C1F471B27AD3E3500FC19C8 /* CheckoutAndPayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C1F471927AD3E3500FC19C8 /* CheckoutAndPayTableViewCell.xib */; };
+		7C1F471D27AD4DEE00FC19C8 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F471C27AD4DEE00FC19C8 /* CustomView.swift */; };
 		7C49161B27707A7B0077307B /* CustomDeclarationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C49161A27707A7B0077307B /* CustomDeclarationFormViewController.swift */; };
 		7C6A1391274B60B000C8C81A /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6A1390274B60B000C8C81A /* FilterViewController.swift */; };
-		7C6A1393274BA0E100C8C81A /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6A1392274BA0E100C8C81A /* Interactor.swift */; };
 		7C6A1396274CB99F00C8C81A /* StorageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6A1395274CB99F00C8C81A /* StorageVM.swift */; };
 		7C6A13982750AA8300C8C81A /* MyStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6A13972750AA8300C8C81A /* MyStorage.swift */; };
 		7C6F0054275779110007D83C /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F0053275779110007D83C /* Enumerations.swift */; };
@@ -527,9 +530,12 @@
 		78FF212E268F29D8009FFB3B /* CheckoutVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVM.swift; sourceTree = "<group>"; };
 		78FF2130268F2C99009FFB3B /* APSCheckOut+EXT+DELEGATEs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APSCheckOut+EXT+DELEGATEs.swift"; sourceTree = "<group>"; };
 		7B3ED7F419C3CEED6FFC0CC0 /* Pods_Global_ShopaholicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Global_ShopaholicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C1F471527AD3AF300FC19C8 /* CheckoutAndPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutAndPayViewController.swift; sourceTree = "<group>"; };
+		7C1F471827AD3E3500FC19C8 /* CheckoutAndPayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutAndPayTableViewCell.swift; sourceTree = "<group>"; };
+		7C1F471927AD3E3500FC19C8 /* CheckoutAndPayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckoutAndPayTableViewCell.xib; sourceTree = "<group>"; };
+		7C1F471C27AD4DEE00FC19C8 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		7C49161A27707A7B0077307B /* CustomDeclarationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDeclarationFormViewController.swift; sourceTree = "<group>"; };
 		7C6A1390274B60B000C8C81A /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
-		7C6A1392274BA0E100C8C81A /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		7C6A1395274CB99F00C8C81A /* StorageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageVM.swift; sourceTree = "<group>"; };
 		7C6A13972750AA8300C8C81A /* MyStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStorage.swift; sourceTree = "<group>"; };
 		7C6F0053275779110007D83C /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
@@ -756,6 +762,7 @@
 		781D3E6C257905BE0013DE3A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7C1F471427AD3AB800FC19C8 /*  CheckoutAndPay */,
 				789B02E5268C89EE006D489A /* Checkout */,
 				78740A8B267B8D1F00C78FE8 /* Begin Purchase */,
 				78740A88267B7D5800C78FE8 /* Assisted Purchase */,
@@ -1422,7 +1429,7 @@
 				7872B80D2654F5E600B796B2 /* ImagePicker.swift */,
 				785E45E5265669EC00DF387A /* Colors.swift */,
 				78E4DDDD269EF95C000F9EDE /* Global-Shopaholic-Bridging-Header.h */,
-				7C6A1392274BA0E100C8C81A /* Interactor.swift */,
+				7C1F471C27AD4DEE00FC19C8 /* CustomView.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -1647,6 +1654,24 @@
 				78FF212E268F29D8009FFB3B /* CheckoutVM.swift */,
 			);
 			path = CheckoutVM;
+			sourceTree = "<group>";
+		};
+		7C1F471427AD3AB800FC19C8 /*  CheckoutAndPay */ = {
+			isa = PBXGroup;
+			children = (
+				7C1F471727AD3E1400FC19C8 /* Cells */,
+				7C1F471527AD3AF300FC19C8 /* CheckoutAndPayViewController.swift */,
+			);
+			name = " CheckoutAndPay";
+			sourceTree = "<group>";
+		};
+		7C1F471727AD3E1400FC19C8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7C1F471827AD3E3500FC19C8 /* CheckoutAndPayTableViewCell.swift */,
+				7C1F471927AD3E3500FC19C8 /* CheckoutAndPayTableViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		7C49161927707A280077307B /* Custom Declaration */ = {
@@ -2032,6 +2057,7 @@
 				78F5EDA22680B17F002AE14B /* AssistedQuestionCell.xib in Resources */,
 				7851C456257E9CE90000A42D /* TrackingOrderCell.xib in Resources */,
 				781D3E91257926870013DE3A /* Montserrat-SemiBoldItalic.ttf in Resources */,
+				7C1F471B27AD3E3500FC19C8 /* CheckoutAndPayTableViewCell.xib in Resources */,
 				78F5ED9E2680B168002AE14B /* AssisterShippingCell.xib in Resources */,
 				781D3E99257926870013DE3A /* Montserrat-Thin.ttf in Resources */,
 				78088D05260B762A00C6E806 /* WeightUnitCell.xib in Resources */,
@@ -2223,6 +2249,7 @@
 				7C6F0054275779110007D83C /* Enumerations.swift in Sources */,
 				78C69CDA2638045000B74780 /* AddCreditCardRequest.swift in Sources */,
 				78740A8A267B7D8300C78FE8 /* AssistedPurchaseVC.swift in Sources */,
+				7C1F471D27AD4DEE00FC19C8 /* CustomView.swift in Sources */,
 				7869BAA7268A295B0020DE4B /* AssistedPurchaseVC+EXT+Tableview.swift in Sources */,
 				7CA39FB927ABB4A000F2359E /* ReturnCollectionViewCell.swift in Sources */,
 				7856F5D9257A4A340067D0B5 /* RegisterValidationResult.swift in Sources */,
@@ -2230,6 +2257,7 @@
 				78F5ED9D2680B168002AE14B /* AssisterShippingCell.swift in Sources */,
 				782FDBBD261B4CD0003AB552 /* PasswordValidation.swift in Sources */,
 				784447F82680BF5500F2C084 /* AddAnotherBtnCell.swift in Sources */,
+				7C1F471A27AD3E3500FC19C8 /* CheckoutAndPayTableViewCell.swift in Sources */,
 				7C6F0057275E26170007D83C /* RequestFormViewController.swift in Sources */,
 				789B02E7268C8A05006D489A /* ASPCheckOut.swift in Sources */,
 				78C69CFD26382DC800B74780 /* CardListVM.swift in Sources */,
@@ -2244,7 +2272,6 @@
 				787F2BF225D6EA5700A480CD /* getCountriesVM.swift in Sources */,
 				7869BAA2268A03470020DE4B /* ASPSaveditemModel.swift in Sources */,
 				789CB90D25E69EB4007313B4 /* FAQVM.swift in Sources */,
-				7C6A1393274BA0E100C8C81A /* Interactor.swift in Sources */,
 				78FF212F268F29D8009FFB3B /* CheckoutVM.swift in Sources */,
 				7C6F007E2761E8F90007D83C /* CustomDetail+EXT+TABLE.swift in Sources */,
 				7C6A1391274B60B000C8C81A /* FilterViewController.swift in Sources */,
@@ -2361,6 +2388,7 @@
 				7869BAAB268A2D440020DE4B /* SavedItemCell.swift in Sources */,
 				78BDF2D12582704C0016C6B6 /* BoxCell.swift in Sources */,
 				78C69D13263832C700B74780 /* CreditCardsCell.swift in Sources */,
+				7C1F471627AD3AF300FC19C8 /* CheckoutAndPayViewController.swift in Sources */,
 				789C9493257E4EC0006A76CD /* HomeVC.swift in Sources */,
 				78440093257A6F0C00B5F0C7 /* AccountCreateVC.swift in Sources */,
 				7819B377257FC133006A8376 /* WalletVC.swift in Sources */,
