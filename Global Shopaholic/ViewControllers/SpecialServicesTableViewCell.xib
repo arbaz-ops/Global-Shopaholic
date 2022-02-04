@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +34,10 @@
                             <constraint firstAttribute="height" constant="29" id="tT4-88-r2H"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="itemTestingCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bYy-i0-aPK"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item's Testing ($ 5)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muz-Ud-bpf">
                         <rect key="frame" x="77" y="54" width="351" height="16"/>
@@ -49,7 +52,10 @@
                             <constraint firstAttribute="width" constant="33" id="diE-O6-MQR"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="detailedPicturesCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vkK-xm-Klp"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detailed Pictures ($ 5)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqQ-9p-RBM">
                         <rect key="frame" x="77" y="86.5" width="351" height="16"/>
@@ -70,7 +76,10 @@
                             <constraint firstAttribute="width" constant="33" id="eBR-EY-aUn"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="removeItemBoxesTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Vor-EV-g2E"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rk6-gz-v5G">
                         <rect key="frame" x="44" y="177" width="33" height="30"/>
@@ -79,7 +88,10 @@
                             <constraint firstAttribute="width" constant="33" id="RxD-OO-2N5"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="removeAllProtectivePackagingTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="F5j-K7-ooV"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove items boxes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHJ-P8-rug">
                         <rect key="frame" x="77" y="151" width="351" height="16"/>
@@ -100,7 +112,10 @@
                             <constraint firstAttribute="height" constant="30" id="npa-JD-Odn"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="removeShipperBoxesTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="K2p-WZ-gRa"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove shipper boxes (Brown boxes)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZa-Nw-Q1t">
                         <rect key="frame" x="77" y="217" width="351" height="16"/>
@@ -115,7 +130,10 @@
                             <constraint firstAttribute="height" constant="30" id="f94-n6-iS8"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="removeInvoicesTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ELJ-QF-KRW"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove invoices and pricing tags" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPY-7y-Agl">
                         <rect key="frame" x="77" y="250" width="351" height="16"/>
@@ -130,7 +148,10 @@
                             <constraint firstAttribute="width" constant="33" id="odi-27-ZYG"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="prepareInOneBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eM1-pc-1XX"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prepare in one box" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUh-QH-D6C">
                         <rect key="frame" x="77" y="283" width="351" height="16"/>
@@ -145,7 +166,10 @@
                             <constraint firstAttribute="height" constant="30" id="vED-by-G1B"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="addFragileStickerTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="O98-Gn-kcg"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add fragile sticker" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ff3-t7-juF">
                         <rect key="frame" x="77" y="316" width="351" height="16"/>
@@ -160,7 +184,10 @@
                             <constraint firstAttribute="width" constant="33" id="eei-Dp-SB7"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="useSmallestBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ETm-26-ceQ"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the smallest box" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTK-pY-ap7">
                         <rect key="frame" x="77" y="349" width="351" height="16"/>
@@ -175,7 +202,10 @@
                             <constraint firstAttribute="width" constant="33" id="x0y-gA-b43"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="packWithoutBubbleTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SWC-4E-Mzn"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gG-et-isJ">
                         <rect key="frame" x="44" y="408" width="33" height="30"/>
@@ -184,7 +214,10 @@
                             <constraint firstAttribute="height" constant="30" id="MCr-iG-SYB"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="doNotRemoveItemBoxesTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WpC-bV-3xT"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pack without bubble wrap" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMb-qz-eO4">
                         <rect key="frame" x="77" y="382" width="351" height="16"/>
@@ -205,7 +238,10 @@
                             <constraint firstAttribute="height" constant="30" id="z18-dj-9yA"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="addExtraBubbleTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="msy-Bd-4Tj"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add extra padding and Bubble wrap" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYF-L0-Tnz">
                         <rect key="frame" x="77" y="448" width="351" height="16"/>
@@ -220,7 +256,10 @@
                             <constraint firstAttribute="height" constant="30" id="UiP-tB-l0P"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="greenRec"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="otherTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ATQ-g5-n5l"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHv-5T-ZV3">
                         <rect key="frame" x="77" y="481" width="351" height="16"/>
@@ -295,7 +334,6 @@
                     <constraint firstAttribute="trailing" secondItem="RqQ-9p-RBM" secondAttribute="trailing" id="faK-FP-fE3"/>
                     <constraint firstItem="0gG-et-isJ" firstAttribute="top" secondItem="bsa-Of-C93" secondAttribute="bottom" constant="3" id="fk9-Iu-d9y"/>
                     <constraint firstAttribute="trailing" secondItem="NUT-Eo-5y3" secondAttribute="trailing" constant="161" id="gHA-WR-Th8"/>
-                    <constraint firstItem="9JH-Ve-6vQ" firstAttribute="top" secondItem="dbK-6f-A7q" secondAttribute="bottom" constant="3" id="i2f-aI-ICR"/>
                     <constraint firstItem="PHJ-P8-rug" firstAttribute="centerY" secondItem="OTK-3Q-FdC" secondAttribute="centerY" id="iV9-L7-jyd"/>
                     <constraint firstAttribute="bottom" secondItem="NUT-Eo-5y3" secondAttribute="bottom" constant="30" id="ig0-1M-zAX"/>
                     <constraint firstAttribute="trailing" secondItem="jZa-Nw-Q1t" secondAttribute="trailing" id="m0E-cy-4dP"/>
@@ -304,6 +342,7 @@
                     <constraint firstItem="Ff3-t7-juF" firstAttribute="leading" secondItem="TrG-DP-si8" secondAttribute="trailing" id="ole-aR-KgX"/>
                     <constraint firstItem="Me1-dN-uPQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="pfF-y8-MQn"/>
                     <constraint firstItem="oUh-QH-D6C" firstAttribute="centerY" secondItem="Ss1-b5-OFH" secondAttribute="centerY" id="qEI-GF-cYE"/>
+                    <constraint firstItem="9JH-Ve-6vQ" firstAttribute="top" secondItem="dbK-6f-A7q" secondAttribute="bottom" constant="3" id="r82-7J-kFa"/>
                     <constraint firstItem="rSd-dI-UOt" firstAttribute="centerY" secondItem="Rk6-gz-v5G" secondAttribute="centerY" id="td6-Rl-bc1"/>
                     <constraint firstItem="bsa-Of-C93" firstAttribute="top" secondItem="74i-qG-rMW" secondAttribute="bottom" constant="3" id="tiG-3b-f82"/>
                     <constraint firstItem="M2v-s8-RGr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="56" id="uaG-7o-40U"/>
@@ -325,6 +364,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="greenRec" width="12" height="12"/>
+        <image name="uncheckedBox" width="15" height="15"/>
     </resources>
 </document>
