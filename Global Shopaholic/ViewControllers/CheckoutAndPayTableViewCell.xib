@@ -55,7 +55,7 @@
                             <constraint firstAttribute="height" constant="90" id="vnr-XO-RO7"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1YD-Nm-gkP" customClass="CustomCardViews" customModule="gShop" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1YD-Nm-gkP">
                         <rect key="frame" x="169" y="101.5" width="90" height="90"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fedex" translatesAutoresizingMaskIntoConstraints="NO" id="203-k1-7SW">
@@ -111,7 +111,7 @@
                             <constraint firstItem="wT5-Zs-PEd" firstAttribute="centerX" secondItem="uDz-AZ-lQN" secondAttribute="centerX" id="nTx-4e-5zK"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DHl-AB-YkM">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHl-AB-YkM">
                         <rect key="frame" x="105" y="212" width="90" height="90"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktk-6d-ezR">
@@ -139,11 +139,45 @@
                             <constraint firstItem="Ktk-6d-ezR" firstAttribute="centerX" secondItem="jeV-LD-Jz2" secondAttribute="centerX" id="s7Q-Uo-Otf"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xY-38-mLL">
+                        <rect key="frame" x="233" y="212" width="90" height="90"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JE9-Tz-QCf">
+                                <rect key="frame" x="0.0" y="64" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.23137254900000001" green="0.32156862749999998" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="USPS" translatesAutoresizingMaskIntoConstraints="NO" id="dhY-Fk-0xq">
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dhY-Fk-0xq" firstAttribute="leading" secondItem="1xY-38-mLL" secondAttribute="leading" id="2u8-qP-Pgl"/>
+                            <constraint firstItem="JE9-Tz-QCf" firstAttribute="top" secondItem="dhY-Fk-0xq" secondAttribute="bottom" constant="8" id="IEJ-rL-UKZ"/>
+                            <constraint firstAttribute="height" constant="90" id="QR5-gr-J13"/>
+                            <constraint firstItem="dhY-Fk-0xq" firstAttribute="top" secondItem="1xY-38-mLL" secondAttribute="top" id="Rz1-8Y-ElY"/>
+                            <constraint firstAttribute="bottom" secondItem="JE9-Tz-QCf" secondAttribute="bottom" constant="5" id="VEA-MJ-ejo"/>
+                            <constraint firstAttribute="trailing" secondItem="JE9-Tz-QCf" secondAttribute="trailing" id="Z0r-Pm-Tbf"/>
+                            <constraint firstAttribute="trailing" secondItem="dhY-Fk-0xq" secondAttribute="trailing" id="b7I-v8-UfK"/>
+                            <constraint firstItem="JE9-Tz-QCf" firstAttribute="leading" secondItem="1xY-38-mLL" secondAttribute="leading" id="dCv-Ws-98F"/>
+                            <constraint firstAttribute="bottom" secondItem="dhY-Fk-0xq" secondAttribute="bottom" constant="34" id="eWn-5d-PPI"/>
+                            <constraint firstAttribute="width" constant="90" id="mqu-IC-8ag"/>
+                            <constraint firstItem="JE9-Tz-QCf" firstAttribute="centerX" secondItem="dhY-Fk-0xq" secondAttribute="centerX" id="vOU-wK-Nbp"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="1xY-38-mLL" firstAttribute="top" secondItem="1O8-7p-vDw" secondAttribute="bottom" constant="20.5" id="3YM-zM-vs9"/>
                     <constraint firstItem="1O8-7p-vDw" firstAttribute="leading" secondItem="1YD-Nm-gkP" secondAttribute="trailing" constant="23" id="3q4-V2-M5b"/>
+                    <constraint firstItem="DHl-AB-YkM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="105" id="7Nx-dV-E0i"/>
+                    <constraint firstItem="DHl-AB-YkM" firstAttribute="top" secondItem="YqA-nv-ZXF" secondAttribute="bottom" constant="20.5" id="8eu-8i-ZSr"/>
                     <constraint firstAttribute="trailing" secondItem="1O8-7p-vDw" secondAttribute="trailing" constant="56" id="Bj9-Mg-NbC"/>
+                    <constraint firstItem="1xY-38-mLL" firstAttribute="top" secondItem="1YD-Nm-gkP" secondAttribute="bottom" constant="20.5" id="Cng-LV-1rj"/>
+                    <constraint firstAttribute="trailing" secondItem="1xY-38-mLL" secondAttribute="trailing" constant="105" id="Eoh-fz-Lw2"/>
                     <constraint firstItem="YqA-nv-ZXF" firstAttribute="top" secondItem="jKv-0u-XqB" secondAttribute="bottom" constant="20" id="Gtn-MX-gKz"/>
+                    <constraint firstItem="DHl-AB-YkM" firstAttribute="top" secondItem="1YD-Nm-gkP" secondAttribute="bottom" constant="20.5" id="Gwj-wC-ww6"/>
                     <constraint firstItem="203-k1-7SW" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="QIp-5d-Ytn"/>
                     <constraint firstItem="jKv-0u-XqB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="RJX-vv-eFz"/>
                     <constraint firstItem="YqA-nv-ZXF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="56" id="Zrd-MJ-zPx"/>
@@ -158,12 +192,15 @@
                 <outlet property="aramexView" destination="YqA-nv-ZXF" id="pq1-4m-nOQ"/>
                 <outlet property="dhlView" destination="1O8-7p-vDw" id="ZwX-El-qQ5"/>
                 <outlet property="fedexView" destination="1YD-Nm-gkP" id="PUC-x8-Jlr"/>
+                <outlet property="upsView" destination="DHl-AB-YkM" id="OP5-sl-Cml"/>
+                <outlet property="uspsView" destination="1xY-38-mLL" id="lSb-pY-cOA"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="245.08928571428569"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="DHL" width="100" height="100"/>
+        <image name="USPS" width="118" height="118"/>
         <image name="aramex" width="118" height="124"/>
         <image name="fedex" width="100" height="100"/>
         <image name="ups" width="118" height="118"/>

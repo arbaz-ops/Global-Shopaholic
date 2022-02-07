@@ -10,6 +10,8 @@ import UIKit
 
 class CheckoutAndPayTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var uspsView: UIView!
+    @IBOutlet weak var upsView: UIView!
     @IBOutlet weak var dhlView: UIView!
     @IBOutlet weak var fedexView: UIView!
     @IBOutlet weak var aramexView: UIView!
@@ -21,7 +23,7 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+      
     }
     
 }

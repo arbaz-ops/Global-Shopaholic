@@ -13,15 +13,20 @@ import UIKit
 @IBDesignable
 class CustomCardViews: UIView {
     
-  
+   
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
-    @IBInspectable var borderColor: CGColor = UIColor.white.cgColor {
+    
+    
+    @IBInspectable var borderColor: UIColor = UIColor.clear {
         didSet {
-            self.layer.borderColor = hexStringToUIColor(hex: "#3B525A").cgColor
+            self.layer.borderColor = borderColor.cgColor
         }
     }
+    
+   
 }
