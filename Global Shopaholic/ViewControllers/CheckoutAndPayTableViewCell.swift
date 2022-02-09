@@ -17,6 +17,7 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     @IBOutlet weak var aramexView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
