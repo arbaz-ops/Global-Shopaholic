@@ -363,6 +363,85 @@
             </objects>
             <point key="canvasLocation" x="-3531" y="-899"/>
         </scene>
+        <!--Credit Card View Controller-->
+        <scene sceneID="K8H-I1-lhd">
+            <objects>
+                <viewController storyboardIdentifier="CreditCardViewController" id="Gvm-pb-Svz" customClass="CreditCardViewController" customModule="gShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GYY-ud-PSF">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1k-pu-IJo">
+                                <rect key="frame" x="0.0" y="478" width="428" height="448"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="w7b-gf-dqV">
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="448"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="w7b-gf-dqV" secondAttribute="trailing" id="V6Z-DE-du5"/>
+                                    <constraint firstItem="w7b-gf-dqV" firstAttribute="top" secondItem="U1k-pu-IJo" secondAttribute="top" id="aWk-bC-4Uw"/>
+                                    <constraint firstItem="w7b-gf-dqV" firstAttribute="leading" secondItem="U1k-pu-IJo" secondAttribute="leading" id="dd4-pc-b3K"/>
+                                    <constraint firstAttribute="bottom" secondItem="w7b-gf-dqV" secondAttribute="bottom" id="ipx-ay-ORx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAu-mi-Ik7">
+                                <rect key="frame" x="0.0" y="428" width="428" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTi-WW-8zf">
+                                        <rect key="frame" x="20" y="14" width="94" height="23"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiO-8j-9UE">
+                                        <rect key="frame" x="370" y="8" width="38" height="34"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="⎯"/>
+                                        <connections>
+                                            <action selector="closeFormTapped:" destination="emB-DN-gDK" eventType="touchUpInside" id="ER6-Au-Bsv"/>
+                                            <action selector="closeTapped:" destination="4hQ-A7-131" eventType="touchUpInside" id="6yO-eM-TtA"/>
+                                            <action selector="closeViewTapped:" destination="6hs-4G-Eom" eventType="touchUpInside" id="iy3-1T-27u"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.72941176470000002" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="dTi-WW-8zf" firstAttribute="leading" secondItem="EAu-mi-Ik7" secondAttribute="leading" constant="20" id="09w-B7-iM4"/>
+                                    <constraint firstAttribute="bottom" secondItem="dTi-WW-8zf" secondAttribute="bottom" constant="13" id="Dn0-Tn-x2m"/>
+                                    <constraint firstItem="dTi-WW-8zf" firstAttribute="top" secondItem="EAu-mi-Ik7" secondAttribute="top" constant="14" id="KFI-0c-54C"/>
+                                    <constraint firstItem="IiO-8j-9UE" firstAttribute="top" secondItem="EAu-mi-Ik7" secondAttribute="top" constant="8" id="QGd-QR-0o7"/>
+                                    <constraint firstAttribute="height" constant="50" id="VE4-0k-Red"/>
+                                    <constraint firstAttribute="bottom" secondItem="IiO-8j-9UE" secondAttribute="bottom" constant="8" id="dnV-nL-eL7"/>
+                                    <constraint firstAttribute="trailing" secondItem="IiO-8j-9UE" secondAttribute="trailing" constant="20" id="nCf-0z-DoG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cjc-rY-Be2"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EAu-mi-Ik7" firstAttribute="leading" secondItem="cjc-rY-Be2" secondAttribute="leading" id="6Rb-e0-Ohr"/>
+                            <constraint firstItem="EAu-mi-Ik7" firstAttribute="width" secondItem="U1k-pu-IJo" secondAttribute="width" id="DoS-7M-YZh"/>
+                            <constraint firstItem="EAu-mi-Ik7" firstAttribute="trailing" secondItem="cjc-rY-Be2" secondAttribute="trailing" id="DqK-lh-Sth"/>
+                            <constraint firstItem="U1k-pu-IJo" firstAttribute="top" secondItem="cjc-rY-Be2" secondAttribute="top" constant="434" id="HDO-fc-2XS"/>
+                            <constraint firstItem="U1k-pu-IJo" firstAttribute="top" secondItem="EAu-mi-Ik7" secondAttribute="bottom" id="LJw-1w-jQf"/>
+                            <constraint firstItem="U1k-pu-IJo" firstAttribute="leading" secondItem="cjc-rY-Be2" secondAttribute="leading" id="ieB-nx-LN6"/>
+                            <constraint firstItem="cjc-rY-Be2" firstAttribute="trailing" secondItem="U1k-pu-IJo" secondAttribute="trailing" id="vHd-wE-XYY"/>
+                            <constraint firstAttribute="bottom" secondItem="U1k-pu-IJo" secondAttribute="bottom" id="xCn-8L-eVL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="creditCardTableView" destination="w7b-gf-dqV" id="azl-5v-8Wi"/>
+                        <outlet property="upperView" destination="EAu-mi-Ik7" id="xTy-Mq-SOE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nTR-3Z-bEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3256.5420560747662" y="-1633.477321814255"/>
+        </scene>
         <!--Edit Custom Details View Controller-->
         <scene sceneID="9UQ-Ql-WOa">
             <objects>
@@ -698,7 +777,7 @@
                                 <rect key="frame" x="0.0" y="129" width="428" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Custom Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAs-Ip-7SZ">
-                                        <rect key="frame" x="20" y="14" width="143.33333333333334" height="23"/>
+                                        <rect key="frame" x="20" y="14" width="164.33333333333334" height="23"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -3209,6 +3288,7 @@ Calculator</string>
                                                     <action selector="backBtn:" destination="KjP-mw-vgf" eventType="touchUpInside" id="iyI-qO-p5p"/>
                                                     <action selector="backBtnTapped:" destination="tkp-lh-8LL" eventType="touchUpInside" id="nf1-fx-mhH"/>
                                                     <action selector="backButtonTapped:" destination="eq0-Mb-5pe" eventType="touchUpInside" id="JVp-HU-Cvb"/>
+                                                    <action selector="backButtonTapped:" destination="ads-s4-9gw" eventType="touchUpInside" id="PpX-b8-8IQ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -3225,37 +3305,12 @@ Calculator</string>
                                             <constraint firstAttribute="width" constant="65" id="zWe-s3-YjA"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8RW-rF-z4t">
-                                        <rect key="frame" x="0.0" y="41.666666666666671" width="65" height="47"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1T-Nc-IFX">
-                                                <rect key="frame" x="0.0" y="0.0" width="65" height="47"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="Icon feather-menu"/>
-                                                <connections>
-                                                    <action selector="sideMenuButtonTapped:" destination="eq0-Mb-5pe" eventType="touchUpInside" id="7u2-8h-rD0"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.23137254900000001" green="0.32156862749999998" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="c1T-Nc-IFX" firstAttribute="top" secondItem="8RW-rF-z4t" secondAttribute="top" id="5w6-NA-Y97"/>
-                                            <constraint firstAttribute="trailing" secondItem="c1T-Nc-IFX" secondAttribute="trailing" id="KcY-aX-IB4"/>
-                                            <constraint firstAttribute="width" constant="65" id="OjB-Ic-lw5"/>
-                                            <constraint firstAttribute="bottom" secondItem="c1T-Nc-IFX" secondAttribute="bottom" id="Wh4-9K-0mx"/>
-                                            <constraint firstAttribute="height" constant="47" id="iBm-F9-crX"/>
-                                            <constraint firstItem="c1T-Nc-IFX" firstAttribute="leading" secondItem="8RW-rF-z4t" secondAttribute="leading" id="zfK-bD-dM7"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="8RW-rF-z4t" firstAttribute="centerY" secondItem="Uvy-Cy-tAK" secondAttribute="centerY" id="4WU-M4-87U"/>
                                     <constraint firstAttribute="bottom" secondItem="sWy-op-pj4" secondAttribute="bottom" constant="14" id="4de-SU-bvI"/>
                                     <constraint firstAttribute="trailing" secondItem="gdV-tU-KbP" secondAttribute="trailing" id="DWC-G2-pIV"/>
-                                    <constraint firstItem="8RW-rF-z4t" firstAttribute="leading" secondItem="oqh-Gs-ngI" secondAttribute="leading" id="F3A-E1-Scm"/>
                                     <constraint firstItem="sWy-op-pj4" firstAttribute="centerX" secondItem="oqh-Gs-ngI" secondAttribute="centerX" id="Iwy-qc-9bQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="8RW-rF-z4t" secondAttribute="bottom" id="Z7P-tG-quM"/>
                                     <constraint firstAttribute="bottom" secondItem="gdV-tU-KbP" secondAttribute="bottom" id="cxP-9e-qvF"/>
                                     <constraint firstItem="sWy-op-pj4" firstAttribute="width" secondItem="oqh-Gs-ngI" secondAttribute="width" multiplier="0.492" id="uPM-gH-SLG"/>
                                 </constraints>
@@ -3281,7 +3336,6 @@ Calculator</string>
                     <connections>
                         <outlet property="backButtonView" destination="gdV-tU-KbP" id="U0f-9K-Gtx"/>
                         <outlet property="checkoutAndPayTableView" destination="2jS-RD-Cge" id="gK9-n4-iWz"/>
-                        <outlet property="sideMenuButtonView" destination="8RW-rF-z4t" id="9ZJ-Ct-UIX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhE-kQ-eLe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

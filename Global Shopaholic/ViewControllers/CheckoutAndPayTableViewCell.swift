@@ -10,6 +10,8 @@ import UIKit
 
 class CheckoutAndPayTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var useWalletCircleButton: UIButton!
+    @IBOutlet weak var shipmentInvoiceView: UIView!
     @IBOutlet weak var payNowButton: UIButton!
     @IBOutlet var couriers: [UIView]!
     @IBOutlet weak var uspsView: UIView!
@@ -17,9 +19,11 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     @IBOutlet weak var dhlView: UIView!
     @IBOutlet weak var fedexView: UIView!
     @IBOutlet weak var aramexView: UIView!
+    var useWallet: Bool?
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        shipmentInvoiceView.layer.cornerRadius = 10
+        shipmentInvoiceView.DropShadowView()
         couriers.forEach { view in
             view.layer.borderColor = hexStringToUIColor(hex: "#3B525A").cgColor
             view.layer.borderWidth = 1
@@ -27,7 +31,7 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
         }
         
         payNowButton.layer.cornerRadius = 10
-        
+        useWallet = false
         // Initialization code
     }
 
@@ -37,4 +41,17 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
       
     }
     
+    @IBAction func useWalletCircleButtonTapped(_ sender: UIButton) {
+        if !useWallet! {
+            sender.setImage(UIImage.init(systemName: "circle.fill"), for: .normal)
+            sender.tintColor = hexStringToUIColor(hex: "#0BBAA3")
+            useWallet = true
+        }
+        else {
+            sender.setImage(UIImage.init(systemName: "circle"), for: .normal)
+            sender.tintColor = hexStringToUIColor(hex: "#0BBAA3")
+            useWallet = false
+        }
+        
+    }
 }

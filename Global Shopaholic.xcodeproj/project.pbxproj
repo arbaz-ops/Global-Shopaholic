@@ -239,6 +239,9 @@
 		7C6F00812761E9230007D83C /* CustomDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F007F2761E9230007D83C /* CustomDetailTableViewCell.swift */; };
 		7C6F00822761E9230007D83C /* CustomDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C6F00802761E9230007D83C /* CustomDetailTableViewCell.xib */; };
 		7C6FAAF827B3E4700088F16D /* CheckoutAndPay+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FAAF727B3E4700088F16D /* CheckoutAndPay+EXT+TABLE.swift */; };
+		7C6FAAFB27B669510088F16D /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FAAFA27B669510088F16D /* CreditCardViewController.swift */; };
+		7C6FAAFF27B66E6D0088F16D /* CreditCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FAAFD27B66E6D0088F16D /* CreditCardTableViewCell.swift */; };
+		7C6FAB0027B66E6D0088F16D /* CreditCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C6FAAFE27B66E6D0088F16D /* CreditCardTableViewCell.xib */; };
 		7C726148278C382300ADB324 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C726147278C382300ADB324 /* VerificationViewController.swift */; };
 		7C72614C278C4E1900ADB324 /* VerificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72614A278C4E1900ADB324 /* VerificationTableViewCell.swift */; };
 		7C72614D278C4E1900ADB324 /* VerificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C72614B278C4E1900ADB324 /* VerificationTableViewCell.xib */; };
@@ -553,6 +556,9 @@
 		7C6F007F2761E9230007D83C /* CustomDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetailTableViewCell.swift; sourceTree = "<group>"; };
 		7C6F00802761E9230007D83C /* CustomDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDetailTableViewCell.xib; sourceTree = "<group>"; };
 		7C6FAAF727B3E4700088F16D /* CheckoutAndPay+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckoutAndPay+EXT+TABLE.swift"; sourceTree = "<group>"; };
+		7C6FAAFA27B669510088F16D /* CreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
+		7C6FAAFD27B66E6D0088F16D /* CreditCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardTableViewCell.swift; sourceTree = "<group>"; };
+		7C6FAAFE27B66E6D0088F16D /* CreditCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCardTableViewCell.xib; sourceTree = "<group>"; };
 		7C726147278C382300ADB324 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
 		7C72614A278C4E1900ADB324 /* VerificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationTableViewCell.swift; sourceTree = "<group>"; };
 		7C72614B278C4E1900ADB324 /* VerificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerificationTableViewCell.xib; sourceTree = "<group>"; };
@@ -764,6 +770,7 @@
 		781D3E6C257905BE0013DE3A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7C6FAAF927B6692C0088F16D /* Credit Card */,
 				7C1F471427AD3AB800FC19C8 /*  CheckoutAndPay */,
 				789B02E5268C89EE006D489A /* Checkout */,
 				78740A8B267B8D1F00C78FE8 /* Begin Purchase */,
@@ -1773,6 +1780,24 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		7C6FAAF927B6692C0088F16D /* Credit Card */ = {
+			isa = PBXGroup;
+			children = (
+				7C6FAAFC27B66E490088F16D /* Cells */,
+				7C6FAAFA27B669510088F16D /* CreditCardViewController.swift */,
+			);
+			name = "Credit Card";
+			sourceTree = "<group>";
+		};
+		7C6FAAFC27B66E490088F16D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7C6FAAFD27B66E6D0088F16D /* CreditCardTableViewCell.swift */,
+				7C6FAAFE27B66E6D0088F16D /* CreditCardTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		7C726146278C37F600ADB324 /* VerificationVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -2083,6 +2108,7 @@
 				781D3E8B257926870013DE3A /* Montserrat-ExtraLightItalic.ttf in Resources */,
 				781D3E96257926870013DE3A /* Montserrat-Black.ttf in Resources */,
 				78D81FBF26848E02007DDB81 /* SummaryCell.xib in Resources */,
+				7C6FAB0027B66E6D0088F16D /* CreditCardTableViewCell.xib in Resources */,
 				7CA3EACC2771D7000053C493 /* EditAddressTableViewCell.xib in Resources */,
 				7851C44E257E95F20000A42D /* WarehouseAddressCell.xib in Resources */,
 				7CA39FBA27ABB4A000F2359E /* ReturnCollectionViewCell.xib in Resources */,
@@ -2242,6 +2268,7 @@
 				781D3E9C257927C30013DE3A /* SignupVC.swift in Sources */,
 				7CE79893273CFE5000D145E5 /* MyStorageCollectionViewCell.swift in Sources */,
 				7844008F257A625300B5F0C7 /* LoginValidation.swift in Sources */,
+				7C6FAAFB27B669510088F16D /* CreditCardViewController.swift in Sources */,
 				78F5EDA12680B17F002AE14B /* AssistedQuestionCell.swift in Sources */,
 				787F2BEC25D6E32F00A480CD /* AddAddressVC.swift in Sources */,
 				7C7261572790592C00ADB324 /* StorageAndShipment+EXT+TABLE+Collection.swift in Sources */,
@@ -2278,6 +2305,7 @@
 				78FF212F268F29D8009FFB3B /* CheckoutVM.swift in Sources */,
 				7C6F007E2761E8F90007D83C /* CustomDetail+EXT+TABLE.swift in Sources */,
 				7C6A1391274B60B000C8C81A /* FilterViewController.swift in Sources */,
+				7C6FAAFF27B66E6D0088F16D /* CreditCardTableViewCell.swift in Sources */,
 				782A689225DAC08400A25A34 /* addressValidtation.swift in Sources */,
 				7851C463257EB3DF0000A42D /* ShippingCalculator.swift in Sources */,
 				789D2F3C2669103600D92197 /* NewsAndUpdatesVC.swift in Sources */,

@@ -219,6 +219,9 @@
                         </constraints>
                         <color key="tintColor" red="0.0" green="0.73725490199999999" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" image="circle" catalog="system"/>
+                        <connections>
+                            <action selector="useWalletCircleButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zSI-n0-Xjs"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Wallet Ballance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPr-Gs-mAu">
                         <rect key="frame" x="68" y="446" width="141" height="18"/>
@@ -407,7 +410,9 @@
                 <outlet property="dhlView" destination="1O8-7p-vDw" id="ZwX-El-qQ5"/>
                 <outlet property="fedexView" destination="1YD-Nm-gkP" id="PUC-x8-Jlr"/>
                 <outlet property="payNowButton" destination="hLb-Qc-Yov" id="ko6-Hd-qje"/>
+                <outlet property="shipmentInvoiceView" destination="8qK-Ud-Ray" id="e7W-0K-jzk"/>
                 <outlet property="upsView" destination="DHl-AB-YkM" id="OP5-sl-Cml"/>
+                <outlet property="useWalletCircleButton" destination="raX-Mw-6FK" id="Yhm-hc-MXc"/>
                 <outlet property="uspsView" destination="1xY-38-mLL" id="lSb-pY-cOA"/>
                 <outletCollection property="couriers" destination="YqA-nv-ZXF" collectionClass="NSMutableArray" id="PtE-Sr-k0b"/>
                 <outletCollection property="couriers" destination="1YD-Nm-gkP" collectionClass="NSMutableArray" id="rbl-2d-xeq"/>

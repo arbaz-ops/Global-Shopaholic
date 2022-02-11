@@ -12,7 +12,6 @@ class CheckoutAndPayViewController: UIViewController {
 
     @IBOutlet weak var checkoutAndPayTableView: UITableView!
     @IBOutlet weak var backButtonView: UIView!
-    @IBOutlet weak var sideMenuButtonView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         InitUI()
@@ -21,8 +20,8 @@ class CheckoutAndPayViewController: UIViewController {
     
     
     private func InitUI() {
-        sideMenuButtonView.roundCorners([.topRight, .bottomRight], radius: 20)
         backButtonView.roundCorners([.topLeft, .bottomLeft], radius: 20)
+        backButtonView.DropShadowView()
     }
 
     
@@ -32,6 +31,9 @@ class CheckoutAndPayViewController: UIViewController {
         checkoutAndPayTableView.register(UINib(nibName: "CheckoutAndPayTableViewCell", bundle: nil), forCellReuseIdentifier: "CheckoutAndPayTableViewCell")
         checkoutAndPayTableView.delegate = self
         checkoutAndPayTableView.dataSource = self
+        
+        checkoutAndPayTableView.allowsSelection = false
+        checkoutAndPayTableView.showsVerticalScrollIndicator = false
         
     }
     /*
@@ -43,5 +45,9 @@ class CheckoutAndPayViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        
+        dismiss(animated: true)
+    }
+    
 }
