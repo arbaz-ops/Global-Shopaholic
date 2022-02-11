@@ -16,6 +16,8 @@ protocol OutgoingTableViewCellDelegate {
     func openEditAddressViewController(cell: UITableViewCell)
     func openShowPackageDetails(cell: UITableViewCell)
     
+    func checkoutAndPayTapped(cell: UITableViewCell)
+    
 }
 
 class OutgoingTableViewCell: UITableViewCell {
@@ -69,6 +71,9 @@ class OutgoingTableViewCell: UITableViewCell {
         hideOptions(frame: optionButton.frame)
     }
     
+    @IBAction func checkoutAndPayTapped(_ sender: UIButton) {
+        outgoingTableViewCellDelegate?.checkoutAndPayTapped(cell: self)
+    }
     @objc func dismissOptionView() {
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut) {[self] in
             optionsView.frame = CGRect(x: optionButton.frame.origin.x, y: optionButton.frame.origin.y + optionButton.frame.height, width: 0, height: 0)

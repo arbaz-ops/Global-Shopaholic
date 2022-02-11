@@ -16,6 +16,7 @@ class CheckoutAndPayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         InitUI()
+        loadTable()
     }
     
     
@@ -28,6 +29,10 @@ class CheckoutAndPayViewController: UIViewController {
     func loadTable() {
         checkoutAndPayTableView.backgroundColor = .clear
         checkoutAndPayTableView.separatorStyle = .none
+        checkoutAndPayTableView.register(UINib(nibName: "CheckoutAndPayTableViewCell", bundle: nil), forCellReuseIdentifier: "CheckoutAndPayTableViewCell")
+        checkoutAndPayTableView.delegate = self
+        checkoutAndPayTableView.dataSource = self
+        
     }
     /*
     // MARK: - Navigation

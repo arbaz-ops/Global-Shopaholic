@@ -10,6 +10,8 @@ import UIKit
 
 class CheckoutAndPayTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var payNowButton: UIButton!
+    @IBOutlet var couriers: [UIView]!
     @IBOutlet weak var uspsView: UIView!
     @IBOutlet weak var upsView: UIView!
     @IBOutlet weak var dhlView: UIView!
@@ -17,6 +19,14 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     @IBOutlet weak var aramexView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        couriers.forEach { view in
+            view.layer.borderColor = hexStringToUIColor(hex: "#3B525A").cgColor
+            view.layer.borderWidth = 1
+            view.layer.cornerRadius = 10
+        }
+        
+        payNowButton.layer.cornerRadius = 10
         
         // Initialization code
     }

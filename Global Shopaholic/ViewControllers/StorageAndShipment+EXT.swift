@@ -362,6 +362,12 @@ extension StorageAndShipmentViewController {
 }
 
 extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, FilterViewControllerDelegate, OutgoingTableViewCellDelegate, ShippedTableViewCellDelegate {
+    func checkoutAndPayTapped(cell: UITableViewCell) {
+        let checkOutAndPay = storyboard?.instantiateViewController(withIdentifier: "CheckoutAndPayViewController") as? CheckoutAndPayViewController
+        checkOutAndPay?.modalPresentationStyle = .overFullScreen
+        present(checkOutAndPay!, animated: true, completion: nil)
+    }
+    
     func shippedOptionButtonTapped(atIndex: IndexPath) {
         let shippedCell = storageAndShipmentTableView!.cellForRow(at: atIndex) as? ShippedTableViewCell
        

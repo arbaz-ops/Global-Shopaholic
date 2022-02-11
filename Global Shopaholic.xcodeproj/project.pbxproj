@@ -238,6 +238,7 @@
 		7C6F007E2761E8F90007D83C /* CustomDetail+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F007D2761E8F90007D83C /* CustomDetail+EXT+TABLE.swift */; };
 		7C6F00812761E9230007D83C /* CustomDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F007F2761E9230007D83C /* CustomDetailTableViewCell.swift */; };
 		7C6F00822761E9230007D83C /* CustomDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C6F00802761E9230007D83C /* CustomDetailTableViewCell.xib */; };
+		7C6FAAF827B3E4700088F16D /* CheckoutAndPay+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FAAF727B3E4700088F16D /* CheckoutAndPay+EXT+TABLE.swift */; };
 		7C726148278C382300ADB324 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C726147278C382300ADB324 /* VerificationViewController.swift */; };
 		7C72614C278C4E1900ADB324 /* VerificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72614A278C4E1900ADB324 /* VerificationTableViewCell.swift */; };
 		7C72614D278C4E1900ADB324 /* VerificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C72614B278C4E1900ADB324 /* VerificationTableViewCell.xib */; };
@@ -551,6 +552,7 @@
 		7C6F007D2761E8F90007D83C /* CustomDetail+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomDetail+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7C6F007F2761E9230007D83C /* CustomDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetailTableViewCell.swift; sourceTree = "<group>"; };
 		7C6F00802761E9230007D83C /* CustomDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDetailTableViewCell.xib; sourceTree = "<group>"; };
+		7C6FAAF727B3E4700088F16D /* CheckoutAndPay+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckoutAndPay+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7C726147278C382300ADB324 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
 		7C72614A278C4E1900ADB324 /* VerificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationTableViewCell.swift; sourceTree = "<group>"; };
 		7C72614B278C4E1900ADB324 /* VerificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerificationTableViewCell.xib; sourceTree = "<group>"; };
@@ -1661,6 +1663,7 @@
 			children = (
 				7C1F471727AD3E1400FC19C8 /* Cells */,
 				7C1F471527AD3AF300FC19C8 /* CheckoutAndPayViewController.swift */,
+				7C6FAAF727B3E4700088F16D /* CheckoutAndPay+EXT+TABLE.swift */,
 			);
 			name = " CheckoutAndPay";
 			sourceTree = "<group>";
@@ -2372,6 +2375,7 @@
 				7819B36E257FABD6006A8376 /* FAQsVC.swift in Sources */,
 				78BC1DA6262073D10047D5CF /* CalculatorRequest.swift in Sources */,
 				78C69CE22638046800B74780 /* AddCreditCardResponse.swift in Sources */,
+				7C6FAAF827B3E4700088F16D /* CheckoutAndPay+EXT+TABLE.swift in Sources */,
 				7C95D2CF27632F1000EC198E /* SpecialServicesViewController.swift in Sources */,
 				78C69D1C2638380500B74780 /* walletcv+CollectionView+Ext.swift in Sources */,
 				7C95D2D327632FFA00EC198E /* SpecialServicesTableViewCell.swift in Sources */,
