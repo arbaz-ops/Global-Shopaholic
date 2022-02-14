@@ -242,6 +242,8 @@
 		7C6FAAFB27B669510088F16D /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FAAFA27B669510088F16D /* CreditCardViewController.swift */; };
 		7C6FAAFF27B66E6D0088F16D /* CreditCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FAAFD27B66E6D0088F16D /* CreditCardTableViewCell.swift */; };
 		7C6FAB0027B66E6D0088F16D /* CreditCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C6FAAFE27B66E6D0088F16D /* CreditCardTableViewCell.xib */; };
+		7C6FAB0227BA5BE80088F16D /* CheckoutAndPay+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FAB0127BA5BE70088F16D /* CheckoutAndPay+EXT.swift */; };
+		7C6FAB0427BA69560088F16D /* CreditCardVC+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FAB0327BA69550088F16D /* CreditCardVC+EXT+TABLE.swift */; };
 		7C726148278C382300ADB324 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C726147278C382300ADB324 /* VerificationViewController.swift */; };
 		7C72614C278C4E1900ADB324 /* VerificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72614A278C4E1900ADB324 /* VerificationTableViewCell.swift */; };
 		7C72614D278C4E1900ADB324 /* VerificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C72614B278C4E1900ADB324 /* VerificationTableViewCell.xib */; };
@@ -559,6 +561,8 @@
 		7C6FAAFA27B669510088F16D /* CreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
 		7C6FAAFD27B66E6D0088F16D /* CreditCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardTableViewCell.swift; sourceTree = "<group>"; };
 		7C6FAAFE27B66E6D0088F16D /* CreditCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCardTableViewCell.xib; sourceTree = "<group>"; };
+		7C6FAB0127BA5BE70088F16D /* CheckoutAndPay+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckoutAndPay+EXT.swift"; sourceTree = "<group>"; };
+		7C6FAB0327BA69550088F16D /* CreditCardVC+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreditCardVC+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7C726147278C382300ADB324 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
 		7C72614A278C4E1900ADB324 /* VerificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationTableViewCell.swift; sourceTree = "<group>"; };
 		7C72614B278C4E1900ADB324 /* VerificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerificationTableViewCell.xib; sourceTree = "<group>"; };
@@ -1671,6 +1675,7 @@
 				7C1F471727AD3E1400FC19C8 /* Cells */,
 				7C1F471527AD3AF300FC19C8 /* CheckoutAndPayViewController.swift */,
 				7C6FAAF727B3E4700088F16D /* CheckoutAndPay+EXT+TABLE.swift */,
+				7C6FAB0127BA5BE70088F16D /* CheckoutAndPay+EXT.swift */,
 			);
 			name = " CheckoutAndPay";
 			sourceTree = "<group>";
@@ -1785,6 +1790,7 @@
 			children = (
 				7C6FAAFC27B66E490088F16D /* Cells */,
 				7C6FAAFA27B669510088F16D /* CreditCardViewController.swift */,
+				7C6FAB0327BA69550088F16D /* CreditCardVC+EXT+TABLE.swift */,
 			);
 			name = "Credit Card";
 			sourceTree = "<group>";
@@ -2333,6 +2339,7 @@
 				78A7E7B525C055EB0073F586 /* WebService.swift in Sources */,
 				7872B8142654F76000B796B2 /* BankDepositeRequest.swift in Sources */,
 				780FB5FE25DC2B990063A015 /* DropAddressVM.swift in Sources */,
+				7C6FAB0427BA69560088F16D /* CreditCardVC+EXT+TABLE.swift in Sources */,
 				7893ED0B2653BBDD00D6CDFA /* DepositeCreditCardRequest.swift in Sources */,
 				7851C45A257EA7660000A42D /* UserInfoCell.swift in Sources */,
 				7893ED1E2653BC9C00D6CDFA /* DepositeCardVM.swift in Sources */,
@@ -2371,6 +2378,7 @@
 				78B87964267799C500B66187 /* NEWSANDUPDATES+INSTAEMBEDED.swift in Sources */,
 				780FB5EE25DBE5A90063A015 /* GetAddressesVM.swift in Sources */,
 				7C6F00752760A7DE0007D83C /* ReturnPackageTableViewCell.swift in Sources */,
+				7C6FAB0227BA5BE80088F16D /* CheckoutAndPay+EXT.swift in Sources */,
 				782A688725DAC03E00A25A34 /* AddressValidationResult.swift in Sources */,
 				785F4F8C267897090094E3F8 /* NewsVM.swift in Sources */,
 				78B0364C26188BAF00883769 /* InfoUpdateValidation.swift in Sources */,

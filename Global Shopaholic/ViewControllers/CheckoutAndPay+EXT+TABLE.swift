@@ -17,7 +17,7 @@ extension CheckoutAndPayViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let checkoutAndPayCell = tableView.dequeueReusableCell(withIdentifier: "CheckoutAndPayTableViewCell") as? CheckoutAndPayTableViewCell
-        
+        checkoutAndPayCell?.chekoutAndPayDelegate = self
         return checkoutAndPayCell!
     }
     

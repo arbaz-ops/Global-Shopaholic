@@ -8,9 +8,13 @@
 
 import UIKit
 
+protocol CheckoutAndPayTableViewCellDelegate {
+    func paynowTapped(paymentMethod: PaymentMethod?)
+}
+
 class CheckoutAndPayTableViewCell: UITableViewCell {
 
-    var paymentMethod: PaymentMethod!
+    var paymentMethod: PaymentMethod?
     
     @IBOutlet weak var bitpayButton: UIButton!
     @IBOutlet weak var bankButton: UIButton!
@@ -26,6 +30,7 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     @IBOutlet weak var fedexView: UIView!
     @IBOutlet weak var aramexView: UIView!
     var useWallet: Bool?
+    var chekoutAndPayDelegate: CheckoutAndPayTableViewCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         shipmentInvoiceView.layer.cornerRadius = 10
@@ -35,11 +40,11 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
             view.layer.borderWidth = 1
             view.layer.cornerRadius = 10
         }
-        
         payNowButton.layer.cornerRadius = 10
         
         
-        
+        paymentMethod = .none
+
         useWallet = false
         // Initialization code
     }
@@ -55,6 +60,11 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
             sender.setImage(UIImage.init(systemName: "circle.fill"), for: .normal)
             sender.tintColor = hexStringToUIColor(hex: "#0BBAA3")
             useWallet = true
+            paymentMethod = nil
+            bankButton.backgroundColor = .white
+            creditCardButton.backgroundColor = .white
+            paypalButton.backgroundColor = .white
+            bitpayButton.backgroundColor = .white
         }
         else {
             sender.setImage(UIImage.init(systemName: "circle"), for: .normal)
@@ -111,12 +121,7 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     }
     
     @IBAction func paynowTapped(_ sender: UIButton) {
-        if paymentMethod == nil {
-            sender.isEnabled = false
-        }
-        else {
-            sender.isEnabled = true
-        }
+        chekoutAndPayDelegate?.paynowTapped(paymentMethod: paymentMethod)
     }
     @IBAction func bankButtonTapped(_ sender: UIButton) {
         paymentMethod = .bank

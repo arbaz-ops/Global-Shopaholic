@@ -22,7 +22,11 @@ class CreditCardViewController: UIViewController {
     private func loadTableView() {
         creditCardTableView.backgroundColor = .clear
         creditCardTableView.separatorStyle = .none
-        
+        creditCardTableView.delegate = self
+        creditCardTableView.dataSource = self
+        creditCardTableView.allowsSelection = false
+        creditCardTableView.showsVerticalScrollIndicator = false
+        creditCardTableView.register(UINib(nibName: "CreditCardTableViewCell", bundle: nil), forCellReuseIdentifier: "CreditCardTableViewCell")
     }
   
     @IBAction func closeButtonTapped(_ sender: UIButton) {
