@@ -117,13 +117,7 @@ class ASPCheckOut: UIViewController {
     var vm = CheckoutVM()
     
     @IBOutlet weak var payBtn: UIButton!
-    enum PaymentMethod {
-        case paypal
-        case card
-        case bank
-        case bitcoin
-       
-    }
+   
     var SelectedMethod: PaymentMethod!
     
     override func viewDidLoad() {

@@ -10,6 +10,12 @@ import UIKit
 
 class CheckoutAndPayTableViewCell: UITableViewCell {
 
+    var paymentMethod: PaymentMethod!
+    
+    @IBOutlet weak var bitpayButton: UIButton!
+    @IBOutlet weak var bankButton: UIButton!
+    @IBOutlet weak var creditCardButton: UIButton!
+    @IBOutlet weak var paypalButton: UIButton!
     @IBOutlet weak var useWalletCircleButton: UIButton!
     @IBOutlet weak var shipmentInvoiceView: UIView!
     @IBOutlet weak var payNowButton: UIButton!
@@ -31,6 +37,9 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
         }
         
         payNowButton.layer.cornerRadius = 10
+        
+        
+        
         useWallet = false
         // Initialization code
     }
@@ -53,5 +62,71 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
             useWallet = false
         }
         
+    }
+    @IBAction func bitcoinButtonTapped(_ sender: UIButton) {
+        
+        paymentMethod = .bitcoin
+        sender.backgroundColor =  hexStringToUIColor(hex: appColors.init().checkoutMethodSelectedColor)
+        sender.layer.cornerRadius = 5
+        
+            bankButton.backgroundColor = .white
+        
+        
+            creditCardButton.backgroundColor = .white
+        
+        
+            paypalButton.backgroundColor = .white
+        
+        
+        
+    }
+    @IBAction func creditcardButtonTapped(_ sender: UIButton) {
+        
+        paymentMethod = .card
+        sender.backgroundColor =  hexStringToUIColor(hex: appColors.init().checkoutMethodSelectedColor)
+        sender.layer.cornerRadius = 5
+
+        
+            bankButton.backgroundColor = .white
+        
+        
+            bitpayButton.backgroundColor = .white
+        
+        
+            paypalButton.backgroundColor = .white
+        
+    }
+    
+    @IBAction func paypalButtonTapped(_ sender: UIButton) {
+        paymentMethod = .paypal
+        sender.backgroundColor =  hexStringToUIColor(hex: appColors.init().checkoutMethodSelectedColor)
+        sender.layer.cornerRadius = 5
+
+            bankButton.backgroundColor = .white
+       
+            creditCardButton.backgroundColor = .white
+        
+            bitpayButton.backgroundColor = .white
+        
+    }
+    
+    @IBAction func paynowTapped(_ sender: UIButton) {
+        if paymentMethod == nil {
+            sender.isEnabled = false
+        }
+        else {
+            sender.isEnabled = true
+        }
+    }
+    @IBAction func bankButtonTapped(_ sender: UIButton) {
+        paymentMethod = .bank
+        sender.backgroundColor =  hexStringToUIColor(hex: appColors.init().checkoutMethodSelectedColor)
+        sender.layer.cornerRadius = 5
+
+        paypalButton.backgroundColor = .white
+   
+        creditCardButton.backgroundColor = .white
+    
+        bitpayButton.backgroundColor = .white
     }
 }

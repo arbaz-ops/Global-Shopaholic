@@ -402,6 +402,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="⎯"/>
                                         <connections>
+                                            <action selector="closeButtonTapped:" destination="Gvm-pb-Svz" eventType="touchUpInside" id="XIi-DP-oVk"/>
                                             <action selector="closeFormTapped:" destination="emB-DN-gDK" eventType="touchUpInside" id="ER6-Au-Bsv"/>
                                             <action selector="closeTapped:" destination="4hQ-A7-131" eventType="touchUpInside" id="6yO-eM-TtA"/>
                                             <action selector="closeViewTapped:" destination="6hs-4G-Eom" eventType="touchUpInside" id="iy3-1T-27u"/>

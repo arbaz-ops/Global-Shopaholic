@@ -10,6 +10,13 @@ import Foundation
 
 
 
+enum PaymentMethod {
+    case paypal
+    case card
+    case bank
+    case bitcoin
+}
+
 enum MainSelection: String {
     case Storage = "my_storage"
     case Outgoing = "outgoing"
