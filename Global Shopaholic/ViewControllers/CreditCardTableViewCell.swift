@@ -21,7 +21,17 @@ class CreditCardTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        ccvTextField.setLeftPaddingPoints(25)
+        ccvTextField.setRightPaddingPoints(10)
+        
+        expiryDateTextField.setLeftPaddingPoints(25)
+        expiryDateTextField.setRightPaddingPoints(10)
+        
+        cardHolderNameTextField.setLeftPaddingPoints(25)
+        cardHolderNameTextField.setRightPaddingPoints(10)
+        
+        cardNumberTextField.setLeftPaddingPoints(25)
+        cardNumberTextField.setRightPaddingPoints(10)
         // Configure the view for the selected state
     }
     
