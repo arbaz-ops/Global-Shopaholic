@@ -16,6 +16,7 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
 
     var paymentMethod: PaymentMethod?
     
+    @IBOutlet weak var walletCurrentBalance: UILabel!
     @IBOutlet weak var bitpayButton: UIButton!
     @IBOutlet weak var bankButton: UIButton!
     @IBOutlet weak var creditCardButton: UIButton!

@@ -32,6 +32,13 @@ class CreditCardTableViewCell: UITableViewCell {
         
         cardNumberTextField.setLeftPaddingPoints(25)
         cardNumberTextField.setRightPaddingPoints(10)
+        
+        
+        ccvTextField.layer.cornerRadius = 10
+        expiryDateTextField.layer.cornerRadius = 10
+        cardHolderNameTextField.layer.cornerRadius = 10
+        cardNumberTextField.layer.cornerRadius = 10
+
         // Configure the view for the selected state
     }
     

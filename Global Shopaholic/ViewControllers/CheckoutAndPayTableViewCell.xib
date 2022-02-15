@@ -420,6 +420,7 @@
                 <outlet property="upsView" destination="DHl-AB-YkM" id="OP5-sl-Cml"/>
                 <outlet property="useWalletCircleButton" destination="raX-Mw-6FK" id="Yhm-hc-MXc"/>
                 <outlet property="uspsView" destination="1xY-38-mLL" id="lSb-pY-cOA"/>
+                <outlet property="walletCurrentBalance" destination="34g-Tl-naa" id="tbT-Fh-WEg"/>
                 <outletCollection property="couriers" destination="YqA-nv-ZXF" collectionClass="NSMutableArray" id="PtE-Sr-k0b"/>
                 <outletCollection property="couriers" destination="1YD-Nm-gkP" collectionClass="NSMutableArray" id="rbl-2d-xeq"/>
                 <outletCollection property="couriers" destination="1O8-7p-vDw" collectionClass="NSMutableArray" id="xMk-LV-pZR"/>

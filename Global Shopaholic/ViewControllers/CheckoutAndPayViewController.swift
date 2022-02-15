@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import RappleProgressHUD
 
 class CheckoutAndPayViewController: UIViewController {
 
     @IBOutlet weak var checkoutAndPayTableView: UITableView!
     @IBOutlet weak var backButtonView: UIView!
+    
+    var walletVM: WalletVM?
     override func viewDidLoad() {
         super.viewDidLoad()
         InitUI()
@@ -22,7 +25,13 @@ class CheckoutAndPayViewController: UIViewController {
     private func InitUI() {
         backButtonView.roundCorners([.topLeft, .bottomLeft], radius: 20)
         backButtonView.DropShadowView()
+        
+        
+       
+        
     }
+    
+    
 
     
     func loadTable() {
@@ -31,20 +40,55 @@ class CheckoutAndPayViewController: UIViewController {
         checkoutAndPayTableView.register(UINib(nibName: "CheckoutAndPayTableViewCell", bundle: nil), forCellReuseIdentifier: "CheckoutAndPayTableViewCell")
         checkoutAndPayTableView.delegate = self
         checkoutAndPayTableView.dataSource = self
-        
+        checkoutAndPayTableView.alwaysBounceVertical = false
         checkoutAndPayTableView.allowsSelection = false
         checkoutAndPayTableView.showsVerticalScrollIndicator = false
         
     }
-    /*
-    // MARK: - Navigation
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        do {
+        
+        let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
+        guard let userData = encodedUserData else {
+            return
+        }
+        let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(userData) as? UserDataClass
+            
+            guard let userToken = unarchivedData?.token else {
+                print("Failed to get the token")
+                return
+            }
+            walletVM = WalletVM()
+            RappleActivityIndicatorView.startAnimating()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            walletVM?.getWalletInfo(token: userToken, success: {[self] response in
+                let data = response["data"] as? [String: Any]
+                
+                guard let currentBalance = data!["current_wallet_balance"] as? Double else {
+                    print("Failed to get the current balance")
+
+                    return
+                }
+                
+               let cell = checkoutAndPayTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? CheckoutAndPayTableViewCell
+                cell?.walletCurrentBalance.text = "$ \(currentBalance)"
+                RappleActivityIndicatorView.stopAnimation()
+
+            }, failure: { str in
+                print(str)
+                RappleActivityIndicatorView.stopAnimation()
+
+            })
+            
+        } catch let error {
+            print(error)
+        }
     }
-    */
+    
+    
     @IBAction func backButtonTapped(_ sender: UIButton) {
         
         dismiss(animated: true)

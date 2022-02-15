@@ -17,11 +17,10 @@ extension CheckoutAndPayViewController: CheckoutAndPayTableViewCellDelegate {
         case .paypal:
             print("Paypal")
         case .card:
-            let creditCardVC = storyboard?.instantiateViewController(withIdentifier: "CreditCardViewController") as? CreditCardViewController
+            let creditCardVC = self.storyboard?.instantiateViewController(withIdentifier: "CreditCardViewController") as? CreditCardViewController
             creditCardVC?.modalPresentationStyle = .overFullScreen
-            creditCardVC?.isModalInPresentation = true
-            self.present(creditCardVC!, animated: true, completion: nil)
-
+//            creditCardVC?.isModalInPresentation = true
+           present(creditCardVC!, animated: true, completion: nil)
         case .bank:
             print("Bank")
         case .bitcoin:

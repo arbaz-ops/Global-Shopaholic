@@ -244,6 +244,7 @@
 		7C6FAB0027B66E6D0088F16D /* CreditCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C6FAAFE27B66E6D0088F16D /* CreditCardTableViewCell.xib */; };
 		7C6FAB0227BA5BE80088F16D /* CheckoutAndPay+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FAB0127BA5BE70088F16D /* CheckoutAndPay+EXT.swift */; };
 		7C6FAB0427BA69560088F16D /* CreditCardVC+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FAB0327BA69550088F16D /* CreditCardVC+EXT+TABLE.swift */; };
+		7C6FAB0627BA6D180088F16D /* WalletVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FAB0527BA6D180088F16D /* WalletVM.swift */; };
 		7C726148278C382300ADB324 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C726147278C382300ADB324 /* VerificationViewController.swift */; };
 		7C72614C278C4E1900ADB324 /* VerificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72614A278C4E1900ADB324 /* VerificationTableViewCell.swift */; };
 		7C72614D278C4E1900ADB324 /* VerificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C72614B278C4E1900ADB324 /* VerificationTableViewCell.xib */; };
@@ -563,6 +564,7 @@
 		7C6FAAFE27B66E6D0088F16D /* CreditCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCardTableViewCell.xib; sourceTree = "<group>"; };
 		7C6FAB0127BA5BE70088F16D /* CheckoutAndPay+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckoutAndPay+EXT.swift"; sourceTree = "<group>"; };
 		7C6FAB0327BA69550088F16D /* CreditCardVC+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreditCardVC+EXT+TABLE.swift"; sourceTree = "<group>"; };
+		7C6FAB0527BA6D180088F16D /* WalletVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletVM.swift; sourceTree = "<group>"; };
 		7C726147278C382300ADB324 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
 		7C72614A278C4E1900ADB324 /* VerificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationTableViewCell.swift; sourceTree = "<group>"; };
 		7C72614B278C4E1900ADB324 /* VerificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerificationTableViewCell.xib; sourceTree = "<group>"; };
@@ -1566,6 +1568,7 @@
 				7872B8202654F85000B796B2 /* BankTransfer */,
 				7893ED1B2653BC4600D6CDFA /* DepositeCard */,
 				7893ED172653BC3900D6CDFA /* AddCard */,
+				7C6FAB0527BA6D180088F16D /* WalletVM.swift */,
 			);
 			path = WalletVM;
 			sourceTree = "<group>";
@@ -2270,6 +2273,7 @@
 				78C69CF8263817A200B74780 /* wallet+AddCard+EXT.swift in Sources */,
 				7893ED242653BE0F00D6CDFA /* DepositeCardValidation.swift in Sources */,
 				7851C450257E99CD0000A42D /* HomeVC+EXT+TableV.swift in Sources */,
+				7C6FAB0627BA6D180088F16D /* WalletVM.swift in Sources */,
 				78BC49D9269C4874000EC5FE /* itemCell.swift in Sources */,
 				781D3E9C257927C30013DE3A /* SignupVC.swift in Sources */,
 				7CE79893273CFE5000D145E5 /* MyStorageCollectionViewCell.swift in Sources */,
