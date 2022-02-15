@@ -15,7 +15,10 @@ extension CheckoutAndPayViewController: CheckoutAndPayTableViewCellDelegate {
     func paynowTapped(paymentMethod: PaymentMethod?) {
         switch paymentMethod {
         case .paypal:
-            print("Paypal")
+            let alert = UIAlertController(title: "Coming Soon", message: "", preferredStyle: .alert)
+          let action =  UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
         case .card:
             let creditCardVC = self.storyboard?.instantiateViewController(withIdentifier: "CreditCardViewController") as? CreditCardViewController
             creditCardVC?.modalPresentationStyle = .overFullScreen
@@ -24,7 +27,10 @@ extension CheckoutAndPayViewController: CheckoutAndPayTableViewCellDelegate {
         case .bank:
             print("Bank")
         case .bitcoin:
-            print("bitcoin")
+            let alert = UIAlertController(title: "Coming Soon", message: "", preferredStyle: .alert)
+          let action =  UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
         
         case .none:
             let alert = UIAlertController(title: "Payment Method!", message: "Please select payment method.", preferredStyle: .alert)
