@@ -1546,6 +1546,9 @@ Pending </string>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="uncheckedBox" title=""/>
+                                <connections>
+                                    <action selector="selectAllButtonTapped:" destination="eq0-Mb-5pe" eventType="touchUpInside" id="ehh-gx-eGC"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select all" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeh-dj-oct">
                                 <rect key="frame" x="311.33333333333331" y="287.66666666666669" width="53.666666666666686" height="14"/>

@@ -221,7 +221,6 @@ extension StorageAndShipmentViewController {
            } catch let error {
                COMMON_ALERT.showAlert(msg: "Could not connect to server.\n Please try again later.")
            }
-
            
        case .Shipped:
           
@@ -478,9 +477,23 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
     }
     
     func checkBoxTapped(indexPath: IndexPath) {
-        self.selectedIndex.append(indexPath.row)
-        print(selectedIndex)
-        storageAndShipmentCollectionView.reloadData()
+        
+        if selectedIndex.contains(indexPath.row) {
+          let containedIndex = selectedIndex.firstIndex{ $0 == indexPath.row }
+            selectedIndex.remove(at: containedIndex!)
+            print(selectedIndex)
+            storageAndShipmentCollectionView.reloadData()
+
+        }
+        else if selectedIndex.contains(indexPath.row) == false {
+            
+            self.selectedIndex.append(indexPath.row)
+            print(selectedIndex)
+            storageAndShipmentCollectionView.reloadData()
+
+
+        }
+        
 
     }
     

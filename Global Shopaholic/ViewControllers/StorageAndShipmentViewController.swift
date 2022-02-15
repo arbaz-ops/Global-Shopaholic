@@ -47,7 +47,7 @@ class StorageAndShipmentViewController: BaseViewController {
     var selectedIndex: [Int] = []
     @IBOutlet weak var selectAllLabel: UILabel!
     @IBOutlet weak var sideMenuView: UIView!
-    
+    var selectAll: Bool?
     @IBOutlet weak var itemsSelectedLabel: UILabel!
     
     var storageAndShipmentTableView: UITableView?
@@ -62,7 +62,7 @@ class StorageAndShipmentViewController: BaseViewController {
         
        setupCollectionView()
         loadTableView()
-        
+        selectAll = false
         // Do any additional setup after loading the view.
     }
     
@@ -148,5 +148,41 @@ class StorageAndShipmentViewController: BaseViewController {
         storageAndShipmentTableView?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 10).isActive = true
     }
 
-   
+    @IBAction func selectAllButtonTapped(_ sender: UIButton) {
+        
+        if selectAll == false {
+            sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            for i in 0..<packagesList.count {
+                if selectedIndex.contains(i) {
+                    //
+                }
+                if !selectedIndex.contains(i) {
+                    selectedIndex.append(i)
+                    storageAndShipmentCollectionView.reloadData()
+                }
+            }
+            print(selectedIndex)
+            selectAll = true
+            storageAndShipmentCollectionView.reloadData()
+        }
+        
+       else if selectAll == true {
+            sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            selectAll = false
+            selectedIndex.removeAll()
+            print(selectedIndex)
+            storageAndShipmentCollectionView.reloadData()
+
+        }
+        
+//        packagesList.forEach { p in
+//
+//            packagesList.filter { element in
+//                return element == p
+//            }.first?.values
+//
+//
+//        }
+    }
+    
 }
