@@ -9,20 +9,16 @@
 import UIKit
 import SDWebImage
 
-//struct UpperCollectionModel {
-//    var image: UIImage?
-//    var text: String?
-//
-//
-//}
-
 struct UpperCollectionModel {
     var image: UIImage?
     var text: String?
 }
 
 
+
+
 class StorageAndShipmentViewController: BaseViewController {
+   
     @IBOutlet weak var collectionViewUpperConstraint: NSLayoutConstraint!
     var upperCollection: [UpperCollectionModel] = [
         UpperCollectionModel(image: UIImage(named: "box (1)"), text: "My Storage"),
@@ -158,6 +154,7 @@ class StorageAndShipmentViewController: BaseViewController {
                 }
                 if !selectedIndex.contains(i) {
                     selectedIndex.append(i)
+                    itemsSelectedLabel.text = "\(selectedIndex.count) items selected"
                     storageAndShipmentCollectionView.reloadData()
                 }
             }
@@ -170,6 +167,7 @@ class StorageAndShipmentViewController: BaseViewController {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
             selectAll = false
             selectedIndex.removeAll()
+           itemsSelectedLabel.text = "\(selectedIndex.count) items selected"
             print(selectedIndex)
             storageAndShipmentCollectionView.reloadData()
 

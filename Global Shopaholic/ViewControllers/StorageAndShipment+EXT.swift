@@ -481,6 +481,7 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
         if selectedIndex.contains(indexPath.row) {
           let containedIndex = selectedIndex.firstIndex{ $0 == indexPath.row }
             selectedIndex.remove(at: containedIndex!)
+            itemsSelectedLabel.text = "\(selectedIndex.count) items selected"
             print(selectedIndex)
             storageAndShipmentCollectionView.reloadData()
 
@@ -489,6 +490,7 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
             
             self.selectedIndex.append(indexPath.row)
             print(selectedIndex)
+            itemsSelectedLabel.text = "\(selectedIndex.count) items selected"
             storageAndShipmentCollectionView.reloadData()
 
 

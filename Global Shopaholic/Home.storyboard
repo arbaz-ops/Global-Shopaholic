@@ -24,8 +24,10 @@
         <array key="Montserrat-SemiBold.ttf">
             <string>Montserrat-SemiBold</string>
         </array>
-        <array key="Quicksand-VariableFont_wght.ttf">
+        <array key="Quicksand-Light.ttf">
             <string>Quicksand-Light</string>
+        </array>
+        <array key="Quicksand-VariableFont_wght.ttf">
             <string>Quicksand-Light_Regular</string>
         </array>
     </customFonts>
@@ -1532,8 +1534,8 @@ Pending </string>
                                     <action selector="filerButtonTapped:" destination="eq0-Mb-5pe" eventType="touchUpInside" id="HWN-R0-uOh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lm-Fu-VO1">
-                                <rect key="frame" x="33" y="287.66666666666669" width="88" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Items selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lm-Fu-VO1">
+                                <rect key="frame" x="33" y="287.66666666666669" width="99" height="15"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" red="0.3921568627" green="0.73333333329999995" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1609,7 +1611,7 @@ Pending </string>
                         <outlet property="backButtonView" destination="bsC-uW-9uC" id="iXs-pl-vyf"/>
                         <outlet property="collectionViewUpperConstraint" destination="sWS-TE-RBE" id="nlI-O2-Qi7"/>
                         <outlet property="filterButton" destination="0yu-lF-bHp" id="F1e-a4-Slx"/>
-                        <outlet property="itemsSelectedLabel" destination="8Lm-Fu-VO1" id="HGi-Ti-brh"/>
+                        <outlet property="itemsSelectedLabel" destination="8Lm-Fu-VO1" id="Reu-Pf-5N3"/>
                         <outlet property="searchTextField" destination="aOd-cB-fSA" id="t0U-Im-IDk"/>
                         <outlet property="selectAllButton" destination="z6J-qi-IUt" id="wB7-og-BZP"/>
                         <outlet property="selectAllLabel" destination="qeh-dj-oct" id="zBm-nN-pZB"/>
