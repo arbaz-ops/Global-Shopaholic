@@ -19,6 +19,7 @@ struct UpperCollectionModel {
 
 class StorageAndShipmentViewController: BaseViewController {
    
+    @IBOutlet weak var consolidateAndShipButton: UIButton!
     @IBOutlet weak var collectionViewUpperConstraint: NSLayoutConstraint!
     var upperCollection: [UpperCollectionModel] = [
         UpperCollectionModel(image: UIImage(named: "box (1)"), text: "My Storage"),
@@ -59,6 +60,8 @@ class StorageAndShipmentViewController: BaseViewController {
        setupCollectionView()
         loadTableView()
         selectAll = false
+        consolidateAndShipButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 13)
+        consolidateAndShipButton.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
     }
     
@@ -70,7 +73,7 @@ class StorageAndShipmentViewController: BaseViewController {
     func setupCollectionView()  {
         upperCollectionView.showsVerticalScrollIndicator = false
         upperCollectionView.showsHorizontalScrollIndicator = false
-//        upperCollectionView.register(UINib(nibName: "UpperCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "UpperCollectionViewCell")
+
         
         upperCollectionView.register(UINib(nibName: "UpperCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "UpperCollectionViewCell")
 //                 self.collectionView.addGestureRecognizer(longPressRecognizer)

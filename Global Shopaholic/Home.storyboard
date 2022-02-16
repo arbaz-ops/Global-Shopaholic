@@ -24,10 +24,8 @@
         <array key="Montserrat-SemiBold.ttf">
             <string>Montserrat-SemiBold</string>
         </array>
-        <array key="Quicksand-Light.ttf">
-            <string>Quicksand-Light</string>
-        </array>
         <array key="Quicksand-VariableFont_wght.ttf">
+            <string>Quicksand-Light</string>
             <string>Quicksand-Light_Regular</string>
         </array>
     </customFonts>
@@ -1559,7 +1557,7 @@ Pending </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iXf-Qx-1ao">
-                                <rect key="frame" x="0.0" y="310.66666666666669" width="428" height="605.33333333333326"/>
+                                <rect key="frame" x="0.0" y="310.66666666666669" width="428" height="527.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xQa-7F-hRR">
                                     <size key="itemSize" width="343" height="131"/>
@@ -1579,23 +1577,37 @@ Pending </string>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Az-Cq-nMx">
+                                <rect key="frame" x="139" y="846" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.72941176470000002" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Gt5-Rs-lZQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="NNp-Qg-zjK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Consolidate &amp; Ship">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uxe-ON-lPf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="z6J-qi-IUt" firstAttribute="leading" secondItem="qeh-dj-oct" secondAttribute="trailing" id="2Di-OC-qhW"/>
+                            <constraint firstItem="3Az-Cq-nMx" firstAttribute="centerX" secondItem="1T2-DF-Qnd" secondAttribute="centerX" id="4Nr-sj-VYc"/>
                             <constraint firstItem="8Lm-Fu-VO1" firstAttribute="leading" secondItem="Uxe-ON-lPf" secondAttribute="leading" constant="33" id="4uB-zf-gnu"/>
                             <constraint firstItem="Ean-xJ-feg" firstAttribute="height" secondItem="1T2-DF-Qnd" secondAttribute="height" multiplier="0.0957523" id="96j-V6-lCo"/>
                             <constraint firstItem="aOd-cB-fSA" firstAttribute="top" secondItem="oPe-7I-TWP" secondAttribute="bottom" constant="15" id="DgV-Bx-Nzu"/>
                             <constraint firstItem="Uxe-ON-lPf" firstAttribute="trailing" secondItem="z6J-qi-IUt" secondAttribute="trailing" constant="33" id="Efq-pQ-Dsj"/>
                             <constraint firstItem="Uxe-ON-lPf" firstAttribute="trailing" secondItem="iXf-Qx-1ao" secondAttribute="trailing" id="Qed-al-UJ0"/>
+                            <constraint firstItem="3Az-Cq-nMx" firstAttribute="top" secondItem="iXf-Qx-1ao" secondAttribute="bottom" constant="8" id="TMs-ey-cRe"/>
                             <constraint firstItem="qeh-dj-oct" firstAttribute="top" secondItem="aOd-cB-fSA" secondAttribute="bottom" constant="20" id="Vao-nB-vXb"/>
                             <constraint firstItem="0yu-lF-bHp" firstAttribute="centerY" secondItem="aOd-cB-fSA" secondAttribute="centerY" id="amK-mG-ECS"/>
                             <constraint firstItem="Ean-xJ-feg" firstAttribute="leading" secondItem="Uxe-ON-lPf" secondAttribute="leading" id="c0Y-UE-IMA"/>
+                            <constraint firstAttribute="bottom" secondItem="3Az-Cq-nMx" secondAttribute="bottom" constant="30" id="f5T-IR-kgb"/>
                             <constraint firstItem="oPe-7I-TWP" firstAttribute="top" secondItem="Ean-xJ-feg" secondAttribute="bottom" constant="20" id="fiI-GV-sce"/>
                             <constraint firstItem="0yu-lF-bHp" firstAttribute="leading" secondItem="aOd-cB-fSA" secondAttribute="trailing" id="jw7-cZ-8ad"/>
                             <constraint firstItem="8Lm-Fu-VO1" firstAttribute="top" secondItem="aOd-cB-fSA" secondAttribute="bottom" constant="20" id="kuy-Ew-D1U"/>
-                            <constraint firstAttribute="bottom" secondItem="iXf-Qx-1ao" secondAttribute="bottom" constant="10" id="m7d-h3-zdh"/>
                             <constraint firstItem="aOd-cB-fSA" firstAttribute="leading" secondItem="Uxe-ON-lPf" secondAttribute="leading" constant="33" id="myp-I7-pOw"/>
                             <constraint firstItem="iXf-Qx-1ao" firstAttribute="leading" secondItem="Uxe-ON-lPf" secondAttribute="leading" id="qH3-Sr-F7z"/>
                             <constraint firstItem="oPe-7I-TWP" firstAttribute="leading" secondItem="Uxe-ON-lPf" secondAttribute="leading" id="qU6-fi-Glm"/>
@@ -1610,6 +1622,7 @@ Pending </string>
                     <connections>
                         <outlet property="backButtonView" destination="bsC-uW-9uC" id="iXs-pl-vyf"/>
                         <outlet property="collectionViewUpperConstraint" destination="sWS-TE-RBE" id="nlI-O2-Qi7"/>
+                        <outlet property="consolidateAndShipButton" destination="3Az-Cq-nMx" id="Cu4-nG-G4f"/>
                         <outlet property="filterButton" destination="0yu-lF-bHp" id="F1e-a4-Slx"/>
                         <outlet property="itemsSelectedLabel" destination="8Lm-Fu-VO1" id="Reu-Pf-5N3"/>
                         <outlet property="searchTextField" destination="aOd-cB-fSA" id="t0U-Im-IDk"/>

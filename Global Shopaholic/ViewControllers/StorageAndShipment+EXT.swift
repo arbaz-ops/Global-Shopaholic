@@ -36,12 +36,15 @@ extension StorageAndShipmentViewController {
          switch currentSelection {
          case .Storage:
              self.selectedSection = 0
+
              storageAndShipmentCollectionView.isHidden = false
              storageAndShipmentTableView?.isHidden = true
             
              storageAndShipmentCollectionView.register(UINib(nibName: "MyStorageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyStorageCollectionViewCell")
              DispatchQueue.main.async { [self] in
                  collectionViewUpperConstraint.constant = 43
+                 consolidateAndShipButton.isHidden = false
+
                  storageAndShipmentCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
 
              }
@@ -56,12 +59,16 @@ extension StorageAndShipmentViewController {
 
          case .Outgoing:
              self.selectedSection = 1
+             consolidateAndShipButton.isHidden = true
+
              storageAndShipmentTableView!.register(UINib(nibName: "OutgoingTableViewCell", bundle: nil), forCellReuseIdentifier: "OutgoingTableViewCell")
              storageAndShipmentTableView?.scrollsToTop = true
              activateTableViewConstraint(topConstraint: 5)
              storageAndShipmentCollectionView.isHidden = true
              storageAndShipmentTableView?.isHidden = false
              DispatchQueue.main.async { [self] in
+                 consolidateAndShipButton.isHidden = true
+
              storageAndShipmentTableView?.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
              }
 
@@ -75,10 +82,14 @@ extension StorageAndShipmentViewController {
 
          case .Shipped:
              self.selectedSection = 2
+             consolidateAndShipButton.isHidden = true
+
              storageAndShipmentTableView!.register(UINib(nibName: "ShippedTableViewCell", bundle: nil), forCellReuseIdentifier: "ShippedTableViewCell")
              activateTableViewConstraint(topConstraint: 5)
              storageAndShipmentTableView?.scrollsToTop = true
              DispatchQueue.main.async { [self] in
+                 consolidateAndShipButton.isHidden = true
+
              storageAndShipmentTableView?.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
              }
              storageAndShipmentCollectionView.isHidden = true
@@ -93,9 +104,13 @@ extension StorageAndShipmentViewController {
          case .Delivered:
              
              self.selectedSection = 3
+             consolidateAndShipButton.isHidden = true
+
              storageAndShipmentTableView!.register(UINib(nibName: "ShippedTableViewCell", bundle: nil), forCellReuseIdentifier: "ShippedTableViewCell")
              storageAndShipmentTableView?.scrollsToTop = true
              DispatchQueue.main.async { [self] in
+                 consolidateAndShipButton.isHidden = true
+
              storageAndShipmentTableView?.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
              }
              activateTableViewConstraint(topConstraint: 5)
@@ -110,9 +125,13 @@ extension StorageAndShipmentViewController {
 
          case .Cancelled:
              self.selectedSection = 4
+             consolidateAndShipButton.isHidden = true
+
             storageAndShipmentTableView!.register(UINib(nibName: "ShippedTableViewCell", bundle: nil), forCellReuseIdentifier: "ShippedTableViewCell")
              activateTableViewConstraint(topConstraint: 5)
              DispatchQueue.main.async { [self] in
+                 consolidateAndShipButton.isHidden = true
+
              storageAndShipmentTableView?.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
              }
              storageAndShipmentCollectionView.isHidden = true
@@ -125,12 +144,15 @@ extension StorageAndShipmentViewController {
 
          case .Return:
              self.selectedSection = 0
+
              storageAndShipmentCollectionView.isHidden = false
              storageAndShipmentTableView?.isHidden = true
 
              storageAndShipmentCollectionView.register(UINib(nibName: "ReturnCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ReturnCollectionViewCell")
              DispatchQueue.main.async { [self] in
                  collectionViewUpperConstraint.constant = 10
+                 consolidateAndShipButton.isHidden = true
+
                  storageAndShipmentCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
 
              }
@@ -166,7 +188,7 @@ extension StorageAndShipmentViewController {
                    return
                }
               storageVM = StorageVM()
-               storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all", success: { response in
+               storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all", success: {[self] response in
                    let data = response["data"] as? [String: [[String: Any]]]
                    let list = data!["list"]!
                    self.packagesList = list
@@ -490,6 +512,7 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
             
             self.selectedIndex.append(indexPath.row)
             print(selectedIndex)
+
             itemsSelectedLabel.text = "\(selectedIndex.count) items selected"
             storageAndShipmentCollectionView.reloadData()
 
