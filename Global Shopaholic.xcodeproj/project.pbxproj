@@ -29,7 +29,6 @@
 		781D3E44257900D00013DE3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781D3E42257900D00013DE3A /* Main.storyboard */; };
 		781D3E46257900D10013DE3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 781D3E45257900D10013DE3A /* Assets.xcassets */; };
 		781D3E49257900D10013DE3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781D3E47257900D10013DE3A /* LaunchScreen.storyboard */; };
-		781D3E54257900D10013DE3A /* Global_ShopaholicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D3E53257900D10013DE3A /* Global_ShopaholicTests.swift */; };
 		781D3E5F257900D10013DE3A /* Global_ShopaholicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D3E5E257900D10013DE3A /* Global_ShopaholicUITests.swift */; };
 		781D3E6F257905E00013DE3A /* LoginVC + EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D3E6E257905E00013DE3A /* LoginVC + EXT.swift */; };
 		781D3E7125790B360013DE3A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D3E7025790B360013DE3A /* Extensions.swift */; };
@@ -225,6 +224,7 @@
 		7C6A1391274B60B000C8C81A /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6A1390274B60B000C8C81A /* FilterViewController.swift */; };
 		7C6A1396274CB99F00C8C81A /* StorageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6A1395274CB99F00C8C81A /* StorageVM.swift */; };
 		7C6A13982750AA8300C8C81A /* MyStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6A13972750AA8300C8C81A /* MyStorage.swift */; };
+		7C6DD1D027BE51F900BD048E /* Global_ShopaholicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781D3E53257900D10013DE3A /* Global_ShopaholicTests.swift */; };
 		7C6F0054275779110007D83C /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F0053275779110007D83C /* Enumerations.swift */; };
 		7C6F0057275E26170007D83C /* RequestFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F0056275E26160007D83C /* RequestFormViewController.swift */; };
 		7C6F005B275E29F00007D83C /* RequestFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F0059275E29F00007D83C /* RequestFormTableViewCell.swift */; };
@@ -2459,7 +2459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				781D3E54257900D10013DE3A /* Global_ShopaholicTests.swift in Sources */,
+				7C6DD1D027BE51F900BD048E /* Global_ShopaholicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2750,7 +2750,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Global Shopaholic.app/Global Shopaholic";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gShop.app/gShop";
 			};
 			name = Debug;
 		};
@@ -2772,7 +2772,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Global Shopaholic.app/Global Shopaholic";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gShop.app/gShop";
 			};
 			name = Release;
 		};

@@ -7,10 +7,11 @@
 //
 
 import XCTest
-@testable import Global_Shopaholic
+@testable import Pods_Global_Shopaholic
 
 class Global_ShopaholicTests: XCTestCase {
 
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -29,6 +30,10 @@ class Global_ShopaholicTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testWallet() {
+       
     }
 
 }
