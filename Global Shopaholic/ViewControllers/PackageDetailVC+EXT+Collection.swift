@@ -21,16 +21,26 @@ extension PackageDetailsViewController: UICollectionViewDataSource, UICollection
         packageDetailCell?.packageDetailCollectionViewCellDelegate = self
         if let primaryThumbnail = packages[indexPath.row]["primary_thumbnail"] as? [String: Any],
         let thumbnailImage = primaryThumbnail["image_name"] as? String,
-           let trackingNumber = packages[indexPath.row]["tracking_number"] as? String{
+           let trackingNumber = packages[indexPath.row]["tracking_number"] as? String,
+           let storageRemaining = packages[indexPath.row]["storageLeft"] as? Int
+           {
+            
+            packageDetailCell?.storageRemainingLabel.text = "\(storageRemaining)"
             packageDetailCell?.packageImageView.sd_setImage(with: URL(string: thumbnailImage), placeholderImage: UIImage())
             print(trackingNumber)
             packageDetailCell?.trackingNumberLabel.text = "TN: \(trackingNumber)"
             packageDetailCell?.changeUI(status: packageStatus!)
         }
         else {
+            print(requestList)
+            
             if let fullImages = packages[indexPath.row]["full_images"] as? [[String: Any]],
                let imageName = fullImages[indexPath.row]["image_name"] as? String,
-               let trackingNumber = packages[indexPath.row]["tracking_number"] as? String{
+               let trackingNumber = packages[indexPath.row]["tracking_number"] as? String,
+               let storageRemaining = packages[indexPath.row]["storageLeft"] as? Int
+               {
+                
+                packageDetailCell?.storageRemainingLabel.text = "\(storageRemaining)"
                 packageDetailCell?.packageImageView.sd_setImage(with: URL(string: imageName), placeholderImage: UIImage())
                 packageDetailCell?.trackingNumberLabel.text = "TN: \(trackingNumber)"
 

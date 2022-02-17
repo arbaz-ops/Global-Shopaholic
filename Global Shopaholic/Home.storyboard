@@ -1820,9 +1820,9 @@ Pending </string>
                                         <color key="backgroundColor" red="0.043137254899999998" green="0.72941176470000002" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="HND-A4-6Fe" firstAttribute="top" secondItem="LQC-0I-yBy" secondAttribute="top" constant="8" id="EHV-Xi-NTv"/>
+                                            <constraint firstItem="sM5-Cn-d20" firstAttribute="leading" secondItem="LQC-0I-yBy" secondAttribute="leading" constant="20" id="gxw-jA-kXc"/>
                                             <constraint firstAttribute="bottom" secondItem="HND-A4-6Fe" secondAttribute="bottom" constant="8" id="iPk-3O-LA2"/>
                                             <constraint firstAttribute="height" constant="50" id="ikK-fu-PrA"/>
-                                            <constraint firstItem="sM5-Cn-d20" firstAttribute="leading" secondItem="LQC-0I-yBy" secondAttribute="leading" constant="20" id="kdq-qe-MD9"/>
                                             <constraint firstAttribute="bottom" secondItem="sM5-Cn-d20" secondAttribute="bottom" constant="13" id="qrJ-km-p8M"/>
                                             <constraint firstItem="sM5-Cn-d20" firstAttribute="top" secondItem="LQC-0I-yBy" secondAttribute="top" constant="14" id="sSP-9O-Yb9"/>
                                             <constraint firstAttribute="trailing" secondItem="HND-A4-6Fe" secondAttribute="trailing" constant="20" id="zTN-f9-aEC"/>

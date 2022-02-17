@@ -15,6 +15,7 @@ protocol PackageDetailCollectionViewCellDelegate {
 class PackageDetailCollectionViewCell: UICollectionViewCell {
     var indexPath: IndexPath?
     var packageDetailCollectionViewCellDelegate: PackageDetailCollectionViewCellDelegate?
+    @IBOutlet weak var storageRemainingLabel: UILabel!
     @IBOutlet weak var editCustomImageView: UIImageView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var editCustomDetailLabel: UILabel!
