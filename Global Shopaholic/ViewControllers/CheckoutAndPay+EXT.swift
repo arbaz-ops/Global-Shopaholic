@@ -12,7 +12,7 @@ import UIKit
 extension CheckoutAndPayViewController: CheckoutAndPayTableViewCellDelegate {
     
     
-    func paynowTapped(paymentMethod: PaymentMethod?) {
+    func paymentMethodSelected(paymentMethod: PaymentMethod?) {
         switch paymentMethod {
         case .paypal:
             let alert = UIAlertController(title: "Coming Soon", message: "", preferredStyle: .alert)
@@ -22,10 +22,13 @@ extension CheckoutAndPayViewController: CheckoutAndPayTableViewCellDelegate {
         case .card:
             let creditCardVC = self.storyboard?.instantiateViewController(withIdentifier: "CreditCardViewController") as? CreditCardViewController
             creditCardVC?.modalPresentationStyle = .overFullScreen
-//            creditCardVC?.isModalInPresentation = true
+            creditCardVC?.isModalInPresentation = true
            present(creditCardVC!, animated: true, completion: nil)
         case .bank:
-            print("Bank")
+            let bankTransferVC = self.storyboard?.instantiateViewController(withIdentifier: "BankTransferViewController") as? BankTransferViewController
+            bankTransferVC?.modalPresentationStyle = .overFullScreen
+            bankTransferVC?.isModalInPresentation = true
+           present(bankTransferVC!, animated: true, completion: nil)
         case .bitcoin:
             let alert = UIAlertController(title: "Coming Soon", message: "", preferredStyle: .alert)
           let action =  UIAlertAction(title: "Ok", style: .default)

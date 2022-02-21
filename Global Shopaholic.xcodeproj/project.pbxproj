@@ -256,6 +256,10 @@
 		7C95D2D327632FFA00EC198E /* SpecialServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D2D127632FFA00EC198E /* SpecialServicesTableViewCell.swift */; };
 		7C95D2D427632FFA00EC198E /* SpecialServicesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C95D2D227632FFA00EC198E /* SpecialServicesTableViewCell.xib */; };
 		7C95D2D627635DF900EC198E /* SpecialServices+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D2D527635DF900EC198E /* SpecialServices+EXT+TABLE.swift */; };
+		7C96E25927C371BC00AD7B91 /* BankTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C96E25827C371BC00AD7B91 /* BankTransferViewController.swift */; };
+		7C96E25C27C3776400AD7B91 /* BankTransferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C96E25A27C3776400AD7B91 /* BankTransferTableViewCell.swift */; };
+		7C96E25D27C3776400AD7B91 /* BankTransferTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C96E25B27C3776400AD7B91 /* BankTransferTableViewCell.xib */; };
+		7C96E26027C3851F00AD7B91 /* BankTransfer+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C96E25F27C3851F00AD7B91 /* BankTransfer+EXT+TABLE.swift */; };
 		7CA39F99279EAD5F00F2359E /* CustomDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39F97279EAD5F00F2359E /* CustomDescriptionTableViewCell.swift */; };
 		7CA39F9A279EAD5F00F2359E /* CustomDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA39F98279EAD5F00F2359E /* CustomDescriptionTableViewCell.xib */; };
 		7CA39F9D27A000BA00F2359E /* PackageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA39F9C27A000BA00F2359E /* PackageDetailsViewController.swift */; };
@@ -576,6 +580,10 @@
 		7C95D2D127632FFA00EC198E /* SpecialServicesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialServicesTableViewCell.swift; sourceTree = "<group>"; };
 		7C95D2D227632FFA00EC198E /* SpecialServicesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialServicesTableViewCell.xib; sourceTree = "<group>"; };
 		7C95D2D527635DF900EC198E /* SpecialServices+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpecialServices+EXT+TABLE.swift"; sourceTree = "<group>"; };
+		7C96E25827C371BC00AD7B91 /* BankTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTransferViewController.swift; sourceTree = "<group>"; };
+		7C96E25A27C3776400AD7B91 /* BankTransferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTransferTableViewCell.swift; sourceTree = "<group>"; };
+		7C96E25B27C3776400AD7B91 /* BankTransferTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankTransferTableViewCell.xib; sourceTree = "<group>"; };
+		7C96E25F27C3851F00AD7B91 /* BankTransfer+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BankTransfer+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7CA39F97279EAD5F00F2359E /* CustomDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		7CA39F98279EAD5F00F2359E /* CustomDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		7CA39F9C27A000BA00F2359E /* PackageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailsViewController.swift; sourceTree = "<group>"; };
@@ -776,6 +784,7 @@
 		781D3E6C257905BE0013DE3A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7C96E25727C36E4E00AD7B91 /* BankTransferVC */,
 				7C6FAAF927B6692C0088F16D /* Credit Card */,
 				7C1F471427AD3AB800FC19C8 /*  CheckoutAndPay */,
 				789B02E5268C89EE006D489A /* Checkout */,
@@ -1864,6 +1873,25 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		7C96E25727C36E4E00AD7B91 /* BankTransferVC */ = {
+			isa = PBXGroup;
+			children = (
+				7C96E25E27C3776D00AD7B91 /* Cells */,
+				7C96E25827C371BC00AD7B91 /* BankTransferViewController.swift */,
+				7C96E25F27C3851F00AD7B91 /* BankTransfer+EXT+TABLE.swift */,
+			);
+			name = BankTransferVC;
+			sourceTree = "<group>";
+		};
+		7C96E25E27C3776D00AD7B91 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7C96E25A27C3776400AD7B91 /* BankTransferTableViewCell.swift */,
+				7C96E25B27C3776400AD7B91 /* BankTransferTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		7CA39F9B27A0008D00F2359E /* Package Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -2098,6 +2126,7 @@
 				78F5ED9E2680B168002AE14B /* AssisterShippingCell.xib in Resources */,
 				781D3E99257926870013DE3A /* Montserrat-Thin.ttf in Resources */,
 				78088D05260B762A00C6E806 /* WeightUnitCell.xib in Resources */,
+				7C96E25D27C3776400AD7B91 /* BankTransferTableViewCell.xib in Resources */,
 				781D3E44257900D00013DE3A /* Main.storyboard in Resources */,
 				781D3E8C257926870013DE3A /* Montserrat-ExtraBold.ttf in Resources */,
 				784447F92680BF5500F2C084 /* AddAnotherBtnCell.xib in Resources */,
@@ -2264,6 +2293,7 @@
 				785ED6AB26302AD20033D98D /* CalculatorDetailVC.swift in Sources */,
 				781D3EA325793FFE0013DE3A /* UITextField+EXT.swift in Sources */,
 				785424BE257E5C5400FC1F61 /* MenuViewController.swift in Sources */,
+				7C96E25C27C3776400AD7B91 /* BankTransferTableViewCell.swift in Sources */,
 				7CA39FB427A9203600F2359E /* EditCustomDetails+EXT+TABLE.swift in Sources */,
 				789CB91D25E6A589007313B4 /* SubRow.swift in Sources */,
 				7CA3EACE2771ED300053C493 /* EditAddress+EXT+TABLE.swift in Sources */,
@@ -2353,6 +2383,7 @@
 				78B0363B26188ADB00883769 /* InfoUpdateRequest.swift in Sources */,
 				78BC49DD269C488C000EC5FE /* ShippingInfoCell.swift in Sources */,
 				7CA39FA827A294BF00F2359E /* PackageDetailVC+EXT+Collection.swift in Sources */,
+				7C96E25927C371BC00AD7B91 /* BankTransferViewController.swift in Sources */,
 				78440096257A7B6000B5F0C7 /* OTPVC.swift in Sources */,
 				7872B80E2654F5E600B796B2 /* ImagePicker.swift in Sources */,
 				78FF1E132682364100A6F3DE /* BeginAssistedPurhase+EXT+VALIDATION.swift in Sources */,
@@ -2404,6 +2435,7 @@
 				7C6F005E275F5D230007D83C /* Request+EXT+TABLE.swift in Sources */,
 				783373D126832DFB004CB9AF /* ASPSummaryModel.swift in Sources */,
 				7CAA390F2747A20D0095A8F5 /* ShippedTableViewCell.swift in Sources */,
+				7C96E26027C3851F00AD7B91 /* BankTransfer+EXT+TABLE.swift in Sources */,
 				78E4DDE426A033FE000F9EDE /* completedCell.swift in Sources */,
 				783373CF268329E9004CB9AF /* missingItemAction.swift in Sources */,
 				78440081257A53B100B5F0C7 /* SignUp+EXT.swift in Sources */,

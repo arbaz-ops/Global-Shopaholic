@@ -27,7 +27,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="45" id="5Ci-lQ-X74"/>
                         </constraints>
-                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Card Holder's Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="033-YF-EG8">
@@ -36,8 +36,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="45" id="0th-W3-31T"/>
                         </constraints>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Expiry Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X7w-iz-XiG">
@@ -47,8 +46,7 @@
                             <constraint firstAttribute="width" constant="149" id="Ie2-zX-P7V"/>
                             <constraint firstAttribute="height" constant="45" id="Rtj-Tl-p9u"/>
                         </constraints>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CCV" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Lu-gL-bQC">
@@ -58,8 +56,7 @@
                             <constraint firstAttribute="height" constant="45" id="Pfw-bB-w7q"/>
                             <constraint firstAttribute="width" constant="149" id="gD8-fT-ak4"/>
                         </constraints>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All transaction are secure and encrypted after varification, we will only store last four digits of your credit card." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jW-jU-GiE">

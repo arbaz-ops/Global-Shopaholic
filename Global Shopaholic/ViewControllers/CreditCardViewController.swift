@@ -10,11 +10,13 @@ import UIKit
 
 class CreditCardViewController: UIViewController {
 
+    @IBOutlet weak var creditCardView: UIView!
     @IBOutlet weak var creditCardTableView: UITableView!
     @IBOutlet weak var upperView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         upperView.roundTopCorners(radius: 25)
+        creditCardTableView.roundTopCorners(radius: 25)
         loadTableView()
         // Do any additional setup after loading the view.
     }
@@ -26,6 +28,7 @@ class CreditCardViewController: UIViewController {
         creditCardTableView.dataSource = self
         creditCardTableView.allowsSelection = false
         creditCardTableView.showsVerticalScrollIndicator = false
+        creditCardTableView.roundTopCorners(radius: 25)
         creditCardTableView.register(UINib(nibName: "CreditCardTableViewCell", bundle: nil), forCellReuseIdentifier: "CreditCardTableViewCell")
     }
   
