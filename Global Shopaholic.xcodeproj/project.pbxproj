@@ -812,9 +812,9 @@
 				7CA3EAC52771C1450053C493 /* Edit Address */,
 				7C6F00792761E6C60007D83C /* CustomDetail */,
 				7C6F005F275F76A80007D83C /* ReturnPackage */,
-				7CA39F9B27A0008D00F2359E /* Package Details */,
 				7C6F0055275E25F90007D83C /* RequestForm */,
 				7C95D2CD27632EE400EC198E /* Special Services */,
+				7CA39F9B27A0008D00F2359E /* Package Details */,
 				7CA39FA927A808B200F2359E /* EditCustomDetails */,
 				7C726151279047FB00ADB324 /* StorageAndShipment */,
 			);

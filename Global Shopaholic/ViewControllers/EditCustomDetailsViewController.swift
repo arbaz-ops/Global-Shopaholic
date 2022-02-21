@@ -13,7 +13,7 @@ class EditCustomDetailsViewController: UIViewController {
     @IBOutlet weak var editCustomDetailsView: UIView!
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var editCustomDetailTableView: UITableView!
-    
+    var trackingNumber: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTable()

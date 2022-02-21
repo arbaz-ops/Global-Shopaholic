@@ -93,6 +93,14 @@ class PackageDetailsViewController: BaseViewController {
                         packageStatus = OutgoingStatus.PaymentDone
                         statusLabel.text = "Payment Done"
                     }
+                    else if status == OutgoingStatus.Shipped.rawValue {
+                        packageStatus = OutgoingStatus.Shipped
+                        statusLabel.text = "Shipped"
+                    }
+                    else if status == OutgoingStatus.Delivered.rawValue {
+                        packageStatus = OutgoingStatus.Delivered
+                        statusLabel.text = "Delivered"
+                    }
                     packages = requestPackages
                     print(packages)
                     loadCollectionView()

@@ -29,22 +29,28 @@ extension PackageDetailsViewController: UICollectionViewDataSource, UICollection
             packageDetailCell?.packageImageView.sd_setImage(with: URL(string: thumbnailImage), placeholderImage: UIImage())
             print(trackingNumber)
             packageDetailCell?.trackingNumberLabel.text = "TN: \(trackingNumber)"
-            packageDetailCell?.changeUI(status: packageStatus!)
+            packageDetailCell?.changeUI(status: packageStatus)
         }
         else {
             print(requestList)
             
             if let fullImages = packages[indexPath.row]["full_images"] as? [[String: Any]],
-               let imageName = fullImages[indexPath.row]["image_name"] as? String,
+               
                let trackingNumber = packages[indexPath.row]["tracking_number"] as? String,
                let storageRemaining = packages[indexPath.row]["storageLeft"] as? Int
                {
                 
+                if  let imageName = fullImages[indexPath.row]["image_name"] as? String{
+                    packageDetailCell?.packageImageView.sd_setImage(with: URL(string: imageName), placeholderImage: UIImage())
+                } else {
+                    packageDetailCell?.packageImageView.sd_setImage(with: URL(string: ""), placeholderImage: UIImage())
+                }
+                
                 packageDetailCell?.storageRemainingLabel.text = "\(storageRemaining)"
-                packageDetailCell?.packageImageView.sd_setImage(with: URL(string: imageName), placeholderImage: UIImage())
+               
                 packageDetailCell?.trackingNumberLabel.text = "TN: \(trackingNumber)"
 
-                packageDetailCell?.changeUI(status: packageStatus!)
+                packageDetailCell?.changeUI(status: packageStatus)
 
             }
                

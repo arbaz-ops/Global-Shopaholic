@@ -31,6 +31,8 @@ enum OutgoingStatus: String {
     case PendingPayment = "payment_pending"
     case Processing = "processing"
     case PaymentDone = "payment_done"
+    case Shipped = "shipped"
+    case Delivered = "delivered"
 }
 
 

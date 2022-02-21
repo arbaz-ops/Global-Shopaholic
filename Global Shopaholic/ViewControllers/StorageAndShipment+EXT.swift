@@ -383,6 +383,41 @@ extension StorageAndShipmentViewController {
 }
 
 extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, FilterViewControllerDelegate, OutgoingTableViewCellDelegate, ShippedTableViewCellDelegate {
+    func openShippedRequestForm(cell: UITableViewCell) {
+        let requestFormVC = self.storyboard!.instantiateViewController(withIdentifier: "RequestFormViewController") as? RequestFormViewController
+        let shippedCell = cell as? ShippedTableViewCell
+        shippedCell?.hideOptions(frame: (shippedCell?.optionButton.frame)!)
+        requestFormVC?.atIndex = shippedCell!.indexPath
+        requestFormVC?.packageList = self.packagesList
+        requestFormVC?.modalPresentationStyle = .overFullScreen
+        requestFormVC?.isModalInPresentation = true
+        self.present(requestFormVC!, animated: true)
+    }
+    
+    func openShippedCustomDeclaration(cell: UITableViewCell) {
+        let customDeclarationVC = self.storyboard!.instantiateViewController(withIdentifier: "CustomDeclarationFormViewController") as? CustomDeclarationFormViewController
+        let shippedCell = cell as? ShippedTableViewCell
+        shippedCell?.hideOptions(frame: (shippedCell?.optionButton.frame)!)
+        customDeclarationVC?.atIndex = shippedCell!.indexPath
+        customDeclarationVC?.packageList = self.packagesList
+        customDeclarationVC?.modalPresentationStyle = .overFullScreen
+        customDeclarationVC?.isModalInPresentation = true
+        self.present(customDeclarationVC!, animated: true)
+    }
+    
+    func openShippedShowPackageDetails(cell: UITableViewCell) {
+        let packageDetailVC = self.storyboard!.instantiateViewController(withIdentifier: "PackageDetailsViewController") as? PackageDetailsViewController
+        packageDetailVC?.modalPresentationStyle = .overFullScreen
+        packageDetailVC?.isModalInPresentation = true
+        let shippedCell = cell as? ShippedTableViewCell
+        shippedCell?.hideOptions(frame: (shippedCell?.optionButton.frame)!)
+        
+        let requestId = packagesList[shippedCell!.indexPath!.row]["id"] as? Int
+        packageDetailVC?.requestID = requestId
+//        packageDetailVC?.requestID = []
+        self.present(packageDetailVC!, animated: true)
+    }
+    
     func checkoutAndPayTapped(cell: UITableViewCell) {
         let checkOutAndPay = storyboard?.instantiateViewController(withIdentifier: "CheckoutAndPayViewController") as? CheckoutAndPayViewController
         checkOutAndPay?.modalPresentationStyle = .overFullScreen
@@ -457,7 +492,7 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
         packageDetailVC?.isModalInPresentation = true
         let outgoingCell = cell as? OutgoingTableViewCell
         outgoingCell?.hideOptions(frame: (outgoingCell?.optionButton.frame)!)
-
+        
         let requestId = packagesList[outgoingCell!.indexPath!.row]["id"] as? Int
         packageDetailVC?.requestID = requestId
 //        packageDetailVC?.requestID = []

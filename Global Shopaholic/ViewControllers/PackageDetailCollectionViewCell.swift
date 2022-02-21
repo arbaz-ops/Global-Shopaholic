@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PackageDetailCollectionViewCellDelegate {
-    func editCustomDetailTapped(cell: UICollectionViewCell)
+    func editCustomDetailTapped(atIndex: IndexPath)
 }
 
 class PackageDetailCollectionViewCell: UICollectionViewCell {
@@ -34,10 +34,10 @@ class PackageDetailCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func editCustomLabelTapped() {
-        packageDetailCollectionViewCellDelegate?.editCustomDetailTapped(cell: self)
+        packageDetailCollectionViewCellDelegate?.editCustomDetailTapped(atIndex: self.indexPath!)
     }
     
-    func changeUI(status: OutgoingStatus) {
+    func changeUI(status: OutgoingStatus!) {
         
         switch status {
         case .Preparing:
@@ -50,6 +50,14 @@ class PackageDetailCollectionViewCell: UICollectionViewCell {
             editCustomImageView.isHidden = true
             editCustomDetailLabel.isHidden = true
         case .PaymentDone:
+            editCustomImageView.isHidden = true
+            editCustomDetailLabel.isHidden = true
+        case .none:
+            print("do nothing")
+        case .Shipped:
+            editCustomImageView.isHidden = true
+            editCustomDetailLabel.isHidden = true
+        case .Delivered:
             editCustomImageView.isHidden = true
             editCustomDetailLabel.isHidden = true
         }

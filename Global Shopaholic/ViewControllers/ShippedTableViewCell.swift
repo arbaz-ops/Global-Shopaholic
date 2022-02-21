@@ -10,6 +10,11 @@ import UIKit
 
 protocol ShippedTableViewCellDelegate {
     func shippedOptionButtonTapped(atIndex: IndexPath)
+    func openShippedRequestForm(cell: UITableViewCell)
+    func openShippedCustomDeclaration(cell: UITableViewCell)
+    func openShippedShowPackageDetails(cell: UITableViewCell)
+
+
 }
 
 class ShippedTableViewCell: UITableViewCell {
@@ -136,14 +141,11 @@ extension ShippedTableViewCell: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            print("sadsadsa")
-//            self.outgoingTableViewCellDelegate?.openRequestFormViewController(cell: self)
+            self.shippedTableViewCellDelegate?.openShippedRequestForm(cell: self)
         case 1:
-            print("sadsads")
-//            self.outgoingTableViewCellDelegate?.openCustomDeclarationViewController(cell: self)
+            self.shippedTableViewCellDelegate?.openShippedCustomDeclaration(cell: self)
         case 2:
-            print("sadsadsadsa")
-//            self.outgoingTableViewCellDelegate?.openEditAddressViewController(cell: self)
+            self.shippedTableViewCellDelegate?.openShippedShowPackageDetails(cell: self)
         
         default:
             break

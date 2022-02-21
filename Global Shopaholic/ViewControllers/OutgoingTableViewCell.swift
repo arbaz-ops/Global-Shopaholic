@@ -124,6 +124,10 @@ class OutgoingTableViewCell: UITableViewCell {
             removeBorderFromView(progressView: pendingPaymentProgressView)
             removeBorderFromView(progressView: processingProgressView)
             checkoutAndPayButton.isHidden = true
+        case .Shipped:
+            print("Do nothing")
+        case .Delivered:
+            print("Do nothing")
         }
     }
 

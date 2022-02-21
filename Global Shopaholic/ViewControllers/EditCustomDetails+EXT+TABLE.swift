@@ -16,6 +16,7 @@ extension EditCustomDetailsViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let editCustomFormCell = tableView.dequeueReusableCell(withIdentifier: "EditCustomDetailsTableViewCell") as? EditCustomDetailsTableViewCell
+        editCustomFormCell?.trackingNumber.text = self.trackingNumber
         return editCustomFormCell!
     }
     

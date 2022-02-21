@@ -10,9 +10,12 @@ import Foundation
 import UIKit
 
 extension PackageDetailsViewController: PackageDetailCollectionViewCellDelegate {
-    func editCustomDetailTapped(cell: UICollectionViewCell) {
-        let cell = cell as! PackageDetailCollectionViewCell
+    func editCustomDetailTapped(atIndex: IndexPath) {
+       
+        print(atIndex.row)
+        
         let editCustomDetailVC = storyboard?.instantiateViewController(withIdentifier: "EditCustomDetailsViewController") as? EditCustomDetailsViewController
+        editCustomDetailVC?.trackingNumber = packages[atIndex.row]["tracking_number"] as? String
         editCustomDetailVC?.modalPresentationStyle = .overFullScreen
         self.present(editCustomDetailVC!, animated: true, completion: nil)
 
