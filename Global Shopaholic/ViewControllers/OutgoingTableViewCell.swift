@@ -52,7 +52,6 @@ class OutgoingTableViewCell: UITableViewCell {
         checkoutAndPayButton.layer.cornerRadius = 8
         optionButton.setTitle("", for: .normal)
         containerView.layer.cornerRadius = 8
-        
         containerView.DropShadowView()
         containerView.isUserInteractionEnabled = true
         self.addSubview(optionsView)
@@ -72,6 +71,8 @@ class OutgoingTableViewCell: UITableViewCell {
     }
     
     @IBAction func checkoutAndPayTapped(_ sender: UIButton) {
+        
+       
         outgoingTableViewCellDelegate?.checkoutAndPayTapped(cell: self)
     }
     @objc func dismissOptionView() {

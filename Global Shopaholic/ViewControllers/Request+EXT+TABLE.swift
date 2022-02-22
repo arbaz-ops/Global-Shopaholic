@@ -29,7 +29,7 @@ extension RequestFormViewController: UITableViewDelegate, UITableViewDataSource 
         let zipCode = address["zip_code"],
         let specialInstruction = consolidation["special_instructions"] as? String,
         let boxDetail = consolidation["box_detail"] as? [[String: Any]],
-        let totalShippingCharges = reviewRequestList!["total_shipping_charges"] as? Int,
+        let totalShippingCharges = reviewRequestList!["total_shipping_charges"] as? Double,
         let processingCharges = reviewRequestList!["processing_charges"] as? Int,
         let expressProcessingFee = reviewRequestList!["express_processing_fee"] as? Int,
         let vatCharges = reviewRequestList!["vat_charges"] as? Int,
@@ -55,14 +55,17 @@ extension RequestFormViewController: UITableViewDelegate, UITableViewDataSource 
             requestFormCell?.requestId.text = unique_key
             requestFormCell?.consolidatedPackages.text = String.init(totalPackage)
             requestFormCell?.boxeDetail = boxDetail
-            requestFormCell?.estimatedShippingCharges.text = "$ \(totalShippingCharges)"
+            requestFormCell?.estimatedShippingCharges.text = "$ \(Int.init(totalShippingCharges))"
             requestFormCell?.expressProcessingCharges.text = "$ \(expressProcessingFee)"
             requestFormCell?.processingCharges.text = "$ \(processingCharges)"
             requestFormCell?.vatCharges.text = "$ \(vatCharges)"
             requestFormCell?.paidServices.text = "$ \(totalPaidServices)"
-            let totalCost = totalShippingCharges + processingCharges + expressProcessingFee + vatCharges + totalPaidServices
+            let totalCost = Int(totalShippingCharges) + processingCharges + expressProcessingFee + vatCharges + totalPaidServices
             requestFormCell?.totalCost.text = "$ \(totalCost)"
             print(consolidation)
+        }
+        else {
+            return UITableViewCell()
         }
         
         return requestFormCell!
