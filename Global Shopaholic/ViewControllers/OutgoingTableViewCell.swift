@@ -60,7 +60,6 @@ class OutgoingTableViewCell: UITableViewCell {
         optionsView.delegate = self
         optionsView.dataSource = self
         optionsView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        
         optionsView.alwaysBounceVertical = false
     }
     
@@ -93,8 +92,6 @@ class OutgoingTableViewCell: UITableViewCell {
             drawBorderToView(progressView: pendingPaymentProgressView)
             drawBorderToView(progressView: processingProgressView)
             checkoutAndPayButton.isHidden = false
-            
-            
         case .PendingPayment:
             preparingProgressView.backgroundColor = hexStringToUIColor(hex: "#0BBAA3")
             pendingPaymentProgressView.backgroundColor = hexStringToUIColor(hex: "#0BBAA3")
@@ -104,7 +101,6 @@ class OutgoingTableViewCell: UITableViewCell {
             removeBorderFromView(progressView: pendingPaymentProgressView)
             drawBorderToView(progressView: processingProgressView)
             checkoutAndPayButton.isHidden = false
-            
         case .Processing:
             preparingProgressView.backgroundColor = hexStringToUIColor(hex: "#0BBAA3")
             pendingPaymentProgressView.backgroundColor = hexStringToUIColor(hex: "#0BBAA3")

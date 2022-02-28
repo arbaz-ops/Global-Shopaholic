@@ -18,6 +18,10 @@ extension PackageDetailsViewController: UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let packageDetailCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PackageDetailCollectionViewCell", for: indexPath) as? PackageDetailCollectionViewCell
         packageDetailCell?.indexPath = indexPath
+        print(indexPath.row)
+        
+        print(packages[indexPath.row])
+        
         packageDetailCell?.packageDetailCollectionViewCellDelegate = self
         if let primaryThumbnail = packages[indexPath.row]["primary_thumbnail"] as? [String: Any],
         let thumbnailImage = primaryThumbnail["image_name"] as? String,
@@ -39,13 +43,11 @@ extension PackageDetailsViewController: UICollectionViewDataSource, UICollection
                let trackingNumber = packages[indexPath.row]["tracking_number"] as? String,
                let storageRemaining = packages[indexPath.row]["storageLeft"] as? Int
                {
-                
                 if  let imageName = fullImages[indexPath.row]["image_name"] as? String{
                     packageDetailCell?.packageImageView.sd_setImage(with: URL(string: imageName), placeholderImage: UIImage())
                 } else {
                     packageDetailCell?.packageImageView.sd_setImage(with: URL(string: ""), placeholderImage: UIImage())
                 }
-                
                 packageDetailCell?.storageRemainingLabel.text = "\(storageRemaining)"
                
                 packageDetailCell?.trackingNumberLabel.text = "TN: \(trackingNumber)"
