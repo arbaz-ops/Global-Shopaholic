@@ -42,7 +42,8 @@ class PackageDetailsViewController: BaseViewController {
         packageDetailCollectionView.delegate = self
         packageDetailCollectionView.dataSource = self
     }
-
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

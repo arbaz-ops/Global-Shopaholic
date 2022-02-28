@@ -63,7 +63,6 @@ extension PackageDetailsViewController: UICollectionViewDataSource, UICollection
    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-          
                 return UIEdgeInsets(top: 1.0, left: 10.0, bottom: 1.0, right: 10.0)
             
           
