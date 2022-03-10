@@ -508,6 +508,10 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
     func returnPackageTapped(indexPath: IndexPath) {
         print(indexPath.row)
         let returnPackageVC = storyboard?.instantiateViewController(withIdentifier: "ReturnPackageViewController") as? ReturnPackageViewController
+        guard let packageId = packagesList[indexPath.row]["package_id"] as? String else {
+            return
+        }
+        returnPackageVC?.packageId = packageId
         returnPackageVC?.modalPresentationStyle = .overFullScreen
 
         present(returnPackageVC!, animated: true, completion: nil)

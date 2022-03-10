@@ -8,7 +8,9 @@
 
 import UIKit
 
-
+protocol ReturnPackageTableViewCellDelegate {
+    func chooseFileTapped(indexPath: IndexPath)
+}
 
 
 class ReturnPackageTableViewCell: UITableViewCell {
@@ -21,6 +23,8 @@ class ReturnPackageTableViewCell: UITableViewCell {
     @IBOutlet weak var yesReturnPackageCheckBox: UIButton!
     @IBOutlet weak var detailsLabel: UILabel!
     
+    var returnPackageCellDelegate: ReturnPackageTableViewCellDelegate?
+    
     @IBOutlet weak var attachLabel: UILabel!
     @IBOutlet weak var noWholePackageLabel: UILabel!
     @IBOutlet weak var yesWholePackageLabel: UILabel!
@@ -28,6 +32,7 @@ class ReturnPackageTableViewCell: UITableViewCell {
     @IBOutlet weak var yesReturnLabelCheckBox: UIButton!
     @IBOutlet weak var chooseFileButton: UIButton!
     @IBOutlet weak var detailsTextField: UITextView!
+    var indexPath: IndexPath?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -63,6 +68,9 @@ class ReturnPackageTableViewCell: UITableViewCell {
 //        }
     }
     
+    @IBAction func chooseFileTapped(_ sender: UIButton) {
+        returnPackageCellDelegate?.chooseFileTapped(indexPath: indexPath!)
+    }
     @IBAction func yesReturnLabelCheckBox(_ sender: UIButton) {
 //        if returnLabel == false {
             yesReturnLabelCheckBox.setImage(UIImage(named: "checkedGreen"), for: .normal)

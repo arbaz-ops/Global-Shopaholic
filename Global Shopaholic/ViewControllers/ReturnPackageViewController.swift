@@ -10,6 +10,12 @@ import UIKit
 
 class ReturnPackageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var packageId: String? {
+        didSet {
+            print(packageId)
+            
+        }
+    }
     @IBOutlet weak var returnPackageView: UIView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var upperView: UIView!

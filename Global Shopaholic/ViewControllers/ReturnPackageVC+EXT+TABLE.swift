@@ -16,6 +16,8 @@ extension ReturnPackageViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let returnPackageCell = tableView.dequeueReusableCell(withIdentifier: "ReturnPackageTableViewCell", for: indexPath) as? ReturnPackageTableViewCell
+        returnPackageCell!.indexPath = indexPath
+        returnPackageCell?.returnPackageCellDelegate = self
         return returnPackageCell!
     }
     
