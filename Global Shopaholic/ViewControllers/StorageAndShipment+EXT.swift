@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-extension StorageAndShipmentViewController {
+extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
+    
     func InitUI()
     {
         searchTextField.layer.cornerRadius = 10
@@ -508,6 +509,7 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
     func returnPackageTapped(indexPath: IndexPath) {
         print(indexPath.row)
         let returnPackageVC = storyboard?.instantiateViewController(withIdentifier: "ReturnPackageViewController") as? ReturnPackageViewController
+        returnPackageVC?.returnPackageVCDelegate = self
         guard let packageId = packagesList[indexPath.row]["package_id"] as? String else {
             return
         }
@@ -561,6 +563,46 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
 
     }
     
+    func updateUI(completion: @escaping (Bool) -> Void) {
+        do {
+//               self.changeUI(status: currentSelection)
+        let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
+        guard let userData = encodedUserData else {
+            return
+        }
+        let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(userData) as? UserDataClass
+            
+            guard let userToken = unarchivedData?.token else {
+                print("Failed to get the token")
+                return
+            }
+           storageVM = StorageVM()
+            storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all", success: {[self] response in
+                let data = response["data"] as? [String: [[String: Any]]]
+                let list = data!["list"]!
+                self.packagesList = list
+                self.changeUI(status: self.currentSelection)
+                completion(true)
+            
+                DispatchQueue.main.async {
+                    self.storageAndShipmentCollectionView.reloadData()
+                }
+
+            }, failure: { str in
+                completion(false)
+
+                COMMON_ALERT.showAlert(msg: str)
+            })
+            
+        } catch let error {
+            completion(false)
+
+                COMMON_ALERT.showAlert(msg: "Could not connect to server.\n Please try again later.")
+
+            
+        }
+      
+    }
     
     
 }

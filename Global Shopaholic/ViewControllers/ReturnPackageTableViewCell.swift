@@ -10,6 +10,7 @@ import UIKit
 
 protocol ReturnPackageTableViewCellDelegate {
     func chooseFileTapped(indexPath: IndexPath)
+    func submitButtonTapped(type: String?, detail: String?)
 }
 
 
@@ -18,7 +19,7 @@ class ReturnPackageTableViewCell: UITableViewCell {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var messageView: UIView!
     var returnLabel: Bool?
-    var returnPackage: Bool?
+    var returnPackage: String?
     @IBOutlet weak var noReturnPackageCheckBox: UIButton!
     @IBOutlet weak var yesReturnPackageCheckBox: UIButton!
     @IBOutlet weak var detailsLabel: UILabel!
@@ -37,7 +38,7 @@ class ReturnPackageTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         returnLabel = false
-        returnPackage = false
+        detailsTextField.autocorrectionType = .no
         detailsTextField.setRightPaddingPoints(10)
         detailsTextField.setLeftPaddingPoints(10)
         detailsTextField.layer.cornerRadius = 6
@@ -55,6 +56,11 @@ class ReturnPackageTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func submitTapped(_ sender: UIButton) {
+       
+        
+        returnPackageCellDelegate?.submitButtonTapped(type: returnPackage, detail: detailsTextField?.text)
+    }
     @IBAction func noReturnLabelCheckBoxTapped(_ sender: UIButton) {
 //        if returnLabel == false {
             noReturnLabelCheckBox.setImage(UIImage(named: "checkedGreen"), for: .normal)
@@ -91,7 +97,7 @@ class ReturnPackageTableViewCell: UITableViewCell {
         detailsTextField.isHidden = false
         detailsLabel.isHidden = false
 
-        returnPackage = false
+        returnPackage = "no"
     }
     @IBAction func yesReturnPackageCheckBox(_ sender: UIButton) {
         yesReturnPackageCheckBox.setImage(UIImage(named: "checkedGreen"), for: .normal)
@@ -99,17 +105,28 @@ class ReturnPackageTableViewCell: UITableViewCell {
         detailsTextField.isHidden = true
         detailsLabel.isHidden = true
 
-        returnPackage = true
+        returnPackage = "yes"
     }
     
     func changeUIOnReturnLabel(_ condition: Bool) {
         switch condition {
         case true:
+            if returnPackage == "yes" {
+                detailsTextField.isHidden = true
+                detailsLabel.isHidden = true
+
+            }else if returnPackage == "no" {
+                detailsTextField.isHidden = false
+                detailsLabel.isHidden = false
+
+            }
+            else if returnPackage == "" {
+                detailsTextField.isHidden = true
+                detailsLabel.isHidden = true
+            }
             wholePackageLabel.isHidden = false
             yesWholePackageLabel.isHidden = false
             noWholePackageLabel.isHidden = false
-            detailsLabel.isHidden = false
-            detailsTextField.isHidden = false
             attachLabel.isHidden = false
             chooseFileButton.isHidden = false
             submitButton.isHidden = false
@@ -117,6 +134,7 @@ class ReturnPackageTableViewCell: UITableViewCell {
             yesReturnPackageCheckBox.isHidden = false
             noReturnPackageCheckBox.isHidden = false
         case false:
+            
             wholePackageLabel.isHidden = true
             yesWholePackageLabel.isHidden = true
             noWholePackageLabel.isHidden = true

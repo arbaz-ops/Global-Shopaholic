@@ -20,6 +20,66 @@ let BASE_URL = "http://34.194.133.139:8888/"
 class WebService: NSObject {
     
     
+    class func postMultipartDataWithToken(Token: String, strURL: String,is_loader_required: Bool,image: UIImage? ,params: [String: Any], method: HTTPMethod,success:@escaping (_ response:NSDictionary) -> (), failure:@escaping (String) -> ()) {
+        if Connectivity.isConnectedToInternet {
+            print("Yes! internet is available.")
+
+        print(BASE_URL.appending(strURL))
+        print(params)
+            print(Token)
+
+       
+            guard let imageData = image?.jpegData(compressionQuality: 0.5) else {
+                return
+            }
+            let headers = [
+                "Authorization": "Bearer "+Token,
+                "Accept": "application/json",
+                "Content-Type": "multipart/form-data"
+            ]
+            
+            Alamofire.upload(multipartFormData: { multipartData in
+                for (key,value) in params {
+                    multipartData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
+                }
+                multipartData.append(imageData, withName: "file", fileName: "file", mimeType: "image/jpg")
+            }, to: BASE_URL.appending(strURL), method: .post, headers: headers) { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        switch(response.result) {
+
+                        case .success(_):
+                            if let data = response.data
+                            {
+                                print(JSON(data).dictionaryObject!)
+                              
+                               
+                                if let dataDictionary = JSON(data).dictionaryObject
+                                {
+                                    success(dataDictionary as NSDictionary)
+                                }
+                                if let dataArray = JSON(data).arrayObject
+                                {
+                                    success(NSDictionary(dictionaryLiteral:  ("data",dataArray)))
+                                }
+                            }
+                            break
+
+                        case .failure(_):
+                            
+                            failure(response.error.debugDescription )
+                            break
+                        }
+                    }
+                case .failure(let error):
+                    failure(error.localizedDescription)
+                }
+            }
+
+    }
+    }
+    
     class  func performApiCallWithJsonBody<T: Codable>(Token:String,strURL:String, expectedReturnType: T.Type, params: [String:Any], method: HTTPMethod, success: @escaping (_ response:T) -> (), failure: @escaping (_ str: String) -> ()) {
        
         

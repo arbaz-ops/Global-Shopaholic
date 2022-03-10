@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ReturnPackageVCDelegate {
+    func updateUI(completion: @escaping (Bool) -> Void)
+}
+
 class ReturnPackageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var packageId: String? {
@@ -16,6 +20,9 @@ class ReturnPackageViewController: UIViewController, UITableViewDelegate, UITabl
             
         }
     }
+    var returnPackageVCDelegate: ReturnPackageVCDelegate?
+    var storageVM: StorageVM?
+    var fileImage: UIImage?
     @IBOutlet weak var returnPackageView: UIView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var upperView: UIView!

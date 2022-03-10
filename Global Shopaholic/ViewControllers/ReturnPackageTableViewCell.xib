@@ -155,6 +155,9 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                        <connections>
+                            <action selector="submitTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Z4s-MD-fXd"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" red="0.93725490196078431" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>

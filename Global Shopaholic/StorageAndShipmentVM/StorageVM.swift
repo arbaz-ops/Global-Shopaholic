@@ -95,4 +95,29 @@ struct StorageVM {
             print(str)
         }
     }
+    
+    func returnPackage(token: String,packageId: String,type: String,detail: String , image: UIImage, success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+        let ep = endpoints()
+        let params: [String: Any] = [
+            "package_id": packageId,
+            "type": type,
+            "detail": detail
+        ]
+        RappleActivityIndicatorView.startAnimating()
+
+        WebService.postMultipartDataWithToken(Token: token, strURL: ep.returnPackage, is_loader_required: false, image: image, params: params, method: .post) { response in
+            RappleActivityIndicatorView.stopAnimation()
+
+            success(response)
+            
+            
+        } failure: { error in
+            RappleActivityIndicatorView.stopAnimation()
+
+            failure(error)
+        }
+
+        
+    }
+    
 }
