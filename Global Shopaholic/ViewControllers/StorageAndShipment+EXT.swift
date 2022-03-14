@@ -532,7 +532,10 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
     func specialServiceTapped(indexPath: IndexPath) {
         let specialServicesVC = storyboard?.instantiateViewController(withIdentifier: "SpecialServicesViewController") as? SpecialServicesViewController
         print(indexPath.row)
-
+        guard let packageId = packagesList[indexPath.row]["package_id"] as? String else {
+            return
+        }
+        specialServicesVC?.packageId = packageId
         specialServicesVC?.modalPresentationStyle = .overFullScreen
 
         present(specialServicesVC!, animated: true, completion: nil)

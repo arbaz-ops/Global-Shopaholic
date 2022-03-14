@@ -41,3 +41,22 @@ enum PackageStatus: String {
     case Rejected = "rejected"
     case Processing = "processing"
 }
+
+enum FreeServices: String {
+    case PackageContentPhotoDuringCosolidation = "package_content_photo_during_consolidation"
+    case PackageConsolidation = "package_consolidation"
+    case Repacking = "repacking"
+    case RemoveItemsBoxes = "remove_items_boxes"
+    case RemoveProtectivePackaging = "remove_all_protective_packaging/padding"
+    case RemoveShipperBoxes = "remove_shipper_boxes_(brown_boxes)"
+    case RemoveInvoicesPricingTags = "remove_invoices_and_pricing_tags"
+    case DoNotRemoveItemsBoxes = "do_not_remove_items_boxes"
+    case DoNotRemoveShipperBoxes = "do_not_remove_shipper_boxes_(brown_boxes)"
+    case Other = "other"
+}
+
+enum PaidServices: String {
+    case Split = "split"
+    case DetailedPhoto = "detail_photos"
+    case TestDevice = "test_device"
+}

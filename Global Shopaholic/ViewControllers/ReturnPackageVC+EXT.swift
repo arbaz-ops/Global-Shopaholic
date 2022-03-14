@@ -108,7 +108,6 @@ extension ReturnPackageViewController: ReturnPackageTableViewCellDelegate, UINav
                                     
                                 }
                             })
-
                         }
                     }, failure: { str in
                         self.dismiss(animated: true) {
@@ -120,10 +119,8 @@ extension ReturnPackageViewController: ReturnPackageTableViewCellDelegate, UINav
                                     
                                 }
                             })
-
                         }
                     })
-                
                 } catch let error {
                     COMMON_ALERT.showAlert(msg: "Could not connect to server.\n Please try again later.")
                 }

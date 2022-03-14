@@ -8,41 +8,80 @@
 
 import UIKit
 
+protocol SpecialServicesTableViewCellDelegate {
+    func packageContentPhotoSelected()
+    func packageConsolidationSelected()
+    func repackingSelected()
+    func removeItemBoxesSelected()
+    func removeAllProtectivePackagingSelected()
+    func removeShipperBoxesSelected()
+    func removeInvoicesAndPricesTagsSelected()
+    func doNotRemoveShipperBoxesSelected()
+    func doNotRemoveItemBoxesSelected()
+    
+    func packageContentPhotoDeSelected()
+    func packageConsolidationDeSelected()
+    func repackingDeSelected()
+    func removeItemBoxesDeSelected()
+    func removeAllProtectivePackagingDeSelected()
+    func removeShipperBoxesDeSelected()
+    func removeInvoicesAndPricesTagsDeSelected()
+    func doNotRemoveShipperBoxesDeSelected()
+    func doNotRemoveItemBoxesDeSelected()
+    
+    func itemTestingSelected()
+    
+    func detailedPictureSelected()
+    
+    func splitBoxesSelected()
+}
+
 class SpecialServicesTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    var freeServices: FreeServices?
     var itemTesting: Bool?
     var detailedPictures: Bool?
-    var removeItemBoxes: Bool?
-    var removeAllProtectivePackaging: Bool?
+    var packageContentPhoto: Bool?
+    var packageConsolidation: Bool?
+    var repacking: Bool?
+    var removeProtectivePackage: Bool?
+    
+    var split: Bool?
     var removeShipperBoxes: Bool?
-    var removeInvoices: Bool?
-    var prepareInOneBox: Bool?
-    var addFragileSticker: Bool?
-    var useSmallestBox: Bool?
-    var packWithoutBubbleWrap: Bool?
+    var removeInvoicesAndPriceTags: Bool?
+    var removeItemBoxes: Bool?
     var doNotRemoveItemBoxes: Bool?
+    var doNotRemoveShipperBoxes: Bool?
     var addExtraBubble: Bool?
     var other: Bool?
+    var specialServicesCellDelegate: SpecialServicesTableViewCellDelegate?
+    
     @IBOutlet weak var submitButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         itemTesting = false
         detailedPictures = false
+        packageContentPhoto = false
+        packageConsolidation = false
+        repacking = false
         removeItemBoxes = false
-        removeAllProtectivePackaging = false
+        removeProtectivePackage = false
         removeShipperBoxes = false
-        removeInvoices = false
-        prepareInOneBox = false
-        addFragileSticker = false
-        useSmallestBox = false
-        packWithoutBubbleWrap = false
+        removeInvoicesAndPriceTags = false
+        doNotRemoveShipperBoxes = false
         doNotRemoveItemBoxes = false
         addExtraBubble = false
+        split = false
         other = false
         
         submitButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
         submitButton.layer.cornerRadius = 8
+        
+        descriptionLabel.isHidden = true
+        descriptionTextView.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -52,149 +91,165 @@ class SpecialServicesTableViewCell: UITableViewCell {
     }
     
     @IBAction func itemTestingCheckBoxTapped(_ sender: UIButton) {
-        if !itemTesting! {
+        
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            specialServicesCellDelegate?.itemTestingSelected()
             itemTesting = true
-        }
-        else if itemTesting == true {
-            sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            itemTesting = false
-        }
+        
         
     }
     @IBAction func detailedPicturesCheckBoxTapped(_ sender: UIButton) {
-        if !detailedPictures! {
+        
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            specialServicesCellDelegate?.detailedPictureSelected()
             detailedPictures = true
-        }
-        else if detailedPictures == true {
-            sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            detailedPictures = false
-        }
+       
 
     }
-    @IBAction func removeAllProtectivePackagingTapped(_ sender: UIButton) {
-        if !removeAllProtectivePackaging! {
+    @IBAction func packageConsolidation(_ sender: UIButton) {
+        if !packageConsolidation! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            removeAllProtectivePackaging = true
+            specialServicesCellDelegate?.packageConsolidationSelected()
+            packageConsolidation = true
         }
-        else if removeAllProtectivePackaging == true {
+        else if packageConsolidation == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            removeAllProtectivePackaging = false
+            specialServicesCellDelegate?.packageConsolidationDeSelected()
+            packageConsolidation = false
         }
 
     }
-    @IBAction func removeShipperBoxesTapped(_ sender: UIButton) {
-        if !removeShipperBoxes! {
+    @IBAction func repacking(_ sender: UIButton) {
+        if !repacking! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            removeShipperBoxes = true
+            specialServicesCellDelegate?.repackingSelected()
+            repacking = true
         }
-        else if removeShipperBoxes == true {
+        else if repacking == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            removeShipperBoxes = false
+            specialServicesCellDelegate?.repackingDeSelected()
+
+            repacking = false
         }
 
     }
-    @IBAction func removeItemBoxesTapped(_ sender: UIButton) {
+    @IBAction func packageContentPhoto(_ sender: UIButton) {
+        if !packageContentPhoto! {
+            sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            specialServicesCellDelegate?.packageContentPhotoSelected()
+            packageContentPhoto = true
+        }
+        else if packageContentPhoto == true {
+            sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            specialServicesCellDelegate?.packageContentPhotoDeSelected()
+            packageContentPhoto = false
+        }
+
+    }
+    
+    @IBAction func removeItemBoxes(_ sender: UIButton) {
         if !removeItemBoxes! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            specialServicesCellDelegate?.removeItemBoxesSelected()
             removeItemBoxes = true
         }
         else if removeItemBoxes == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            specialServicesCellDelegate?.removeItemBoxesDeSelected()
             removeItemBoxes = false
         }
 
     }
     
-    @IBAction func removeInvoicesTapped(_ sender: UIButton) {
-        if !removeInvoices! {
+    @IBAction func splitBoxesSelected(_ sender: UIButton) {
+       
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            removeInvoices = true
+            specialServicesCellDelegate?.splitBoxesSelected()
+            split = true
+        
+    
+    }
+    @IBAction func removeProtectivePackage(_ sender: UIButton) {
+        if !removeProtectivePackage! {
+            sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            specialServicesCellDelegate?.removeAllProtectivePackagingSelected()
+            removeProtectivePackage = true
         }
-        else if removeInvoices == true {
+        else if removeProtectivePackage == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            removeInvoices = false
+            specialServicesCellDelegate?.removeAllProtectivePackagingDeSelected()
+            removeProtectivePackage = false
+        }
+
+    }
+    @IBAction func removeShipperBoxes(_ sender: UIButton) {
+        if !removeShipperBoxes! {
+            sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            specialServicesCellDelegate?.removeShipperBoxesSelected()
+            removeShipperBoxes = true
+        }
+        else if removeShipperBoxes == true {
+            sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            specialServicesCellDelegate?.removeShipperBoxesDeSelected()
+            removeShipperBoxes = false
         }
 
     }
     
-    @IBAction func prepareInOneBoxTapped(_ sender: UIButton) {
-        if !prepareInOneBox! {
+    @IBAction func removeInvoicesAndTags(_ sender: UIButton) {
+        if !removeInvoicesAndPriceTags! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            prepareInOneBox = true
+            specialServicesCellDelegate?.removeInvoicesAndPricesTagsSelected()
+            removeInvoicesAndPriceTags = true
         }
-        else if prepareInOneBox == true {
+        else if removeInvoicesAndPriceTags == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            prepareInOneBox = false
+            specialServicesCellDelegate?.removeInvoicesAndPricesTagsDeSelected()
+            removeInvoicesAndPriceTags = false
         }
 
     }
-    @IBAction func addFragileStickerTapped(_ sender: UIButton) {
-        if !addFragileSticker! {
+    @IBAction func doNotRemoveShipperBoxes(_ sender: UIButton) {
+        if !doNotRemoveShipperBoxes! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            addFragileSticker = true
+            specialServicesCellDelegate?.doNotRemoveShipperBoxesSelected()
+            doNotRemoveShipperBoxes = true
         }
-        else if addFragileSticker == true {
+        else if doNotRemoveShipperBoxes == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            addFragileSticker = false
-        }
-
-    }
-    
-    @IBAction func useSmallestBoxTapped(_ sender: UIButton) {
-        if !useSmallestBox! {
-            sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            useSmallestBox = true
-        }
-        else if useSmallestBox == true {
-            sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            useSmallestBox = false
-        }
-
-    }
-    @IBAction func packWithoutBubbleTapped(_ sender: UIButton) {
-        if !packWithoutBubbleWrap! {
-            sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            packWithoutBubbleWrap = true
-        }
-        else if packWithoutBubbleWrap == true {
-            sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            packWithoutBubbleWrap = false
+            specialServicesCellDelegate?.doNotRemoveShipperBoxesDeSelected()
+            doNotRemoveShipperBoxes = false
         }
 
     }
     @IBAction func doNotRemoveItemBoxesTapped(_ sender: UIButton) {
         if !doNotRemoveItemBoxes! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            specialServicesCellDelegate?.doNotRemoveItemBoxesSelected()
             doNotRemoveItemBoxes = true
         }
         else if doNotRemoveItemBoxes == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            specialServicesCellDelegate?.doNotRemoveItemBoxesDeSelected()
             doNotRemoveItemBoxes = false
         }
 
 
     }
-    @IBAction func addExtraBubbleTapped(_ sender: UIButton) {
-        if !addExtraBubble! {
-            sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            addExtraBubble = true
-        }
-        else if addExtraBubble == true {
-            sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            addExtraBubble = false
-        }
-
-    }
+ 
+    
     
     @IBAction func otherTapped(_ sender: UIButton) {
         if !other! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            descriptionLabel.isHidden = false
+            descriptionTextView.isHidden = false
             other = true
         }
         else if other == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            descriptionLabel.isHidden = true
+            descriptionTextView.isHidden = true
             other = false
         }
 

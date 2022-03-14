@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -14,21 +15,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="583" id="KGk-i7-Jjw" customClass="SpecialServicesTableViewCell" customModule="gShop" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="428" height="583"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="737" id="KGk-i7-Jjw" customClass="SpecialServicesTableViewCell" customModule="gShop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="428" height="737"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="428" height="583"/>
+                <rect key="frame" x="0.0" y="0.0" width="428" height="737"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paid Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWo-4t-ZZh">
-                        <rect key="frame" x="56" y="19" width="106" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paid Services" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWo-4t-ZZh">
+                        <rect key="frame" x="41" y="19" width="106" height="20"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                         <color key="textColor" red="0.3529411764705882" green="0.33725490196078434" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbK-6f-A7q">
-                        <rect key="frame" x="44" y="47.5" width="33" height="29"/>
+                        <rect key="frame" x="44" y="68.5" width="33" height="29"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="33" id="K9p-6y-Owc"/>
                             <constraint firstAttribute="height" constant="29" id="tT4-88-r2H"/>
@@ -40,13 +41,13 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item's Testing ($ 5)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muz-Ud-bpf">
-                        <rect key="frame" x="77" y="54" width="351" height="16"/>
+                        <rect key="frame" x="77" y="75" width="351" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JH-Ve-6vQ">
-                        <rect key="frame" x="44" y="79.5" width="33" height="30"/>
+                        <rect key="frame" x="44" y="100.5" width="33" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="9QQ-XJ-E62"/>
                             <constraint firstAttribute="width" constant="33" id="diE-O6-MQR"/>
@@ -58,19 +59,19 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detailed Pictures ($ 5)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqQ-9p-RBM">
-                        <rect key="frame" x="77" y="86.5" width="351" height="16"/>
+                        <rect key="frame" x="77" y="107.5" width="351" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2v-s8-RGr">
-                        <rect key="frame" x="56" y="115.5" width="106" height="20"/>
+                        <rect key="frame" x="41" y="177.5" width="106" height="20"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTK-3Q-FdC">
-                        <rect key="frame" x="44" y="144" width="33" height="30"/>
+                        <rect key="frame" x="44" y="206" width="33" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="Pk7-ei-Pwn"/>
                             <constraint firstAttribute="width" constant="33" id="eBR-EY-aUn"/>
@@ -78,11 +79,11 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
                         <connections>
-                            <action selector="removeItemBoxesTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Vor-EV-g2E"/>
+                            <action selector="packageContentPhoto:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kfh-Kr-fIy"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rk6-gz-v5G">
-                        <rect key="frame" x="44" y="177" width="33" height="30"/>
+                        <rect key="frame" x="44" y="239" width="33" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="MiX-0C-39Q"/>
                             <constraint firstAttribute="width" constant="33" id="RxD-OO-2N5"/>
@@ -90,23 +91,17 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
                         <connections>
-                            <action selector="removeAllProtectivePackagingTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="F5j-K7-ooV"/>
+                            <action selector="packageConsolidation:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tls-JQ-HOm"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove items boxes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHJ-P8-rug">
-                        <rect key="frame" x="77" y="151" width="351" height="16"/>
-                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
-                        <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove all protective packaging or unnecessary padding" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSd-dI-UOt">
-                        <rect key="frame" x="77" y="176" width="351" height="32"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Package Consolidation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSd-dI-UOt">
+                        <rect key="frame" x="77" y="246" width="351" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOr-LV-8nf">
-                        <rect key="frame" x="44" y="210" width="33" height="30"/>
+                        <rect key="frame" x="44" y="272" width="33" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="33" id="DvP-Wr-b0b"/>
                             <constraint firstAttribute="height" constant="30" id="npa-JD-Odn"/>
@@ -114,17 +109,17 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
                         <connections>
-                            <action selector="removeShipperBoxesTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="K2p-WZ-gRa"/>
+                            <action selector="repacking:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UVg-P7-wDD"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove shipper boxes (Brown boxes)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZa-Nw-Q1t">
-                        <rect key="frame" x="77" y="217" width="351" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repacking" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZa-Nw-Q1t">
+                        <rect key="frame" x="77" y="279" width="351" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Me1-dN-uPQ">
-                        <rect key="frame" x="44" y="243" width="33" height="30"/>
+                        <rect key="frame" x="44" y="305" width="33" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="33" id="3VT-kX-cRB"/>
                             <constraint firstAttribute="height" constant="30" id="f94-n6-iS8"/>
@@ -132,17 +127,17 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
                         <connections>
-                            <action selector="removeInvoicesTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ELJ-QF-KRW"/>
+                            <action selector="removeItemBoxes:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="roO-Yy-BQ6"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove invoices and pricing tags" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPY-7y-Agl">
-                        <rect key="frame" x="77" y="250" width="351" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove items boxes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPY-7y-Agl">
+                        <rect key="frame" x="77" y="312" width="351" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ss1-b5-OFH">
-                        <rect key="frame" x="44" y="276" width="33" height="30"/>
+                        <rect key="frame" x="44" y="338" width="33" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="3St-ha-uEk"/>
                             <constraint firstAttribute="width" constant="33" id="odi-27-ZYG"/>
@@ -150,17 +145,17 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
                         <connections>
-                            <action selector="prepareInOneBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eM1-pc-1XX"/>
+                            <action selector="removeProtectivePackage:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="A3X-wi-z3l"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prepare in one box" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUh-QH-D6C">
-                        <rect key="frame" x="77" y="283" width="351" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove all protective packaging/padding" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUh-QH-D6C">
+                        <rect key="frame" x="77" y="345" width="351" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrG-DP-si8">
-                        <rect key="frame" x="44" y="309" width="33" height="30"/>
+                        <rect key="frame" x="44" y="371" width="33" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="33" id="dEZ-Jv-Nxa"/>
                             <constraint firstAttribute="height" constant="30" id="vED-by-G1B"/>
@@ -168,17 +163,17 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
                         <connections>
-                            <action selector="addFragileStickerTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="O98-Gn-kcg"/>
+                            <action selector="removeShipperBoxes:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="S1f-P4-0qe"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add fragile sticker" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ff3-t7-juF">
-                        <rect key="frame" x="77" y="316" width="351" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove shipper boxes (Brown boxes)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ff3-t7-juF">
+                        <rect key="frame" x="77" y="378" width="351" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74i-qG-rMW">
-                        <rect key="frame" x="44" y="342" width="33" height="30"/>
+                        <rect key="frame" x="44" y="404" width="33" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="Fw0-ce-ini"/>
                             <constraint firstAttribute="width" constant="33" id="eei-Dp-SB7"/>
@@ -186,17 +181,17 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
                         <connections>
-                            <action selector="useSmallestBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ETm-26-ceQ"/>
+                            <action selector="removeInvoicesAndTags:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JJb-5w-EPB"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the smallest box" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTK-pY-ap7">
-                        <rect key="frame" x="77" y="349" width="351" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove invoices and pricing tags" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTK-pY-ap7">
+                        <rect key="frame" x="77" y="411" width="351" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsa-Of-C93">
-                        <rect key="frame" x="44" y="375" width="33" height="30"/>
+                        <rect key="frame" x="44" y="437" width="33" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="dd0-41-GiT"/>
                             <constraint firstAttribute="width" constant="33" id="x0y-gA-b43"/>
@@ -204,11 +199,11 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
                         <connections>
-                            <action selector="packWithoutBubbleTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SWC-4E-Mzn"/>
+                            <action selector="doNotRemoveShipperBoxes:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="oqD-Yj-MVp"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gG-et-isJ">
-                        <rect key="frame" x="44" y="408" width="33" height="30"/>
+                        <rect key="frame" x="44" y="470" width="33" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="33" id="8wx-B9-Ql9"/>
                             <constraint firstAttribute="height" constant="30" id="MCr-iG-SYB"/>
@@ -219,38 +214,20 @@
                             <action selector="doNotRemoveItemBoxesTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WpC-bV-3xT"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pack without bubble wrap" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMb-qz-eO4">
-                        <rect key="frame" x="77" y="382" width="351" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not remove shipper boxes (Brown boxes)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMb-qz-eO4">
+                        <rect key="frame" x="77" y="444" width="351" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not remove items boxes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mo0-5Q-IuF">
-                        <rect key="frame" x="77" y="415" width="351" height="16"/>
-                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
-                        <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ds2-U6-ugz">
-                        <rect key="frame" x="44" y="441" width="33" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="33" id="ycZ-Tl-uMS"/>
-                            <constraint firstAttribute="height" constant="30" id="z18-dj-9yA"/>
-                        </constraints>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
-                        <connections>
-                            <action selector="addExtraBubbleTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="msy-Bd-4Tj"/>
-                        </connections>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add extra padding and Bubble wrap" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYF-L0-Tnz">
-                        <rect key="frame" x="77" y="448" width="351" height="16"/>
+                        <rect key="frame" x="77" y="477" width="351" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HwI-tt-UbR">
-                        <rect key="frame" x="44" y="474" width="33" height="30"/>
+                        <rect key="frame" x="44" y="503" width="33" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="33" id="HVy-pE-VWW"/>
                             <constraint firstAttribute="height" constant="30" id="UiP-tB-l0P"/>
@@ -262,13 +239,13 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHv-5T-ZV3">
-                        <rect key="frame" x="77" y="481" width="351" height="16"/>
+                        <rect key="frame" x="77" y="510" width="351" height="16"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                         <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUT-Eo-5y3">
-                        <rect key="frame" x="161" y="516" width="106" height="37"/>
+                        <rect key="frame" x="161" y="682" width="106" height="37"/>
                         <color key="backgroundColor" red="0.043137254899999998" green="0.72941176470000002" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="37" id="02J-Ek-aDT"/>
@@ -278,45 +255,94 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Submit"/>
                     </button>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWc-qo-hqm">
+                        <rect key="frame" x="44" y="133.5" width="33" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="KDW-CD-Hok"/>
+                            <constraint firstAttribute="width" constant="33" id="nCo-dm-CDK"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="splitBoxesSelected:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GH0-ks-MWx"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split Boxes ($ 5)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcs-i9-Cec">
+                        <rect key="frame" x="77" y="140.5" width="351" height="16"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
+                        <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Package content photo during Consolidation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QU4-XH-aW8">
+                        <rect key="frame" x="77" y="213" width="351" height="16"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
+                        <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jKV-Ky-F6d">
+                        <rect key="frame" x="56" y="571" width="310" height="90"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="90" id="Ii2-Lq-KjI"/>
+                            <constraint firstAttribute="width" constant="310" id="eew-c6-xmr"/>
+                        </constraints>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvu-h1-ghU">
+                        <rect key="frame" x="56" y="543" width="70" height="15"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                        <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(once an option is selected, can't unselect it)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hm-Pg-2Ea">
+                        <rect key="frame" x="41" y="47" width="265.5" height="15"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                        <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.93725490196078431" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="PHJ-P8-rug" secondAttribute="trailing" id="0Zy-Yb-qVH"/>
                     <constraint firstAttribute="trailing" secondItem="hTK-pY-ap7" secondAttribute="trailing" id="1Fa-Kh-Eq8"/>
                     <constraint firstItem="Ff3-t7-juF" firstAttribute="centerY" secondItem="TrG-DP-si8" secondAttribute="centerY" id="1kq-7n-Syo"/>
                     <constraint firstItem="EHv-5T-ZV3" firstAttribute="leading" secondItem="HwI-tt-UbR" secondAttribute="trailing" id="2bz-67-P9v"/>
-                    <constraint firstItem="Ds2-U6-ugz" firstAttribute="top" secondItem="0gG-et-isJ" secondAttribute="bottom" constant="3" id="2lm-er-T8Y"/>
                     <constraint firstItem="Muz-Ud-bpf" firstAttribute="centerY" secondItem="dbK-6f-A7q" secondAttribute="centerY" id="3Dw-Kb-IvE"/>
+                    <constraint firstAttribute="bottom" secondItem="NUT-Eo-5y3" secondAttribute="bottom" constant="18" id="3RR-B9-5AL"/>
                     <constraint firstItem="jZa-Nw-Q1t" firstAttribute="leading" secondItem="BOr-LV-8nf" secondAttribute="trailing" id="6dK-M8-1dR"/>
+                    <constraint firstItem="QU4-XH-aW8" firstAttribute="leading" secondItem="OTK-3Q-FdC" secondAttribute="trailing" id="6xV-pK-L0H"/>
                     <constraint firstItem="jZa-Nw-Q1t" firstAttribute="centerY" secondItem="BOr-LV-8nf" secondAttribute="centerY" id="7v2-GH-lWa"/>
                     <constraint firstItem="TrG-DP-si8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="85c-nK-QXm"/>
                     <constraint firstItem="RqQ-9p-RBM" firstAttribute="leading" secondItem="9JH-Ve-6vQ" secondAttribute="trailing" id="9UE-Z2-LeL"/>
                     <constraint firstAttribute="trailing" secondItem="mo0-5Q-IuF" secondAttribute="trailing" id="Ajy-nI-Aif"/>
                     <constraint firstItem="Me1-dN-uPQ" firstAttribute="top" secondItem="BOr-LV-8nf" secondAttribute="bottom" constant="3" id="Asz-JD-lmf"/>
                     <constraint firstItem="hTK-pY-ap7" firstAttribute="centerY" secondItem="74i-qG-rMW" secondAttribute="centerY" id="BYz-bf-J46"/>
+                    <constraint firstItem="jKV-Ky-F6d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="56" id="Bi5-nm-BBP"/>
                     <constraint firstItem="74i-qG-rMW" firstAttribute="top" secondItem="TrG-DP-si8" secondAttribute="bottom" constant="3" id="Cp6-mx-ZLX"/>
                     <constraint firstItem="HwI-tt-UbR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="FXA-Ea-qKM"/>
                     <constraint firstItem="mo0-5Q-IuF" firstAttribute="leading" secondItem="0gG-et-isJ" secondAttribute="trailing" id="FgK-lH-1eC"/>
                     <constraint firstItem="hTK-pY-ap7" firstAttribute="leading" secondItem="74i-qG-rMW" secondAttribute="trailing" id="G2R-Fm-Flz"/>
+                    <constraint firstItem="jKV-Ky-F6d" firstAttribute="top" secondItem="Jvu-h1-ghU" secondAttribute="bottom" constant="13" id="GW9-5x-Q1h"/>
                     <constraint firstItem="Ss1-b5-OFH" firstAttribute="top" secondItem="Me1-dN-uPQ" secondAttribute="bottom" constant="3" id="H4Z-NB-1Ee"/>
-                    <constraint firstItem="xYF-L0-Tnz" firstAttribute="centerY" secondItem="Ds2-U6-ugz" secondAttribute="centerY" id="HL7-Kq-4JV"/>
-                    <constraint firstItem="Ds2-U6-ugz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="Hra-2H-F8Y"/>
                     <constraint firstItem="BOr-LV-8nf" firstAttribute="top" secondItem="Rk6-gz-v5G" secondAttribute="bottom" constant="3" id="Hv1-Va-MqZ"/>
                     <constraint firstItem="OTK-3Q-FdC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="I6e-Ml-dal"/>
-                    <constraint firstItem="NUT-Eo-5y3" firstAttribute="top" secondItem="EHv-5T-ZV3" secondAttribute="bottom" constant="19" id="MVh-1H-4Rc"/>
+                    <constraint firstItem="MWc-qo-hqm" firstAttribute="top" secondItem="9JH-Ve-6vQ" secondAttribute="bottom" constant="3" id="K9r-Jt-16M"/>
+                    <constraint firstItem="NUT-Eo-5y3" firstAttribute="top" secondItem="jKV-Ky-F6d" secondAttribute="bottom" constant="21" id="KzE-du-ev3"/>
+                    <constraint firstItem="M2v-s8-RGr" firstAttribute="top" secondItem="MWc-qo-hqm" secondAttribute="bottom" constant="14" id="Lll-Th-z6S"/>
                     <constraint firstItem="0gG-et-isJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="NsK-fE-sDc"/>
                     <constraint firstItem="TrG-DP-si8" firstAttribute="top" secondItem="Ss1-b5-OFH" secondAttribute="bottom" constant="3" id="PPv-5K-CwX"/>
                     <constraint firstItem="bsa-Of-C93" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="PeI-ub-oFY"/>
+                    <constraint firstItem="6Hm-Pg-2Ea" firstAttribute="top" secondItem="OWo-4t-ZZh" secondAttribute="bottom" constant="8" id="Pgr-Pc-0Su"/>
                     <constraint firstItem="BOr-LV-8nf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="Pni-Ld-6H8"/>
-                    <constraint firstItem="dbK-6f-A7q" firstAttribute="top" secondItem="OWo-4t-ZZh" secondAttribute="bottom" constant="8.5" id="RYv-v4-hlg"/>
                     <constraint firstAttribute="trailing" secondItem="Ff3-t7-juF" secondAttribute="trailing" id="Rqo-YB-V1Q"/>
-                    <constraint firstAttribute="trailing" secondItem="xYF-L0-Tnz" secondAttribute="trailing" id="Sw0-L0-z4E"/>
                     <constraint firstItem="dbK-6f-A7q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="Tv6-ob-TkQ"/>
                     <constraint firstItem="74i-qG-rMW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="Txo-aL-3aO"/>
-                    <constraint firstItem="Rk6-gz-v5G" firstAttribute="top" secondItem="OTK-3Q-FdC" secondAttribute="bottom" constant="3" id="VQf-72-nU7"/>
-                    <constraint firstItem="PHJ-P8-rug" firstAttribute="leading" secondItem="OTK-3Q-FdC" secondAttribute="trailing" id="VyD-Re-seb"/>
+                    <constraint firstItem="MWc-qo-hqm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="WNq-v4-D0i"/>
                     <constraint firstItem="mo0-5Q-IuF" firstAttribute="centerY" secondItem="0gG-et-isJ" secondAttribute="centerY" id="X8j-TA-3bY"/>
                     <constraint firstItem="oUh-QH-D6C" firstAttribute="leading" secondItem="Ss1-b5-OFH" secondAttribute="trailing" id="Y8y-fn-3iF"/>
+                    <constraint firstItem="OWo-4t-ZZh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="41" id="ZH0-4Y-2RU"/>
+                    <constraint firstItem="tcs-i9-Cec" firstAttribute="leading" secondItem="MWc-qo-hqm" secondAttribute="trailing" id="aJq-5E-Jau"/>
                     <constraint firstAttribute="trailing" secondItem="oUh-QH-D6C" secondAttribute="trailing" id="aRO-eh-Wgb"/>
                     <constraint firstItem="9JH-Ve-6vQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="aeG-2W-ctJ"/>
                     <constraint firstAttribute="trailing" secondItem="Muz-Ud-bpf" secondAttribute="trailing" id="akY-vV-fN7"/>
@@ -329,41 +355,54 @@
                     <constraint firstAttribute="trailing" secondItem="lMb-qz-eO4" secondAttribute="trailing" id="csN-5p-MQX"/>
                     <constraint firstAttribute="trailing" secondItem="vPY-7y-Agl" secondAttribute="trailing" id="csd-3P-6kg"/>
                     <constraint firstItem="RqQ-9p-RBM" firstAttribute="centerY" secondItem="9JH-Ve-6vQ" secondAttribute="centerY" id="cyV-mc-n4t"/>
-                    <constraint firstItem="HwI-tt-UbR" firstAttribute="top" secondItem="Ds2-U6-ugz" secondAttribute="bottom" constant="3" id="dVY-EB-oak"/>
-                    <constraint firstItem="xYF-L0-Tnz" firstAttribute="leading" secondItem="Ds2-U6-ugz" secondAttribute="trailing" id="eam-te-5Gj"/>
+                    <constraint firstItem="Rk6-gz-v5G" firstAttribute="top" secondItem="OTK-3Q-FdC" secondAttribute="bottom" constant="3" id="efg-Vi-blM"/>
+                    <constraint firstAttribute="trailing" secondItem="QU4-XH-aW8" secondAttribute="trailing" id="fKZ-N2-vUv"/>
                     <constraint firstAttribute="trailing" secondItem="RqQ-9p-RBM" secondAttribute="trailing" id="faK-FP-fE3"/>
                     <constraint firstItem="0gG-et-isJ" firstAttribute="top" secondItem="bsa-Of-C93" secondAttribute="bottom" constant="3" id="fk9-Iu-d9y"/>
+                    <constraint firstItem="QU4-XH-aW8" firstAttribute="centerY" secondItem="OTK-3Q-FdC" secondAttribute="centerY" id="gBM-9H-1AF"/>
                     <constraint firstAttribute="trailing" secondItem="NUT-Eo-5y3" secondAttribute="trailing" constant="161" id="gHA-WR-Th8"/>
-                    <constraint firstItem="PHJ-P8-rug" firstAttribute="centerY" secondItem="OTK-3Q-FdC" secondAttribute="centerY" id="iV9-L7-jyd"/>
-                    <constraint firstAttribute="bottom" secondItem="NUT-Eo-5y3" secondAttribute="bottom" constant="30" id="ig0-1M-zAX"/>
+                    <constraint firstItem="Jvu-h1-ghU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="56" id="hj5-Vi-sji"/>
+                    <constraint firstAttribute="trailing" secondItem="tcs-i9-Cec" secondAttribute="trailing" id="i8K-lR-ux6"/>
+                    <constraint firstAttribute="trailing" secondItem="jKV-Ky-F6d" secondAttribute="trailing" constant="62" id="iDe-Qc-o2J"/>
+                    <constraint firstItem="dbK-6f-A7q" firstAttribute="top" secondItem="6Hm-Pg-2Ea" secondAttribute="bottom" constant="6.5" id="iIk-m8-WiU"/>
                     <constraint firstAttribute="trailing" secondItem="jZa-Nw-Q1t" secondAttribute="trailing" id="m0E-cy-4dP"/>
-                    <constraint firstItem="M2v-s8-RGr" firstAttribute="top" secondItem="9JH-Ve-6vQ" secondAttribute="bottom" constant="6" id="mR3-PD-k1O"/>
                     <constraint firstAttribute="trailing" secondItem="EHv-5T-ZV3" secondAttribute="trailing" id="myv-Lp-LIH"/>
                     <constraint firstItem="Ff3-t7-juF" firstAttribute="leading" secondItem="TrG-DP-si8" secondAttribute="trailing" id="ole-aR-KgX"/>
+                    <constraint firstItem="6Hm-Pg-2Ea" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="41" id="pZW-FW-bwR"/>
                     <constraint firstItem="Me1-dN-uPQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="pfF-y8-MQn"/>
                     <constraint firstItem="oUh-QH-D6C" firstAttribute="centerY" secondItem="Ss1-b5-OFH" secondAttribute="centerY" id="qEI-GF-cYE"/>
                     <constraint firstItem="9JH-Ve-6vQ" firstAttribute="top" secondItem="dbK-6f-A7q" secondAttribute="bottom" constant="3" id="r82-7J-kFa"/>
                     <constraint firstItem="rSd-dI-UOt" firstAttribute="centerY" secondItem="Rk6-gz-v5G" secondAttribute="centerY" id="td6-Rl-bc1"/>
                     <constraint firstItem="bsa-Of-C93" firstAttribute="top" secondItem="74i-qG-rMW" secondAttribute="bottom" constant="3" id="tiG-3b-f82"/>
-                    <constraint firstItem="M2v-s8-RGr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="56" id="uaG-7o-40U"/>
+                    <constraint firstItem="Jvu-h1-ghU" firstAttribute="top" secondItem="HwI-tt-UbR" secondAttribute="bottom" constant="10" id="uEX-ZL-xpG"/>
+                    <constraint firstItem="M2v-s8-RGr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="41" id="uaG-7o-40U"/>
                     <constraint firstItem="EHv-5T-ZV3" firstAttribute="centerY" secondItem="HwI-tt-UbR" secondAttribute="centerY" id="vOD-JR-02a"/>
                     <constraint firstItem="NUT-Eo-5y3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="161" id="vay-ZH-8an"/>
                     <constraint firstItem="rSd-dI-UOt" firstAttribute="leading" secondItem="Rk6-gz-v5G" secondAttribute="trailing" id="w8z-WP-WQm"/>
                     <constraint firstItem="lMb-qz-eO4" firstAttribute="leading" secondItem="bsa-Of-C93" secondAttribute="trailing" id="wIr-au-hwf"/>
                     <constraint firstItem="vPY-7y-Agl" firstAttribute="leading" secondItem="Me1-dN-uPQ" secondAttribute="trailing" id="wJH-JI-S8g"/>
                     <constraint firstItem="lMb-qz-eO4" firstAttribute="centerY" secondItem="bsa-Of-C93" secondAttribute="centerY" id="wUF-Sw-JVM"/>
-                    <constraint firstItem="OWo-4t-ZZh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="56" id="y6q-B0-J2F"/>
+                    <constraint firstItem="tcs-i9-Cec" firstAttribute="centerY" secondItem="MWc-qo-hqm" secondAttribute="centerY" id="x0a-0L-z3k"/>
                     <constraint firstItem="Muz-Ud-bpf" firstAttribute="leading" secondItem="dbK-6f-A7q" secondAttribute="trailing" id="y95-gA-Mmk"/>
+                    <constraint firstItem="HwI-tt-UbR" firstAttribute="top" secondItem="0gG-et-isJ" secondAttribute="bottom" constant="3" id="zMm-Yl-ZOe"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="descriptionLabel" destination="Jvu-h1-ghU" id="EKe-Rb-RRX"/>
+                <outlet property="descriptionTextView" destination="jKV-Ky-F6d" id="aX9-MS-ICc"/>
                 <outlet property="submitButton" destination="NUT-Eo-5y3" id="qMC-Hh-AJj"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="240.73660714285714"/>
+            <point key="canvasLocation" x="131.8840579710145" y="289.62053571428572"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="uncheckedBox" width="15" height="15"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

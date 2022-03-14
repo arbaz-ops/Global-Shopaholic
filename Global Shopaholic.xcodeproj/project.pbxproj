@@ -279,6 +279,7 @@
 		7CA3EACC2771D7000053C493 /* EditAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA3EACA2771D7000053C493 /* EditAddressTableViewCell.xib */; };
 		7CA3EACE2771ED300053C493 /* EditAddress+EXT+TABLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3EACD2771ED300053C493 /* EditAddress+EXT+TABLE.swift */; };
 		7CA5992B27D8E56E001C8F78 /* ReturnPackageVC+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA5992A27D8E56E001C8F78 /* ReturnPackageVC+EXT.swift */; };
+		7CA5992D27DB1F32001C8F78 /* SpecialServicesVC+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA5992C27DB1F32001C8F78 /* SpecialServicesVC+EXT.swift */; };
 		7CAA390F2747A20D0095A8F5 /* ShippedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA390D2747A20D0095A8F5 /* ShippedTableViewCell.swift */; };
 		7CAA39102747A20D0095A8F5 /* ShippedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CAA390E2747A20D0095A8F5 /* ShippedTableViewCell.xib */; };
 		7CAE1F8327709F9A0039E027 /* CustomDeclarationFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAE1F8127709F9A0039E027 /* CustomDeclarationFormTableViewCell.swift */; };
@@ -604,6 +605,7 @@
 		7CA3EACA2771D7000053C493 /* EditAddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditAddressTableViewCell.xib; sourceTree = "<group>"; };
 		7CA3EACD2771ED300053C493 /* EditAddress+EXT+TABLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditAddress+EXT+TABLE.swift"; sourceTree = "<group>"; };
 		7CA5992A27D8E56E001C8F78 /* ReturnPackageVC+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReturnPackageVC+EXT.swift"; sourceTree = "<group>"; };
+		7CA5992C27DB1F32001C8F78 /* SpecialServicesVC+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpecialServicesVC+EXT.swift"; sourceTree = "<group>"; };
 		7CAA390D2747A20D0095A8F5 /* ShippedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippedTableViewCell.swift; sourceTree = "<group>"; };
 		7CAA390E2747A20D0095A8F5 /* ShippedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShippedTableViewCell.xib; sourceTree = "<group>"; };
 		7CAE1F8127709F9A0039E027 /* CustomDeclarationFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDeclarationFormTableViewCell.swift; sourceTree = "<group>"; };
@@ -1863,6 +1865,7 @@
 				7C95D2D027632FD200EC198E /* Cells */,
 				7C95D2CE27632F1000EC198E /* SpecialServicesViewController.swift */,
 				7C95D2D527635DF900EC198E /* SpecialServices+EXT+TABLE.swift */,
+				7CA5992C27DB1F32001C8F78 /* SpecialServicesVC+EXT.swift */,
 			);
 			name = "Special Services";
 			sourceTree = "<group>";
@@ -2297,6 +2300,7 @@
 				781D3EA325793FFE0013DE3A /* UITextField+EXT.swift in Sources */,
 				785424BE257E5C5400FC1F61 /* MenuViewController.swift in Sources */,
 				7C96E25C27C3776400AD7B91 /* BankTransferTableViewCell.swift in Sources */,
+				7CA5992D27DB1F32001C8F78 /* SpecialServicesVC+EXT.swift in Sources */,
 				7CA39FB427A9203600F2359E /* EditCustomDetails+EXT+TABLE.swift in Sources */,
 				789CB91D25E6A589007313B4 /* SubRow.swift in Sources */,
 				7CA3EACE2771ED300053C493 /* EditAddress+EXT+TABLE.swift in Sources */,

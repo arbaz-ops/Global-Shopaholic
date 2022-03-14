@@ -10,8 +10,14 @@ import UIKit
 
 class SpecialServicesViewController: UIViewController {
 
+    var packageId: String? {
+        didSet {
+            print(packageId)
+        }
+    }
     @IBOutlet weak var specialServicesView: UIView!
     @IBOutlet weak var upperView: UIView!
+    var storageVM: StorageVM?
     @IBOutlet weak var specialServicesTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

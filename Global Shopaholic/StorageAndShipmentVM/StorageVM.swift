@@ -86,14 +86,58 @@ struct StorageVM {
 
         WebService.RequestWithTokenJsonWithParams(Token: token, strURL: ep.getRequestPackages, is_loader_required: false, params: params) { response in
             RappleActivityIndicatorView.stopAnimation()
-
             success(response)
-            
         } failure: { str in
             RappleActivityIndicatorView.stopAnimation()
             failure(str)
             print(str)
         }
+    }
+    
+    func attachPaidServices(token: String,packageId: String,paidService: String ,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+        let ep = endpoints()
+        let params: [String: Any] = [
+            "package_id": packageId,
+            "service_name": paidService
+        ]
+        RappleActivityIndicatorView.startAnimating()
+
+        WebService.postMultipartDataWithTokenWithOutImage(Token: token, strURL: ep.paidServices, is_loader_required: false, params: params, method: .post) { response in
+            RappleActivityIndicatorView.stopAnimation()
+
+            success(response)
+            
+            
+        } failure: { error in
+            RappleActivityIndicatorView.stopAnimation()
+
+            failure(error)
+        }
+
+    }
+    
+    func attachFreeServices(token: String,packageId: String,freeService: String, flag: String, description: String ,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+        let ep = endpoints()
+        let params: [String: Any] = [
+            "package_id": packageId,
+            "service_name": freeService,
+            "flag": flag,
+            "description": description
+        ]
+        RappleActivityIndicatorView.startAnimating()
+
+        WebService.postMultipartDataWithTokenWithOutImage(Token: token, strURL: ep.freeServices, is_loader_required: false, params: params, method: .post) { response in
+            RappleActivityIndicatorView.stopAnimation()
+
+            success(response)
+            
+            
+        } failure: { error in
+            RappleActivityIndicatorView.stopAnimation()
+
+            failure(error)
+        }
+
     }
     
     func returnPackage(token: String,packageId: String,type: String,detail: String , image: UIImage, success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
