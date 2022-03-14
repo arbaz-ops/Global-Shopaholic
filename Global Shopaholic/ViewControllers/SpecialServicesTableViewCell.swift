@@ -40,7 +40,8 @@ class SpecialServicesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var descriptionLabel: UILabel!
-    var freeServices: FreeServices?
+    var paidServices: [String]?
+    var freeServices: [String]?
     var itemTesting: Bool?
     var detailedPictures: Bool?
     var packageContentPhoto: Bool?
@@ -62,8 +63,30 @@ class SpecialServicesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        itemTesting = false
-        detailedPictures = false
+        if paidServices != nil {
+        for service in paidServices! {
+            if service == "test_device" {
+                itemTesting = true
+            }
+            else if service != "test_device" {
+                itemTesting = false
+            }
+            
+            if service == "detail_photos" {
+                detailedPictures = true
+            }
+            else if service != "detail_photos" {
+                detailedPictures = false
+            }
+            if service == "split" {
+                split = true
+            }
+            else if service != "split" {
+                split = false
+            }
+        }
+        }
+        
         packageContentPhoto = false
         packageConsolidation = false
         repacking = false
@@ -74,7 +97,6 @@ class SpecialServicesTableViewCell: UITableViewCell {
         doNotRemoveShipperBoxes = false
         doNotRemoveItemBoxes = false
         addExtraBubble = false
-        split = false
         other = false
         
         submitButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
@@ -91,18 +113,20 @@ class SpecialServicesTableViewCell: UITableViewCell {
     }
     
     @IBAction func itemTestingCheckBoxTapped(_ sender: UIButton) {
-        
+        if itemTesting == false {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
             specialServicesCellDelegate?.itemTestingSelected()
             itemTesting = true
-        
+        }
         
     }
     @IBAction func detailedPicturesCheckBoxTapped(_ sender: UIButton) {
-        
+        if detailedPictures == false {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
             specialServicesCellDelegate?.detailedPictureSelected()
             detailedPictures = true
+            
+        }
        
 
     }
@@ -162,10 +186,12 @@ class SpecialServicesTableViewCell: UITableViewCell {
     }
     
     @IBAction func splitBoxesSelected(_ sender: UIButton) {
-       
+        if split == false {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
             specialServicesCellDelegate?.splitBoxesSelected()
             split = true
+            
+        }
         
     
     }

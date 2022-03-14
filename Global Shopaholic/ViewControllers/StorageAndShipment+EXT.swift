@@ -533,8 +533,11 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
         let specialServicesVC = storyboard?.instantiateViewController(withIdentifier: "SpecialServicesViewController") as? SpecialServicesViewController
         print(indexPath.row)
         guard let packageId = packagesList[indexPath.row]["package_id"] as? String else {
+            COMMON_ALERT.showAlert(msg: "Invalid ID")
             return
         }
+         let paidServices = packagesList[indexPath.row]["paid_services"] as? [String]
+        specialServicesVC?.paidServices = paidServices
         specialServicesVC?.packageId = packageId
         specialServicesVC?.modalPresentationStyle = .overFullScreen
 

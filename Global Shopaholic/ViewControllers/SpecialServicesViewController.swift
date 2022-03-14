@@ -15,6 +15,11 @@ class SpecialServicesViewController: UIViewController {
             print(packageId)
         }
     }
+    var paidServices: [String]? {
+        didSet {
+            print(paidServices)
+        }
+    }
     @IBOutlet weak var specialServicesView: UIView!
     @IBOutlet weak var upperView: UIView!
     var storageVM: StorageVM?

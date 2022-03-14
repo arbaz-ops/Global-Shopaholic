@@ -32,9 +32,11 @@ extension RequestFormViewController: UITableViewDelegate, UITableViewDataSource 
         let totalShippingCharges = reviewRequestList!["total_shipping_charges"] as? Double,
         let processingCharges = reviewRequestList!["processing_charges"] as? Int,
         let expressProcessingFee = reviewRequestList!["express_processing_fee"] as? Int,
-        let vatCharges = reviewRequestList!["vat_charges"] as? Int,
-        let totalPaidServices = reviewRequestList!["total_paid_service"] as? Int{
+        let vatCharges = reviewRequestList!["vat_charges"] as? Double,
+           let totalPaidServices = reviewRequestList!["total_paid_service"] as? Int
 
+            
+        {
             if packageCustomDetails.count < 1 {
                 requestFormCell?.customValue.text = "$ 0"
             }
@@ -50,7 +52,7 @@ extension RequestFormViewController: UITableViewDelegate, UITableViewDataSource 
                 requestFormCell?.specialServices.text = specialInstruction
 
             }
-            
+
             requestFormCell?.destinationAddress.text = "\(street), \(city), \(country), \(zipCode)"
             requestFormCell?.requestId.text = unique_key
             requestFormCell?.consolidatedPackages.text = String.init(totalPackage)
@@ -60,7 +62,8 @@ extension RequestFormViewController: UITableViewDelegate, UITableViewDataSource 
             requestFormCell?.processingCharges.text = "$ \(processingCharges)"
             requestFormCell?.vatCharges.text = "$ \(vatCharges)"
             requestFormCell?.paidServices.text = "$ \(totalPaidServices)"
-            let totalCost = Int(totalShippingCharges) + processingCharges + expressProcessingFee + vatCharges + totalPaidServices
+
+            let totalCost = Int(totalShippingCharges) + processingCharges + expressProcessingFee + Int.init(vatCharges) + totalPaidServices
             requestFormCell?.totalCost.text = "$ \(totalCost)"
             print(consolidation)
         }
