@@ -363,6 +363,90 @@
             </objects>
             <point key="canvasLocation" x="-3531" y="-899"/>
         </scene>
+        <!--Consolidate And Ship View Controller-->
+        <scene sceneID="tsX-7s-jaJ">
+            <objects>
+                <viewController restorationIdentifier="ConsolidateAndShipViewController" storyboardIdentifier="ConsolidateAndShipViewController" id="ZOo-XX-UJa" customClass="ConsolidateAndShipViewController" customModule="gShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uFy-55-wbd">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3f-Y0-mLV">
+                                <rect key="frame" x="0.0" y="179" width="428" height="747"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ua5-0f-Ell">
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="747"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.96862745100000003" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ua5-0f-Ell" firstAttribute="leading" secondItem="d3f-Y0-mLV" secondAttribute="leading" id="NBw-Fs-PbK"/>
+                                    <constraint firstAttribute="trailing" secondItem="ua5-0f-Ell" secondAttribute="trailing" id="XoB-g3-Kva"/>
+                                    <constraint firstItem="ua5-0f-Ell" firstAttribute="top" secondItem="d3f-Y0-mLV" secondAttribute="top" id="jBc-uN-ahr"/>
+                                    <constraint firstAttribute="bottom" secondItem="ua5-0f-Ell" secondAttribute="bottom" id="zBM-kc-Pxf"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbO-o9-3SN">
+                                <rect key="frame" x="0.0" y="129" width="428" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consolidate &amp; Ship" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOQ-9k-UVz">
+                                        <rect key="frame" x="20" y="14" width="154.33333333333334" height="23"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40O-FE-KSQ">
+                                        <rect key="frame" x="370" y="8" width="38" height="34"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="⎯"/>
+                                        <connections>
+                                            <action selector="closeButton:" destination="eFw-Av-U14" eventType="touchUpInside" id="zI7-Ls-fHX"/>
+                                            <action selector="closeButtonTapped:" destination="ZOo-XX-UJa" eventType="touchUpInside" id="Af7-uK-wEg"/>
+                                            <action selector="closeButtonTapped:" destination="rw5-vE-iwD" eventType="touchUpInside" id="gtI-iz-cn5"/>
+                                            <action selector="closeFormTapped:" destination="emB-DN-gDK" eventType="touchUpInside" id="MRY-Kk-Qwp"/>
+                                            <action selector="closeTapped:" destination="4hQ-A7-131" eventType="touchUpInside" id="eJv-xM-qRb"/>
+                                            <action selector="closeViewTapped:" destination="6hs-4G-Eom" eventType="touchUpInside" id="UC1-OK-SXA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.72941176470000002" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NOQ-9k-UVz" firstAttribute="top" secondItem="DbO-o9-3SN" secondAttribute="top" constant="14" id="2KD-YE-xbi"/>
+                                    <constraint firstAttribute="trailing" secondItem="40O-FE-KSQ" secondAttribute="trailing" constant="20" id="69E-b4-pzx"/>
+                                    <constraint firstAttribute="height" constant="50" id="HID-6Y-gH1"/>
+                                    <constraint firstAttribute="bottom" secondItem="NOQ-9k-UVz" secondAttribute="bottom" constant="13" id="TrO-4S-U7v"/>
+                                    <constraint firstAttribute="bottom" secondItem="40O-FE-KSQ" secondAttribute="bottom" constant="8" id="amw-AE-Fg4"/>
+                                    <constraint firstItem="40O-FE-KSQ" firstAttribute="top" secondItem="DbO-o9-3SN" secondAttribute="top" constant="8" id="dhu-Sq-F3E"/>
+                                    <constraint firstItem="NOQ-9k-UVz" firstAttribute="leading" secondItem="DbO-o9-3SN" secondAttribute="leading" constant="20" id="z7d-Ra-5fo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6mF-40-vGL"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d3f-Y0-mLV" firstAttribute="leading" secondItem="6mF-40-vGL" secondAttribute="leading" id="16U-NM-ogU"/>
+                            <constraint firstItem="DbO-o9-3SN" firstAttribute="width" secondItem="d3f-Y0-mLV" secondAttribute="width" id="7bk-ic-a5Z"/>
+                            <constraint firstAttribute="bottom" secondItem="d3f-Y0-mLV" secondAttribute="bottom" id="Dvw-CP-8J9"/>
+                            <constraint firstItem="DbO-o9-3SN" firstAttribute="trailing" secondItem="6mF-40-vGL" secondAttribute="trailing" id="kp7-5y-Qjv"/>
+                            <constraint firstItem="d3f-Y0-mLV" firstAttribute="top" secondItem="DbO-o9-3SN" secondAttribute="bottom" id="mzW-C0-mz1"/>
+                            <constraint firstItem="d3f-Y0-mLV" firstAttribute="width" secondItem="uFy-55-wbd" secondAttribute="width" id="pyV-Np-w0j"/>
+                            <constraint firstItem="d3f-Y0-mLV" firstAttribute="top" secondItem="uFy-55-wbd" secondAttribute="top" constant="179" id="tEZ-FL-0SX"/>
+                            <constraint firstItem="6mF-40-vGL" firstAttribute="trailing" secondItem="d3f-Y0-mLV" secondAttribute="trailing" id="xz5-6Y-4Wd"/>
+                            <constraint firstItem="DbO-o9-3SN" firstAttribute="leading" secondItem="6mF-40-vGL" secondAttribute="leading" id="zRq-S1-jC2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="consolidateAndShipView" destination="d3f-Y0-mLV" id="ZYR-EX-xPR"/>
+                        <outlet property="consolidateTableView" destination="ua5-0f-Ell" id="rey-6V-EzA"/>
+                        <outlet property="upperView" destination="DbO-o9-3SN" id="PZ7-xg-Sm7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NqN-SO-uuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4787.3831775700928" y="-1638.0129589632832"/>
+        </scene>
         <!--Bank Transfer View Controller-->
         <scene sceneID="HkB-tw-vFs">
             <objects>
@@ -1677,6 +1761,9 @@ Pending </string>
                                 <buttonConfiguration key="configuration" style="plain" title="Consolidate &amp; Ship">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="consolidateAndShipTapped:" destination="eq0-Mb-5pe" eventType="touchUpInside" id="SKJ-QD-Csl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uxe-ON-lPf"/>
@@ -1710,6 +1797,7 @@ Pending </string>
                     </view>
                     <connections>
                         <outlet property="backButtonView" destination="bsC-uW-9uC" id="iXs-pl-vyf"/>
+                        <outlet property="collectionViewBottomConstraint" destination="TMs-ey-cRe" id="9Zz-YX-Ny7"/>
                         <outlet property="collectionViewUpperConstraint" destination="sWS-TE-RBE" id="nlI-O2-Qi7"/>
                         <outlet property="consolidateAndShipButton" destination="3Az-Cq-nMx" id="Cu4-nG-G4f"/>
                         <outlet property="filterButton" destination="0yu-lF-bHp" id="F1e-a4-Slx"/>

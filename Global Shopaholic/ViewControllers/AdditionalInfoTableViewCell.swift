@@ -10,8 +10,13 @@ import UIKit
 
 class AdditionalInfoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var checkBoxButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = .clear
+        
+        
         // Initialization code
     }
 
@@ -20,5 +25,11 @@ class AdditionalInfoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configureCell(description: String) {
+        infoLabel.text = description
+        
+    }
+    
     
 }

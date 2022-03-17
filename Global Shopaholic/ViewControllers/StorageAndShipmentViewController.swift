@@ -19,6 +19,7 @@ struct UpperCollectionModel {
 
 class StorageAndShipmentViewController: BaseViewController {
    
+    @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var consolidateAndShipButton: UIButton!
     @IBOutlet weak var collectionViewUpperConstraint: NSLayoutConstraint!
     var upperCollection: [UpperCollectionModel] = [
@@ -62,6 +63,8 @@ class StorageAndShipmentViewController: BaseViewController {
         selectAll = false
         consolidateAndShipButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 13)
         consolidateAndShipButton.layer.cornerRadius = 10
+       
+        
         // Do any additional setup after loading the view.
     }
     
@@ -122,6 +125,16 @@ class StorageAndShipmentViewController: BaseViewController {
         
     }
     
+    @IBAction func consolidateAndShipTapped(_ sender: UIButton) {
+        
+        let consolidateAndShipVC = storyboard?.instantiateViewController(withIdentifier: "ConsolidateAndShipViewController") as? ConsolidateAndShipViewController
+        
+        consolidateAndShipVC?.modalPresentationStyle = .overFullScreen
+        
+//        consolidateAndShipVC?.filterVCDelegate = self
+        self.present(consolidateAndShipVC!, animated: true)
+        
+    }
     @IBAction func sideMenuButtonTapped(_ sender: UIButton) {
         self.onSlide(sender: sender)
     }

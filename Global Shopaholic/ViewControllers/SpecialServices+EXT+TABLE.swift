@@ -17,7 +17,8 @@ extension SpecialServicesViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let specialServicesCell = tableView.dequeueReusableCell(withIdentifier: "SpecialServicesTableViewCell", for: indexPath) as? SpecialServicesTableViewCell
-        specialServicesCell?.paidServices = paidServices
+        
+        specialServicesCell?.updateUI(paidServices: paidServices)
         
         specialServicesCell?.specialServicesCellDelegate = self
         return specialServicesCell!

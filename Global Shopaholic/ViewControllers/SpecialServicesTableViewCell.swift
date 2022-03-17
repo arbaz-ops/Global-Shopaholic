@@ -37,7 +37,9 @@ protocol SpecialServicesTableViewCellDelegate {
 }
 
 class SpecialServicesTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var detailedPictureCheckBoxButton: UIButton!
+    @IBOutlet weak var itemTestingCheckBoxButton: UIButton!
+    @IBOutlet weak var splitCheckBoxButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var descriptionLabel: UILabel!
     var paidServices: [String]?
@@ -63,29 +65,36 @@ class SpecialServicesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        if paidServices != nil {
-        for service in paidServices! {
-            if service == "test_device" {
-                itemTesting = true
-            }
-            else if service != "test_device" {
-                itemTesting = false
-            }
-            
-            if service == "detail_photos" {
-                detailedPictures = true
-            }
-            else if service != "detail_photos" {
-                detailedPictures = false
-            }
-            if service == "split" {
-                split = true
-            }
-            else if service != "split" {
-                split = false
-            }
-        }
-        }
+        
+//        if paidServices != nil {
+//        for service in paidServices! {
+//            if service == "test_device" {
+//                itemTestingCheckBoxButton.setImage(UIImage(named: "checkedGreen"), for: .normal)
+//                itemTesting = true
+//            }
+//            else if service != "test_device" {
+//                itemTesting = false
+//                itemTestingCheckBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+//            }
+//
+//            if service == "detail_photos" {
+//                detailedPictures = true
+//                detailedPictureCheckBoxButton.setImage(UIImage(named: "checkedGreen"), for: .normal)
+//            }
+//            else if service != "detail_photos" {
+//                detailedPictures = false
+//                detailedPictureCheckBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+//            }
+//            if service == "split" {
+//                split = true
+//                splitCheckBoxButton.setImage(UIImage(named: "checkedGreen"), for: .normal)
+//            }
+//            else if service != "split" {
+//                split = false
+//                splitCheckBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+//            }
+//        }
+//        }
         
         packageContentPhoto = false
         packageConsolidation = false
@@ -105,6 +114,43 @@ class SpecialServicesTableViewCell: UITableViewCell {
         descriptionLabel.isHidden = true
         descriptionTextView.isHidden = true
     }
+    
+    func updateUI(paidServices: [String]?) {
+        
+        if paidServices == nil {
+            itemTesting = false
+            itemTestingCheckBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            detailedPictures = false
+            detailedPictureCheckBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            split = false
+            splitCheckBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            
+        }else {
+        if paidServices!.contains("test_device") {
+            itemTestingCheckBoxButton.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            itemTesting = true
+        }
+            else if !paidServices!.contains("test_device") {
+            itemTesting = false
+            itemTestingCheckBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+        }
+        if paidServices!.contains("detail_photos") {
+            detailedPictures = true
+            detailedPictureCheckBoxButton.setImage(UIImage(named: "checkedGreen"), for: .normal)
+        }else {
+            detailedPictures = false
+            detailedPictureCheckBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+        }
+            if paidServices!.contains("split") {
+                split = true
+                splitCheckBoxButton.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            }
+            else {
+                split = false
+                splitCheckBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            }
+        }
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -113,6 +159,7 @@ class SpecialServicesTableViewCell: UITableViewCell {
     }
     
     @IBAction func itemTestingCheckBoxTapped(_ sender: UIButton) {
+        print(itemTesting)
         if itemTesting == false {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
             specialServicesCellDelegate?.itemTestingSelected()

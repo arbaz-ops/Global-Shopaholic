@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SpecialServicesViewControllerDelegate {
+    func updateMyStorage()
+}
+
 class SpecialServicesViewController: UIViewController {
 
     var packageId: String? {
@@ -20,6 +24,8 @@ class SpecialServicesViewController: UIViewController {
             print(paidServices)
         }
     }
+    
+    var specialServicesVCDelegate: SpecialServicesViewControllerDelegate?
     @IBOutlet weak var specialServicesView: UIView!
     @IBOutlet weak var upperView: UIView!
     var storageVM: StorageVM?
@@ -43,6 +49,8 @@ class SpecialServicesViewController: UIViewController {
     }
     
     @IBAction func closeButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {[self] in
+            specialServicesVCDelegate?.updateMyStorage()
+        }
     }
 }

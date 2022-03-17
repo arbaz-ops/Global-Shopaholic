@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RappleProgressHUD
 
 extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
     
@@ -37,16 +38,17 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
          switch currentSelection {
          case .Storage:
              self.selectedSection = 0
-
+             
              storageAndShipmentCollectionView.isHidden = false
              storageAndShipmentTableView?.isHidden = true
             
              storageAndShipmentCollectionView.register(UINib(nibName: "MyStorageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyStorageCollectionViewCell")
              DispatchQueue.main.async { [self] in
                  collectionViewUpperConstraint.constant = 43
-                 consolidateAndShipButton.isHidden = false
-
-                 storageAndShipmentCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
+//                 consolidateAndShipButton.isHidden = false
+                 storageAndShipmentCollectionView.bottomAnchor.constraint(equalTo: self.view!.bottomAnchor, constant: 0).isActive = true
+//                 storageAndShipmentCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
+                 consolidateAndShipButton.isHidden = true
 
              }
              
@@ -383,7 +385,7 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
     
 }
 
-extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, FilterViewControllerDelegate, OutgoingTableViewCellDelegate, ShippedTableViewCellDelegate {
+extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, FilterViewControllerDelegate, OutgoingTableViewCellDelegate, ShippedTableViewCellDelegate, SpecialServicesViewControllerDelegate {
     func openShippedRequestForm(cell: UITableViewCell) {
         let requestFormVC = self.storyboard!.instantiateViewController(withIdentifier: "RequestFormViewController") as? RequestFormViewController
         let shippedCell = cell as? ShippedTableViewCell
@@ -540,7 +542,7 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
         specialServicesVC?.paidServices = paidServices
         specialServicesVC?.packageId = packageId
         specialServicesVC?.modalPresentationStyle = .overFullScreen
-
+        specialServicesVC?.specialServicesVCDelegate = self
         present(specialServicesVC!, animated: true, completion: nil)
 
     }
@@ -570,19 +572,11 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
     }
     
     func updateUI(completion: @escaping (Bool) -> Void) {
-        do {
+       
 //               self.changeUI(status: currentSelection)
-        let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
-        guard let userData = encodedUserData else {
-            return
-        }
-        let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(userData) as? UserDataClass
-            
-            guard let userToken = unarchivedData?.token else {
-                print("Failed to get the token")
-                return
-            }
+        let userToken = getCurrentUserToken()
            storageVM = StorageVM()
+        
             storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all", success: {[self] response in
                 let data = response["data"] as? [String: [[String: Any]]]
                 let list = data!["list"]!
@@ -600,14 +594,30 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
                 COMMON_ALERT.showAlert(msg: str)
             })
             
-        } catch let error {
-            completion(false)
-
-                COMMON_ALERT.showAlert(msg: "Could not connect to server.\n Please try again later.")
-
-            
         }
       
+    
+
+    
+    func updateMyStorage() {
+        let userToken = getCurrentUserToken()
+           storageVM = StorageVM()
+            storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all", success: {[self] response in
+            
+                let data = response["data"] as? [String: [[String: Any]]]
+                let list = data!["list"]!
+                self.packagesList = list
+                self.changeUI(status: self.currentSelection)
+                
+            
+                DispatchQueue.main.async {
+                    self.storageAndShipmentCollectionView.reloadData()
+                }
+
+            }, failure: { str in
+
+                COMMON_ALERT.showAlert(msg: str)
+            })
     }
     
     

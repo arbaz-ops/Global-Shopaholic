@@ -114,7 +114,7 @@ extension HomeVC: UITextFieldDelegate
                 shouldMoveViewUp = true
             }
         }
-        print(activeTextField!.tag)
+        print(activeTextField?.tag)
         if(shouldMoveViewUp) {
             
             self.view.frame.origin.y = 0 - 250
