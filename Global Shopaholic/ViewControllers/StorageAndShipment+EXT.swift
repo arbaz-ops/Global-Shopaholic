@@ -38,17 +38,16 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
          switch currentSelection {
          case .Storage:
              self.selectedSection = 0
-             
+
              storageAndShipmentCollectionView.isHidden = false
              storageAndShipmentTableView?.isHidden = true
             
              storageAndShipmentCollectionView.register(UINib(nibName: "MyStorageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyStorageCollectionViewCell")
              DispatchQueue.main.async { [self] in
                  collectionViewUpperConstraint.constant = 43
-//                 consolidateAndShipButton.isHidden = false
-                 storageAndShipmentCollectionView.bottomAnchor.constraint(equalTo: self.view!.bottomAnchor, constant: 0).isActive = true
+//                 consolidateAndShipButton.isHidden = true
+                 enableConsolidateAndShip()
 //                 storageAndShipmentCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
-                 consolidateAndShipButton.isHidden = true
 
              }
              
@@ -555,7 +554,7 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
             itemsSelectedLabel.text = "\(selectedIndex.count) items selected"
             print(selectedIndex)
             storageAndShipmentCollectionView.reloadData()
-
+            enableConsolidateAndShip()
         }
         else if selectedIndex.contains(indexPath.row) == false {
             
@@ -564,11 +563,35 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
 
             itemsSelectedLabel.text = "\(selectedIndex.count) items selected"
             storageAndShipmentCollectionView.reloadData()
-
+            enableConsolidateAndShip()
 
         }
         
 
+    }
+    
+    func enableConsolidateAndShip() {
+        if selectedIndex.count > 0 {
+            
+            DispatchQueue.main.async { [self] in
+                consolidateAndShipButton.isHidden = false
+//                storageAndShipmentCollectionView.bottomAnchor.constraint(equalTo: self.consolidateAndShipButton.topAnchor, constant: 8).isActive = true
+////                storageAndShipmentCollectionView.reloadData()
+//                self.view.layoutSubviews()
+                
+            }
+        }
+        else if selectedIndex.count < 1 {
+            
+            DispatchQueue.main.async { [self] in
+                consolidateAndShipButton.isHidden = true
+//                storageAndShipmentCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+//                self.view.layoutSubviews()
+
+            }
+            
+
+        }
     }
     
     func updateUI(completion: @escaping (Bool) -> Void) {

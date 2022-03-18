@@ -13,6 +13,7 @@ class ConsolidateAndShipViewController: UIViewController {
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var consolidateAndShipView: UIView!
     @IBOutlet weak var consolidateTableView: UITableView!
+    var selectedPackages: [Int]?
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTable()

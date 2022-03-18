@@ -57,8 +57,8 @@ class StorageAndShipmentViewController: BaseViewController {
         backButtonView.roundCorners([.topLeft, .bottomLeft], radius: 20)
         InitUI()
         filterButton.isHidden = true
-        
-       setupCollectionView()
+        enableConsolidateAndShip()
+           setupCollectionView()
         loadTableView()
         selectAll = false
         consolidateAndShipButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 13)
@@ -162,6 +162,8 @@ class StorageAndShipmentViewController: BaseViewController {
 
     @IBAction func selectAllButtonTapped(_ sender: UIButton) {
         
+        
+        
         if selectAll == false {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
             for i in 0..<packagesList.count {
@@ -171,6 +173,7 @@ class StorageAndShipmentViewController: BaseViewController {
                 if !selectedIndex.contains(i) {
                     selectedIndex.append(i)
                     itemsSelectedLabel.text = "\(selectedIndex.count) items selected"
+                    enableConsolidateAndShip()
                     storageAndShipmentCollectionView.reloadData()
                 }
             }
@@ -183,6 +186,8 @@ class StorageAndShipmentViewController: BaseViewController {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
             selectAll = false
             selectedIndex.removeAll()
+           enableConsolidateAndShip()
+
            itemsSelectedLabel.text = "\(selectedIndex.count) items selected"
             print(selectedIndex)
             storageAndShipmentCollectionView.reloadData()
