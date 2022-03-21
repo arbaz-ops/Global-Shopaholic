@@ -347,8 +347,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="addressDropDownField" destination="WPZ-Or-pHa" id="b5w-1y-uCI"/>
+                <outlet property="customValueLabel" destination="Ge0-ro-Y4V" id="mPz-rV-F3s"/>
                 <outlet property="detailView" destination="zLe-Ea-52J" id="zTg-R2-HnL"/>
                 <outlet property="specialServicesTextView" destination="z5d-67-9V6" id="yWU-lF-eM3"/>
+                <outlet property="totalPackagesConsolidatedLabel" destination="Qm3-Nh-w4G" id="no1-ez-yHD"/>
             </connections>
             <point key="canvasLocation" x="128.98550724637681" y="430.58035714285711"/>
         </tableViewCell>

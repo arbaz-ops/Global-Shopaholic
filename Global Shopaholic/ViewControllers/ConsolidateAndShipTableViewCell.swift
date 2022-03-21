@@ -11,6 +11,8 @@ import iOSDropDown
 
 class ConsolidateAndShipTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var customValueLabel: UILabel!
+    @IBOutlet weak var totalPackagesConsolidatedLabel: UILabel!
     @IBOutlet weak var specialServicesTextView: UITextView!
     @IBOutlet weak var addressDropDownField: DropDown!
     @IBOutlet weak var detailView: UIView!

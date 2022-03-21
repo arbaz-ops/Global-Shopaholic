@@ -42,7 +42,7 @@ class StorageAndShipmentViewController: BaseViewController {
     var storageVM: StorageVM?
     var estimateWidth = 160.0
     var cellMarginSize = 16.0
-    var selectedIndex: [Int] = []
+    var selectedIndex: [Int] = [] 
     @IBOutlet weak var selectAllLabel: UILabel!
     @IBOutlet weak var sideMenuView: UIView!
     var selectAll: Bool?
@@ -129,7 +129,10 @@ class StorageAndShipmentViewController: BaseViewController {
         
         let consolidateAndShipVC = storyboard?.instantiateViewController(withIdentifier: "ConsolidateAndShipViewController") as? ConsolidateAndShipViewController
         
+        
         consolidateAndShipVC?.modalPresentationStyle = .overFullScreen
+        consolidateAndShipVC?.selectedIndex = selectedIndex
+        consolidateAndShipVC?.packagesList = packagesList
         
 //        consolidateAndShipVC?.filterVCDelegate = self
         self.present(consolidateAndShipVC!, animated: true)

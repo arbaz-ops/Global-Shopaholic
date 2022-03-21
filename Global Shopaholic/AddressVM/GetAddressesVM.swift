@@ -40,7 +40,7 @@ struct GetAddressesVM {
      } failure: { (error) in
          RappleActivityIndicatorView.stopAnimation()
 
-         print("something bad happend")
+         self.delegate?.didFailToGetAddress(msg: "Something went bad")
      }
 
      //self.delegate?.didFinished()
