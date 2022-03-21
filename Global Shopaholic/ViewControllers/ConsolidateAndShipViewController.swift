@@ -74,11 +74,13 @@ class ConsolidateAndShipViewController: UIViewController, getAddressesDelegate {
             let zipCode = address["zip_code"] as? String
             let country = address["country"] as? String
            
-            let completeAddress = street + ", " + city + ", " + state + ", " + zipCode + ", " + country
+            let completeAddress = street!  + city!  + state! + zipCode!  + country!
             print(completeAddress)
             
          
         }
+        
+        consolidateAndShipCell!.totalPackagesConsolidatedLabel.text = "\(selectedIndex!.count)"
         
      }
 //    func configureDropDown(addresses: [[String: Any]]) {
