@@ -16,7 +16,7 @@ extension ConsolidateAndShipViewController: UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let consolidateAndShipCell = tableView.dequeueReusableCell(withIdentifier: "ConsolidateAndShipTableViewCell") as? ConsolidateAndShipTableViewCell
-        
+        consolidateAndShipCell?.consolidationAndShipCellDelegate = self
         return consolidateAndShipCell!
     }
     

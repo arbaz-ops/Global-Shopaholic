@@ -8,16 +8,18 @@
 
 import UIKit
 import iOSDropDown
-
 class ConsolidateAndShipViewController: UIViewController, getAddressesDelegate {
     
     var addresses:  [[String: Any]]? = [[String: Any]]()
     var getAddressVM: GetAddressesVM?
     var packagesList: [[String: Any]]? = [[String: Any]]()
     var selectedIndex: [Int]? = [Int]()
+    var customValue = 0
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var consolidateAndShipView: UIView!
     @IBOutlet weak var consolidateTableView: UITableView!
+    var customValues = [Int]()
+    var additionalInfo: [String]? = [String]()
     var selectedPackages: [Int]?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,7 @@ class ConsolidateAndShipViewController: UIViewController, getAddressesDelegate {
         getAddressVM = GetAddressesVM()
         getAddressVM?.delegate = self
         upperView.roundTopCorners(radius: 25)
+        
         // Do any additional setup after loading the view.
     }
     
@@ -66,25 +69,47 @@ class ConsolidateAndShipViewController: UIViewController, getAddressesDelegate {
     
     func configureCell() {
         let consolidateAndShipCell = consolidateTableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as? ConsolidateAndShipTableViewCell
+        calculateCustomValue()
         for address in addresses! {
-            
             let street = address["street"] as? String
             let  city = address["city"] as? String
             let state = address["state"] as? String
             let zipCode = address["zip_code"] as? String
             let country = address["country"] as? String
            
-            let completeAddress = street!  + city!  + state! + zipCode!  + country!
-            print(completeAddress)
-            
-         
+            let completeAddress = "\(street!), "  + "\(city!), "  + "\(state!), " + "\(zipCode!), "  + "\(country!)"
+            consolidateAndShipCell?.addressDropDownField.optionArray.append(completeAddress)
         }
-        
+  
+        consolidateAndShipCell?.customValueLabel.text = "$ \(customValue)"
         consolidateAndShipCell!.totalPackagesConsolidatedLabel.text = "\(selectedIndex!.count)"
         
      }
 //    func configureDropDown(addresses: [[String: Any]]) {
 //        let
 //    }
+    
+    
+    func calculateCustomValue() {
+        for index in selectedIndex! {
+            let packageCustomDetail = packagesList![index]["package_custom_detail"] as? [[String: Any]]
+            if packageCustomDetail!.count < 1 {
+                print("no")
+            }
+           else if packageCustomDetail!.count > 0 {
+                let valueString = packageCustomDetail![0]["value"] as? String
+               let valueDouble = Double.init(valueString!)
+               let valueInt = Int.init(valueDouble!)
+               self.customValues.append(valueInt)
+              
+            }
+            
+        }
+        
+        for i in customValues {
+            customValue += i
+        }
+        
+    }
     
 }

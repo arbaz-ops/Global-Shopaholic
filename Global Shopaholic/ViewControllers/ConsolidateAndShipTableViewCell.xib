@@ -31,14 +31,14 @@
                                 <color key="textColor" red="0.35294117650000001" green="0.33725490200000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm3-Nh-w4G">
-                                <rect key="frame" x="342" y="20" width="9" height="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm3-Nh-w4G">
+                                <rect key="frame" x="341" y="20" width="10" height="19"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <color key="textColor" red="0.043137254899999998" green="0.72941176470000002" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 50.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge0-ro-Y4V">
-                                <rect key="frame" x="296" y="64" width="55" height="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge0-ro-Y4V">
+                                <rect key="frame" x="327" y="64" width="24" height="19"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <color key="textColor" red="0.043137254899999998" green="0.72941176470000002" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -52,13 +52,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Qm3-Nh-w4G" secondAttribute="trailing" constant="21" id="CUW-17-zMR"/>
                             <constraint firstAttribute="height" constant="115" id="DQG-aG-qsf"/>
                             <constraint firstItem="Ge0-ro-Y4V" firstAttribute="centerY" secondItem="Uip-ek-hoa" secondAttribute="centerY" id="Ho8-yx-Eha"/>
                             <constraint firstItem="Qm3-Nh-w4G" firstAttribute="centerY" secondItem="HVB-pr-ne1" secondAttribute="centerY" id="Th3-TB-aGi"/>
                             <constraint firstItem="HVB-pr-ne1" firstAttribute="leading" secondItem="zLe-Ea-52J" secondAttribute="leading" constant="21" id="dwr-up-xgi"/>
                             <constraint firstItem="Uip-ek-hoa" firstAttribute="top" secondItem="HVB-pr-ne1" secondAttribute="bottom" constant="25" id="eFI-iO-9rO"/>
                             <constraint firstItem="HVB-pr-ne1" firstAttribute="top" secondItem="zLe-Ea-52J" secondAttribute="top" constant="20" id="jpV-LX-ds7"/>
-                            <constraint firstItem="Ge0-ro-Y4V" firstAttribute="leading" secondItem="Uip-ek-hoa" secondAttribute="trailing" constant="79" id="nCK-Gc-r0a"/>
                             <constraint firstItem="Uip-ek-hoa" firstAttribute="leading" secondItem="HVB-pr-ne1" secondAttribute="leading" id="wYW-KU-iKp"/>
                             <constraint firstItem="Ge0-ro-Y4V" firstAttribute="trailing" secondItem="Qm3-Nh-w4G" secondAttribute="trailing" id="xaf-XM-kY3"/>
                         </constraints>
@@ -77,6 +77,11 @@
                         </constraints>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                <real key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waE-K0-f2m">
                         <rect key="frame" x="44" y="267" width="112" height="19"/>
@@ -91,7 +96,7 @@
                             <constraint firstAttribute="height" constant="83" id="Dwj-j9-D33"/>
                         </constraints>
                         <color key="textColor" systemColor="labelColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krh-cL-f8s">
@@ -118,6 +123,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="acceptTermsAndConditionsCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WhV-JT-JIm"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I Accept the Terms and Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ii8-5C-bgw">
                         <rect key="frame" x="75" y="806" width="333" height="19"/>
@@ -132,6 +140,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="insureThisPackageCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="AmQ-FJ-d35"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to Insure this Package ?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qW8-QY-AJP">
                         <rect key="frame" x="75" y="439.5" width="333" height="18.5"/>
@@ -146,6 +157,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="thisPackageContainsBatteryCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="TkV-yk-OoQ"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Does this Package contain Batteries ?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ue-04-RDl">
                         <rect key="frame" x="75" y="473.5" width="333" height="18.5"/>
@@ -160,6 +174,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="sendAsGiftCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ICa-Ar-XQY"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send as Gift ?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5h-2g-c6K">
                         <rect key="frame" x="75" y="507.5" width="333" height="18.5"/>
@@ -174,6 +191,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="isDangerousGoodCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5tq-D6-csg"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is dangerous goods ?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTr-eL-5zQ">
                         <rect key="frame" x="75" y="541.5" width="333" height="18.5"/>
@@ -188,6 +208,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="expressProcessingCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nVB-5d-UY2"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Express processing ($5)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnR-1T-SjA">
                         <rect key="frame" x="75" y="575.5" width="333" height="18.5"/>
@@ -202,6 +225,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="prepareInOneBoxCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KmF-nY-BOh"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ror-0Y-f7j">
                         <rect key="frame" x="36" y="638" width="39" height="29"/>
@@ -210,6 +236,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="addFragileCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="QSf-MN-RYh"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prepare in one box" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBt-ko-l7i">
                         <rect key="frame" x="75" y="609.5" width="333" height="18.5"/>
@@ -230,6 +259,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="useSmallestBoxCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eF5-Zd-U0r"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the smallest box" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmJ-Iv-zvv">
                         <rect key="frame" x="75" y="677.5" width="333" height="18.5"/>
@@ -244,6 +276,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="packWithoutBubbleWrapCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Wl4-yL-dc9"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pack without bubble wrap" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn5-CN-5qS">
                         <rect key="frame" x="75" y="711.5" width="333" height="18.5"/>
@@ -258,6 +293,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="uncheckedBox"/>
+                        <connections>
+                            <action selector="addExtraPaddingAndBubbleCheckBoxTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gRe-SO-64R"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add extra padding and Bubble wrap" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvZ-bJ-1Cn">
                         <rect key="frame" x="75" y="745.5" width="333" height="18.5"/>
@@ -349,7 +387,12 @@
                 <outlet property="addressDropDownField" destination="WPZ-Or-pHa" id="b5w-1y-uCI"/>
                 <outlet property="customValueLabel" destination="Ge0-ro-Y4V" id="mPz-rV-F3s"/>
                 <outlet property="detailView" destination="zLe-Ea-52J" id="zTg-R2-HnL"/>
+                <outlet property="expressProcessingCheckBox" destination="bxh-GD-twr" id="Ct7-bp-Egn"/>
+                <outlet property="isDangerousGoodCheckBox" destination="NcL-sE-Z1U" id="BxT-jN-OZG"/>
+                <outlet property="packageContainsBatteryCheckBox" destination="IrD-On-ig2" id="Zgm-Iv-0LF"/>
+                <outlet property="sendAsGiftCheckBox" destination="azZ-aU-aHb" id="Tq1-bm-5o0"/>
                 <outlet property="specialServicesTextView" destination="z5d-67-9V6" id="yWU-lF-eM3"/>
+                <outlet property="submitButton" destination="Bd8-AK-nEF" id="ulA-Qh-cL5"/>
                 <outlet property="totalPackagesConsolidatedLabel" destination="Qm3-Nh-w4G" id="no1-ez-yHD"/>
             </connections>
             <point key="canvasLocation" x="128.98550724637681" y="430.58035714285711"/>

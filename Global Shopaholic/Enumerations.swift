@@ -60,3 +60,16 @@ enum PaidServices: String {
     case DetailedPhoto = "detail_photos"
     case TestDevice = "test_device"
 }
+
+enum AdditionalInfo: String {
+    case Do_you_want_to_Insure_this_Package = "Do_you_want_to_Insure_this_Package_?"
+    case Does_this_Package_contain_Batteries = "Does_this_Package_contain_Batteries_?"
+    case Send_as_Gift = "Send_as_Gift_?"
+    case Is_dangerous_goods = "Is_dangerous_goods_?"
+    case express_processing = "express_processing"
+    case prepare_in_one_box = "prepare_in_one_box"
+    case add_fragile_sticker = "add_fragile_sticker"
+    case use_the_smallest_box = "use_the_smallest_box"
+    case pack_without_bubble_wrap = "pack_without_bubble_wrap"
+    case add_extra_padding_and_bubble_wrap = "add_extra_padding_and_bubble_wrap"
+}

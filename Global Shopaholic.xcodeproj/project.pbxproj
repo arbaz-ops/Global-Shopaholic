@@ -252,6 +252,7 @@
 		7C7261532790482100ADB324 /* StorageAndShipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7261522790482100ADB324 /* StorageAndShipmentViewController.swift */; };
 		7C72615527904D4000ADB324 /* StorageAndShipment+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72615427904D4000ADB324 /* StorageAndShipment+EXT.swift */; };
 		7C7261572790592C00ADB324 /* StorageAndShipment+EXT+TABLE+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7261562790592C00ADB324 /* StorageAndShipment+EXT+TABLE+Collection.swift */; };
+		7C94F52127E9266F0010B1B2 /* ConsolidateAndShipVC+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C94F52027E9266F0010B1B2 /* ConsolidateAndShipVC+EXT.swift */; };
 		7C95D2CF27632F1000EC198E /* SpecialServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D2CE27632F1000EC198E /* SpecialServicesViewController.swift */; };
 		7C95D2D327632FFA00EC198E /* SpecialServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D2D127632FFA00EC198E /* SpecialServicesTableViewCell.swift */; };
 		7C95D2D427632FFA00EC198E /* SpecialServicesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C95D2D227632FFA00EC198E /* SpecialServicesTableViewCell.xib */; };
@@ -584,6 +585,7 @@
 		7C7261522790482100ADB324 /* StorageAndShipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageAndShipmentViewController.swift; sourceTree = "<group>"; };
 		7C72615427904D4000ADB324 /* StorageAndShipment+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageAndShipment+EXT.swift"; sourceTree = "<group>"; };
 		7C7261562790592C00ADB324 /* StorageAndShipment+EXT+TABLE+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageAndShipment+EXT+TABLE+Collection.swift"; sourceTree = "<group>"; };
+		7C94F52027E9266F0010B1B2 /* ConsolidateAndShipVC+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConsolidateAndShipVC+EXT.swift"; sourceTree = "<group>"; };
 		7C95D2CE27632F1000EC198E /* SpecialServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialServicesViewController.swift; sourceTree = "<group>"; };
 		7C95D2D127632FFA00EC198E /* SpecialServicesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialServicesTableViewCell.swift; sourceTree = "<group>"; };
 		7C95D2D227632FFA00EC198E /* SpecialServicesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialServicesTableViewCell.xib; sourceTree = "<group>"; };
@@ -1917,6 +1919,7 @@
 				7CA0A20B27E091BA00208C28 /* Cells */,
 				7CA0A20927E075B400208C28 /* ConsolidateAndShipViewController.swift */,
 				7CA0A21427E1DB6200208C28 /* ConsolidateAndShipVC+EXT+TABLE.swift */,
+				7C94F52027E9266F0010B1B2 /* ConsolidateAndShipVC+EXT.swift */,
 			);
 			name = ConsolidateAndShip;
 			sourceTree = "<group>";
@@ -2455,6 +2458,7 @@
 				787E89EF2625F518007F67DB /* CalculatorVM.swift in Sources */,
 				789B02EB268CA6CE006D489A /* APSCheckOut+EXT+UI.swift in Sources */,
 				7872B81C2654F82000B796B2 /* BankDepositeResponse.swift in Sources */,
+				7C94F52127E9266F0010B1B2 /* ConsolidateAndShipVC+EXT.swift in Sources */,
 				789D2F40266913F800D92197 /* NewsAndUpdateCell.swift in Sources */,
 				7819B374257FAD4A006A8376 /* FAQ+EXT.swift in Sources */,
 				78B87964267799C500B66187 /* NEWSANDUPDATES+INSTAEMBEDED.swift in Sources */,
