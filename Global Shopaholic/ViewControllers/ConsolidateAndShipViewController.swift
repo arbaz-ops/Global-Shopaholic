@@ -8,16 +8,27 @@
 
 import UIKit
 import iOSDropDown
+
+protocol ConsolidateAndShipVCDelegate {
+    func showSuccessVC(uniquqKey: String)
+}
+
 class ConsolidateAndShipViewController: UIViewController, getAddressesDelegate {
     
+    
+    var storageVM: StorageVM?
     var addresses:  [[String: Any]]? = [[String: Any]]()
     var getAddressVM: GetAddressesVM?
     var packagesList: [[String: Any]]? = [[String: Any]]()
     var selectedIndex: [Int]? = [Int]()
     var customValue = 0
+    var packages: [String]? = [String]() 
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var consolidateAndShipView: UIView!
     @IBOutlet weak var consolidateTableView: UITableView!
+    
+    
+    var consolidateAndShipVCDelegate: ConsolidateAndShipVCDelegate?
     var customValues = [Int]()
     var additionalInfo: [String]? = [String]()
     var selectedPackages: [Int]?
@@ -28,12 +39,22 @@ class ConsolidateAndShipViewController: UIViewController, getAddressesDelegate {
         getAddressVM?.delegate = self
         upperView.roundTopCorners(radius: 25)
         
+        for index in selectedIndex! {
+            guard let packagesID = packagesList![index]["package_id"] as? String else {
+                let alert = UIAlertController(title: "", message: "Package Does not exist.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            packages?.append(packagesID)
+        }
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
          let userToken = getCurrentUserToken()
+        
         getAddressVM?.getAddress(accessToken: userToken)
     }
     
@@ -79,8 +100,12 @@ class ConsolidateAndShipViewController: UIViewController, getAddressesDelegate {
            
             let completeAddress = "\(street!), "  + "\(city!), "  + "\(state!), " + "\(zipCode!), "  + "\(country!)"
             consolidateAndShipCell?.addressDropDownField.optionArray.append(completeAddress)
+            
+            
         }
-  
+        
+        
+        
         consolidateAndShipCell?.customValueLabel.text = "$ \(customValue)"
         consolidateAndShipCell!.totalPackagesConsolidatedLabel.text = "\(selectedIndex!.count)"
         

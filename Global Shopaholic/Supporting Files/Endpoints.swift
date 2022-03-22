@@ -44,4 +44,5 @@ struct endpoints {
     let returnPackage = "api/shopaholic/storage/package/returnpackage"
     let freeServices = "api/shopaholic/storage/package/freeservice"
     let paidServices = "api/shopaholic/storage/package/paidservice"
+    let createConsolidation = "api/consolidation/create"
 }

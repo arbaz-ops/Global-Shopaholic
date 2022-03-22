@@ -21,10 +21,16 @@ protocol ConsolidateAndShipTableViewCellDelegate {
     func packWithoutBubbleWrap(selected: Bool?)
     func addExtraPaddingAndBubble(selected: Bool?)
     func acceptTermsAndCondition(selected: Bool?)
+    
+    func submitButtonTapped(selectedAddressIndex: Int?, specialService: String?)
 }
+
+
 
 class ConsolidateAndShipTableViewCell: UITableViewCell {
 
+    
+    
     @IBOutlet weak var expressProcessingCheckBox: UIButton!
     @IBOutlet weak var isDangerousGoodCheckBox: UIButton!
     @IBOutlet weak var sendAsGiftCheckBox: UIButton!
@@ -48,6 +54,11 @@ class ConsolidateAndShipTableViewCell: UITableViewCell {
     var packWithoutBubbleWrap: Bool?
     var addExtraPaddingAndBubble: Bool?
     var acceptTermsAndCondition: Bool?
+    var selectedAddressIndex: Int? {
+        didSet {
+            print(selectedAddressIndex!)
+        }
+    }
 //    @IBOutlet weak var additionalInfoTableView: UITableView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -80,7 +91,14 @@ class ConsolidateAndShipTableViewCell: UITableViewCell {
         addressDropDownField.listHeight = 200
         addressDropDownField.rowHeight = 100
         
+        addressDropDownField.didSelect { selectedText, index, id in
+            self.selectedAddressIndex = index
+            
+        }
     }
+    
+    
+    
 
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -234,6 +252,13 @@ class ConsolidateAndShipTableViewCell: UITableViewCell {
             consolidationAndShipCellDelegate?.acceptTermsAndCondition(selected: acceptTermsAndCondition)
         }
     }
+    
+    
+    @IBAction func submitButtonTapped(_ sender: UIButton) {
+        consolidationAndShipCellDelegate?.submitButtonTapped(selectedAddressIndex: self.selectedAddressIndex, specialService: self.specialServicesTextView.text)
+    }
+    
+    
 }
 
 

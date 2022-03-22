@@ -8,7 +8,13 @@
 
 import Foundation
 
+import UIKit
+
 extension ConsolidateAndShipViewController: ConsolidateAndShipTableViewCellDelegate {
+    
+    
+   
+    
     func insurePackage(selected: Bool?) {
         if selected == true {
             self.additionalInfo?.append(AdditionalInfo.Do_you_want_to_Insure_this_Package.rawValue)
@@ -121,6 +127,70 @@ extension ConsolidateAndShipViewController: ConsolidateAndShipTableViewCellDeleg
         }
         else {
             print("Already Removed")
+        }
+    }
+    
+    
+    func submitButtonTapped(selectedAddressIndex: Int?, specialService: String?) {
+        
+        guard let index = selectedAddressIndex else {
+            let alert = UIAlertController(title: "", message: "Please select Destination Address", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if  specialService!.count > 0 {
+            guard let addressID = addresses![index]["address_id"] as? String else {
+                return
+            }
+            storageVM = StorageVM()
+            let userToken = getCurrentUserToken()
+            storageVM?.createConsolidationRequest(token: userToken, packages: packages!, destinationAddress: addressID , specialRequestInfo: specialService, additionalInfo: additionalInfo, success: {[self] response in
+                print(response)
+                
+                
+                self.completion(response: response)
+                
+                
+            }, failure: { error in
+                let alert = UIAlertController(title: "", message: error, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            })
+        }
+        else {
+            let alert = UIAlertController(title: "", message: "Special Service is required.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+//        guard let serviceInfo = specialService else {
+//
+//            return
+//        }
+       
+        
+//
+
+    }
+    
+    func completion(response: NSDictionary) {
+        if response["message"] as! String == "The given data was invalid." {
+            let alert = UIAlertController(title: "", message: response["message"] as? String, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if response["message"] as? String == "Server Error" {
+            let alert = UIAlertController(title: "", message: "Server Error \n Please try again later.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else {
+            let data = response["data"] as? [String: Any]
+            let uniqueKey = data!["unique_key"] as? String
+            self.dismiss(animated: true) {[self] in
+                consolidateAndShipVCDelegate?.showSuccessVC(uniquqKey: uniqueKey!)
+            }
         }
     }
     

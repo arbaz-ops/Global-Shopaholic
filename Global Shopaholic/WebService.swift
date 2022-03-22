@@ -19,12 +19,11 @@ import RappleProgressHUD//http://beta.globalshopaholics.com   //http://192.168.1
 let BASE_URL = "http://34.194.133.139:8888/"
 class WebService: NSObject {
     
-    class func postMultipartArrayWithToken(Token: String, strURL: String,is_loader_required: Bool ,params: [String: Any], method: HTTPMethod,success:@escaping (_ response:NSDictionary) -> (), failure:@escaping (String) -> ()) {
+    class func postMultipartArrayWithToken(Token: String, strURL: String,is_loader_required: Bool,  packages: [String],destinationAddress: String,specialRequestInfo: String,additionalInfo: [String] , method: HTTPMethod,success:@escaping (_ response:NSDictionary) -> (), failure:@escaping (String) -> ()) {
         if Connectivity.isConnectedToInternet {
             print("Yes! internet is available.")
 
         print(BASE_URL.appending(strURL))
-        print(params)
             print(Token)
 
        
@@ -34,12 +33,26 @@ class WebService: NSObject {
                 "Accept": "application/json",
                 "Content-Type": "multipart/form-data"
             ]
+            print(packages)
+            print(destinationAddress)
+            print(specialRequestInfo)
+            print(additionalInfo)
             
             Alamofire.upload(multipartFormData: { multipartData in
                                  
-                for (key,value) in params {
-                    multipartData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
+                for package in packages {
+                    print(package)
+                    multipartData.append("\(package)".data(using: .utf8)!, withName: "packages[]")
                 }
+                multipartData.append("\(destinationAddress)".data(using: .utf8)!, withName: "destination_address")
+                multipartData.append("\(specialRequestInfo)".data(using: .utf8)!, withName: "special_request_info")
+                
+                for info in additionalInfo {
+                    multipartData.append("\(info)".data(using: .utf8)!, withName: "additional_info[]")
+                }
+//                for (key,value) in params {
+//                    multipartData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
+//                }
             }, to: BASE_URL.appending(strURL), method: .post, headers: headers) { encodingResult in
                 switch encodingResult {
                 case .success(let upload, _, _):
@@ -65,12 +78,12 @@ class WebService: NSObject {
 
                         case .failure(_):
                             
-                            failure(response.error.debugDescription )
+                            failure(response.error!.localizedDescription )
                             break
                         }
                     }
-                case .failure(let error):
-                    failure(error.localizedDescription)
+                case .failure(_):
+                    failure("Something Went wrong")
                 }
             }
 

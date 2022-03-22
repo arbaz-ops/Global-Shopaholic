@@ -12,7 +12,7 @@ class CustomDetailViewController: UIViewController {
     var trackingNumber: String?
     @IBOutlet weak var customDetailTableView: UITableView!
     @IBOutlet weak var upperView: UIView!
-    
+    var indexPath: IndexPath?
     var packagesList: [[String: Any]]?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,7 @@ class CustomDetailViewController: UIViewController {
         customDetailTableView.alwaysBounceVertical = false
         customDetailTableView.dataSource = self
         customDetailTableView.delegate = self
+        customDetailTableView.separatorStyle = .none
         customDetailTableView.register(UINib(nibName: "CustomDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomDetailTableViewCell")
     }
 

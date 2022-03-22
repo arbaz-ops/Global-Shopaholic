@@ -164,4 +164,20 @@ struct StorageVM {
         
     }
     
+    
+    func createConsolidationRequest(token: String, packages: [String], destinationAddress: String, specialRequestInfo: String?, additionalInfo: [String]?,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+        let ep = endpoints()
+        RappleActivityIndicatorView.startAnimating()
+        WebService.postMultipartArrayWithToken(Token: token, strURL: ep.createConsolidation, is_loader_required: false, packages: packages, destinationAddress: destinationAddress, specialRequestInfo: specialRequestInfo!, additionalInfo: additionalInfo!, method: .post) { response in
+            RappleActivityIndicatorView.stopAnimation()
+
+            success(response)
+        } failure: { error in
+            RappleActivityIndicatorView.stopAnimation()
+
+            failure(error)
+        }
+
+    }
+    
 }

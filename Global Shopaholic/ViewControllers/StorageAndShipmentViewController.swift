@@ -129,7 +129,7 @@ class StorageAndShipmentViewController: BaseViewController {
         
         let consolidateAndShipVC = storyboard?.instantiateViewController(withIdentifier: "ConsolidateAndShipViewController") as? ConsolidateAndShipViewController
         
-        
+        consolidateAndShipVC?.consolidateAndShipVCDelegate = self
         consolidateAndShipVC?.modalPresentationStyle = .overFullScreen
         consolidateAndShipVC?.selectedIndex = selectedIndex
         consolidateAndShipVC?.packagesList = packagesList

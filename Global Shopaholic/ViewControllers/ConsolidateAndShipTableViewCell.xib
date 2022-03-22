@@ -115,6 +115,9 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                        <connections>
+                            <action selector="submitButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="d97-Mv-io9"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWw-ua-tze">
                         <rect key="frame" x="36" y="801" width="39" height="29"/>
