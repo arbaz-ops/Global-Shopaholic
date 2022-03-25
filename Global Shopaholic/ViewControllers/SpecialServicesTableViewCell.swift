@@ -42,6 +42,17 @@ class SpecialServicesTableViewCell: UITableViewCell {
     @IBOutlet weak var splitCheckBoxButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var pcakageContentPhotoCheckBox: UIButton!
+    @IBOutlet weak var packageConsolidationCheckBox: UIButton!
+    @IBOutlet weak var repackingCheckBox: UIButton!
+    @IBOutlet weak var removeItemBoxesCheckBox: UIButton!
+    @IBOutlet weak var removeAllProtectivePackagingCheckBox: UIButton!
+    @IBOutlet weak var removeShipperBoxesCheckBox: UIButton!
+    @IBOutlet weak var otherCheckBox: UIButton!
+    @IBOutlet weak var doNotRemoveItemBoxesCheckBox: UIButton!
+    @IBOutlet weak var doNotRemoveShipperBoxesCheckBox: UIButton!
+    
+    @IBOutlet weak var removeInvoicesCheckBox: UIButton!
     var paidServices: [String]?
     var freeServices: [String]?
     var itemTesting: Bool?
@@ -115,7 +126,7 @@ class SpecialServicesTableViewCell: UITableViewCell {
         descriptionTextView.isHidden = true
     }
     
-    func updateUI(paidServices: [String]?) {
+    func updateUI(paidServices: [String]?, freeServices: [String]?) {
         
         if paidServices == nil {
             itemTesting = false
@@ -150,7 +161,114 @@ class SpecialServicesTableViewCell: UITableViewCell {
                 splitCheckBoxButton.setImage(UIImage(named: "uncheckedBox"), for: .normal)
             }
         }
+        
+        
+        
+        //Free Services
+        if freeServices == nil {
+            packageContentPhoto = false
+            packageConsolidation = false
+            repacking = false
+            removeItemBoxes = false
+            removeProtectivePackage = false
+            removeShipperBoxes = false
+            removeInvoicesAndPriceTags = false
+            doNotRemoveItemBoxes = false
+            doNotRemoveShipperBoxes = false
+            other = false
+            packageConsolidationCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            packageConsolidationCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            repackingCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            removeItemBoxesCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            removeAllProtectivePackagingCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            removeShipperBoxesCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            removeInvoicesCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            doNotRemoveShipperBoxesCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            doNotRemoveItemBoxesCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+        }
+        else if freeServices != nil {
+            if freeServices!.contains("package_content_photo_during_consolidation") {
+                packageContentPhoto = true
+                packageConsolidationCheckBox.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            }
+            else if !freeServices!.contains("package_content_photo_during_consolidation") {
+                packageContentPhoto = false
+                packageConsolidationCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            }
+            
+            if freeServices!.contains("package_consolidation") {
+                packageConsolidation = true
+                packageConsolidationCheckBox.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            }
+            else {
+                packageConsolidation = false
+                packageConsolidationCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            }
+            
+            if freeServices!.contains("repacking") {
+                repacking = true
+                repackingCheckBox.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            }
+            else {
+                repacking = false
+                repackingCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            }
+            
+            if freeServices!.contains("remove_all_protective_packaging/padding") {
+                removeProtectivePackage = true
+                removeAllProtectivePackagingCheckBox.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            }
+            else {
+                removeProtectivePackage = false
+                removeAllProtectivePackagingCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            }
+            
+            if freeServices!.contains("remove_shipper_boxes_(brown_boxes)") {
+                removeShipperBoxes = true
+                removeShipperBoxesCheckBox.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            }
+            else {
+                removeShipperBoxes = false
+                removeShipperBoxesCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            }
+            
+            if freeServices!.contains("remove_invoices_and_pricing_tags") {
+                removeInvoicesAndPriceTags = true
+                removeInvoicesCheckBox.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            }
+            else {
+                removeInvoicesAndPriceTags = false
+                removeInvoicesCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            }
+            
+            if freeServices!.contains("do_not_remove_items_boxes") {
+                doNotRemoveItemBoxes = true
+                doNotRemoveItemBoxesCheckBox.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            }
+            else {
+                doNotRemoveItemBoxes = false
+                doNotRemoveItemBoxesCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            }
+            if freeServices!.contains("other") {
+                other = true
+                otherCheckBox.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            }
+            else {
+                other = false
+                otherCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            }
+            if freeServices!.contains("do_not_remove_shipper_boxes_(brown_boxes)") {
+                doNotRemoveShipperBoxes = true
+                doNotRemoveShipperBoxesCheckBox.setImage(UIImage(named: "checkedGreen"), for: .normal)
+            }
+            else {
+                doNotRemoveShipperBoxes = false
+                doNotRemoveShipperBoxesCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            }
+        }
     }
+    
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

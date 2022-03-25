@@ -28,7 +28,6 @@ class FilterViewController: UIViewController {
     var currentSelection: MainSelection?
     var storageVM: StorageVM?
     var filterVCDelegate: FilterViewControllerDelegate?
-    var substatus = OutgoingStatus.All
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()

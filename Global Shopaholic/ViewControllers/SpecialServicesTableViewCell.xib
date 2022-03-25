@@ -392,7 +392,17 @@
                 <outlet property="descriptionLabel" destination="Jvu-h1-ghU" id="EKe-Rb-RRX"/>
                 <outlet property="descriptionTextView" destination="jKV-Ky-F6d" id="aX9-MS-ICc"/>
                 <outlet property="detailedPictureCheckBoxButton" destination="9JH-Ve-6vQ" id="Mz7-rv-OO6"/>
+                <outlet property="doNotRemoveItemBoxesCheckBox" destination="0gG-et-isJ" id="8NH-SR-LGK"/>
+                <outlet property="doNotRemoveShipperBoxesCheckBox" destination="bsa-Of-C93" id="B96-hO-I2L"/>
                 <outlet property="itemTestingCheckBoxButton" destination="dbK-6f-A7q" id="0Oq-u9-6Vs"/>
+                <outlet property="otherCheckBox" destination="HwI-tt-UbR" id="y4d-Ot-i6w"/>
+                <outlet property="packageConsolidationCheckBox" destination="Rk6-gz-v5G" id="KHw-Jv-zPo"/>
+                <outlet property="pcakageContentPhotoCheckBox" destination="OTK-3Q-FdC" id="94b-Tm-gam"/>
+                <outlet property="removeAllProtectivePackagingCheckBox" destination="Ss1-b5-OFH" id="tZs-dF-tmI"/>
+                <outlet property="removeInvoicesCheckBox" destination="74i-qG-rMW" id="afq-Mn-w45"/>
+                <outlet property="removeItemBoxesCheckBox" destination="Me1-dN-uPQ" id="Xo7-Vo-J4U"/>
+                <outlet property="removeShipperBoxesCheckBox" destination="TrG-DP-si8" id="Lno-St-J5J"/>
+                <outlet property="repackingCheckBox" destination="BOr-LV-8nf" id="656-Ic-aiJ"/>
                 <outlet property="splitCheckBoxButton" destination="MWc-qo-hqm" id="h5l-08-hcL"/>
                 <outlet property="submitButton" destination="NUT-Eo-5y3" id="qMC-Hh-AJj"/>
             </connections>

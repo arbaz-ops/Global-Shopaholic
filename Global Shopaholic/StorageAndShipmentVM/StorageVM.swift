@@ -197,9 +197,31 @@ struct StorageVM {
 
     }
     
-    func getSearchedPackage(token: String, status: MainSelection.RawValue ,searchTerm: String, subStatus: String) {
-        print(searchTerm)
-        print(status)
+    func getSearchedPackage(token: String, status: MainSelection.RawValue ,searchTerm: String, subStatus: String, success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+        let ep = endpoints()
+        let params = [
+            "status": status,
+            "subStatus": subStatus,
+            "searchTerm": searchTerm
+        ]
+        RappleActivityIndicatorView.startAnimating()
+
+        WebService.RequestWithTokenJsonWithParams(Token: token, strURL: ep.packagesList, is_loader_required: false, params: params) { response in
+            if (response["success"] as! Bool) == true
+            {
+                RappleActivityIndicatorView.stopAnimation()
+
+                
+                success(response)
+            } else{
+                RappleActivityIndicatorView.stopAnimation()
+
+                failure("Error getting package.")
+             }
+        } failure: { error in
+            failure("Something went wrong.")
+        }
+
     }
     
 }

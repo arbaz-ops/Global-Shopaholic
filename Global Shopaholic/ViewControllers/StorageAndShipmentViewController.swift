@@ -46,6 +46,7 @@ class StorageAndShipmentViewController: BaseViewController {
     @IBOutlet weak var selectAllLabel: UILabel!
     @IBOutlet weak var sideMenuView: UIView!
     var selectAll: Bool?
+    var subStatus: String?
     @IBOutlet weak var itemsSelectedLabel: UILabel!
     
     var isSearchEnabled: Bool?
@@ -60,6 +61,7 @@ class StorageAndShipmentViewController: BaseViewController {
         filterButton.isHidden = true
         isSearchEnabled = false
         searchTextField.delegate = self
+        searchTextField.returnKeyType = .search
         enableConsolidateAndShip()
            setupCollectionView()
         loadTableView()
@@ -208,13 +210,51 @@ class StorageAndShipmentViewController: BaseViewController {
 extension StorageAndShipmentViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.isSearchEnabled = true
-        print(isSearchEnabled)
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         storageVM = StorageVM()
-        let userToken = getCurrentUserToken()
-        storageVM?.getSearchedPackage(token: userToken, status: currentSelection.rawValue ,searchTerm: textField.text!, subStatus: "sdasd")
+           let userToken = getCurrentUserToken()
+        if textField.text == "" {
+            storageVM?.getSearchedPackage(token: userToken, status: currentSelection.rawValue, searchTerm: textField.text!, subStatus: self.subStatus ?? "all", success: { response in
+                let data = response["data"] as? [String: [[String: Any]]]
+                let list = data!["list"]!
+                self.packagesList = list
+                self.changeUI(status: self.currentSelection)
+
+            
+                DispatchQueue.main.async {
+                    self.storageAndShipmentCollectionView.reloadData()
+                }
+                textField.resignFirstResponder()
+            }, failure: { error in
+                COMMON_ALERT.showAlert(msg: error)
+            })
+        }
+       
+
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        storageVM = StorageVM()
+           let userToken = getCurrentUserToken()
+           storageVM?.getSearchedPackage(token: userToken, status: currentSelection.rawValue, searchTerm: textField.text!, subStatus: self.subStatus ?? "all", success: { response in
+               let data = response["data"] as? [String: [[String: Any]]]
+               let list = data!["list"]!
+               self.packagesList = list
+               self.changeUI(status: self.currentSelection)
+
+           
+               DispatchQueue.main.async {
+                   self.storageAndShipmentCollectionView.reloadData()
+               }
+               textField.resignFirstResponder()
+           }, failure: { error in
+               COMMON_ALERT.showAlert(msg: error)
+           })
+        return true
+    }
+    
+    
     
 }

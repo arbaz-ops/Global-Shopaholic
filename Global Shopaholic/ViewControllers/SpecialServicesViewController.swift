@@ -14,16 +14,9 @@ protocol SpecialServicesViewControllerDelegate {
 
 class SpecialServicesViewController: UIViewController {
 
-    var packageId: String? {
-        didSet {
-            print(packageId)
-        }
-    }
-    var paidServices: [String]? {
-        didSet {
-            print(paidServices)
-        }
-    }
+    var packageId: String?
+    var paidServices: [String]?
+    var freeServices: [String]?
     
     var specialServicesVCDelegate: SpecialServicesViewControllerDelegate?
     @IBOutlet weak var specialServicesView: UIView!

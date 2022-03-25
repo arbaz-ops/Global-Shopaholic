@@ -38,7 +38,8 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
          switch currentSelection {
          case .Storage:
              self.selectedSection = 0
-
+             isSearchEnabled = false
+             searchTextField.resignFirstResponder()
              storageAndShipmentCollectionView.isHidden = false
              storageAndShipmentTableView?.isHidden = true
             
@@ -62,8 +63,10 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
          case .Outgoing:
              self.selectedSection = 1
              consolidateAndShipButton.isHidden = true
-
+             isSearchEnabled = false
+             searchTextField.resignFirstResponder()
              storageAndShipmentTableView!.register(UINib(nibName: "OutgoingTableViewCell", bundle: nil), forCellReuseIdentifier: "OutgoingTableViewCell")
+             
              storageAndShipmentTableView?.scrollsToTop = true
              activateTableViewConstraint(topConstraint: 5)
              storageAndShipmentCollectionView.isHidden = true
@@ -85,7 +88,8 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
          case .Shipped:
              self.selectedSection = 2
              consolidateAndShipButton.isHidden = true
-
+             isSearchEnabled = false
+             searchTextField.resignFirstResponder()
              storageAndShipmentTableView!.register(UINib(nibName: "ShippedTableViewCell", bundle: nil), forCellReuseIdentifier: "ShippedTableViewCell")
              activateTableViewConstraint(topConstraint: 5)
              storageAndShipmentTableView?.scrollsToTop = true
@@ -107,7 +111,8 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
              
              self.selectedSection = 3
              consolidateAndShipButton.isHidden = true
-
+             isSearchEnabled = false
+             searchTextField.resignFirstResponder()
              storageAndShipmentTableView!.register(UINib(nibName: "ShippedTableViewCell", bundle: nil), forCellReuseIdentifier: "ShippedTableViewCell")
              storageAndShipmentTableView?.scrollsToTop = true
              DispatchQueue.main.async { [self] in
@@ -128,7 +133,8 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
          case .Cancelled:
              self.selectedSection = 4
              consolidateAndShipButton.isHidden = true
-
+             isSearchEnabled = false
+             searchTextField.resignFirstResponder()
             storageAndShipmentTableView!.register(UINib(nibName: "ShippedTableViewCell", bundle: nil), forCellReuseIdentifier: "ShippedTableViewCell")
              activateTableViewConstraint(topConstraint: 5)
              DispatchQueue.main.async { [self] in
@@ -146,7 +152,8 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
 
          case .Return:
              self.selectedSection = 0
-
+             isSearchEnabled = false
+             searchTextField.resignFirstResponder()
              storageAndShipmentCollectionView.isHidden = false
              storageAndShipmentTableView?.isHidden = true
 
@@ -385,6 +392,16 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
 }
 
 extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, FilterViewControllerDelegate, OutgoingTableViewCellDelegate, ShippedTableViewCellDelegate, SpecialServicesViewControllerDelegate {
+    
+    
+    func updateFilteredList(list: [[String : Any]], subStatus: String) {
+        self.packagesList = list
+        self.subStatus = subStatus
+        print(self.subStatus)
+        
+        self.storageAndShipmentTableView!.reloadData()
+    }
+    
     func openShippedRequestForm(cell: UITableViewCell) {
         let requestFormVC = self.storyboard!.instantiateViewController(withIdentifier: "RequestFormViewController") as? RequestFormViewController
         let shippedCell = cell as? ShippedTableViewCell
@@ -502,10 +519,9 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
 
     }
     
-    func updateFilteredList(list: [[String : Any]]) {
-        self.packagesList = list
-        self.storageAndShipmentTableView!.reloadData()
-    }
+//    func updateFilteredList(list: [[String : Any]]) {
+//
+//    }
     
     func returnPackageTapped(indexPath: IndexPath) {
         print(indexPath.row)

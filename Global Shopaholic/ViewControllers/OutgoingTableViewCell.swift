@@ -125,6 +125,7 @@ class OutgoingTableViewCell: UITableViewCell {
             print("Do nothing")
         case .Delivered:
             print("Do nothing")
+        
         }
     }
 
