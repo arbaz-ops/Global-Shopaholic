@@ -40,11 +40,7 @@ class SuccessAlertViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
-            view.transform = CGAffineTransform(scaleX: 0.00001, y: 0.00001)
-            UIView.animate(withDuration: 0.5, animations: { [weak self] in
-                self?.view.transform = CGAffineTransform.identity
-            })
-        }
+    }
 
 
 }

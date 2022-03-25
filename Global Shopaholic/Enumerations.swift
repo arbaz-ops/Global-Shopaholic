@@ -27,6 +27,7 @@ enum MainSelection: String {
 }
 
 enum OutgoingStatus: String {
+    case All = "all"
     case Preparing = "preparing"
     case PendingPayment = "payment_pending"
     case Processing = "processing"

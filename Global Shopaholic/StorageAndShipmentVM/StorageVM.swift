@@ -15,7 +15,6 @@ import RappleProgressHUD
 //}
 
 
-
 struct StorageVM {
   
     func getPackagesList(token: String, status: String,subStatus: String ,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
@@ -178,6 +177,29 @@ struct StorageVM {
             failure(error)
         }
 
+    }
+    
+    
+    func getPackageCustomCategory(token: String, success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+        let ep = endpoints()
+        WebService.RequestWithTokenJson(Token: token, strURL: ep.getPackageCustomCategoryList, is_loader_required: false, params: ["":""]) { response in
+            if (response["success"] as! Bool) == true
+            {
+                success(response)
+            }
+            else{
+
+               failure("Error getting package custom detail.")
+            }
+        } failure: { error in
+            failure("Something went wrong.")
+        }
+
+    }
+    
+    func getSearchedPackage(token: String, status: MainSelection.RawValue ,searchTerm: String, subStatus: String) {
+        print(searchTerm)
+        print(status)
     }
     
 }

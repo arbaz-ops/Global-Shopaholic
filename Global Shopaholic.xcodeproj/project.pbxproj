@@ -254,6 +254,12 @@
 		7C7261572790592C00ADB324 /* StorageAndShipment+EXT+TABLE+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7261562790592C00ADB324 /* StorageAndShipment+EXT+TABLE+Collection.swift */; };
 		7C94F52127E9266F0010B1B2 /* ConsolidateAndShipVC+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C94F52027E9266F0010B1B2 /* ConsolidateAndShipVC+EXT.swift */; };
 		7C94F52527E9BF580010B1B2 /* SuccessAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C94F52427E9BF580010B1B2 /* SuccessAlertViewController.swift */; };
+		7C94F52727EA01A90010B1B2 /* CustomDetailVC+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C94F52627EA01A90010B1B2 /* CustomDetailVC+EXT.swift */; };
+		7C94F52A27EC21270010B1B2 /* CustomDetailButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C94F52827EC21270010B1B2 /* CustomDetailButtonsTableViewCell.swift */; };
+		7C94F52B27EC21270010B1B2 /* CustomDetailButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C94F52927EC21270010B1B2 /* CustomDetailButtonsTableViewCell.xib */; };
+		7C94F52E27EC591B0010B1B2 /* CustomDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C94F52D27EC591B0010B1B2 /* CustomDetail.swift */; };
+		7C94F53127EC703D0010B1B2 /* TotalPackageValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C94F52F27EC703D0010B1B2 /* TotalPackageValueTableViewCell.swift */; };
+		7C94F53227EC703D0010B1B2 /* TotalPackageValueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C94F53027EC703D0010B1B2 /* TotalPackageValueTableViewCell.xib */; };
 		7C95D2CF27632F1000EC198E /* SpecialServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D2CE27632F1000EC198E /* SpecialServicesViewController.swift */; };
 		7C95D2D327632FFA00EC198E /* SpecialServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D2D127632FFA00EC198E /* SpecialServicesTableViewCell.swift */; };
 		7C95D2D427632FFA00EC198E /* SpecialServicesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C95D2D227632FFA00EC198E /* SpecialServicesTableViewCell.xib */; };
@@ -588,6 +594,12 @@
 		7C7261562790592C00ADB324 /* StorageAndShipment+EXT+TABLE+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageAndShipment+EXT+TABLE+Collection.swift"; sourceTree = "<group>"; };
 		7C94F52027E9266F0010B1B2 /* ConsolidateAndShipVC+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConsolidateAndShipVC+EXT.swift"; sourceTree = "<group>"; };
 		7C94F52427E9BF580010B1B2 /* SuccessAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessAlertViewController.swift; sourceTree = "<group>"; };
+		7C94F52627EA01A90010B1B2 /* CustomDetailVC+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomDetailVC+EXT.swift"; sourceTree = "<group>"; };
+		7C94F52827EC21270010B1B2 /* CustomDetailButtonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetailButtonsTableViewCell.swift; sourceTree = "<group>"; };
+		7C94F52927EC21270010B1B2 /* CustomDetailButtonsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDetailButtonsTableViewCell.xib; sourceTree = "<group>"; };
+		7C94F52D27EC591B0010B1B2 /* CustomDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetail.swift; sourceTree = "<group>"; };
+		7C94F52F27EC703D0010B1B2 /* TotalPackageValueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPackageValueTableViewCell.swift; sourceTree = "<group>"; };
+		7C94F53027EC703D0010B1B2 /* TotalPackageValueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalPackageValueTableViewCell.xib; sourceTree = "<group>"; };
 		7C95D2CE27632F1000EC198E /* SpecialServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialServicesViewController.swift; sourceTree = "<group>"; };
 		7C95D2D127632FFA00EC198E /* SpecialServicesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialServicesTableViewCell.swift; sourceTree = "<group>"; };
 		7C95D2D227632FFA00EC198E /* SpecialServicesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialServicesTableViewCell.xib; sourceTree = "<group>"; };
@@ -1124,6 +1136,7 @@
 		7856F5D2257A47C50067D0B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7C94F52C27EC59070010B1B2 /* CustomDetail */,
 				7C7A71452750E40400698077 /* MyStorage */,
 				780B1AF9268D9827006C828F /* CheckOut */,
 				7869BAA0268A03200020DE4B /* ASPSavedModel */,
@@ -1807,6 +1820,7 @@
 				7C6F007C2761E8CE0007D83C /* Cells */,
 				7C6F007A2761E6F70007D83C /* CustomDetailViewController.swift */,
 				7C6F007D2761E8F90007D83C /* CustomDetail+EXT+TABLE.swift */,
+				7C94F52627EA01A90010B1B2 /* CustomDetailVC+EXT.swift */,
 			);
 			name = CustomDetail;
 			sourceTree = "<group>";
@@ -1816,6 +1830,10 @@
 			children = (
 				7C6F007F2761E9230007D83C /* CustomDetailTableViewCell.swift */,
 				7C6F00802761E9230007D83C /* CustomDetailTableViewCell.xib */,
+				7C94F52827EC21270010B1B2 /* CustomDetailButtonsTableViewCell.swift */,
+				7C94F52927EC21270010B1B2 /* CustomDetailButtonsTableViewCell.xib */,
+				7C94F52F27EC703D0010B1B2 /* TotalPackageValueTableViewCell.swift */,
+				7C94F53027EC703D0010B1B2 /* TotalPackageValueTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1883,6 +1901,14 @@
 				7C94F52427E9BF580010B1B2 /* SuccessAlertViewController.swift */,
 			);
 			path = SuccessAlertVC;
+			sourceTree = "<group>";
+		};
+		7C94F52C27EC59070010B1B2 /* CustomDetail */ = {
+			isa = PBXGroup;
+			children = (
+				7C94F52D27EC591B0010B1B2 /* CustomDetail.swift */,
+			);
+			path = CustomDetail;
 			sourceTree = "<group>";
 		};
 		7C95D2CD27632EE400EC198E /* Special Services */ = {
@@ -2176,6 +2202,7 @@
 				7851C460257EAC400000A42D /* AssitedPuchaseCell.xib in Resources */,
 				78F5EDA22680B17F002AE14B /* AssistedQuestionCell.xib in Resources */,
 				7851C456257E9CE90000A42D /* TrackingOrderCell.xib in Resources */,
+				7C94F52B27EC21270010B1B2 /* CustomDetailButtonsTableViewCell.xib in Resources */,
 				781D3E91257926870013DE3A /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				7C1F471B27AD3E3500FC19C8 /* CheckoutAndPayTableViewCell.xib in Resources */,
 				7CA0A21327E1C38100208C28 /* AdditionalInfoTableViewCell.xib in Resources */,
@@ -2188,6 +2215,7 @@
 				784447F92680BF5500F2C084 /* AddAnotherBtnCell.xib in Resources */,
 				78E4DDE526A033FE000F9EDE /* completedCell.xib in Resources */,
 				7C95D2D427632FFA00EC198E /* SpecialServicesTableViewCell.xib in Resources */,
+				7C94F53227EC703D0010B1B2 /* TotalPackageValueTableViewCell.xib in Resources */,
 				7CA39F9A279EAD5F00F2359E /* CustomDescriptionTableViewCell.xib in Resources */,
 				78BC49DE269C488C000EC5FE /* ShippingInfoCell.xib in Resources */,
 				78BC49EE269C619E000EC5FE /* ReviewHeader.xib in Resources */,
@@ -2350,6 +2378,7 @@
 				785ED6AB26302AD20033D98D /* CalculatorDetailVC.swift in Sources */,
 				781D3EA325793FFE0013DE3A /* UITextField+EXT.swift in Sources */,
 				785424BE257E5C5400FC1F61 /* MenuViewController.swift in Sources */,
+				7C94F52E27EC591B0010B1B2 /* CustomDetail.swift in Sources */,
 				7C96E25C27C3776400AD7B91 /* BankTransferTableViewCell.swift in Sources */,
 				7CA5992D27DB1F32001C8F78 /* SpecialServicesVC+EXT.swift in Sources */,
 				7CA39FB427A9203600F2359E /* EditCustomDetails+EXT+TABLE.swift in Sources */,
@@ -2357,6 +2386,7 @@
 				7CA3EACE2771ED300053C493 /* EditAddress+EXT+TABLE.swift in Sources */,
 				7CA0A21527E1DB6200208C28 /* ConsolidateAndShipVC+EXT+TABLE.swift in Sources */,
 				7869BAA5268A0E500020DE4B /* AspVM.swift in Sources */,
+				7C94F53127EC703D0010B1B2 /* TotalPackageValueTableViewCell.swift in Sources */,
 				78740A8D267B8D3A00C78FE8 /* BeginPurchaseVC.swift in Sources */,
 				7851C45F257EAC400000A42D /* AssitedPuchaseCell.swift in Sources */,
 				78C69CF8263817A200B74780 /* wallet+AddCard+EXT.swift in Sources */,
@@ -2474,6 +2504,7 @@
 				789D2F40266913F800D92197 /* NewsAndUpdateCell.swift in Sources */,
 				7819B374257FAD4A006A8376 /* FAQ+EXT.swift in Sources */,
 				78B87964267799C500B66187 /* NEWSANDUPDATES+INSTAEMBEDED.swift in Sources */,
+				7C94F52A27EC21270010B1B2 /* CustomDetailButtonsTableViewCell.swift in Sources */,
 				780FB5EE25DBE5A90063A015 /* GetAddressesVM.swift in Sources */,
 				7C6F00752760A7DE0007D83C /* ReturnPackageTableViewCell.swift in Sources */,
 				7C6FAB0227BA5BE80088F16D /* CheckoutAndPay+EXT.swift in Sources */,
@@ -2531,6 +2562,7 @@
 				7C1F471627AD3AF300FC19C8 /* CheckoutAndPayViewController.swift in Sources */,
 				789C9493257E4EC0006A76CD /* HomeVC.swift in Sources */,
 				78440093257A6F0C00B5F0C7 /* AccountCreateVC.swift in Sources */,
+				7C94F52727EA01A90010B1B2 /* CustomDetailVC+EXT.swift in Sources */,
 				7819B377257FC133006A8376 /* WalletVC.swift in Sources */,
 				784447FC2680C9BD00F2C084 /* HeaderCell.swift in Sources */,
 				78BC49E9269C49E3000EC5FE /* ReviewSummaryCell.swift in Sources */,

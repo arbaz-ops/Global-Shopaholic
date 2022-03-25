@@ -48,6 +48,7 @@ class StorageAndShipmentViewController: BaseViewController {
     var selectAll: Bool?
     @IBOutlet weak var itemsSelectedLabel: UILabel!
     
+    var isSearchEnabled: Bool?
     var storageAndShipmentTableView: UITableView?
     
     
@@ -57,6 +58,8 @@ class StorageAndShipmentViewController: BaseViewController {
         backButtonView.roundCorners([.topLeft, .bottomLeft], radius: 20)
         InitUI()
         filterButton.isHidden = true
+        isSearchEnabled = false
+        searchTextField.delegate = self
         enableConsolidateAndShip()
            setupCollectionView()
         loadTableView()
@@ -197,14 +200,21 @@ class StorageAndShipmentViewController: BaseViewController {
 
         }
         
-//        packagesList.forEach { p in
-//
-//            packagesList.filter { element in
-//                return element == p
-//            }.first?.values
-//
-//
-//        }
+
+    }
+    
+}
+
+extension StorageAndShipmentViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.isSearchEnabled = true
+        print(isSearchEnabled)
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        storageVM = StorageVM()
+        let userToken = getCurrentUserToken()
+        storageVM?.getSearchedPackage(token: userToken, status: currentSelection.rawValue ,searchTerm: textField.text!, subStatus: "sdasd")
     }
     
 }

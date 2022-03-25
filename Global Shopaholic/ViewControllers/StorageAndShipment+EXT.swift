@@ -523,9 +523,11 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
     func addCustomDetailTapped(indexPath: IndexPath) {
         let customDetailVC = storyboard?.instantiateViewController(withIdentifier: "CustomDetailViewController") as? CustomDetailViewController
         print(indexPath.row)
-
+//        customDetailVC?.indexPath = indexPath
+        let package = packagesList[indexPath.row] as? [String: Any]
+        customDetailVC?.package = package
         customDetailVC?.modalPresentationStyle = .overFullScreen
-        customDetailVC?.packagesList = packagesList
+//        customDetailVC?.packagesList = packagesList
         present(customDetailVC!, animated: true, completion: nil)
 
     }
@@ -566,7 +568,6 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
             enableConsolidateAndShip()
 
         }
-        
 
     }
     
@@ -655,10 +656,12 @@ extension StorageAndShipmentViewController: ConsolidateAndShipVCDelegate {
                 let successVC = storyboard?.instantiateViewController(withIdentifier: "SuccessAlertViewController") as? SuccessAlertViewController
                 successVC?.modalPresentationStyle = .overFullScreen
                 successVC?.configureVC(uniqueKey: uniquqKey)
-                self.present(successVC!, animated: true, completion: nil)
+                self.present(successVC!, animated: false, completion: nil)
             }
         }
     }
     
     
 }
+
+

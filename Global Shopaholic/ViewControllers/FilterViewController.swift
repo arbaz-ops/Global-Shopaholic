@@ -10,7 +10,7 @@ import UIKit
 import iOSDropDown
 
 protocol FilterViewControllerDelegate {
-    func updateFilteredList(list: [[String: Any]])
+    func updateFilteredList(list: [[String: Any]], subStatus: String)
 }
 
 class FilterViewController: UIViewController {
@@ -28,7 +28,7 @@ class FilterViewController: UIViewController {
     var currentSelection: MainSelection?
     var storageVM: StorageVM?
     var filterVCDelegate: FilterViewControllerDelegate?
-
+    var substatus = OutgoingStatus.All
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
@@ -88,7 +88,7 @@ class FilterViewController: UIViewController {
                 storageVM?.getPackagesList(token: userToken, status: currentSelection!.rawValue, subStatus: "paymentpending", success: { response in
                     let data = response["data"] as? [String: [[String: Any]]]
                     let list = data!["list"]!
-                    self.filterVCDelegate?.updateFilteredList(list: list)
+                    self.filterVCDelegate?.updateFilteredList(list: list, subStatus: "paymentpending")
                     self.dismiss(animated: true)
                 }, failure: { str in
                     print(str)
@@ -99,9 +99,10 @@ class FilterViewController: UIViewController {
                 return
             }
             storageVM?.getPackagesList(token: userToken, status: currentSelection!.rawValue, subStatus: subStatus, success: { response in
+                print(subStatus)
                 let data = response["data"] as? [String: [[String: Any]]]
                 let list = data!["list"]!
-                self.filterVCDelegate?.updateFilteredList(list: list)
+                self.filterVCDelegate?.updateFilteredList(list: list, subStatus: subStatus)
                 self.dismiss(animated: true)
             }, failure: { str in
                 print(str)
