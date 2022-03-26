@@ -187,7 +187,7 @@ class SpecialServicesTableViewCell: UITableViewCell {
             doNotRemoveItemBoxesCheckBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
         }
         else if freeServices != nil {
-            if freeServices!.contains("package_content_photo_during_consolidation") {
+            if (freeServices! as AnyObject).contains("package_content_photo_during_consolidation") {
                 packageContentPhoto = true
                 packageConsolidationCheckBox.setImage(UIImage(named: "checkedGreen"), for: .normal)
             }

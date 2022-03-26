@@ -556,7 +556,12 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
             return
         }
          let paidServices = packagesList[indexPath.row]["paid_services"] as? [String]
+        let freeServices = packagesList[indexPath.row]["free_services"]
+        print(freeServices)
+        
+        
         specialServicesVC?.paidServices = paidServices
+//        specialServicesVC?.freeServices = freeServices
         specialServicesVC?.packageId = packageId
         specialServicesVC?.modalPresentationStyle = .overFullScreen
         specialServicesVC?.specialServicesVCDelegate = self

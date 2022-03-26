@@ -10,7 +10,6 @@ import UIKit
 
 class SuccessAlertViewController: UIViewController {
 
-    @IBOutlet weak var cancelImageView: UIImageView!
     @IBOutlet weak var uniqueKeyLabel: UILabel!
     @IBOutlet weak var uniqueKeyView: UIView!
     @IBOutlet weak var successAlertView: UIView!
@@ -22,15 +21,16 @@ class SuccessAlertViewController: UIViewController {
         uniqueKeyView.isUserInteractionEnabled = true
         self.view.superview?.isUserInteractionEnabled = true
         self.view.isUserInteractionEnabled = true
-        cancelImageView.isUserInteractionEnabled = true
         uniqueKeyLabel.text = "sadshjaghjdgsjha"
-        cancelImageView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(dismissController)))
+      
         // Do any additional setup after loading the view.
     }
     
-    @objc func dismissController() {
-        self.dismissController()
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
     }
+    
     
     func configureVC(uniqueKey: String) {
         self.uniqueKeyLabel?.text = uniqueKey
