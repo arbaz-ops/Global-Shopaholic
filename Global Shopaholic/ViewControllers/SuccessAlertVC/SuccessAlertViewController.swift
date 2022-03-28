@@ -14,6 +14,7 @@ protocol SuccessAlertVCDelegate {
 
 class SuccessAlertViewController: UIViewController {
     
+    var uniqueKey: String?
     var successAlertVCDelegate: SuccessAlertVCDelegate?
     @IBOutlet weak var uniqueKeyLabel: UILabel!
     @IBOutlet weak var uniqueKeyView: UIView!
@@ -26,7 +27,7 @@ class SuccessAlertViewController: UIViewController {
         uniqueKeyView.isUserInteractionEnabled = true
         self.view.superview?.isUserInteractionEnabled = true
         self.view.isUserInteractionEnabled = true
-        
+        uniqueKeyLabel.text = uniqueKey
       
         // Do any additional setup after loading the view.
     }
@@ -49,6 +50,10 @@ class SuccessAlertViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
+        successAlertView.transform = CGAffineTransform(scaleX: 0.00001, y: 0.00001)
+                UIView.animate(withDuration: 0.5, animations: { [weak self] in
+                    self?.successAlertView.transform = CGAffineTransform.identity
+                })
     }
 
 

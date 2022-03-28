@@ -22,7 +22,7 @@ protocol ConsolidateAndShipTableViewCellDelegate {
     func addExtraPaddingAndBubble(selected: Bool?)
     func acceptTermsAndCondition(selected: Bool?)
     
-    func submitButtonTapped(selectedAddressIndex: Int?, specialService: String?)
+    func submitButtonTapped(selectedAddressIndex: Int?, specialService: String?, acceptConditions: Bool?)
 }
 
 
@@ -255,7 +255,7 @@ class ConsolidateAndShipTableViewCell: UITableViewCell {
     
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
-        consolidationAndShipCellDelegate?.submitButtonTapped(selectedAddressIndex: self.selectedAddressIndex, specialService: self.specialServicesTextView.text)
+        consolidationAndShipCellDelegate?.submitButtonTapped(selectedAddressIndex: self.selectedAddressIndex, specialService: self.specialServicesTextView.text, acceptConditions: acceptTermsAndCondition)
     }
     
     

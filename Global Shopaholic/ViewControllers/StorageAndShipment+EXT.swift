@@ -677,7 +677,7 @@ extension StorageAndShipmentViewController: ConsolidateAndShipVCDelegate, Succes
                 if success {
                     let successVC = storyboard?.instantiateViewController(withIdentifier: "SuccessAlertViewController") as? SuccessAlertViewController
                     successVC?.modalPresentationStyle = .overFullScreen
-                    successVC?.configureVC(uniqueKey: uniquqKey)
+                    successVC?.uniqueKey = uniquqKey
                     successVC?.successAlertVCDelegate = self
                     self.present(successVC!, animated: false, completion: nil)
                 }
@@ -687,6 +687,7 @@ extension StorageAndShipmentViewController: ConsolidateAndShipVCDelegate, Succes
     }
     
     func dismissedAlertController() {
+        selectedIndex.removeAll()
         self.updateMyStorage()
     }
     

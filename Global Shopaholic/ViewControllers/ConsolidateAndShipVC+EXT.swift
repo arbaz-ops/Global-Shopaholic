@@ -131,47 +131,47 @@ extension ConsolidateAndShipViewController: ConsolidateAndShipTableViewCellDeleg
     }
     
     
-    func submitButtonTapped(selectedAddressIndex: Int?, specialService: String?) {
+    func submitButtonTapped(selectedAddressIndex: Int?, specialService: String?, acceptConditions: Bool?) {
         
         guard let index = selectedAddressIndex else {
-            let alert = UIAlertController(title: "", message: "Please select Destination Address", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            showAlert(message: "Please select Destination Address")
+           
             return
         }
         
-        if  specialService!.count > 0 {
-            guard let addressID = addresses![index]["address_id"] as? String else {
-                return
+        if acceptConditions!  {
+            if  specialService!.count > 0 {
+                guard let addressID = addresses![index]["address_id"] as? String else {
+                    return
+                }
+                storageVM = StorageVM()
+                let userToken = getCurrentUserToken()
+                storageVM?.createConsolidationRequest(token: userToken, packages: packages!, destinationAddress: addressID , specialRequestInfo: specialService, additionalInfo: additionalInfo, success: {[self] response in
+                    print(response)
+                    
+                    
+                    self.completion(response: response)
+                }, failure: {[self] error in
+                    showAlert(message: error)
+                })
             }
-            storageVM = StorageVM()
-            let userToken = getCurrentUserToken()
-            storageVM?.createConsolidationRequest(token: userToken, packages: packages!, destinationAddress: addressID , specialRequestInfo: specialService, additionalInfo: additionalInfo, success: {[self] response in
-                print(response)
+            else {
                 
+                showAlert(message: "Special Service is required.")
                 
-                self.completion(response: response)
-                
-                
-            }, failure: { error in
-                let alert = UIAlertController(title: "", message: error, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            })
+            }
         }
         else {
-            let alert = UIAlertController(title: "", message: "Special Service is required.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            showAlert(message: "Please Accept Terms and Conditions.")
         }
-//        guard let serviceInfo = specialService else {
-//
-//            return
-//        }
-       
         
-//
 
+    }
+    
+    func showAlert(message: String?) {
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func completion(response: NSDictionary) {
@@ -188,7 +188,6 @@ extension ConsolidateAndShipViewController: ConsolidateAndShipTableViewCellDeleg
         else {
             let data = response["data"] as? [String: Any]
             let uniqueKey = data!["unique_key"] as? String
-            
             self.dismiss(animated: true) {[self] in
                 consolidateAndShipVCDelegate?.showSuccessVC(uniquqKey: uniqueKey!)
             }

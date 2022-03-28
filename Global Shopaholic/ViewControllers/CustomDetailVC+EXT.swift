@@ -26,7 +26,6 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
             customDetailTableView.endUpdates()
             customDetailTableView.reloadData()
         }
-        
     }
     
     func submitTapped() {
@@ -45,9 +44,6 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
             return
         }
         
-        guard let categoryIndex = customDetailCell?.categoryTextField.selectedIndex else {
-            return
-        }
         
         guard let description = descriptionField?.text else {
             
@@ -62,6 +58,7 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
             return
         }
         
+      
         if categorytext.isEmpty {
             showAlert(message: "Please select category.")
 
@@ -79,9 +76,10 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
             showAlert(message: "Please enter value.")
         }
         else {
+            let categoryIndex = customDetailCell?.categoryTextField.selectedIndex
+
             selectedCategories?.append(categorytext)
-            customDetailTableView.reloadData()
-            guard let categoryKey = categoriesList?[categoryIndex]["key"] as? String else {
+            guard let categoryKey = categoriesList?[categoryIndex!]["key"] as? String else {
                 showAlert(message: "Category does not exist")
                 return
             }
@@ -94,9 +92,9 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
             let totalPackageValueCell = customDetailTableView.cellForRow(at: IndexPath.init(row: 0, section: 1)) as? TotalPackageValueTableViewCell
             totalPackageValueCell?.totalPackageValueTextField.text = "$ \(sum)"
             
-            self.rows.append("CustomDetailCell")
+            
+            self.rows.insert("CustomDetailCell", at: rows.endIndex)
             customDetailTableView.reloadData()
-            print(customDetails)
 
         }
         
