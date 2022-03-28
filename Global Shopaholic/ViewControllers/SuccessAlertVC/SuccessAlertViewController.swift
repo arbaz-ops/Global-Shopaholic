@@ -8,8 +8,13 @@
 
 import UIKit
 
-class SuccessAlertViewController: UIViewController {
+protocol SuccessAlertVCDelegate {
+    func dismissedAlertController()
+}
 
+class SuccessAlertViewController: UIViewController {
+    
+    var successAlertVCDelegate: SuccessAlertVCDelegate?
     @IBOutlet weak var uniqueKeyLabel: UILabel!
     @IBOutlet weak var uniqueKeyView: UIView!
     @IBOutlet weak var successAlertView: UIView!
@@ -21,14 +26,18 @@ class SuccessAlertViewController: UIViewController {
         uniqueKeyView.isUserInteractionEnabled = true
         self.view.superview?.isUserInteractionEnabled = true
         self.view.isUserInteractionEnabled = true
-        uniqueKeyLabel.text = "sadshjaghjdgsjha"
+        
       
         // Do any additional setup after loading the view.
     }
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        
-        self.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion:  {[self] in
+                successAlertVCDelegate?.dismissedAlertController()
+            })
+
+        }
     }
     
     

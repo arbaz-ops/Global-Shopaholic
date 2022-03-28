@@ -668,18 +668,26 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
     
 }
 
-extension StorageAndShipmentViewController: ConsolidateAndShipVCDelegate {
+extension StorageAndShipmentViewController: ConsolidateAndShipVCDelegate, SuccessAlertVCDelegate {
     
     
     func showSuccessVC(uniquqKey: String) {
-        self.updateUI { [self] success in
-            if success {
-                let successVC = storyboard?.instantiateViewController(withIdentifier: "SuccessAlertViewController") as? SuccessAlertViewController
-                successVC?.modalPresentationStyle = .overFullScreen
-                successVC?.configureVC(uniqueKey: uniquqKey)
-                self.present(successVC!, animated: false, completion: nil)
+        DispatchQueue.main.async {
+            self.updateUI { [self] success in
+                if success {
+                    let successVC = storyboard?.instantiateViewController(withIdentifier: "SuccessAlertViewController") as? SuccessAlertViewController
+                    successVC?.modalPresentationStyle = .overFullScreen
+                    successVC?.configureVC(uniqueKey: uniquqKey)
+                    successVC?.successAlertVCDelegate = self
+                    self.present(successVC!, animated: false, completion: nil)
+                }
             }
         }
+        
+    }
+    
+    func dismissedAlertController() {
+        self.updateMyStorage()
     }
     
     

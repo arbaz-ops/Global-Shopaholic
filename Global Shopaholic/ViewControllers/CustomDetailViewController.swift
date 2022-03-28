@@ -27,6 +27,7 @@ class CustomDetailViewController: UIViewController {
     var qtyTextField: UITextField?
     var valueTextField: UITextField?
     var totalPackageValue: UITextField?
+    var selectedCategories:[String]? = [String]()
     var totalPackageValueSum: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()

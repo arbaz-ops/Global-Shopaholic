@@ -28,6 +28,8 @@ class CustomDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var qtyTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var categoryTextField: DropDown!
+    var selectedText: String?
+    
     var categoriesList: [[String: Any]]?
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -49,6 +51,8 @@ class CustomDetailTableViewCell: UITableViewCell {
         fetchCategories()
         
         categoryTextField.didSelect {[self] selectedText, index, id in
+//            self.selectedText = selectedText
+//            categoryTextField.text = selectedText
             customDetailCellDelegate?.categorySelectedIndex(index: index)
             
 //            self.categorySelectedIndex = index

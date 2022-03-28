@@ -44,6 +44,7 @@ extension CustomDetailViewController: UITableViewDelegate, UITableViewDataSource
             
             let customDetailCell = tableView.dequeueReusableCell(withIdentifier: "CustomDetailTableViewCell", for: indexPath) as? CustomDetailTableViewCell
             customDetailCell?.indexPath = indexPath
+            
             customDetailCell?.trackingNumber.text = package!["tracking_number"] as? String
             customDetailCell?.backgroundColor = hexStringToUIColor(hex: "#EFF7F5")
             customDetailCell?.customDetailCellDelegate = self
@@ -52,6 +53,13 @@ extension CustomDetailViewController: UITableViewDelegate, UITableViewDataSource
             qtyTextField = customDetailCell?.qtyTextField
             valueTextField = customDetailCell?.valueTextField
             categorySelectedIndex = customDetailCell?.categorySelectedIndex
+//            if selectedCategories!.count < 1 {
+//                customDetailCell?.categoryTextField.text = nil
+//            }
+//            else if selectedCategories!.count > 0 {
+//                print(selectedCategories![indexPath.row])
+//                print(indexPath.row)
+//            }
             
             if indexPath.row < 1 {
                 customDetailCell?.trackingNumber.isHidden = false

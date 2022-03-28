@@ -188,6 +188,7 @@ extension ConsolidateAndShipViewController: ConsolidateAndShipTableViewCellDeleg
         else {
             let data = response["data"] as? [String: Any]
             let uniqueKey = data!["unique_key"] as? String
+            
             self.dismiss(animated: true) {[self] in
                 consolidateAndShipVCDelegate?.showSuccessVC(uniquqKey: uniqueKey!)
             }

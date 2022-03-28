@@ -38,7 +38,14 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
     }
     
     func addItemTapped() {
-        guard let  categorytext = categoryField?.text else {
+        
+        let customDetailCell = customDetailTableView.cellForRow(at: IndexPath.init(row: self.rows.count - 1, section: 0)) as? CustomDetailTableViewCell
+        
+        guard let  categorytext = customDetailCell?.categoryTextField.text else {
+            return
+        }
+        
+        guard let categoryIndex = customDetailCell?.categoryTextField.selectedIndex else {
             return
         }
         
@@ -56,30 +63,26 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
         }
         
         if categorytext.isEmpty {
-            let alert = UIAlertController(title: "", message: "Please select category.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            showAlert(message: "Please select category.")
+
         }
         else if description.isEmpty {
-            let alert = UIAlertController(title: "", message: "Please enter description.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+         
+            showAlert(message: "Please enter description.")
+
         }
         else if qty.isEmpty {
-            let alert = UIAlertController(title: "", message: "Please enter quantity.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            
+            showAlert(message: "Please enter quantity.")
         }
         else if value.isEmpty {
-            let alert = UIAlertController(title: "", message: "Please enter value.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            showAlert(message: "Please enter value.")
         }
         else {
-            guard let categoryKey = categoriesList?[categorySelectedIndex]["key"] as? String else {
-                let alert = UIAlertController(title: "", message: "Category does not exist", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+            selectedCategories?.append(categorytext)
+            customDetailTableView.reloadData()
+            guard let categoryKey = categoriesList?[categoryIndex]["key"] as? String else {
+                showAlert(message: "Category does not exist")
                 return
             }
             
@@ -91,13 +94,21 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
             let totalPackageValueCell = customDetailTableView.cellForRow(at: IndexPath.init(row: 0, section: 1)) as? TotalPackageValueTableViewCell
             totalPackageValueCell?.totalPackageValueTextField.text = "$ \(sum)"
             
-            self.rows.insert("CustomDetailCell", at: rows.endIndex)
+            self.rows.append("CustomDetailCell")
             customDetailTableView.reloadData()
+            print(customDetails)
+
         }
         
         
 
         
+    }
+    
+    func showAlert(message: String?) {
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     
