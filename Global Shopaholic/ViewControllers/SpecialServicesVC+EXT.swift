@@ -11,6 +11,7 @@ import UIKit
 
 
 extension SpecialServicesViewController: SpecialServicesTableViewCellDelegate {
+   
     func itemTestingSelected() {
         let token = getCurrentUserToken()
         guard let packageId = packageId else {
@@ -372,5 +373,25 @@ extension SpecialServicesViewController: SpecialServicesTableViewCellDelegate {
         })
     }
     
-    
+    func submitButtonTapped(description: String?, other: Bool?) {
+        if other!  {
+            if description!.isEmpty {
+                showAlert(message: "Please add description.")
+            }
+            else if !description!.isEmpty  {
+                guard let description = description else {
+                    return
+                }
+
+            }
+        }
+        else {
+            
+        }
+    }
+    func showAlert(message: String?) {
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

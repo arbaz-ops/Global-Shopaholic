@@ -34,6 +34,8 @@ protocol SpecialServicesTableViewCellDelegate {
     func detailedPictureSelected()
     
     func splitBoxesSelected()
+    
+    func submitButtonTapped(description: String?,other: Bool?)
 }
 
 class SpecialServicesTableViewCell: UITableViewCell {
@@ -61,7 +63,7 @@ class SpecialServicesTableViewCell: UITableViewCell {
     var packageConsolidation: Bool?
     var repacking: Bool?
     var removeProtectivePackage: Bool?
-    
+
     var split: Bool?
     var removeShipperBoxes: Bool?
     var removeInvoicesAndPriceTags: Bool?
@@ -76,7 +78,7 @@ class SpecialServicesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        descriptionTextView.layer.cornerRadius = 6
 //        if paidServices != nil {
 //        for service in paidServices! {
 //            if service == "test_device" {
@@ -446,4 +448,8 @@ class SpecialServicesTableViewCell: UITableViewCell {
 
     }
     
+    @IBAction func submitButtonTapped(_ sender: UIButton) {
+        specialServicesCellDelegate?.submitButtonTapped(description: descriptionTextView.text, other: self.other)
+    
+    }
 }
