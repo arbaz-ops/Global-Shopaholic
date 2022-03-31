@@ -35,54 +35,54 @@ extension SpecialServicesViewController: SpecialServicesTableViewCellDelegate {
     
     
     func packageContentPhotoDeSelected() {
-        insertFreeServices(freeServices: FreeServices.PackageContentPhotoDuringCosolidation.rawValue, flag: "delete")
+        insertFreeServices(freeServices: FreeServices.PackageContentPhotoDuringCosolidation.rawValue, flag: "delete", description: "")
 
     }
     
     func packageConsolidationDeSelected() {
         
-        insertFreeServices(freeServices: FreeServices.PackageConsolidation.rawValue, flag: "delete")
+        insertFreeServices(freeServices: FreeServices.PackageConsolidation.rawValue, flag: "delete", description: "")
 
 
     }
     
     func repackingDeSelected() {
         
-        insertFreeServices(freeServices: FreeServices.Repacking.rawValue, flag: "delete")
+        insertFreeServices(freeServices: FreeServices.Repacking.rawValue, flag: "delete", description: "")
 
 
     }
     
     func removeItemBoxesDeSelected() {
         
-        insertFreeServices(freeServices: FreeServices.RemoveItemsBoxes.rawValue, flag: "delete")
+        insertFreeServices(freeServices: FreeServices.RemoveItemsBoxes.rawValue, flag: "delete", description: "")
 
 
     }
     
     func removeAllProtectivePackagingDeSelected() {
         
-        insertFreeServices(freeServices: FreeServices.RemoveShipperBoxes.rawValue, flag: "delete")
+        insertFreeServices(freeServices: FreeServices.RemoveShipperBoxes.rawValue, flag: "delete", description: "")
     }
     
     func removeShipperBoxesDeSelected() {
         
-        insertFreeServices(freeServices: FreeServices.RemoveShipperBoxes.rawValue, flag: "delete")
+        insertFreeServices(freeServices: FreeServices.RemoveShipperBoxes.rawValue, flag: "delete", description: "")
 
     }
     
     func removeInvoicesAndPricesTagsDeSelected() {
-        insertFreeServices(freeServices: FreeServices.RemoveInvoicesPricingTags.rawValue, flag: "delete")
+        insertFreeServices(freeServices: FreeServices.RemoveInvoicesPricingTags.rawValue, flag: "delete", description: "")
 
     }
     
     func doNotRemoveShipperBoxesDeSelected() {
-        insertFreeServices(freeServices: FreeServices.DoNotRemoveShipperBoxes.rawValue, flag: "delete")
+        insertFreeServices(freeServices: FreeServices.DoNotRemoveShipperBoxes.rawValue, flag: "delete", description: "")
 
     }
     
     func doNotRemoveItemBoxesDeSelected() {
-        insertFreeServices(freeServices: FreeServices.DoNotRemoveItemsBoxes.rawValue, flag: "delete")
+        insertFreeServices(freeServices: FreeServices.DoNotRemoveItemsBoxes.rawValue, flag: "delete", description: "")
 
     }
     
@@ -90,48 +90,48 @@ extension SpecialServicesViewController: SpecialServicesTableViewCellDelegate {
     
     
     func packageContentPhotoSelected() {
-        insertFreeServices(freeServices: FreeServices.PackageContentPhotoDuringCosolidation.rawValue, flag: "insert")
+        insertFreeServices(freeServices: FreeServices.PackageContentPhotoDuringCosolidation.rawValue, flag: "insert", description: "")
 
     }
     
     func packageConsolidationSelected() {
         
-        insertFreeServices(freeServices: FreeServices.PackageConsolidation.rawValue, flag: "insert")
+        insertFreeServices(freeServices: FreeServices.PackageConsolidation.rawValue, flag: "insert", description: "")
     }
     
     func repackingSelected() {
         
-        insertFreeServices(freeServices: FreeServices.Repacking.rawValue, flag: "insert")
+        insertFreeServices(freeServices: FreeServices.Repacking.rawValue, flag: "insert", description: "")
     }
     
     func removeItemBoxesSelected() {
         
-        insertFreeServices(freeServices: FreeServices.RemoveItemsBoxes.rawValue, flag: "insert")
+        insertFreeServices(freeServices: FreeServices.RemoveItemsBoxes.rawValue, flag: "insert", description: "")
     }
     
     func removeAllProtectivePackagingSelected() {
         
-        insertFreeServices(freeServices: FreeServices.RemoveProtectivePackaging.rawValue, flag: "insert")
+        insertFreeServices(freeServices: FreeServices.RemoveProtectivePackaging.rawValue, flag: "insert", description: "")
     }
     
     func removeShipperBoxesSelected() {
         
-        insertFreeServices(freeServices: FreeServices.RemoveShipperBoxes.rawValue, flag: "insert")
+        insertFreeServices(freeServices: FreeServices.RemoveShipperBoxes.rawValue, flag: "insert", description: "")
     }
     
     func removeInvoicesAndPricesTagsSelected() {
         
-        insertFreeServices(freeServices: FreeServices.RemoveInvoicesPricingTags.rawValue, flag: "insert")
+        insertFreeServices(freeServices: FreeServices.RemoveInvoicesPricingTags.rawValue, flag: "insert", description: "")
     }
     
     func doNotRemoveShipperBoxesSelected() {
         
-        insertFreeServices(freeServices: FreeServices.DoNotRemoveShipperBoxes.rawValue, flag: "insert")
+        insertFreeServices(freeServices: FreeServices.DoNotRemoveShipperBoxes.rawValue, flag: "insert", description: "")
     }
     
     func doNotRemoveItemBoxesSelected() {
         
-        insertFreeServices(freeServices: FreeServices.DoNotRemoveItemsBoxes.rawValue, flag: "insert")
+        insertFreeServices(freeServices: FreeServices.DoNotRemoveItemsBoxes.rawValue, flag: "insert", description: "")
     }
     
     func submitButtonTapped(description: String?, other: Bool?) {
@@ -143,7 +143,8 @@ extension SpecialServicesViewController: SpecialServicesTableViewCellDelegate {
                 guard let description = description else {
                     return
                 }
-                
+                insertFreeServices(freeServices: FreeServices.Other.rawValue, flag: "insert", description: description)
+                self.dismiss(animated: true, completion: nil)
             }
         }
         else {
@@ -156,14 +157,14 @@ extension SpecialServicesViewController: SpecialServicesTableViewCellDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func insertFreeServices(freeServices: FreeServices.RawValue, flag: String?) {
+    func insertFreeServices(freeServices: FreeServices.RawValue, flag: String?, description: String) {
         let token = getCurrentUserToken()
         guard let packageId = packageId else {
             return
         }
         print(token)
         storageVM = StorageVM()
-        storageVM?.attachFreeServices(token: token, packageId: packageId, freeService: freeServices, flag: flag!, description: "", success: { response in
+        storageVM?.attachFreeServices(token: token, packageId: packageId, freeService: freeServices, flag: flag!, description: description, success: { response in
             print(response["message"])
         }, failure: { str in
             let alert = UIAlertController(title: "", message: str, preferredStyle: .alert)
