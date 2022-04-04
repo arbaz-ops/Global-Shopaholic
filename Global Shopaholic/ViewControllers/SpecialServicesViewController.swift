@@ -15,9 +15,9 @@ protocol SpecialServicesViewControllerDelegate {
 class SpecialServicesViewController: UIViewController {
 
     var packageId: String?
-    var paidServices: [String]?
-    var freeServices: [String]? 
-    
+    var paidServices: [String]? = []
+    var freeServices: [String]? = []
+    var serviceDescription: String?
     var specialServicesVCDelegate: SpecialServicesViewControllerDelegate?
     @IBOutlet weak var specialServicesView: UIView!
     @IBOutlet weak var upperView: UIView!
@@ -26,6 +26,7 @@ class SpecialServicesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         upperView.roundTopCorners(radius: 25)
+       
         
         loadTable()
     }
@@ -42,8 +43,26 @@ class SpecialServicesViewController: UIViewController {
     }
     
     @IBAction func closeButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true) {[self] in
-            specialServicesVCDelegate?.updateMyStorage()
+        let specialServiceCell = specialServicesTableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as? SpecialServicesTableViewCell
+        if specialServiceCell!.other!  {
+            if specialServiceCell!.descriptionTextView.text.isEmpty {
+                showAlert(message: "Please add description.")
+            }
+            else if !specialServiceCell!.descriptionTextView.text.isEmpty  {
+                guard let description = specialServiceCell!.descriptionTextView.text else {
+                    return
+                }
+                insertFreeServices(freeServices: FreeServices.Other.rawValue, flag: "insert", description: description)
+                self.dismiss(animated: true) {[self] in
+                    specialServicesVCDelegate?.updateMyStorage()
+                }
+            }
         }
+        else {
+            self.dismiss(animated: true) {[self] in
+                specialServicesVCDelegate?.updateMyStorage()
+            }
+        }
+        
     }
 }

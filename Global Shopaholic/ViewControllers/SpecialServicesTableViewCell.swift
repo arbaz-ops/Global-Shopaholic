@@ -9,25 +9,29 @@
 import UIKit
 
 protocol SpecialServicesTableViewCellDelegate {
-    func packageContentPhotoSelected()
-    func packageConsolidationSelected()
-    func repackingSelected()
-    func removeItemBoxesSelected()
-    func removeAllProtectivePackagingSelected()
-    func removeShipperBoxesSelected()
-    func removeInvoicesAndPricesTagsSelected()
-    func doNotRemoveShipperBoxesSelected()
-    func doNotRemoveItemBoxesSelected()
     
-    func packageContentPhotoDeSelected()
-    func packageConsolidationDeSelected()
-    func repackingDeSelected()
-    func removeItemBoxesDeSelected()
-    func removeAllProtectivePackagingDeSelected()
-    func removeShipperBoxesDeSelected()
-    func removeInvoicesAndPricesTagsDeSelected()
-    func doNotRemoveShipperBoxesDeSelected()
-    func doNotRemoveItemBoxesDeSelected()
+   
+    
+    func packageContentPhotoSelected(selected: Bool?)
+    func packageConsolidationSelected(selected: Bool?)
+    func repackingSelected(selected: Bool?)
+    func removeItemBoxesSelected(selected: Bool?)
+    func removeAllProtectivePackagingSelected(selected: Bool?)
+    func removeShipperBoxesSelected(selected: Bool?)
+    func removeInvoicesAndPricesTagsSelected(selected: Bool?)
+    func doNotRemoveShipperBoxesSelected(selected: Bool?)
+    func doNotRemoveItemBoxesSelected(selected: Bool?)
+    
+    
+//    func packageContentPhotoDeSelected()
+//    func packageConsolidationDeSelected()
+//    func repackingDeSelected()
+//    func removeItemBoxesDeSelected()
+//    func removeAllProtectivePackagingDeSelected()
+//    func removeShipperBoxesDeSelected()
+//    func removeInvoicesAndPricesTagsDeSelected()
+//    func doNotRemoveShipperBoxesDeSelected()
+//    func doNotRemoveItemBoxesDeSelected()
     
     func itemTestingSelected()
     
@@ -279,19 +283,20 @@ class SpecialServicesTableViewCell: UITableViewCell {
     }
     
     @IBAction func itemTestingCheckBoxTapped(_ sender: UIButton) {
-        print(itemTesting)
         if itemTesting == false {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            specialServicesCellDelegate?.itemTestingSelected()
             itemTesting = true
+            specialServicesCellDelegate?.itemTestingSelected()
+
         }
         
     }
     @IBAction func detailedPicturesCheckBoxTapped(_ sender: UIButton) {
         if detailedPictures == false {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            specialServicesCellDelegate?.detailedPictureSelected()
             detailedPictures = true
+            specialServicesCellDelegate?.detailedPictureSelected()
+
             
         }
        
@@ -300,40 +305,45 @@ class SpecialServicesTableViewCell: UITableViewCell {
     @IBAction func packageConsolidation(_ sender: UIButton) {
         if !packageConsolidation! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            specialServicesCellDelegate?.packageConsolidationSelected()
             packageConsolidation = true
+            specialServicesCellDelegate?.packageConsolidationSelected(selected: packageConsolidation)
+
         }
         else if packageConsolidation == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            specialServicesCellDelegate?.packageConsolidationDeSelected()
             packageConsolidation = false
+            specialServicesCellDelegate?.packageConsolidationSelected(selected: packageConsolidation)
+
         }
 
     }
     @IBAction func repacking(_ sender: UIButton) {
         if !repacking! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            specialServicesCellDelegate?.repackingSelected()
             repacking = true
+            specialServicesCellDelegate?.repackingSelected(selected: repacking)
+
         }
         else if repacking == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            specialServicesCellDelegate?.repackingDeSelected()
-
             repacking = false
+            specialServicesCellDelegate?.repackingSelected(selected: repacking)
+
         }
 
     }
     @IBAction func packageContentPhoto(_ sender: UIButton) {
         if !packageContentPhoto! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            specialServicesCellDelegate?.packageContentPhotoSelected()
             packageContentPhoto = true
+            specialServicesCellDelegate?.packageContentPhotoSelected(selected: packageContentPhoto)
+
         }
         else if packageContentPhoto == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            specialServicesCellDelegate?.packageContentPhotoDeSelected()
             packageContentPhoto = false
+            specialServicesCellDelegate?.packageContentPhotoSelected(selected: packageContentPhoto)
+
         }
 
     }
@@ -341,13 +351,15 @@ class SpecialServicesTableViewCell: UITableViewCell {
     @IBAction func removeItemBoxes(_ sender: UIButton) {
         if !removeItemBoxes! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            specialServicesCellDelegate?.removeItemBoxesSelected()
             removeItemBoxes = true
+            specialServicesCellDelegate?.removeItemBoxesSelected(selected: removeItemBoxes)
+
         }
         else if removeItemBoxes == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            specialServicesCellDelegate?.removeItemBoxesDeSelected()
             removeItemBoxes = false
+            specialServicesCellDelegate?.removeItemBoxesSelected(selected: removeItemBoxes)
+
         }
 
     }
@@ -365,26 +377,30 @@ class SpecialServicesTableViewCell: UITableViewCell {
     @IBAction func removeProtectivePackage(_ sender: UIButton) {
         if !removeProtectivePackage! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            specialServicesCellDelegate?.removeAllProtectivePackagingSelected()
             removeProtectivePackage = true
+            specialServicesCellDelegate?.removeAllProtectivePackagingSelected(selected: removeProtectivePackage)
+
         }
         else if removeProtectivePackage == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            specialServicesCellDelegate?.removeAllProtectivePackagingDeSelected()
             removeProtectivePackage = false
+            specialServicesCellDelegate?.removeAllProtectivePackagingSelected(selected: removeProtectivePackage)
+
         }
 
     }
     @IBAction func removeShipperBoxes(_ sender: UIButton) {
         if !removeShipperBoxes! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            specialServicesCellDelegate?.removeShipperBoxesSelected()
             removeShipperBoxes = true
+            specialServicesCellDelegate?.removeShipperBoxesSelected(selected: removeShipperBoxes)
+
         }
         else if removeShipperBoxes == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            specialServicesCellDelegate?.removeShipperBoxesDeSelected()
             removeShipperBoxes = false
+            specialServicesCellDelegate?.removeShipperBoxesSelected(selected: removeShipperBoxes)
+
         }
 
     }
@@ -392,39 +408,45 @@ class SpecialServicesTableViewCell: UITableViewCell {
     @IBAction func removeInvoicesAndTags(_ sender: UIButton) {
         if !removeInvoicesAndPriceTags! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            specialServicesCellDelegate?.removeInvoicesAndPricesTagsSelected()
             removeInvoicesAndPriceTags = true
+            specialServicesCellDelegate?.removeInvoicesAndPricesTagsSelected(selected: removeInvoicesAndPriceTags)
+
         }
         else if removeInvoicesAndPriceTags == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            specialServicesCellDelegate?.removeInvoicesAndPricesTagsDeSelected()
             removeInvoicesAndPriceTags = false
+            specialServicesCellDelegate?.removeInvoicesAndPricesTagsSelected(selected: removeInvoicesAndPriceTags)
+
         }
 
     }
     @IBAction func doNotRemoveShipperBoxes(_ sender: UIButton) {
         if !doNotRemoveShipperBoxes! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            specialServicesCellDelegate?.doNotRemoveShipperBoxesSelected()
             doNotRemoveShipperBoxes = true
+            specialServicesCellDelegate?.doNotRemoveShipperBoxesSelected(selected: doNotRemoveShipperBoxes)
+
         }
         else if doNotRemoveShipperBoxes == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            specialServicesCellDelegate?.doNotRemoveShipperBoxesDeSelected()
             doNotRemoveShipperBoxes = false
+            specialServicesCellDelegate?.doNotRemoveShipperBoxesSelected(selected: doNotRemoveShipperBoxes)
+
         }
 
     }
     @IBAction func doNotRemoveItemBoxesTapped(_ sender: UIButton) {
         if !doNotRemoveItemBoxes! {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
-            specialServicesCellDelegate?.doNotRemoveItemBoxesSelected()
             doNotRemoveItemBoxes = true
+            specialServicesCellDelegate?.doNotRemoveItemBoxesSelected(selected: doNotRemoveItemBoxes)
+
         }
         else if doNotRemoveItemBoxes == true {
             sender.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            specialServicesCellDelegate?.doNotRemoveItemBoxesDeSelected()
             doNotRemoveItemBoxes = false
+            specialServicesCellDelegate?.doNotRemoveItemBoxesSelected(selected: doNotRemoveItemBoxes)
+
         }
 
 

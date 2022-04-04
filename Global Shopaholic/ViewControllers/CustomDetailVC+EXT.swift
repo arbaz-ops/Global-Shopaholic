@@ -21,8 +21,12 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
     func cancelTapped(indexPath: IndexPath) {
         DispatchQueue.main.async {[self] in
             customDetailTableView.beginUpdates()
-            rows.remove(at: indexPath.row)
+            customDetails?.remove(at: indexPath.row)
             customDetailTableView.deleteRows(at: [IndexPath.init(row: indexPath.row, section: 0)], with: .none)
+            let sum = customDetails!.reduce(0) {$0 + Int.init($1.value!)!}
+            print(sum)
+            let totalPackageValueCell = customDetailTableView.cellForRow(at: IndexPath.init(row: 0, section: 1)) as? TotalPackageValueTableViewCell
+            totalPackageValueCell?.totalPackageValueTextField.text = "$ \(sum)"
             customDetailTableView.endUpdates()
             customDetailTableView.reloadData()
         }
@@ -38,27 +42,25 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
     
     func addItemTapped() {
         
-        let customDetailCell = customDetailTableView.cellForRow(at: IndexPath.init(row: self.rows.count - 1, section: 0)) as? CustomDetailTableViewCell
+        let customDetailCell = customDetailTableView.cellForRow(at: IndexPath.init(row: self.customDetails!.count - 1, section: 0)) as? CustomDetailTableViewCell
         
         guard let  categorytext = customDetailCell?.categoryTextField.text else {
             return
         }
         
-        
-        guard let description = descriptionField?.text else {
+        guard let description = customDetailCell?.descriptionTextField.text else {
             
             return
         }
-        guard let qty = qtyTextField?.text else  {
+        guard let qty = customDetailCell?.qtyTextField?.text else  {
            
             return
         }
-        guard let value = valueTextField?.text else {
+        guard let value = customDetailCell?.valueTextField?.text else {
             
             return
         }
         
-      
         if categorytext.isEmpty {
             showAlert(message: "Please select category.")
 
@@ -77,30 +79,30 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
         }
         else {
             let categoryIndex = customDetailCell?.categoryTextField.selectedIndex
-
             selectedCategories?.append(categorytext)
             guard let categoryKey = categoriesList?[categoryIndex!]["key"] as? String else {
                 showAlert(message: "Category does not exist")
                 return
             }
-            
-            let customDetail = CustomDetail(category: categorytext, categoryKey: categoryKey, description: description, quantity: qty, value: value)
-            customDetails?.append(customDetail)
-            
+            print(categoryKey)
+            let indexPath = customDetailCell?.indexPath
+            customDetails?[indexPath!.row].category  = categorytext
+            customDetails?[indexPath!.row].description = description
+            customDetails?[indexPath!.row].quantity = qty
+            customDetails?[indexPath!.row].value = value
+            customDetails?[indexPath!.row].categoryKey = categoryKey
             let sum = customDetails!.reduce(0) {$0 + Int.init($1.value!)!}
-            
             let totalPackageValueCell = customDetailTableView.cellForRow(at: IndexPath.init(row: 0, section: 1)) as? TotalPackageValueTableViewCell
             totalPackageValueCell?.totalPackageValueTextField.text = "$ \(sum)"
-            
-            
-            self.rows.insert("CustomDetailCell", at: rows.endIndex)
+           
+            let customDetail = CustomDetail(category: "", categoryKey: "", description: "", quantity: "", value: "")
+            customDetails?.append(customDetail)
             customDetailTableView.reloadData()
+        
+            
 
         }
-        
-        
-
-        
+  
     }
     
     func showAlert(message: String?) {
@@ -115,8 +117,9 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
 
 extension CustomDetailViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        let totalPackageValueCell = customDetailTableView.cellForRow(at: IndexPath.init(row: 0, section: 1)) as? TotalPackageValueTableViewCell
-        totalPackageValueCell?.totalPackageValueTextField.text = "$ \(textField.text)"
-        customDetailTableView.reloadData()
+        print(textField.text)
+//        let totalPackageValueCell = customDetailTableView.cellForRow(at: IndexPath.init(row: 0, section: 1)) as? TotalPackageValueTableViewCell
+//        totalPackageValueCell?.totalPackageValueTextField.text = "$ \(textField.text)"
+//        customDetailTableView.reloadData()
     }
 }

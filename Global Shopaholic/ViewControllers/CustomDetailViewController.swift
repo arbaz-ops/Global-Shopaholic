@@ -12,7 +12,7 @@ import iOSDropDown
 class CustomDetailViewController: UIViewController {
     var trackingNumber: String?
     var storageVM: StorageVM?
-    var customDetails: [CustomDetail]? = [CustomDetail]()
+    var customDetails: [CustomDetail]? = [CustomDetail]() 
     var dropDown: DropDown?
     var rows = ["CustomDetailCell"]
     @IBOutlet weak var customDetailTableView: UITableView!
@@ -32,9 +32,12 @@ class CustomDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        fetchCategories()
+        
+        let customDetail = CustomDetail(category: nil, categoryKey: nil, description: nil, quantity: nil, value: nil)
+        customDetails?.append(customDetail)
+        
         upperView.roundTopCorners(radius: 35)
-//        categoryField = DropDown()
-//        dropDown = DropDown()
+
         valueTextField?.delegate = self
         // Do any additional setup after loading the view.
     }

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 
 extension CustomDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -20,7 +21,7 @@ extension CustomDetailViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return  self.rows.count
+            return  self.customDetails!.count
         case 1:
             return 1
         case 2:
@@ -41,25 +42,25 @@ extension CustomDetailViewController: UITableViewDelegate, UITableViewDataSource
         switch indexPath.section {
         case 0 :
             
-            
             let customDetailCell = tableView.dequeueReusableCell(withIdentifier: "CustomDetailTableViewCell", for: indexPath) as? CustomDetailTableViewCell
             customDetailCell?.indexPath = indexPath
             
             customDetailCell?.trackingNumber.text = package!["tracking_number"] as? String
             customDetailCell?.backgroundColor = hexStringToUIColor(hex: "#EFF7F5")
             customDetailCell?.customDetailCellDelegate = self
+         
             categoryField = customDetailCell?.categoryTextField
             descriptionField = customDetailCell?.descriptionTextField
             qtyTextField = customDetailCell?.qtyTextField
             valueTextField = customDetailCell?.valueTextField
             categorySelectedIndex = customDetailCell?.categorySelectedIndex
-//            if selectedCategories!.count < 1 {
-//                customDetailCell?.categoryTextField.text = nil
-//            }
-//            else if selectedCategories!.count > 0 {
-//                print(selectedCategories![indexPath.row])
-//                print(indexPath.row)
-//            }
+            
+            customDetailCell?.categoryTextField.text = customDetails?[indexPath.row].category
+            customDetailCell?.descriptionTextField.text = customDetails?[indexPath.row].description
+            customDetailCell?.valueTextField.text = customDetails?[indexPath.row].value
+            customDetailCell?.qtyTextField.text = customDetails?[indexPath.row].quantity
+            
+            
             
             if indexPath.row < 1 {
                 customDetailCell?.trackingNumber.isHidden = false

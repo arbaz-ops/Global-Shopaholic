@@ -32,106 +32,102 @@ extension SpecialServicesViewController: SpecialServicesTableViewCellDelegate {
         insertPaidService(paidService: PaidServices.Split.rawValue)
     }
     
-    
-    
-    func packageContentPhotoDeSelected() {
-        insertFreeServices(freeServices: FreeServices.PackageContentPhotoDuringCosolidation.rawValue, flag: "delete", description: "")
+  
+    func packageContentPhotoSelected(selected: Bool?) {
+        switch selected! {
+        case true:
+            insertFreeServices(freeServices: FreeServices.PackageContentPhotoDuringCosolidation.rawValue, flag: "insert", description: "")
+        case false:
+            insertFreeServices(freeServices: FreeServices.PackageContentPhotoDuringCosolidation.rawValue, flag: "delete", description: "")
+        }
 
     }
     
-    func packageConsolidationDeSelected() {
+    func packageConsolidationSelected(selected: Bool?) {
         
-        insertFreeServices(freeServices: FreeServices.PackageConsolidation.rawValue, flag: "delete", description: "")
-
-
+        switch selected! {
+        case true:
+            insertFreeServices(freeServices: FreeServices.PackageConsolidation.rawValue, flag: "insert", description: "")
+        case false:
+            insertFreeServices(freeServices: FreeServices.PackageConsolidation.rawValue, flag: "delete", description: "")
+            
+        }
+        
     }
     
-    func repackingDeSelected() {
+    func repackingSelected(selected: Bool?) {
         
-        insertFreeServices(freeServices: FreeServices.Repacking.rawValue, flag: "delete", description: "")
-
-
+        switch selected! {
+        case true:
+            insertFreeServices(freeServices: FreeServices.Repacking.rawValue, flag: "insert", description: "")
+        case false:
+            insertFreeServices(freeServices: FreeServices.Repacking.rawValue, flag: "delete", description: "")
+        }
     }
     
-    func removeItemBoxesDeSelected() {
-        
-        insertFreeServices(freeServices: FreeServices.RemoveItemsBoxes.rawValue, flag: "delete", description: "")
-
-
-    }
-    
-    func removeAllProtectivePackagingDeSelected() {
-        
-        insertFreeServices(freeServices: FreeServices.RemoveShipperBoxes.rawValue, flag: "delete", description: "")
-    }
-    
-    func removeShipperBoxesDeSelected() {
-        
-        insertFreeServices(freeServices: FreeServices.RemoveShipperBoxes.rawValue, flag: "delete", description: "")
-
-    }
-    
-    func removeInvoicesAndPricesTagsDeSelected() {
-        insertFreeServices(freeServices: FreeServices.RemoveInvoicesPricingTags.rawValue, flag: "delete", description: "")
+    func removeItemBoxesSelected(selected: Bool?) {
+        switch selected! {
+        case true:
+            insertFreeServices(freeServices: FreeServices.RemoveItemsBoxes.rawValue, flag: "insert", description: "")
+        case false:
+            insertFreeServices(freeServices: FreeServices.RemoveItemsBoxes.rawValue, flag: "delete", description: "")
+        }
+       
 
     }
     
-    func doNotRemoveShipperBoxesDeSelected() {
-        insertFreeServices(freeServices: FreeServices.DoNotRemoveShipperBoxes.rawValue, flag: "delete", description: "")
+    func removeAllProtectivePackagingSelected(selected: Bool?) {
+        switch selected! {
+        case true:
+            insertFreeServices(freeServices: FreeServices.RemoveProtectivePackaging.rawValue, flag: "insert", description: "")
+        case false:
+            insertFreeServices(freeServices: FreeServices.RemoveProtectivePackaging.rawValue, flag: "delete", description: "")
+        }
+//        insertFreeServices(freeServices: FreeServices.RemoveProtectivePackaging.rawValue, flag: "insert", description: "")
+    }
+    
+    func removeShipperBoxesSelected(selected: Bool?) {
+        
+        switch selected! {
+        case true:
+            insertFreeServices(freeServices: FreeServices.RemoveShipperBoxes.rawValue, flag: "insert", description: "")
+        case false:
+            insertFreeServices(freeServices: FreeServices.RemoveShipperBoxes.rawValue, flag: "delete", description: "")
+        }
+       
+    }
+    
+    func removeInvoicesAndPricesTagsSelected(selected: Bool?) {
+        switch selected! {
+        case true:
+            insertFreeServices(freeServices: FreeServices.RemoveInvoicesPricingTags.rawValue, flag: "insert", description: "")
+           
+        case false:
+            
+            insertFreeServices(freeServices: FreeServices.RemoveInvoicesPricingTags.rawValue, flag: "delete", description: "")
+        
+        }
+    }
+    
+    func doNotRemoveShipperBoxesSelected(selected: Bool?) {
+        switch selected! {
+        case true:
+            insertFreeServices(freeServices: FreeServices.DoNotRemoveShipperBoxes.rawValue, flag: "insert", description: "")
+        case false:
+            insertFreeServices(freeServices: FreeServices.DoNotRemoveShipperBoxes.rawValue, flag: "delete", description: "")
+        }
+       
 
     }
     
-    func doNotRemoveItemBoxesDeSelected() {
-        insertFreeServices(freeServices: FreeServices.DoNotRemoveItemsBoxes.rawValue, flag: "delete", description: "")
-
-    }
-    
-    
-    
-    
-    func packageContentPhotoSelected() {
-        insertFreeServices(freeServices: FreeServices.PackageContentPhotoDuringCosolidation.rawValue, flag: "insert", description: "")
-
-    }
-    
-    func packageConsolidationSelected() {
+    func doNotRemoveItemBoxesSelected(selected: Bool?) {
+        switch selected! {
+        case true:
+            insertFreeServices(freeServices: FreeServices.DoNotRemoveItemsBoxes.rawValue, flag: "insert", description: "")
+        case false:
+            insertFreeServices(freeServices: FreeServices.DoNotRemoveItemsBoxes.rawValue, flag: "delete", description: "")
+        }
         
-        insertFreeServices(freeServices: FreeServices.PackageConsolidation.rawValue, flag: "insert", description: "")
-    }
-    
-    func repackingSelected() {
-        
-        insertFreeServices(freeServices: FreeServices.Repacking.rawValue, flag: "insert", description: "")
-    }
-    
-    func removeItemBoxesSelected() {
-        
-        insertFreeServices(freeServices: FreeServices.RemoveItemsBoxes.rawValue, flag: "insert", description: "")
-    }
-    
-    func removeAllProtectivePackagingSelected() {
-        
-        insertFreeServices(freeServices: FreeServices.RemoveProtectivePackaging.rawValue, flag: "insert", description: "")
-    }
-    
-    func removeShipperBoxesSelected() {
-        
-        insertFreeServices(freeServices: FreeServices.RemoveShipperBoxes.rawValue, flag: "insert", description: "")
-    }
-    
-    func removeInvoicesAndPricesTagsSelected() {
-        
-        insertFreeServices(freeServices: FreeServices.RemoveInvoicesPricingTags.rawValue, flag: "insert", description: "")
-    }
-    
-    func doNotRemoveShipperBoxesSelected() {
-        
-        insertFreeServices(freeServices: FreeServices.DoNotRemoveShipperBoxes.rawValue, flag: "insert", description: "")
-    }
-    
-    func doNotRemoveItemBoxesSelected() {
-        
-        insertFreeServices(freeServices: FreeServices.DoNotRemoveItemsBoxes.rawValue, flag: "insert", description: "")
     }
     
     func submitButtonTapped(description: String?, other: Bool?) {
@@ -144,11 +140,15 @@ extension SpecialServicesViewController: SpecialServicesTableViewCellDelegate {
                     return
                 }
                 insertFreeServices(freeServices: FreeServices.Other.rawValue, flag: "insert", description: description)
-                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true) {[self] in
+                    specialServicesVCDelegate?.updateMyStorage()
+                }
             }
         }
         else {
-            
+            self.dismiss(animated: true) {[self] in
+                specialServicesVCDelegate?.updateMyStorage()
+            }
         }
     }
     func showAlert(message: String?) {
