@@ -14,7 +14,6 @@ class CustomDetailViewController: UIViewController {
     var storageVM: StorageVM?
     var customDetails: [CustomDetail]? = [CustomDetail]() 
     var dropDown: DropDown?
-    var rows = ["CustomDetailCell"]
     @IBOutlet weak var customDetailTableView: UITableView!
     @IBOutlet weak var upperView: UIView!
     var indexPath: IndexPath?
@@ -23,23 +22,13 @@ class CustomDetailViewController: UIViewController {
     var categoriesList: [[String: Any]]?
     var package: [String: Any]?
     var categoryField: DropDown?
-    var descriptionField: UITextField?
-    var qtyTextField: UITextField?
-    var valueTextField: UITextField?
-    var totalPackageValue: UITextField?
     var selectedCategories:[String]? = [String]()
-    var totalPackageValueSum: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-//        fetchCategories()
         
         let customDetail = CustomDetail(category: nil, categoryKey: nil, description: nil, quantity: nil, value: nil)
         customDetails?.append(customDetail)
-        
         upperView.roundTopCorners(radius: 35)
-
-        valueTextField?.delegate = self
-        // Do any additional setup after loading the view.
     }
     
     
@@ -61,17 +50,10 @@ class CustomDetailViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         })
     }
-//
+
     func completion(response: NSDictionary) {
         let data = response["data"] as? [String: Any]
         categoriesList = data!["list"] as? [[String: Any]]
-
-
-//        for categories in categoriesList! {
-//            let category = categories["title"] as? String
-//            dropDown?.optionArray.append(category!)
-//            categoryField?.optionArray = dropDown!.optionArray
-//        }
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -95,7 +77,6 @@ class CustomDetailViewController: UIViewController {
         customDetailTableView.register(UINib(nibName: "CustomDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomDetailTableViewCell")
         customDetailTableView.register(UINib.init(nibName: "CustomDetailButtonsTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomDetailButtonsTableViewCell")
         customDetailTableView.register(UINib.init(nibName: "TotalPackageValueTableViewCell", bundle: nil), forCellReuseIdentifier: "TotalPackageValueTableViewCell")
-
     }
 
 }

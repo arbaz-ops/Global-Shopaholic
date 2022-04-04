@@ -5,13 +5,16 @@
 //  Created by Carbonic-IT on 22/03/2022.
 //  Copyright © 2022 Ahsan. All rights reserved.
 //
-
 import Foundation
 import UIKit
 
 
-extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDetailCellDelegate {
+extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDetailCellDelegate, UITextFieldDelegate {
   
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        print(textField.text)
+    }
+    
     func categorySelectedIndex(index: Int) {
         categorySelectedIndex = index
         print(index)
@@ -57,13 +60,11 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
             return
         }
         guard let value = customDetailCell?.valueTextField?.text else {
-            
             return
         }
         
         if categorytext.isEmpty {
             showAlert(message: "Please select category.")
-
         }
         else if description.isEmpty {
          
@@ -71,7 +72,6 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
 
         }
         else if qty.isEmpty {
-            
             showAlert(message: "Please enter quantity.")
         }
         else if value.isEmpty {
@@ -98,9 +98,6 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
             let customDetail = CustomDetail(category: "", categoryKey: "", description: "", quantity: "", value: "")
             customDetails?.append(customDetail)
             customDetailTableView.reloadData()
-        
-            
-
         }
   
     }
@@ -113,13 +110,11 @@ extension CustomDetailViewController: CustomDetailButtonCellDelegate, CustomDeta
     
     
 }
-
-
-extension CustomDetailViewController: UITextFieldDelegate {
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        print(textField.text)
-//        let totalPackageValueCell = customDetailTableView.cellForRow(at: IndexPath.init(row: 0, section: 1)) as? TotalPackageValueTableViewCell
-//        totalPackageValueCell?.totalPackageValueTextField.text = "$ \(textField.text)"
-//        customDetailTableView.reloadData()
-    }
-}
+//extension CustomDetailViewController: UITextFieldDelegate {
+//    func textFieldDidChangeSelection(_ textField: UITextField) {
+//        print(textField.text)
+////        let totalPackageValueCell = customDetailTableView.cellForRow(at: IndexPath.init(row: 0, section: 1)) as? TotalPackageValueTableViewCell
+////        totalPackageValueCell?.totalPackageValueTextField.text = "$ \(textField.text)"
+////        customDetailTableView.reloadData()
+//    }
+//}

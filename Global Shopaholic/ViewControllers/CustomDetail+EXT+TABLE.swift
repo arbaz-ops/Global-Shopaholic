@@ -44,24 +44,14 @@ extension CustomDetailViewController: UITableViewDelegate, UITableViewDataSource
             
             let customDetailCell = tableView.dequeueReusableCell(withIdentifier: "CustomDetailTableViewCell", for: indexPath) as? CustomDetailTableViewCell
             customDetailCell?.indexPath = indexPath
-            
             customDetailCell?.trackingNumber.text = package!["tracking_number"] as? String
             customDetailCell?.backgroundColor = hexStringToUIColor(hex: "#EFF7F5")
+            customDetailCell?.valueTextField.delegate = self
             customDetailCell?.customDetailCellDelegate = self
-         
-            categoryField = customDetailCell?.categoryTextField
-            descriptionField = customDetailCell?.descriptionTextField
-            qtyTextField = customDetailCell?.qtyTextField
-            valueTextField = customDetailCell?.valueTextField
-            categorySelectedIndex = customDetailCell?.categorySelectedIndex
-            
             customDetailCell?.categoryTextField.text = customDetails?[indexPath.row].category
             customDetailCell?.descriptionTextField.text = customDetails?[indexPath.row].description
             customDetailCell?.valueTextField.text = customDetails?[indexPath.row].value
             customDetailCell?.qtyTextField.text = customDetails?[indexPath.row].quantity
-            
-            
-            
             if indexPath.row < 1 {
                 customDetailCell?.trackingNumber.isHidden = false
                 customDetailCell?.trackingNumberLabel.isHidden = false
@@ -71,12 +61,10 @@ extension CustomDetailViewController: UITableViewDelegate, UITableViewDataSource
                 customDetailCell?.trackingNumber.isHidden = true
                 customDetailCell?.trackingNumberLabel.isHidden = true
                 customDetailCell?.cancelButton.isHidden = false
-
             }
             return customDetailCell!
         case 1:
             let totalPackageValueCell = tableView.dequeueReusableCell(withIdentifier: "TotalPackageValueTableViewCell") as? TotalPackageValueTableViewCell
-            totalPackageValue = totalPackageValueCell?.totalPackageValueTextField 
             return totalPackageValueCell!
         case 2:
             let customDetailButtonCell = tableView.dequeueReusableCell(withIdentifier: "CustomDetailButtonsTableViewCell") as? CustomDetailButtonsTableViewCell
