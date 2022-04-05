@@ -8,14 +8,10 @@
 
 import UIKit
 
-protocol SuccessAlertVCDelegate {
-    func dismissedAlertController()
-}
 
 class SuccessAlertViewController: UIViewController {
     
     var uniqueKey: String?
-    var successAlertVCDelegate: SuccessAlertVCDelegate?
     @IBOutlet weak var uniqueKeyLabel: UILabel!
     @IBOutlet weak var uniqueKeyView: UIView!
     @IBOutlet weak var successAlertView: UIView!
@@ -34,9 +30,7 @@ class SuccessAlertViewController: UIViewController {
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         DispatchQueue.main.async {
-            self.dismiss(animated: true, completion:  {[self] in
-                successAlertVCDelegate?.dismissedAlertController()
-            })
+            self.dismiss(animated: true, completion: nil)
 
         }
     }

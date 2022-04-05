@@ -175,24 +175,27 @@ extension ConsolidateAndShipViewController: ConsolidateAndShipTableViewCellDeleg
     }
     
     func completion(response: NSDictionary) {
-        if response["message"] as! String == "The given data was invalid." {
+        
+        switch response["message"] as! String {
+        case "The given data was invalid.":
             let alert = UIAlertController(title: "", message: response["message"] as? String, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        }
-        else if response["message"] as? String == "Server Error" {
+        case "Server Error":
             let alert = UIAlertController(title: "", message: "Server Error \n Please try again later.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        }
-        else {
+        default:
             let data = response["data"] as? [String: Any]
             let uniqueKey = data!["unique_key"] as? String
             self.dismiss(animated: true) {[self] in
                 consolidateAndShipVCDelegate?.showSuccessVC(uniquqKey: uniqueKey!)
-            }
         }
+        
+
     }
     
+    
+    }
     
 }

@@ -46,4 +46,5 @@ struct endpoints {
     let paidServices = "api/shopaholic/storage/package/paidservice"
     let createConsolidation = "api/consolidation/create"
     let getPackageCustomCategoryList = "api/shopaholic/storage/package/custom/categories"
+    let packageCustomValue = "api/shopaholic/storage/package/assign/customvalue"
 }

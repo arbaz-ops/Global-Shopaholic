@@ -30,6 +30,7 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
         searchTextField.rightView = iconContainerView
         searchTextField.rightViewMode = .always
         filterButton.setTitle("", for: .normal)
+//        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
 
     }
     
@@ -39,10 +40,8 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
          case .Storage:
              self.selectedSection = 0
              isSearchEnabled = false
-             searchTextField.resignFirstResponder()
              storageAndShipmentCollectionView.isHidden = false
              storageAndShipmentTableView?.isHidden = true
-            
              storageAndShipmentCollectionView.register(UINib(nibName: "MyStorageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyStorageCollectionViewCell")
              DispatchQueue.main.async { [self] in
                  collectionViewUpperConstraint.constant = 43
@@ -114,6 +113,7 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
              isSearchEnabled = false
              searchTextField.resignFirstResponder()
              storageAndShipmentTableView!.register(UINib(nibName: "ShippedTableViewCell", bundle: nil), forCellReuseIdentifier: "ShippedTableViewCell")
+
              storageAndShipmentTableView?.scrollsToTop = true
              DispatchQueue.main.async { [self] in
                  consolidateAndShipButton.isHidden = true
@@ -135,6 +135,7 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
              consolidateAndShipButton.isHidden = true
              isSearchEnabled = false
              searchTextField.resignFirstResponder()
+
             storageAndShipmentTableView!.register(UINib(nibName: "ShippedTableViewCell", bundle: nil), forCellReuseIdentifier: "ShippedTableViewCell")
              activateTableViewConstraint(topConstraint: 5)
              DispatchQueue.main.async { [self] in
@@ -156,7 +157,6 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
              searchTextField.resignFirstResponder()
              storageAndShipmentCollectionView.isHidden = false
              storageAndShipmentTableView?.isHidden = true
-
              storageAndShipmentCollectionView.register(UINib(nibName: "ReturnCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ReturnCollectionViewCell")
              DispatchQueue.main.async { [self] in
                  collectionViewUpperConstraint.constant = 10
@@ -667,7 +667,8 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
     
 }
 
-extension StorageAndShipmentViewController: ConsolidateAndShipVCDelegate, SuccessAlertVCDelegate {
+
+extension StorageAndShipmentViewController: ConsolidateAndShipVCDelegate {
     
     
     func showSuccessVC(uniquqKey: String) {
@@ -675,9 +676,9 @@ extension StorageAndShipmentViewController: ConsolidateAndShipVCDelegate, Succes
             self.updateUI { [self] success in
                 if success {
                     let successVC = storyboard?.instantiateViewController(withIdentifier: "SuccessAlertViewController") as? SuccessAlertViewController
+                    selectedIndex.removeAll()
                     successVC?.modalPresentationStyle = .overFullScreen
                     successVC?.uniqueKey = uniquqKey
-                    successVC?.successAlertVCDelegate = self
                     self.present(successVC!, animated: false, completion: nil)
                 }
             }
@@ -685,10 +686,7 @@ extension StorageAndShipmentViewController: ConsolidateAndShipVCDelegate, Succes
         
     }
     
-    func dismissedAlertController() {
-        selectedIndex.removeAll()
-        self.updateMyStorage()
-    }
+    
     
     
 }

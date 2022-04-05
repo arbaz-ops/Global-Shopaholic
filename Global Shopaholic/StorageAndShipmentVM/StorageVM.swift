@@ -224,4 +224,24 @@ struct StorageVM {
 
     }
     
+    
+    func addCustomDetail(token: String, categories: [String], quantites: [String], descriptions: [String], amounts: [String], packageId: String ,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+        let ep = endpoints()
+        RappleActivityIndicatorView.startAnimating()
+        WebService.postMultipartArrayCustomDetailWithToken(Token: token, strURL: ep.packageCustomValue, is_loader_required: false, categories: categories, quantities: quantites, descriptions: descriptions, amounts: amounts, package_id: packageId, method: .post) { response in
+            if (response["success"] as! Bool) == true
+            {
+                RappleActivityIndicatorView.stopAnimation()
+                success(response)
+            } else{
+                RappleActivityIndicatorView.stopAnimation()
+
+                failure(response["message"] as! String)
+             }
+        } failure: { str in
+            failure(str)
+        }
+
+        
+    }
 }

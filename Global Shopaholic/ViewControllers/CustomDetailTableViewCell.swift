@@ -28,6 +28,7 @@ class CustomDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var qtyTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var categoryTextField: DropDown!
+    var packageId: String?
     var selectedText: String?
     
     var categoriesList: [[String: Any]]?

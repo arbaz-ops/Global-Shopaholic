@@ -19,6 +19,8 @@ struct UpperCollectionModel {
 
 class StorageAndShipmentViewController: BaseViewController {
    
+//     let refreshControl = UIRefreshControl()
+
     @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var consolidateAndShipButton: UIButton!
     @IBOutlet weak var collectionViewUpperConstraint: NSLayoutConstraint!
@@ -98,6 +100,8 @@ class StorageAndShipmentViewController: BaseViewController {
                   .setCollectionViewLayout(layout, animated: false)
         storageAndShipmentCollectionView.delegate = self
         storageAndShipmentCollectionView.dataSource = self
+//        storageAndShipmentCollectionView.addSubview(refreshControl)
+
         storageAndShipmentCollectionView.allowsMultipleSelection = false
         storageAndShipmentCollectionView.register(UINib(nibName: "MyStorageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyStorageCollectionViewCell")
         storageAndShipmentCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "default")
@@ -127,6 +131,9 @@ class StorageAndShipmentViewController: BaseViewController {
         storageAndShipmentTableView?.backgroundColor = .clear
         storageAndShipmentTableView?.separatorStyle = .none
         storageAndShipmentTableView?.allowsSelection = false
+//        storageAndShipmentTableView?.addSubview(refreshControl)
+
+        
         
     }
     
@@ -167,11 +174,13 @@ class StorageAndShipmentViewController: BaseViewController {
         storageAndShipmentTableView?.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: topConstraint).isActive = true
         storageAndShipmentTableView?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 10).isActive = true
     }
+    
+//    @objc func refreshData()  {
+//       setCurrentSelection()
+//        refreshControl.endRefreshing()
+//    }
 
     @IBAction func selectAllButtonTapped(_ sender: UIButton) {
-        
-        
-        
         if selectAll == false {
             sender.setImage(UIImage(named: "checkedGreen"), for: .normal)
             for i in 0..<packagesList.count {

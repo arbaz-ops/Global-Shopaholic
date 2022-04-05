@@ -19,6 +19,75 @@ import RappleProgressHUD//http://beta.globalshopaholics.com   //http://192.168.1
 let BASE_URL = "http://34.194.133.139:8888/"
 class WebService: NSObject {
     
+    
+    class func postMultipartArrayCustomDetailWithToken(Token: String, strURL: String,is_loader_required: Bool,  categories: [String],quantities: [String],descriptions: [String],amounts: [String],package_id: String , method: HTTPMethod,success:@escaping (_ response:NSDictionary) -> (), failure:@escaping (String) -> ()) {
+        if Connectivity.isConnectedToInternet {
+            print("Yes! internet is available.")
+
+        print(BASE_URL.appending(strURL))
+            print(Token)
+
+       
+            
+            let headers = [
+                "Authorization": "Bearer "+Token,
+                "Accept": "application/json",
+                "Content-Type": "multipart/form-data"
+            ]
+           
+            Alamofire.upload(multipartFormData: { multipartData in
+                                 
+                for category in categories {
+                    multipartData.append("\(category)".data(using: .utf8)!, withName: "category[]")
+                }
+                for quantity in quantities {
+                    multipartData.append("\(quantity)".data(using: .utf8)!, withName: "quantity[]")
+                }
+                for description in descriptions {
+                    multipartData.append("\(description)".data(using: .utf8)!, withName: "description[]")
+                }
+                for amount in amounts {
+                    multipartData.append("\(amount)".data(using: .utf8)!, withName: "amount[]")
+                }
+                multipartData.append("\(package_id)".data(using: .utf8)!, withName: "package_id")
+                
+            }, to: BASE_URL.appending(strURL), method: .post, headers: headers) { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        switch(response.result) {
+
+                        case .success(_):
+                            if let data = response.data
+                            {
+                                print(JSON(data).dictionaryObject!)
+                              
+                               
+                                if let dataDictionary = JSON(data).dictionaryObject
+                                {
+                                    success(dataDictionary as NSDictionary)
+                                }
+                                if let dataArray = JSON(data).arrayObject
+                                {
+                                    success(NSDictionary(dictionaryLiteral:  ("data",dataArray)))
+                                }
+                            }
+                            break
+
+                        case .failure(_):
+                            
+                            failure(response.error!.localizedDescription )
+                            break
+                        }
+                    }
+                case .failure(_):
+                    failure("Something Went wrong")
+                }
+            }
+
+    }
+    }
+    
     class func postMultipartArrayWithToken(Token: String, strURL: String,is_loader_required: Bool,  packages: [String],destinationAddress: String,specialRequestInfo: String,additionalInfo: [String] , method: HTTPMethod,success:@escaping (_ response:NSDictionary) -> (), failure:@escaping (String) -> ()) {
         if Connectivity.isConnectedToInternet {
             print("Yes! internet is available.")
