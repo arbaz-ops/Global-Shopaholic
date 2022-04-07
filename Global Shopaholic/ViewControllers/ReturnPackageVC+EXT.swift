@@ -135,13 +135,33 @@ extension ReturnPackageViewController: ReturnPackageTableViewCellDelegate, UINav
     
     
     func chooseFileTapped(indexPath: IndexPath) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .photoLibrary
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
+        
+        let alert = UIAlertController(title: "Attach Label Image.", message: "", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction.init(title: "Gallery", style: .default, handler: {[self] _ in
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.sourceType = .photoLibrary
+            imagePickerController.delegate = self
+            present(imagePickerController, animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction.init(title: "Capture", style: .default, handler: { [self] _ in
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.sourceType = .camera
+            imagePickerController.delegate = self
+            present(imagePickerController, animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { _ in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
             print("Image Picked")
         self.fileImage = image

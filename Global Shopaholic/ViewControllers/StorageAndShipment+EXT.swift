@@ -323,7 +323,6 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
            
            
        case .Cancelled:
-           
 
            do {
            let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
@@ -514,14 +513,11 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
         
         let requestId = packagesList[outgoingCell!.indexPath!.row]["id"] as? Int
         packageDetailVC?.requestID = requestId
-//        packageDetailVC?.requestID = []
         self.present(packageDetailVC!, animated: true)
 
     }
     
-//    func updateFilteredList(list: [[String : Any]]) {
-//
-//    }
+
     
     func returnPackageTapped(indexPath: IndexPath) {
         print(indexPath.row)

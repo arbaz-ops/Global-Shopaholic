@@ -14,12 +14,8 @@ struct UpperCollectionModel {
     var text: String?
 }
 
-
-
-
 class StorageAndShipmentViewController: BaseViewController {
    
-//     let refreshControl = UIRefreshControl()
 
     @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var consolidateAndShipButton: UIButton!
@@ -175,10 +171,7 @@ class StorageAndShipmentViewController: BaseViewController {
         storageAndShipmentTableView?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 10).isActive = true
     }
     
-//    @objc func refreshData()  {
-//       setCurrentSelection()
-//        refreshControl.endRefreshing()
-//    }
+
 
     @IBAction func selectAllButtonTapped(_ sender: UIButton) {
         if selectAll == false {

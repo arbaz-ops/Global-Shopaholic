@@ -13,6 +13,9 @@ protocol SlideMenuDelegate {
 class BaseViewController: UIViewController, SlideMenuDelegate {
     
     func SlideMenuItemSelectedAtIndex(_ index: Int32) {
+        
+        print(index)
+        
         let topViewController : UIViewController = self.navigationController!.topViewController!
             print("View Controller is : \(topViewController) \n", terminator: "")
         //print(index)

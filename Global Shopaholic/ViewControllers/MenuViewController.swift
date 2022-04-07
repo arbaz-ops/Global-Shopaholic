@@ -65,7 +65,8 @@ class MenuViewController: UIViewController {
     @IBAction func HomeAction(_ sender: UIButton) {
         if sender.tag != btnMenu.tag
         {
-            print("")
+            print(sender.tag)
+            
             setUI(sender: sender)
             hide(withIdentifier: "HomeVCC")
         }
@@ -82,7 +83,6 @@ class MenuViewController: UIViewController {
         if sender.tag != btnMenu.tag
         {
             setUI(sender: sender)
-            
             hide(withIdentifier: "ShippingCalculatorVC")
         }
         else{
@@ -120,6 +120,8 @@ class MenuViewController: UIViewController {
     @IBAction func StorageAction(_ sender: UIButton) {
         if sender.tag != btnMenu.tag
             {
+            print(sender.tag)
+            
                 setUI(sender: sender)
             hide(withIdentifier: "StorageAndShipmentViewController")
 //                hide(withIdentifier: "StorageShipmentVC")
