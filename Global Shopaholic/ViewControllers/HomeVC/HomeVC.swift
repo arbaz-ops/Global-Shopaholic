@@ -54,8 +54,18 @@ class HomeVC: BaseViewController {
         StorageShippingView.DropShadowView()
         AssistedPurchaseView.DropShadowView()
         setGestures()
+        StorageShippingView.isUserInteractionEnabled = true
+        StorageShippingView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(openStorageAndShip)))
         
     }
+    
+    @objc func openStorageAndShip() {
+        let storageAndShipVC = storyboard?.instantiateViewController(withIdentifier: "StorageAndShipmentViewController") as? StorageAndShipmentViewController
+        
+        self.navigationController?.pushViewController(storageAndShipVC!, animated: true)
+    }
+    
+    
     func setGestures()
     {
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.openShippingCalculator))

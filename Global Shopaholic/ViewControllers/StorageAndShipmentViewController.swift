@@ -151,8 +151,7 @@ class StorageAndShipmentViewController: BaseViewController {
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
-        self.onSlide(sender: sender)
-
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func filerButtonTapped(_ sender: UIButton) {
