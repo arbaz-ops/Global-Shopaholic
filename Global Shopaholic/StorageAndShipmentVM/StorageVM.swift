@@ -17,6 +17,36 @@ import RappleProgressHUD
 
 struct StorageVM {
   
+    func getFilteredPackagesList(token: String, status: String,subStatus: String?, startDate: String?, endDate: String? ,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+        let ep = endpoints()
+        let params: [String: Any] = [
+            "status": status,
+            "subStatus": subStatus ?? "",
+            "startDate": startDate ?? "",
+            "endDate": endDate ?? ""
+        ]
+        
+        RappleActivityIndicatorView.startAnimating()
+
+        WebService.RequestWithTokenJsonWithParams(Token: token, strURL: ep.packagesList, is_loader_required: false, params: params) { response in
+            RappleActivityIndicatorView.stopAnimation()
+
+            if (response["success"] as! Bool) == true
+            {
+                success(response)
+            }
+            else{
+
+                failure(response["message"] as! String)
+            }
+            
+        } failure: { str in
+            RappleActivityIndicatorView.stopAnimation()
+            failure(str)
+            print(str)
+        }
+    }
+    
     func getPackagesList(token: String, status: String,subStatus: String ,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
         let ep = endpoints()
         let params = ["status": status,

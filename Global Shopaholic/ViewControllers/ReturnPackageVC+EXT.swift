@@ -12,6 +12,8 @@ import RappleProgressHUD
 
 
 extension ReturnPackageViewController: ReturnPackageTableViewCellDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    
     func submitButtonTapped(type: String?, detail: String?) {
         guard let type = type else {
             let alert = UIAlertController(title: "", message: "Please select the type.", preferredStyle: .alert)

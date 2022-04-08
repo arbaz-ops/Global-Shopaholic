@@ -31,7 +31,6 @@ class FilterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-       print(currentSelection)
         // Do any additional setup after loading the view.
     }
     private func initUI() {
@@ -65,26 +64,38 @@ class FilterViewController: UIViewController {
         applyButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 13)
         resetButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 13)
         
+        toTextField.addInputViewDatePicker(target: self, selector: #selector(doneButtonPressedToField))
+        fromTextField.addInputViewDatePicker(target: self, selector: #selector(doneButtonPressedFromField))
+
+        
     }
+    
+    @objc func doneButtonPressedFromField() {
+        if let  datePicker = self.fromTextField.inputView as? UIDatePicker {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MM/dd/yyyy"
+                self.fromTextField.text = dateFormatter.string(from: datePicker.date)
+            }
+            self.fromTextField.resignFirstResponder()
+         }
+    
+    @objc func doneButtonPressedToField() {
+        if let  datePicker = self.toTextField.inputView as? UIDatePicker {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MM/dd/yyyy"
+                self.toTextField.text = dateFormatter.string(from: datePicker.date)
+            }
+            self.toTextField.resignFirstResponder()
+         }
     
    
     
     @IBAction func applyTapped(_ sender: UIButton) {
         storageVM = StorageVM()
-        do {
-        let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
-        guard let userData = encodedUserData else {
-            return
-        }
-        let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(userData) as? UserDataClass
-            
-            guard let userToken = unarchivedData?.token else {
-                print("Failed to get the token")
-                return
-            }
-            if subTypeTextField.text == "Payment Pending" {
-                
-                storageVM?.getPackagesList(token: userToken, status: currentSelection!.rawValue, subStatus: "paymentpending", success: { response in
+        let userToken = getCurrentUserToken()
+                if subTypeTextField.text == "Payment Pending" {
+                    
+                    storageVM?.getFilteredPackagesList(token: userToken, status: currentSelection!.rawValue, subStatus: "paymentpending", startDate: fromTextField.text, endDate: toTextField.text,success: { response in
                     let data = response["data"] as? [String: [[String: Any]]]
                     let list = data!["list"]!
                     self.filterVCDelegate?.updateFilteredList(list: list, subStatus: "paymentpending")
@@ -97,7 +108,7 @@ class FilterViewController: UIViewController {
             guard let subStatus = subTypeTextField.text?.lowercased() else {
                 return
             }
-            storageVM?.getPackagesList(token: userToken, status: currentSelection!.rawValue, subStatus: subStatus, success: { response in
+                storageVM?.getFilteredPackagesList(token: userToken, status: currentSelection!.rawValue, subStatus: subStatus, startDate: fromTextField.text, endDate: toTextField.text, success: { response in
                 print(subStatus)
                 let data = response["data"] as? [String: [[String: Any]]]
                 let list = data!["list"]!
@@ -108,9 +119,7 @@ class FilterViewController: UIViewController {
             })
             }
         
-        } catch let error {
-            print(error.localizedDescription)
-        }
+        
     }
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         subTypeTextField.text = ""
