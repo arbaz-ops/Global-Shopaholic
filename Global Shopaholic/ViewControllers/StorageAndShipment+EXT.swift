@@ -455,8 +455,6 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
         }
     }
     
-   
-    
     func outgoingOptionButtonTapped(atIndex: IndexPath) {
         print(atIndex)
         let outgoingCell = storageAndShipmentTableView!.cellForRow(at: atIndex) as? OutgoingTableViewCell
@@ -517,8 +515,6 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
 
     }
     
-
-    
     func returnPackageTapped(indexPath: IndexPath) {
         print(indexPath.row)
         let returnPackageVC = storyboard?.instantiateViewController(withIdentifier: "ReturnPackageViewController") as? ReturnPackageViewController
@@ -553,7 +549,6 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
         }
          let paidServices = packagesList[indexPath.row]["paid_services"] as? [String]
 //        let freeServices = packagesList[indexPath.row]["free_services"]
-        
         
         specialServicesVC?.paidServices = paidServices
 //        specialServicesVC?.freeServices = freeServices

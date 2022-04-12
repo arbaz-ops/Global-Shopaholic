@@ -159,8 +159,7 @@ class MenuViewController: UIViewController {
                   hide(withIdentifier: "FAQsVC")
               }
               else{
-                  print("Idher ha")
-                    // defaultView(sender:sender)
+                print("Idher ha")
                 justHide()
               }
         

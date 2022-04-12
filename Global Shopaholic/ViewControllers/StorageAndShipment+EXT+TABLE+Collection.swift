@@ -103,11 +103,7 @@ extension StorageAndShipmentViewController: UICollectionViewDelegate, UICollecti
             return CGFloat()
         }
     }
-    
-    
-    
-    
-
+  
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
             
             if collectionView == upperCollectionView {

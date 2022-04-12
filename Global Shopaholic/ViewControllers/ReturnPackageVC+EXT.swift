@@ -145,7 +145,6 @@ extension ReturnPackageViewController: ReturnPackageTableViewCellDelegate, UINav
             imagePickerController.delegate = self
             present(imagePickerController, animated: true, completion: nil)
         }))
-        
         alert.addAction(UIAlertAction.init(title: "Capture", style: .default, handler: { [self] _ in
             let imagePickerController = UIImagePickerController()
             imagePickerController.sourceType = .camera
