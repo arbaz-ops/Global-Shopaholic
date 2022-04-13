@@ -13,7 +13,6 @@ import RappleProgressHUD
 
 extension ReturnPackageViewController: ReturnPackageTableViewCellDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    
     func submitButtonTapped(type: String?, detail: String?) {
         guard let type = type else {
             let alert = UIAlertController(title: "", message: "Please select the type.", preferredStyle: .alert)
@@ -129,12 +128,7 @@ extension ReturnPackageViewController: ReturnPackageTableViewCellDelegate, UINav
             }
 
         }
-        
-       
     }
-    
-    
-    
     
     func chooseFileTapped(indexPath: IndexPath) {
         
@@ -162,7 +156,6 @@ extension ReturnPackageViewController: ReturnPackageTableViewCellDelegate, UINav
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
             print("Image Picked")
         self.fileImage = image
@@ -170,15 +163,12 @@ extension ReturnPackageViewController: ReturnPackageTableViewCellDelegate, UINav
             return
         }
         RappleActivityIndicatorView.startAnimating()
-
         DispatchQueue.main.async {
-
             cell.chooseFileButton.setTitle("Attached", for: .normal)
         }
         RappleActivityIndicatorView.stopAnimation()
 
            self.dismiss(animated: true, completion: nil)
-
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
