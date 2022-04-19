@@ -15,7 +15,6 @@ protocol ConsolidateAndShipVCDelegate {
 
 class ConsolidateAndShipViewController: UIViewController, getAddressesDelegate {
     
-    
     var storageVM: StorageVM?
     var addresses:  [[String: Any]]? = [[String: Any]]()
     var getAddressVM: GetAddressesVM?

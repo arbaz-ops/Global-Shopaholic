@@ -11,12 +11,17 @@ import RappleProgressHUD
 
 class CheckoutAndPayViewController: UIViewController {
 
+    
+    var checkoutVM: CheckoutVM?
     @IBOutlet weak var checkoutAndPayTableView: UITableView!
     @IBOutlet weak var backButtonView: UIView!
     
+    var packageDetail: [String: Any]?
     var walletVM: WalletVM?
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkoutVM = CheckoutVM()
+
         InitUI()
         loadTable()
     }
@@ -26,11 +31,10 @@ class CheckoutAndPayViewController: UIViewController {
         backButtonView.roundCorners([.topLeft, .bottomLeft], radius: 20)
         backButtonView.DropShadowView()
         
-        
-       
-        
     }
     
+    
+
     
 
     
@@ -48,44 +52,51 @@ class CheckoutAndPayViewController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        do {
-        
-        let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
-        guard let userData = encodedUserData else {
+       
+          super.viewDidAppear(animated)
+            getWalletData()
+            getCheckOutSummary()
+    }
+    
+    
+    func getCheckOutSummary() {
+        let userToken = getCurrentUserToken()
+        checkoutVM = CheckoutVM()
+        guard let packageId = packageDetail!["shipment_id"] as? String else {
+            showAlert(message: "Failed to get package ID.")
             return
         }
-        let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(userData) as? UserDataClass
+        checkoutVM?.getCheckoutSummaryOutgoing(token: userToken, requestId: packageId,success: { response in
+            completion(response: response)
             
-            guard let userToken = unarchivedData?.token else {
-                print("Failed to get the token")
+        }, failure: {msg  in
+            showAlert(message: msg)
+        })
+    }
+    
+    func getWalletData() {
+        let userToken = getCurrentUserToken()
+        walletVM = WalletVM()
+        RappleActivityIndicatorView.startAnimating()
+
+        walletVM?.getWalletInfo(token: userToken, success: {[self] response in
+            let data = response["data"] as? [String: Any]
+            
+            guard let currentBalance = data!["current_wallet_balance"] as? Double else {
+                print("Failed to get the current balance")
+
                 return
             }
-            walletVM = WalletVM()
-            RappleActivityIndicatorView.startAnimating()
-
-            walletVM?.getWalletInfo(token: userToken, success: {[self] response in
-                let data = response["data"] as? [String: Any]
-                
-                guard let currentBalance = data!["current_wallet_balance"] as? Double else {
-                    print("Failed to get the current balance")
-
-                    return
-                }
-                
-               let cell = checkoutAndPayTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? CheckoutAndPayTableViewCell
-                cell?.walletCurrentBalance.text = "$ \(currentBalance)"
-                RappleActivityIndicatorView.stopAnimation()
-
-            }, failure: { str in
-                print(str)
-                RappleActivityIndicatorView.stopAnimation()
-
-            })
             
-        } catch let error {
-            print(error)
-        }
+           let cell = checkoutAndPayTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? CheckoutAndPayTableViewCell
+            cell?.walletCurrentBalance.text = "$ \(currentBalance)"
+            RappleActivityIndicatorView.stopAnimation()
+
+        }, failure: { str in
+            print(str)
+            RappleActivityIndicatorView.stopAnimation()
+
+        })
     }
     
     
@@ -94,4 +105,9 @@ class CheckoutAndPayViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    
+    func completion(response: NSDictionary) {
+        print(response)
+        
+    }
 }

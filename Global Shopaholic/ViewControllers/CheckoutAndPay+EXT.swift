@@ -12,7 +12,7 @@ import UIKit
 extension CheckoutAndPayViewController: CheckoutAndPayTableViewCellDelegate {
     
     
-    func paymentMethodSelected(paymentMethod: PaymentMethod?) {
+    func paynowTapped(paymentMethod: PaymentMethod?) {
         switch paymentMethod {
         case .paypal:
             let alert = UIAlertController(title: "Coming Soon", message: "", preferredStyle: .alert)
@@ -43,5 +43,14 @@ extension CheckoutAndPayViewController: CheckoutAndPayTableViewCellDelegate {
         }
     }
     
+   
+    func showAlert(message: String?) {
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
 }
+
+

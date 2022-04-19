@@ -184,18 +184,8 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
        {
        case .Storage:
           
-           do {
-//               self.changeUI(status: currentSelection)
-           let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
-           guard let userData = encodedUserData else {
-               return
-           }
-           let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(userData) as? UserDataClass
-               
-               guard let userToken = unarchivedData?.token else {
-                   print("Failed to get the token")
-                   return
-               }
+           let userToken = getCurrentUserToken()
+
               storageVM = StorageVM()
                storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all", success: {[self] response in
                    let data = response["data"] as? [String: [[String: Any]]]
@@ -212,28 +202,10 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
                    COMMON_ALERT.showAlert(msg: str)
                })
                
-           } catch let error {
-               
-                   COMMON_ALERT.showAlert(msg: "Could not connect to server.\n Please try again later.")
-
-               
-           }
-     
+           
        case .Outgoing:
-         
-           do {
-//               changeUI(status: currentSelection)
+           let userToken = getCurrentUserToken()
 
-           let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
-           guard let userData = encodedUserData else {
-               return
-           }
-           let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(userData) as? UserDataClass
-               
-               guard let userToken = unarchivedData?.token else {
-                   print("Failed to get the token")
-                   return
-               }
                storageVM = StorageVM()
                
                storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all" ,success: {[self] response in
@@ -249,26 +221,11 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
                })
 
            
-           } catch let error {
-               COMMON_ALERT.showAlert(msg: "Could not connect to server.\n Please try again later.")
-           }
+          
            
        case .Shipped:
           
-           do {
-//          changeUI(status: currentSelection)
-
-           let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
-           guard let userData = encodedUserData else {
-               print("Failed to get user Data")
-               return
-           }
-           let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(userData) as? UserDataClass
-               
-               guard let userToken = unarchivedData?.token else {
-                   print("Failed to get the token")
-                   return
-               }
+           let userToken = getCurrentUserToken()
                storageVM = StorageVM()
                storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue,subStatus: "all" ,success: {[self] response in
                    let data = response["data"] as? [String: [[String: Any]]]
@@ -284,25 +241,14 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
           
 
            
-           } catch let error {
-               COMMON_ALERT.showAlert(msg: "Could not connect to server.\n Please try again later.")
-           }
+          
 
            
 
        case .Delivered:
   
-           do {
+           let userToken = getCurrentUserToken()
 
-           let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
-           guard let userData = encodedUserData else {
-               return
-           }
-           let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(userData) as? UserDataClass
-               guard let userToken = unarchivedData?.token else {
-                   print("Failed to get the token")
-                   return
-               }
                storageVM = StorageVM()
                storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all" ,success: {[self] response in
                    let data = response["data"] as? [String: [[String: Any]]]
@@ -317,24 +263,13 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
                    COMMON_ALERT.showAlert(msg: str)
                })
 
-           } catch let error {
-               COMMON_ALERT.showAlert(msg: "Could not connect to server.\n Please try again later.")
-           }
+          
            
            
        case .Cancelled:
 
-           do {
-           let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
-           guard let userData = encodedUserData else {
-               return
-           }
-           let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(userData) as? UserDataClass
-               
-               guard let userToken = unarchivedData?.token else {
-                   print("Failed to get the token")
-                   return
-               }
+           let userToken = getCurrentUserToken()
+
                storageVM = StorageVM()
                storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all" ,success: {[self] response in
                    let data = response["data"] as? [String: [[String: Any]]]
@@ -350,23 +285,11 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
                })
 
            
-           } catch let error {
-               COMMON_ALERT.showAlert(msg: "Could not connect to server.\n Please try again later.")
-           }
+           
            
        case .Return:
-           do {
-           let encodedUserData = UserDefaults.standard.object(forKey: "user_data") as? Data
-           guard let userData = encodedUserData else {
-               return
-           }
-           let unarchivedData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(userData) as? UserDataClass
-               
-               guard let userToken = unarchivedData?.token else {
-                   print("Failed to get the token")
-                   return
-               }
-              
+           let userToken = getCurrentUserToken()
+
                print(currentSelection.rawValue)
                storageVM?.getPackagesList(token: userToken, status: currentSelection.rawValue, subStatus: "all", success: {[self] response in
                    let data = response["data"] as? [String: [[String: Any]]]
@@ -380,9 +303,7 @@ extension StorageAndShipmentViewController: ReturnPackageVCDelegate {
                    COMMON_ALERT.showAlert(msg: str)
                })
            
-           } catch let error {
-               COMMON_ALERT.showAlert(msg: error.localizedDescription)
-           }
+          
   
       
        }
@@ -438,6 +359,13 @@ extension StorageAndShipmentViewController: StorageCollectionViewCellDelegate, F
     
     func checkoutAndPayTapped(cell: UITableViewCell) {
         let checkOutAndPay = storyboard?.instantiateViewController(withIdentifier: "CheckoutAndPayViewController") as? CheckoutAndPayViewController
+        let outgoingCell = cell as? OutgoingTableViewCell
+        guard let indexPath = outgoingCell?.indexPath else {
+            return
+        }
+        let package = packagesList[indexPath.row]
+        checkOutAndPay?.packageDetail = package
+        
         checkOutAndPay?.modalPresentationStyle = .overFullScreen
         present(checkOutAndPay!, animated: true, completion: nil)
     }

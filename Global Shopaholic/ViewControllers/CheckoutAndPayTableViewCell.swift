@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CheckoutAndPayTableViewCellDelegate {
-    func paymentMethodSelected(paymentMethod: PaymentMethod?)
+    func paynowTapped(paymentMethod: PaymentMethod?)
 }
 
 class CheckoutAndPayTableViewCell: UITableViewCell {
@@ -77,7 +77,7 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     @IBAction func bitcoinButtonTapped(_ sender: UIButton) {
         
         paymentMethod = .bitcoin
-        chekoutAndPayDelegate?.paymentMethodSelected(paymentMethod: .bitcoin)
+//        chekoutAndPayDelegate?.paymentMethodSelected(paymentMethod: .bitcoin)
 
         sender.backgroundColor =  hexStringToUIColor(hex: appColors.init().checkoutMethodSelectedColor)
         sender.layer.cornerRadius = 5
@@ -96,7 +96,7 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     @IBAction func creditcardButtonTapped(_ sender: UIButton) {
         
         paymentMethod = .card
-        chekoutAndPayDelegate?.paymentMethodSelected(paymentMethod: .card)
+//        chekoutAndPayDelegate?.paymentMethodSelected(paymentMethod: .card)
 
         sender.backgroundColor =  hexStringToUIColor(hex: appColors.init().checkoutMethodSelectedColor)
         sender.layer.cornerRadius = 5
@@ -114,10 +114,10 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     
     @IBAction func paypalButtonTapped(_ sender: UIButton) {
         paymentMethod = .paypal
-        chekoutAndPayDelegate?.paymentMethodSelected(paymentMethod: .paypal)
+//        chekoutAndPayDelegate?.paymentMethodSelected(paymentMethod: .paypal)
         sender.backgroundColor =  hexStringToUIColor(hex: appColors.init().checkoutMethodSelectedColor)
         sender.layer.cornerRadius = 5
-
+        
             bankButton.backgroundColor = .white
        
             creditCardButton.backgroundColor = .white
@@ -127,12 +127,11 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     }
     
     @IBAction func paynowTapped(_ sender: UIButton) {
-//        chekoutAndPayDelegate?.paynowTapped(paymentMethod: paymentMethod)
+        chekoutAndPayDelegate?.paynowTapped(paymentMethod: paymentMethod)
     }
     @IBAction func bankButtonTapped(_ sender: UIButton) {
         paymentMethod = .bank
-        chekoutAndPayDelegate?.paymentMethodSelected(paymentMethod: .bank)
-
+        
         sender.backgroundColor =  hexStringToUIColor(hex: appColors.init().checkoutMethodSelectedColor)
         sender.layer.cornerRadius = 5
 

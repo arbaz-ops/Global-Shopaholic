@@ -25,6 +25,36 @@ protocol checkoutDelegate{
 struct CheckoutVM{
     var delegate: checkoutDelegate?
     
+    func getCheckoutSummaryOutgoing(token: String, requestId: String, success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+        let ep = endpoints()
+        let param: [String: Any] = [
+            "request_id" : requestId
+        ]
+        var getCheckoutSummaryOutgoing = ep.GetCheckoutSummaryOutgoing
+        getCheckoutSummaryOutgoing = getCheckoutSummaryOutgoing.replacingOccurrences(of: "{request_id}", with: "\(requestId)")
+        RappleActivityIndicatorView.startAnimating()
+        WebService.RequestWithTokenJsonWithParams(Token: token, strURL: getCheckoutSummaryOutgoing, is_loader_required: false, params: param) { response in
+            if (response["success"] as! Bool) == true
+            {
+                
+                RappleActivityIndicatorView.stopAnimation()
+                success(response)
+//                self.delegate?.didGetCheckoutSummary(response: response)
+            }
+            else{
+                failure(response["message"] as! String)
+                RappleActivityIndicatorView.stopAnimation()
+
+            }
+        } failure: { error in
+            print(error)
+            
+            RappleActivityIndicatorView.stopAnimation()
+            failure("Something went wrong.")
+        }
+
+    }
+    
     func getCheckOutSummary(token: String,Request: OrderSummaryRequest)
     {
         RappleActivityIndicatorView.startAnimating()

@@ -186,6 +186,7 @@ class ASPCheckOut: UIViewController {
         vm.getCheckOutSummary(token: user_data.token, Request: request)
         resultText = ""
         print(totalLbl.text)
+        
 
             // Note: For purposes of illustration, this example shows a payment that includes
             //       both payment details (subtotal, shipping, tax) and multiple items.
@@ -206,6 +207,8 @@ class ASPCheckOut: UIViewController {
             let tax = NSDecimalNumber(string: "2.50")
         let a = shipping.adding(tax)
         print(a)
+        
+        
 //            let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
             
 //            let total = subtotal.adding(shipping).adding(tax)
