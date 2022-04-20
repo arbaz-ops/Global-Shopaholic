@@ -62,14 +62,16 @@ class CheckoutAndPayViewController: UIViewController {
     func getCheckOutSummary() {
         let userToken = getCurrentUserToken()
         checkoutVM = CheckoutVM()
-        guard let packageId = packageDetail!["shipment_id"] as? String else {
+        print(packageDetail)
+        
+        guard let packageId = packageDetail!["unique_key"] as? String else {
             showAlert(message: "Failed to get package ID.")
             return
         }
-        checkoutVM?.getCheckoutSummaryOutgoing(token: userToken, requestId: packageId,success: { response in
+        checkoutVM?.getCheckoutSummaryOutgoing(token: userToken, requestId: packageId,success: {[self] response in
             completion(response: response)
             
-        }, failure: {msg  in
+        }, failure: {[self] msg  in
             showAlert(message: msg)
         })
     }
@@ -107,7 +109,16 @@ class CheckoutAndPayViewController: UIViewController {
     
     
     func completion(response: NSDictionary) {
-        print(response)
+        print(type(of: response))
+        
+        let data = response["data"] as? [String: Any]
+        print(data!["shipment_id"] as! String)
+//        let checkoutPackageDetail = data!["data"]
+        
+//        print(checkoutPackageDetail)
+        
+//        let checkoutPackageData = data!["data"]
+//        print(checkoutPackageData)
         
     }
 }
