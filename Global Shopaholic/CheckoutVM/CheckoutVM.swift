@@ -16,8 +16,6 @@ protocol checkoutDelegate{
     func didFailedToGetSummary(msg: String)
     func didBankPaySuccessFully(response: NSDictionary)
     func DidBankPayFailed(msg: String)
-    
-    
     func didCCpaySuccessfully(response: NSDictionary)
     func didFailedToPayViaCC(msg:String)
     
