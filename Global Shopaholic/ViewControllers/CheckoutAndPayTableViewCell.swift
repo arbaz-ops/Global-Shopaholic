@@ -18,7 +18,7 @@ protocol CheckoutAndPayTableViewCellDelegate {
 class CheckoutAndPayTableViewCell: UITableViewCell {
 
     var paymentMethod: PaymentMethod?
-    
+    var courierServiceSelected: Bool?
     @IBOutlet weak var shippingChargesLabel: UILabel!
     @IBOutlet weak var courierServiceCollectionView: UICollectionView!
     @IBOutlet weak var phoneNumberLabel: UILabel!
@@ -61,6 +61,7 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
         paymentMethod = .none
         
         useWallet = false
+        courierServiceSelected = false
         // Initialization code
     }
     
@@ -158,7 +159,13 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     }
     
     @IBAction func paynowTapped(_ sender: UIButton) {
-        chekoutAndPayDelegate?.paynowTapped(paymentMethod: paymentMethod)
+        if courierServiceSelected! {
+            chekoutAndPayDelegate?.paynowTapped(paymentMethod: paymentMethod)
+        }
+        else {
+            chekoutAndPayDelegate?.showAlert(message: "Please Select Shipping Service!", title: "Alert")
+        }
+        
     }
     @IBAction func bankButtonTapped(_ sender: UIButton) {
         paymentMethod = .bank
@@ -201,9 +208,10 @@ extension CheckoutAndPayTableViewCell: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let courierServiceCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourierServiceCollectionViewCell", for: indexPath) as? CourierServiceCollectionViewCell
         let price = rates?[indexPath.row]["rate"] as! String
-        chekoutAndPayDelegate?.showAlert(message: "$ \(price) courier service charges added.", title: "Alert")
+        chekoutAndPayDelegate?.showAlert(message: "$ \(price) Shipping Service Charges Added.", title: "Alert")
         shippingChargesLabel.text = "$ " + price
         courierServiceCell?.isSelected = true
+        courierServiceSelected = true
 
       
     }
