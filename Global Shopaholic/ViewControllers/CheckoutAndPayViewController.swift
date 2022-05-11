@@ -33,11 +33,6 @@ class CheckoutAndPayViewController: UIViewController {
         
     }
     
-    
-
-    
-
-    
     func loadTable() {
         checkoutAndPayTableView.backgroundColor = .clear
         checkoutAndPayTableView.separatorStyle = .none
@@ -49,7 +44,6 @@ class CheckoutAndPayViewController: UIViewController {
         checkoutAndPayTableView.showsVerticalScrollIndicator = false
         
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
        
@@ -72,6 +66,7 @@ class CheckoutAndPayViewController: UIViewController {
             completion(response: response)
             
         }, failure: {[self] msg  in
+            print(msg)
             showAlert(message: msg)
         })
     }
@@ -112,13 +107,17 @@ class CheckoutAndPayViewController: UIViewController {
         print(type(of: response))
         
         let data = response["data"] as? [String: Any]
-        print(data!["shipment_id"] as! String)
-//        let checkoutPackageDetail = data!["data"]
-        
-//        print(checkoutPackageDetail)
-        
-//        let checkoutPackageData = data!["data"]
-//        print(checkoutPackageData)
+        print(data)
+        let checkoutAndPayCell = checkoutAndPayTableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as? CheckoutAndPayTableViewCell
+        guard let address = data?["address"] as? [String: Any] , let street = address["street"], let city = address["city"], let state = address["state"], let country = address["country"],
+        let name = address["name"], let phone = address["phone"], let rates = data?["rates"] as? [[String: Any]] else {
+            showAlert(message: "No Destination Address.")
+            return
+        }
+        checkoutAndPayCell?.rates = rates
+        checkoutAndPayCell?.shipToAddressLabel.text = "Ship To Address: \(name)"
+        checkoutAndPayCell?.addressLabel.text = "\(street), \(city), \(state), \(country)"
+        checkoutAndPayCell?.phoneNumberLabel.text = "Phone Number: \(phone)"
         
     }
 }

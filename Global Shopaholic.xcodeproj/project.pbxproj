@@ -302,6 +302,8 @@
 		7CB3A1B52791716D00CA5C69 /* UpperCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB3A1B32791716D00CA5C69 /* UpperCollectionViewCell.xib */; };
 		7CB3A1D02799371B00CA5C69 /* BoxDimensionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3A1CE2799371B00CA5C69 /* BoxDimensionsTableViewCell.swift */; };
 		7CB3A1D12799371B00CA5C69 /* BoxDimensionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB3A1CF2799371B00CA5C69 /* BoxDimensionsTableViewCell.xib */; };
+		7CCDE445282B90F400F5DC76 /* CourierServiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCDE443282B90F400F5DC76 /* CourierServiceCollectionViewCell.swift */; };
+		7CCDE446282B90F400F5DC76 /* CourierServiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CCDE444282B90F400F5DC76 /* CourierServiceCollectionViewCell.xib */; };
 		7CD45E53274618FB00397F57 /* OutgoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD45E51274618FB00397F57 /* OutgoingTableViewCell.swift */; };
 		7CD45E54274618FB00397F57 /* OutgoingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD45E52274618FB00397F57 /* OutgoingTableViewCell.xib */; };
 		7CE79893273CFE5000D145E5 /* MyStorageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE79891273CFE5000D145E5 /* MyStorageCollectionViewCell.swift */; };
@@ -642,6 +644,8 @@
 		7CB3A1B32791716D00CA5C69 /* UpperCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpperCollectionViewCell.xib; sourceTree = "<group>"; };
 		7CB3A1CE2799371B00CA5C69 /* BoxDimensionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDimensionsTableViewCell.swift; sourceTree = "<group>"; };
 		7CB3A1CF2799371B00CA5C69 /* BoxDimensionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoxDimensionsTableViewCell.xib; sourceTree = "<group>"; };
+		7CCDE443282B90F400F5DC76 /* CourierServiceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourierServiceCollectionViewCell.swift; sourceTree = "<group>"; };
+		7CCDE444282B90F400F5DC76 /* CourierServiceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourierServiceCollectionViewCell.xib; sourceTree = "<group>"; };
 		7CD45E51274618FB00397F57 /* OutgoingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingTableViewCell.swift; sourceTree = "<group>"; };
 		7CD45E52274618FB00397F57 /* OutgoingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutgoingTableViewCell.xib; sourceTree = "<group>"; };
 		7CE79891273CFE5000D145E5 /* MyStorageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStorageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1732,6 +1736,8 @@
 			children = (
 				7C1F471827AD3E3500FC19C8 /* CheckoutAndPayTableViewCell.swift */,
 				7C1F471927AD3E3500FC19C8 /* CheckoutAndPayTableViewCell.xib */,
+				7CCDE443282B90F400F5DC76 /* CourierServiceCollectionViewCell.swift */,
+				7CCDE444282B90F400F5DC76 /* CourierServiceCollectionViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -2181,6 +2187,7 @@
 				789CB91C25E6A589007313B4 /* SubRow.xib in Resources */,
 				78F7FC2A26330410005208FF /* WalletHistoryCell.xib in Resources */,
 				781D3E8F257926870013DE3A /* Montserrat-MediumItalic.ttf in Resources */,
+				7CCDE446282B90F400F5DC76 /* CourierServiceCollectionViewCell.xib in Resources */,
 				78F5ED962680A790002AE14B /* AssistedItemCell.xib in Resources */,
 				7CD45E54274618FB00397F57 /* OutgoingTableViewCell.xib in Resources */,
 				781D3E8A257926870013DE3A /* Montserrat-BoldItalic.ttf in Resources */,
@@ -2515,6 +2522,7 @@
 				78F619AB25C182C600BF6CA3 /* ShippingAddressVC.swift in Sources */,
 				7893ED132653BBEF00D6CDFA /* DepositeCreditCardResponse.swift in Sources */,
 				7CA3EACB2771D7000053C493 /* EditAddressTableViewCell.swift in Sources */,
+				7CCDE445282B90F400F5DC76 /* CourierServiceCollectionViewCell.swift in Sources */,
 				7CAE1F8327709F9A0039E027 /* CustomDeclarationFormTableViewCell.swift in Sources */,
 				788F73D22673870500FA3DBE /* ShippingCalculator+EXT+CollectionView.swift in Sources */,
 				7C6F005B275E29F00007D83C /* RequestFormTableViewCell.swift in Sources */,
