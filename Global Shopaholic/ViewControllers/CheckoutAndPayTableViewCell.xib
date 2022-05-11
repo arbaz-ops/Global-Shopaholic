@@ -70,8 +70,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qK-Ud-Ray">
                         <rect key="frame" x="40" y="744" width="342" height="161"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Shipping Charges" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8B-eU-ghb">
-                                <rect key="frame" x="20" y="15" width="172.5" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipping Charges" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8B-eU-ghb">
+                                <rect key="frame" x="20" y="15" width="108" height="15"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" red="0.23137254901960785" green="0.32156862745098036" blue="0.3529411764705882" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -268,7 +268,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="s9c-c4-uEO">
-                        <rect key="frame" x="5" y="123" width="423" height="155"/>
+                        <rect key="frame" x="5" y="123" width="418" height="155"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="155" id="6kF-TM-nbj"/>
@@ -310,7 +310,7 @@
                     <constraint firstItem="jKv-0u-XqB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="oZG-uO-I9e"/>
                     <constraint firstItem="dPr-Gs-mAu" firstAttribute="leading" secondItem="raX-Mw-6FK" secondAttribute="trailing" constant="10" id="rJU-vG-8cz"/>
                     <constraint firstItem="akZ-ro-EEb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="rm6-QG-zte"/>
-                    <constraint firstAttribute="trailing" secondItem="s9c-c4-uEO" secondAttribute="trailing" id="tR5-ce-0vS"/>
+                    <constraint firstAttribute="trailing" secondItem="s9c-c4-uEO" secondAttribute="trailing" constant="5" id="tR5-ce-0vS"/>
                     <constraint firstAttribute="trailing" secondItem="hLb-Qc-Yov" secondAttribute="trailing" constant="58" id="wQY-3K-WUm"/>
                     <constraint firstAttribute="bottom" secondItem="hLb-Qc-Yov" secondAttribute="bottom" constant="28" id="yFb-zI-Rvk"/>
                     <constraint firstItem="dPr-Gs-mAu" firstAttribute="centerY" secondItem="raX-Mw-6FK" secondAttribute="centerY" id="zLT-mz-CPT"/>
@@ -329,6 +329,7 @@
                 <outlet property="phoneNumberLabel" destination="CoO-0T-1CZ" id="b4Q-aO-wue"/>
                 <outlet property="shipToAddressLabel" destination="2oO-dw-Kp6" id="fai-he-rrt"/>
                 <outlet property="shipmentInvoiceView" destination="8qK-Ud-Ray" id="e7W-0K-jzk"/>
+                <outlet property="shippingChargesLabel" destination="Ehv-Ce-zIb" id="rn5-3a-6h9"/>
                 <outlet property="useWalletCircleButton" destination="raX-Mw-6FK" id="Yhm-hc-MXc"/>
                 <outlet property="walletCurrentBalance" destination="34g-Tl-naa" id="tbT-Fh-WEg"/>
             </connections>

@@ -93,6 +93,7 @@
             </constraints>
             <size key="customSize" width="397" height="140"/>
             <connections>
+                <outlet property="containerView" destination="PLU-Gy-Q5I" id="APi-yf-ieP"/>
                 <outlet property="courierNameLabel" destination="vR6-C3-KDX" id="fXZ-Si-vcf"/>
                 <outlet property="daysLabel" destination="HHg-A6-ucq" id="KRg-96-q2h"/>
                 <outlet property="priceLabel" destination="cKu-IT-IWc" id="6eL-S7-aXg"/>

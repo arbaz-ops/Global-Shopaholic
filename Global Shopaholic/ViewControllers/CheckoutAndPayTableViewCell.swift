@@ -12,12 +12,14 @@ import SwiftyJSON
 
 protocol CheckoutAndPayTableViewCellDelegate {
     func paynowTapped(paymentMethod: PaymentMethod?)
+    func showAlert(message: String, title: String)
 }
 
 class CheckoutAndPayTableViewCell: UITableViewCell {
 
     var paymentMethod: PaymentMethod?
     
+    @IBOutlet weak var shippingChargesLabel: UILabel!
     @IBOutlet weak var courierServiceCollectionView: UICollectionView!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -36,8 +38,6 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     var rates: [[String: Any]]? {
         didSet {
             setUpCollectionView()
-            print(rates)
-            
         }
     }
 //    @IBOutlet weak var uspsView: UIView!
@@ -174,6 +174,8 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     }
 }
 
+
+
 extension CheckoutAndPayTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return rates!.count
@@ -191,23 +193,20 @@ extension CheckoutAndPayTableViewCell: UICollectionViewDelegate, UICollectionVie
         return courierServiceCell!
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let courierServiceCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourierServiceCollectionViewCell", for: indexPath) as? CourierServiceCollectionViewCell
-//        print("sadsa")
-//        courierServiceCell?.layer.borderWidth = 5
-//        courierServiceCell?.layer.borderColor = hexStringToUIColor(hex: "#0BBAA3").cgColor
-//    }
-    
-    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let courierServiceCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourierServiceCollectionViewCell", for: indexPath) as? CourierServiceCollectionViewCell
-        courierServiceCell?.layer.borderWidth = 1
-        courierServiceCell?.layer.borderColor = hexStringToUIColor(hex: "#3B525A").cgColor
+        courierServiceCell?.isSelected = false
     }
     
-    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let courierServiceCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourierServiceCollectionViewCell", for: indexPath) as? CourierServiceCollectionViewCell
-        courierServiceCell?.layer.borderWidth = 5
-        courierServiceCell?.layer.borderColor = hexStringToUIColor(hex: "#0BBAA3").cgColor
+        let price = rates?[indexPath.row]["rate"] as! String
+        chekoutAndPayDelegate?.showAlert(message: "$ \(price) courier service charges added.", title: "Alert")
+        shippingChargesLabel.text = "$ " + price
+        courierServiceCell?.isSelected = true
+
+      
     }
+    
     
 }

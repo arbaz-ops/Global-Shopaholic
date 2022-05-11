@@ -10,6 +10,14 @@ import UIKit
 
 class CourierServiceCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var containerView: UIView!
+    override var isSelected: Bool {
+        didSet {
+            self.layer.borderWidth = isSelected ? 2 : 1
+            self.layer.borderColor = isSelected ? hexStringToUIColor(hex: "#0BBAA3").cgColor : hexStringToUIColor(hex: "#3B525A").cgColor
+            self.containerView.backgroundColor = isSelected ? hexStringToUIColor(hex: "#0BBAA3").withAlphaComponent(0.1) : UIColor.clear
+        }
+    }
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var courierNameLabel: UILabel!
