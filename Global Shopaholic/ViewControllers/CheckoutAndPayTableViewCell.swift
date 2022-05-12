@@ -211,9 +211,7 @@ extension CheckoutAndPayTableViewCell: UICollectionViewDelegate, UICollectionVie
         chekoutAndPayDelegate?.showAlert(message: "$ \(price) Shipping Service Charges Added.", title: "Alert")
         shippingChargesLabel.text = "$ " + price
         courierServiceCell?.isSelected = true
-        courierServiceSelected = true
-
-      
+        courierServiceSelected = true      
     }
     
     
