@@ -17,6 +17,12 @@ protocol CheckoutAndPayTableViewCellDelegate {
 
 class CheckoutAndPayTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var totalCharges: UILabel!
+    @IBOutlet weak var insuranceFee: UILabel!
+    @IBOutlet weak var vapCharges: UILabel!
+    @IBOutlet weak var packageLateFee: UILabel!
+    @IBOutlet weak var lateFeeCharges: UILabel!
+    @IBOutlet weak var processingCharges: UILabel!
     var paymentMethod: PaymentMethod?
     var courierServiceSelected: Bool?
     @IBOutlet weak var shippingChargesLabel: UILabel!
@@ -35,16 +41,52 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     @IBOutlet weak var shipmentInvoiceView: UIView!
     @IBOutlet weak var payNowButton: UIButton!
     
+    
+//    var insuranceFeeValue: Int! {
+//        didSet {
+//            insuranceFee.text = "$ \(String(describing: insuranceFeeValue!))"
+////            sumCharges()
+//        }
+//    }
+//    var vapChargesValue: Int! {
+//        didSet {
+//            vapCharges.text = "$ \(String(describing: vapChargesValue!))"
+//        }
+//    }
+//
+//    var packagesLateFeeValue: Int! {
+//        didSet {
+//            packageLateFee.text = "$ \(String(describing: packagesLateFeeValue!))"
+//
+//        }
+//    }
+//    var lateFeeChargesValue: Int! {
+//        didSet {
+//            lateFeeCharges.text = "$ \(String(describing: lateFeeChargesValue!))"
+//
+//        }
+//    }
+//    var processingChargesValue: Int! {
+//        didSet {
+//            processingCharges.text = "$ \(String(describing: processingChargesValue!))"
+//
+//        }
+//    }
+//    var shippingChargesValue: Int? {
+//        didSet {
+//            print(shippingChargesValue)
+//
+////            shippingChargesLabel.text = "$ \(shippingChargesValue!)"
+//            sumCharges()
+//
+//        }
+//    }
     var rates: [[String: Any]]? {
         didSet {
             setUpCollectionView()
         }
     }
-//    @IBOutlet weak var uspsView: UIView!
-//    @IBOutlet weak var upsView: UIView!
-//    @IBOutlet weak var dhlView: UIView!
-//    @IBOutlet weak var fedexView: UIView!
-//    @IBOutlet weak var aramexView: UIView!
+
     var useWallet: Bool?
     var chekoutAndPayDelegate: CheckoutAndPayTableViewCellDelegate?
     
@@ -54,7 +96,7 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
         destinationView.DropShadowView()
         shipmentInvoiceView.layer.cornerRadius = 10
         shipmentInvoiceView.DropShadowView()
-        
+//        shippingChargesValue = 0
         payNowButton.layer.cornerRadius = 10
         
         
@@ -62,8 +104,17 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
         
         useWallet = false
         courierServiceSelected = false
+        
+//        insuranceFee.text = "$ \(String(describing: insuranceFeeValue))"
+//        vapCharges.text = "$ \(String(describing: vapChargesValue))"
+//        packageLateFee.text = "$ \(String(describing: packagesLateFeeValue))"
+//        lateFeeCharges.text = "$ \(String(describing: lateFeeChargesValue))"
+//        processingCharges.text = "$ \(String(describing: processingChargesValue))"
+        
         // Initialization code
     }
+    
+    
     
     func setUpCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -195,7 +246,7 @@ extension CheckoutAndPayTableViewCell: UICollectionViewDelegate, UICollectionVie
         courierServiceCell?.daysLabel.text = rates?[indexPath.row]["courier_estimated_delivery_time"] as? String
         let price = rates?[indexPath.row]["rate"] as? String
         let image = rates?[indexPath.row]["courier_image"] as? String
-        courierServiceCell?.priceLabel.text = "$ " + price! ?? "0.0"
+        courierServiceCell?.priceLabel.text = "$ " + price!
         courierServiceCell?.serviceImageView.sd_setImage(with: URL(string: image!), placeholderImage: UIImage(), completed: nil)
         return courierServiceCell!
     }
@@ -209,10 +260,25 @@ extension CheckoutAndPayTableViewCell: UICollectionViewDelegate, UICollectionVie
         let courierServiceCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourierServiceCollectionViewCell", for: indexPath) as? CourierServiceCollectionViewCell
         let price = rates?[indexPath.row]["rate"] as! String
         chekoutAndPayDelegate?.showAlert(message: "$ \(price) Shipping Service Charges Added.", title: "Alert")
-        shippingChargesLabel.text = "$ " + price
-        courierServiceCell?.isSelected = true
-        courierServiceSelected = true      
+        shippingChargesLabel.text = "$ \(price)"
+            courierServiceCell?.isSelected = true
+        courierServiceSelected = true
     }
     
+    func updateChargesSummary(chargesSummary: [String : Any]) {
+        guard let processingChargesValue = chargesSummary["processing_charges"] as? Int,
+              let insuranceFeeValue = chargesSummary["insurance_fee"] as? Int,
+              let lateFeeChargesValue = chargesSummary["late_fee_charges"] as? Int,
+              let packageLateFeeValue = chargesSummary["package_late_fee"] as? Int,
+              let vapChargesValue = chargesSummary["vap_charges"] as? Int else {
+                  return
+              }
+        processingCharges.text = "$ \(processingChargesValue)"
+        insuranceFee.text = "$ \(insuranceFeeValue)"
+        lateFeeCharges.text = "$ \(lateFeeChargesValue)"
+        packageLateFee.text = "$ \(packageLateFeeValue)"
+        vapCharges.text = "$ \(vapChargesValue)"
+
+    }
     
 }

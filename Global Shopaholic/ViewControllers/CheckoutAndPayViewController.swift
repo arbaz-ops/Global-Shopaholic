@@ -109,11 +109,25 @@ class CheckoutAndPayViewController: UIViewController {
         let data = response["data"] as? [String: Any]
         print(data)
         let checkoutAndPayCell = checkoutAndPayTableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as? CheckoutAndPayTableViewCell
-        guard let address = data?["address"] as? [String: Any] , let street = address["street"], let city = address["city"], let state = address["state"], let country = address["country"],
-        let name = address["name"], let phone = address["phone"], let rates = data?["rates"] as? [[String: Any]] else {
+        guard let address = data?["address"] as? [String: Any] ,
+                let street = address["street"],
+                let city = address["city"],
+                let state = address["state"],
+                let country = address["country"],
+                let name = address["name"],
+                let phone = address["phone"],
+                let rates = data?["rates"] as? [[String: Any]]
+                 else {
             showAlert(message: "No Destination Address.")
             return
         }
+        guard  let chargesSummary = data?["charges_summary"] as? [String: Any] else {
+            return
+        }
+        
+      
+        checkoutAndPayCell?.updateChargesSummary(chargesSummary: chargesSummary)
+        
         checkoutAndPayCell?.rates = rates
         checkoutAndPayCell?.shipToAddressLabel.text = "Ship To Address: \(name)"
         checkoutAndPayCell?.addressLabel.text = "\(street), \(city), \(state), \(country)"
