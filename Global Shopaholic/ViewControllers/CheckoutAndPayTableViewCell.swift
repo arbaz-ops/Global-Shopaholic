@@ -41,46 +41,9 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     @IBOutlet weak var shipmentInvoiceView: UIView!
     @IBOutlet weak var payNowButton: UIButton!
     
+    var totalChargesValue: Double?
     
-//    var insuranceFeeValue: Int! {
-//        didSet {
-//            insuranceFee.text = "$ \(String(describing: insuranceFeeValue!))"
-////            sumCharges()
-//        }
-//    }
-//    var vapChargesValue: Int! {
-//        didSet {
-//            vapCharges.text = "$ \(String(describing: vapChargesValue!))"
-//        }
-//    }
-//
-//    var packagesLateFeeValue: Int! {
-//        didSet {
-//            packageLateFee.text = "$ \(String(describing: packagesLateFeeValue!))"
-//
-//        }
-//    }
-//    var lateFeeChargesValue: Int! {
-//        didSet {
-//            lateFeeCharges.text = "$ \(String(describing: lateFeeChargesValue!))"
-//
-//        }
-//    }
-//    var processingChargesValue: Int! {
-//        didSet {
-//            processingCharges.text = "$ \(String(describing: processingChargesValue!))"
-//
-//        }
-//    }
-//    var shippingChargesValue: Int? {
-//        didSet {
-//            print(shippingChargesValue)
-//
-////            shippingChargesLabel.text = "$ \(shippingChargesValue!)"
-//            sumCharges()
-//
-//        }
-//    }
+
     var rates: [[String: Any]]? {
         didSet {
             setUpCollectionView()
@@ -260,8 +223,13 @@ extension CheckoutAndPayTableViewCell: UICollectionViewDelegate, UICollectionVie
         let courierServiceCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourierServiceCollectionViewCell", for: indexPath) as? CourierServiceCollectionViewCell
         let price = rates?[indexPath.row]["rate"] as! String
         chekoutAndPayDelegate?.showAlert(message: "$ \(price) Shipping Service Charges Added.", title: "Alert")
+        let priceInDouble = Double.init(price)
+        
+        let newTotal = totalChargesValue! + priceInDouble!
+        totalCharges.text = "$ \(newTotal)"
         shippingChargesLabel.text = "$ \(price)"
-            courierServiceCell?.isSelected = true
+        totalChargesValue = newTotal
+        courierServiceCell?.isSelected = true
         courierServiceSelected = true
     }
     
@@ -273,12 +241,18 @@ extension CheckoutAndPayTableViewCell: UICollectionViewDelegate, UICollectionVie
               let vapChargesValue = chargesSummary["vap_charges"] as? Int else {
                   return
               }
-        processingCharges.text = "$ \(processingChargesValue)"
-        insuranceFee.text = "$ \(insuranceFeeValue)"
-        lateFeeCharges.text = "$ \(lateFeeChargesValue)"
-        packageLateFee.text = "$ \(packageLateFeeValue)"
-        vapCharges.text = "$ \(vapChargesValue)"
-
+        let processingChargesInDouble = Double.init(processingChargesValue)
+        let insuranceFeeInDouble = Double.init(insuranceFeeValue)
+        let lateFeeChargesInDouble = Double.init(lateFeeChargesValue)
+        let packageLatFeeInDouble = Double.init(packageLateFeeValue)
+        let vapChargesFeeInDouble = Double.init(vapChargesValue)
+        processingCharges.text = "$ \(processingChargesInDouble)"
+        insuranceFee.text = "$ \(insuranceFeeInDouble)"
+        lateFeeCharges.text = "$ \(lateFeeChargesInDouble)"
+        packageLateFee.text = "$ \(packageLatFeeInDouble)"
+        vapCharges.text = "$ \(vapChargesFeeInDouble)"
+        self.totalChargesValue = processingChargesInDouble + insuranceFeeInDouble + lateFeeChargesInDouble + packageLatFeeInDouble + vapChargesFeeInDouble
+        totalCharges.text = "$ \(totalChargesValue!)"
     }
     
 }
