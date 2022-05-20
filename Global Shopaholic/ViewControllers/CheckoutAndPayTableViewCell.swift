@@ -228,7 +228,6 @@ extension CheckoutAndPayTableViewCell: UICollectionViewDelegate, UICollectionVie
         let newTotal = totalChargesValue! + priceInDouble!
         totalCharges.text = "$ \(newTotal)"
         shippingChargesLabel.text = "$ \(price)"
-        totalChargesValue = newTotal
         courierServiceCell?.isSelected = true
         courierServiceSelected = true
     }
