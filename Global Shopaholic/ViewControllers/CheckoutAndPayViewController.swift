@@ -56,13 +56,12 @@ class CheckoutAndPayViewController: UIViewController {
     func getCheckOutSummary() {
         let userToken = getCurrentUserToken()
         checkoutVM = CheckoutVM()
-        print(packageDetail)
         
         guard let packageId = packageDetail!["unique_key"] as? String else {
             showAlert(message: "Failed to get package ID.")
             return
         }
-        checkoutVM?.getCheckoutSummaryOutgoing(token: userToken, requestId: packageId,success: {[self] response in
+        checkoutVM?.getCheckoutSummaryOutgoing(token: userToken, requestId: packageId,courier_service: "", payment_gateway: "",is_wallet: "" ,success: {[self] response in
             completion(response: response)
             
         }, failure: {[self] msg  in
@@ -104,10 +103,8 @@ class CheckoutAndPayViewController: UIViewController {
     
     
     func completion(response: NSDictionary) {
-        print(type(of: response))
         
         let data = response["data"] as? [String: Any]
-        print(data)
         let checkoutAndPayCell = checkoutAndPayTableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as? CheckoutAndPayTableViewCell
         guard let address = data?["address"] as? [String: Any] ,
                 let street = address["street"],
@@ -116,17 +113,22 @@ class CheckoutAndPayViewController: UIViewController {
                 let country = address["country"],
                 let name = address["name"],
                 let phone = address["phone"],
-                let rates = data?["rates"] as? [[String: Any]]
+                let rates = data?["rates"] as? [[String: Any]],
+                let totalCharges = data?["total"]
                  else {
             showAlert(message: "No Destination Address.")
+            return
+        }
+        guard let packageId = packageDetail!["unique_key"] as? String else {
+            showAlert(message: "Failed to get package ID.")
             return
         }
         guard  let chargesSummary = data?["charges_summary"] as? [String: Any] else {
             return
         }
         
-      
-        checkoutAndPayCell?.updateChargesSummary(chargesSummary: chargesSummary)
+        checkoutAndPayCell?.requestID = packageId
+        checkoutAndPayCell?.updateChargesSummary(chargesSummary: chargesSummary, totalCharges: totalCharges as! Double)
         
         checkoutAndPayCell?.rates = rates
         checkoutAndPayCell?.shipToAddressLabel.text = "Ship To Address: \(name)"

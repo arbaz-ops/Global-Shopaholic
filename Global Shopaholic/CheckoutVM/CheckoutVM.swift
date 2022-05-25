@@ -23,10 +23,13 @@ protocol checkoutDelegate{
 struct CheckoutVM{
     var delegate: checkoutDelegate?
     
-    func getCheckoutSummaryOutgoing(token: String, requestId: String, success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
+    func getCheckoutSummaryOutgoing(token: String, requestId: String,courier_service: String,payment_gateway: String,is_wallet: String ,success: @escaping (_ response: NSDictionary ) -> Void, failure: @escaping (_ :String) -> Void) {
         let ep = endpoints()
         let param: [String: Any] = [
-            "request_id" : requestId
+            "request_id" : requestId,
+            "courier_service": courier_service,
+            "payment_gateway": payment_gateway,
+            "isWallet": is_wallet
         ]
         var getCheckoutSummaryOutgoing = ep.GetCheckoutSummaryOutgoing
         getCheckoutSummaryOutgoing = getCheckoutSummaryOutgoing.replacingOccurrences(of: "{request_id}", with: "\(requestId)")

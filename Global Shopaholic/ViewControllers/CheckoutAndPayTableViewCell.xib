@@ -350,7 +350,7 @@
                 <outlet property="shipToAddressLabel" destination="2oO-dw-Kp6" id="fai-he-rrt"/>
                 <outlet property="shipmentInvoiceView" destination="8qK-Ud-Ray" id="e7W-0K-jzk"/>
                 <outlet property="shippingChargesLabel" destination="Ehv-Ce-zIb" id="rn5-3a-6h9"/>
-                <outlet property="totalCharges" destination="vYn-JK-TvT" id="Oph-b3-gqV"/>
+                <outlet property="totalChargesLabel" destination="vYn-JK-TvT" id="WV2-Dr-KI0"/>
                 <outlet property="useWalletCircleButton" destination="raX-Mw-6FK" id="Yhm-hc-MXc"/>
                 <outlet property="vapCharges" destination="5aX-Cz-Ibs" id="Xor-QH-3Zn"/>
                 <outlet property="walletCurrentBalance" destination="34g-Tl-naa" id="tbT-Fh-WEg"/>

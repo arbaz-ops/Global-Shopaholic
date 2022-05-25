@@ -17,13 +17,15 @@ protocol CheckoutAndPayTableViewCellDelegate {
 
 class CheckoutAndPayTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var totalCharges: UILabel!
+    var requestID: String?
+    @IBOutlet weak var totalChargesLabel: UILabel!
     @IBOutlet weak var insuranceFee: UILabel!
     @IBOutlet weak var vapCharges: UILabel!
     @IBOutlet weak var packageLateFee: UILabel!
     @IBOutlet weak var lateFeeCharges: UILabel!
     @IBOutlet weak var processingCharges: UILabel!
-    var paymentMethod: PaymentMethod?
+    var paymentMethod: PaymentMethod? = .none
+    var checkoutVM: CheckoutVM?
     var courierServiceSelected: Bool?
     @IBOutlet weak var shippingChargesLabel: UILabel!
     @IBOutlet weak var courierServiceCollectionView: UICollectionView!
@@ -50,7 +52,7 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
         }
     }
 
-    var useWallet: Bool?
+    var isWallet: isWallet! = .no
     var chekoutAndPayDelegate: CheckoutAndPayTableViewCellDelegate?
     
     override func awakeFromNib() {
@@ -62,19 +64,12 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
 //        shippingChargesValue = 0
         payNowButton.layer.cornerRadius = 10
         
-        
         paymentMethod = .none
         
-        useWallet = false
+        isWallet = .no
         courierServiceSelected = false
         
-//        insuranceFee.text = "$ \(String(describing: insuranceFeeValue))"
-//        vapCharges.text = "$ \(String(describing: vapChargesValue))"
-//        packageLateFee.text = "$ \(String(describing: packagesLateFeeValue))"
-//        lateFeeCharges.text = "$ \(String(describing: lateFeeChargesValue))"
-//        processingCharges.text = "$ \(String(describing: processingChargesValue))"
-        
-        // Initialization code
+
     }
     
     
@@ -104,26 +99,43 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
     }
     
     @IBAction func useWalletCircleButtonTapped(_ sender: UIButton) {
-        if !useWallet! {
+        switch isWallet {
+        case .no:
             sender.setImage(UIImage.init(systemName: "circle.fill"), for: .normal)
             sender.tintColor = hexStringToUIColor(hex: "#0BBAA3")
-            useWallet = true
-            paymentMethod = nil
-            bankButton.backgroundColor = .white
-            creditCardButton.backgroundColor = .white
-            paypalButton.backgroundColor = .white
-            bitpayButton.backgroundColor = .white
-        }
-        else {
+            isWallet = .yes
+            if paymentMethod == .none {
+                getCheckoutSummary(courierService: "", paymentMethod: "", isWallet: self.isWallet.rawValue)
+            }
+            else {
+                getCheckoutSummary(courierService: "", paymentMethod: paymentMethod!.rawValue, isWallet: self.isWallet.rawValue)
+            }
+            
+            
+        case .yes:
             sender.setImage(UIImage.init(systemName: "circle"), for: .normal)
             sender.tintColor = hexStringToUIColor(hex: "#0BBAA3")
-            useWallet = false
+            isWallet = .no
+            if paymentMethod == .none {
+                getCheckoutSummary(courierService: "", paymentMethod: "", isWallet: self.isWallet.rawValue)
+            }
+            else {
+                getCheckoutSummary(courierService: "", paymentMethod: paymentMethod!.rawValue, isWallet: self.isWallet.rawValue)
+            }
+        case .none:
+            sender.setImage(UIImage.init(systemName: "circle"), for: .normal)
+            sender.tintColor = hexStringToUIColor(hex: "#0BBAA3")
+            isWallet = .no
+
         }
+       
         
     }
     @IBAction func bitcoinButtonTapped(_ sender: UIButton) {
+
         
         paymentMethod = .bitcoin
+
 //        chekoutAndPayDelegate?.paymentMethodSelected(paymentMethod: .bitcoin)
 
         sender.backgroundColor =  hexStringToUIColor(hex: appColors.init().checkoutMethodSelectedColor)
@@ -135,12 +147,14 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
         
         
             paypalButton.backgroundColor = .white
-        
+        getCheckoutSummary(courierService: "", paymentMethod: paymentMethod!.rawValue, isWallet: self.isWallet.rawValue)
         
         
     }
     @IBAction func creditcardButtonTapped(_ sender: UIButton) {
         
+        
+
         paymentMethod = .card
 //        chekoutAndPayDelegate?.paymentMethodSelected(paymentMethod: .card)
 
@@ -155,11 +169,15 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
         
         
             paypalButton.backgroundColor = .white
-        
+        getCheckoutSummary(courierService: "", paymentMethod: paymentMethod!.rawValue, isWallet: self.isWallet.rawValue)
     }
     
     @IBAction func paypalButtonTapped(_ sender: UIButton) {
         paymentMethod = .paypal
+        
+        print(isWallet.rawValue)
+        print(PaymentMethod.paypal.rawValue)
+        
 //        chekoutAndPayDelegate?.paymentMethodSelected(paymentMethod: .paypal)
         sender.backgroundColor =  hexStringToUIColor(hex: appColors.init().checkoutMethodSelectedColor)
         sender.layer.cornerRadius = 5
@@ -169,6 +187,7 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
             creditCardButton.backgroundColor = .white
         
             bitpayButton.backgroundColor = .white
+        getCheckoutSummary(courierService: "", paymentMethod: paymentMethod!.rawValue, isWallet: self.isWallet.rawValue)
         
     }
     
@@ -182,6 +201,8 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
         
     }
     @IBAction func bankButtonTapped(_ sender: UIButton) {
+        paymentMethod = .paypal
+        
         paymentMethod = .bank
         
         sender.backgroundColor =  hexStringToUIColor(hex: appColors.init().checkoutMethodSelectedColor)
@@ -192,6 +213,7 @@ class CheckoutAndPayTableViewCell: UITableViewCell {
         creditCardButton.backgroundColor = .white
     
         bitpayButton.backgroundColor = .white
+        getCheckoutSummary(courierService: "", paymentMethod: paymentMethod!.rawValue, isWallet: self.isWallet.rawValue)
     }
 }
 
@@ -218,26 +240,24 @@ extension CheckoutAndPayTableViewCell: UICollectionViewDelegate, UICollectionVie
         let courierServiceCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourierServiceCollectionViewCell", for: indexPath) as? CourierServiceCollectionViewCell
         courierServiceCell?.isSelected = false
     }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let courierServiceCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourierServiceCollectionViewCell", for: indexPath) as? CourierServiceCollectionViewCell
         let price = rates?[indexPath.row]["rate"] as! String
         chekoutAndPayDelegate?.showAlert(message: "$ \(price) Shipping Service Charges Added.", title: "Alert")
         let priceInDouble = Double.init(price)
         
-        let newTotal = totalChargesValue! + priceInDouble!
-        totalCharges.text = "$ \(newTotal)"
-        shippingChargesLabel.text = "$ \(price)"
+       
         courierServiceCell?.isSelected = true
         courierServiceSelected = true
     }
     
-    func updateChargesSummary(chargesSummary: [String : Any]) {
+    func updateChargesSummary(chargesSummary: [String : Any], totalCharges: Double) {
         guard let processingChargesValue = chargesSummary["processing_charges"] as? Int,
               let insuranceFeeValue = chargesSummary["insurance_fee"] as? Int,
               let lateFeeChargesValue = chargesSummary["late_fee_charges"] as? Int,
               let packageLateFeeValue = chargesSummary["package_late_fee"] as? Int,
-              let vapChargesValue = chargesSummary["vap_charges"] as? Int else {
+              let vapChargesValue = chargesSummary["vap_charges"] as? Int,
+              let shippingCharges =  chargesSummary["shipping_charges"] as? Int  else {
                   return
               }
         let processingChargesInDouble = Double.init(processingChargesValue)
@@ -245,13 +265,36 @@ extension CheckoutAndPayTableViewCell: UICollectionViewDelegate, UICollectionVie
         let lateFeeChargesInDouble = Double.init(lateFeeChargesValue)
         let packageLatFeeInDouble = Double.init(packageLateFeeValue)
         let vapChargesFeeInDouble = Double.init(vapChargesValue)
+        let shippingChargesInDouble = Double.init(shippingCharges)
+        let totalChargesInDouble = Double.init(totalCharges)
         processingCharges.text = "$ \(processingChargesInDouble)"
         insuranceFee.text = "$ \(insuranceFeeInDouble)"
         lateFeeCharges.text = "$ \(lateFeeChargesInDouble)"
         packageLateFee.text = "$ \(packageLatFeeInDouble)"
         vapCharges.text = "$ \(vapChargesFeeInDouble)"
-        self.totalChargesValue = processingChargesInDouble + insuranceFeeInDouble + lateFeeChargesInDouble + packageLatFeeInDouble + vapChargesFeeInDouble
-        totalCharges.text = "$ \(totalChargesValue!)"
+        shippingChargesLabel.text = "$ \(shippingChargesInDouble)"
+        totalChargesLabel.text = "$ \(totalChargesInDouble)"
+        
+
     }
     
+    func getCheckoutSummary(courierService: String,paymentMethod: String, isWallet: String) {
+        checkoutVM = CheckoutVM()
+        let userToken = getCurrentUserToken()
+        checkoutVM?.getCheckoutSummaryOutgoing(token: userToken, requestId: self.requestID!, courier_service: courierService, payment_gateway: paymentMethod, is_wallet: isWallet, success: {[self] response in
+           completion(response: response)
+        }, failure: { str in
+            print(str)
+        })
+    }
+    
+    
+    func completion(response: NSDictionary) {
+        let data = response["data"] as? [String: Any]
+        let totalCharges = data?["total"]
+        guard  let chargesSummary = data?["charges_summary"] as? [String: Any] else {
+            return
+        }
+        self.updateChargesSummary(chargesSummary: chargesSummary, totalCharges: totalCharges as! Double)
+    }
 }

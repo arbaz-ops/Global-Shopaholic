@@ -9,12 +9,16 @@
 import Foundation
 
 
+enum isWallet: String {
+    case yes = "yes"
+    case no = "no"
+}
 
-enum PaymentMethod {
-    case paypal
-    case card
-    case bank
-    case bitcoin
+enum PaymentMethod: String {
+    case paypal = "paypal"
+    case card = "credit_card"
+    case bank = "bank_transfer"
+    case bitcoin = "bitpay"
 }
 
 enum MainSelection: String {
